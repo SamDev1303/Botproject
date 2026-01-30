@@ -1,4 +1,21 @@
-# ClawdBot - AI Business Assistant Framework
+<p align="center">
+  <img src="assets/bella-banner.svg" alt="Bella - AI Executive Assistant" width="100%">
+</p>
+
+<p align="center">
+  <strong>Your 24/7 AI-powered business assistant that never sleeps, never complains, and knows Australian tax law.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Made_in-Australia-00843D?style=for-the-badge" alt="Made in Australia">
+  <img src="https://img.shields.io/badge/GST-Compliant-blue?style=for-the-badge" alt="GST Compliant">
+  <img src="https://img.shields.io/badge/MCP-Protocol-purple?style=for-the-badge" alt="MCP Protocol">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+</p>
+
+---
+
+# Bella - AI Business Assistant Framework
 
 > An open-source AI assistant framework for small business automation. Built with MCP (Model Context Protocol) servers for seamless tool integration.
 

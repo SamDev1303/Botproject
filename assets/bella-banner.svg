@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <defs>
+    <!-- Retro gradient background -->
+    <linearGradient id="retroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+
+    <!-- Neon glow filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Scanlines pattern -->
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="2" fill="rgba(0,0,0,0.1)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="300" fill="url(#retroGrad)"/>
+
+  <!-- Grid lines (retro 80s style) -->
+  <g stroke="#e94560" stroke-width="0.5" opacity="0.3">
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="260" x2="800" y2="260"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="280" x2="800" y2="280"/>
+    <line x1="0" y1="290" x2="800" y2="290"/>
+    <!-- Vertical perspective lines -->
+    <line x1="400" y1="200" x2="0" y2="300"/>
+    <line x1="400" y1="200" x2="200" y2="300"/>
+    <line x1="400" y1="200" x2="400" y2="300"/>
+    <line x1="400" y1="200" x2="600" y2="300"/>
+    <line x1="400" y1="200" x2="800" y2="300"/>
+  </g>
+
+  <!-- Retro sun -->
+  <circle cx="400" cy="200" r="80" fill="#e94560" opacity="0.8"/>
+  <rect x="0" y="205" width="800" height="10" fill="url(#retroGrad)"/>
+  <rect x="0" y="220" width="800" height="8" fill="url(#retroGrad)"/>
+  <rect x="0" y="232" width="800" height="6" fill="url(#retroGrad)"/>
+  <rect x="0" y="242" width="800" height="5" fill="url(#retroGrad)"/>
+
+  <!-- Stars -->
+  <g fill="#fff" opacity="0.8">
+    <circle cx="50" cy="30" r="1.5"/>
+    <circle cx="150" cy="60" r="1"/>
+    <circle cx="250" cy="25" r="1.5"/>
+    <circle cx="550" cy="40" r="1"/>
+    <circle cx="650" cy="70" r="1.5"/>
+    <circle cx="750" cy="35" r="1"/>
+    <circle cx="100" cy="90" r="1"/>
+    <circle cx="700" cy="100" r="1"/>
+  </g>
+
+  <!-- Robot mascot (simple retro style) -->
+  <g transform="translate(80, 60)">
+    <!-- Robot body -->
+    <rect x="0" y="40" width="60" height="70" rx="5" fill="#00d4ff" stroke="#fff" stroke-width="2"/>
+    <!-- Robot head -->
+    <rect x="5" y="0" width="50" height="40" rx="5" fill="#00d4ff" stroke="#fff" stroke-width="2"/>
+    <!-- Eyes -->
+    <circle cx="20" cy="18" r="8" fill="#1a1a2e"/>
+    <circle cx="40" cy="18" r="8" fill="#1a1a2e"/>
+    <circle cx="22" cy="16" r="3" fill="#e94560" filter="url(#neonGlow)"/>
+    <circle cx="42" cy="16" r="3" fill="#e94560" filter="url(#neonGlow)"/>
+    <!-- Mouth -->
+    <rect x="15" y="28" width="30" height="4" fill="#1a1a2e"/>
+    <!-- Antenna -->
+    <line x1="30" y1="0" x2="30" y2="-15" stroke="#fff" stroke-width="2"/>
+    <circle cx="30" cy="-18" r="5" fill="#e94560" filter="url(#neonGlow)"/>
+    <!-- Chest display -->
+    <rect x="10" y="50" width="40" height="20" fill="#1a1a2e" rx="2"/>
+    <text x="30" y="64" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="10">AI</text>
+    <!-- Arms -->
+    <rect x="-15" y="45" width="15" height="8" fill="#00d4ff" stroke="#fff" stroke-width="1"/>
+    <rect x="60" y="45" width="15" height="8" fill="#00d4ff" stroke="#fff" stroke-width="1"/>
+  </g>
+
+  <!-- Main title: BELLA -->
+  <text x="400" y="90" text-anchor="middle" font-family="'Courier New', monospace" font-size="72" font-weight="bold" fill="#e94560" filter="url(#neonGlow)">BELLA</text>
+
+  <!-- Chrome/metallic effect outline -->
+  <text x="400" y="90" text-anchor="middle" font-family="'Courier New', monospace" font-size="72" font-weight="bold" fill="none" stroke="#ff6b9d" stroke-width="1">BELLA</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="130" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" fill="#00d4ff">AI Executive Assistant</text>
+
+  <!-- Tagline -->
+  <text x="400" y="160" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" fill="#888" letter-spacing="3">BOOKKEEPING  |  COMMUNICATIONS  |  AUTOMATION</text>
+
+  <!-- Version badge -->
+  <g transform="translate(620, 20)">
+    <rect width="80" height="25" rx="12" fill="#e94560"/>
+    <text x="40" y="17" text-anchor="middle" font-family="monospace" font-size="11" fill="#fff" font-weight="bold">v1.0</text>
+  </g>
+
+  <!-- Australia badge -->
+  <g transform="translate(100, 20)">
+    <rect width="100" height="25" rx="12" fill="#00d4ff"/>
+    <text x="50" y="17" text-anchor="middle" font-family="monospace" font-size="10" fill="#1a1a2e" font-weight="bold">MADE IN AU</text>
+  </g>
+
+  <!-- Scanlines overlay -->
+  <rect width="800" height="300" fill="url(#scanlines)" opacity="0.5"/>
+</svg>
