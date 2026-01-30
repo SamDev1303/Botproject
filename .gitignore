@@ -1,0 +1,155 @@
+# ===========================================
+# SECRETS & CREDENTIALS - NEVER COMMIT THESE
+# ===========================================
+
+# Environment files with API keys (but keep .env.example)
+.env
+!.env.example
+**/.env
+
+# OAuth tokens and credentials
+*-oauth-tokens.json
+*-credentials.json
+*-token.json
+google-oauth-tokens.json
+client_secret*.json
+credentials.json
+token.json
+service-account*.json
+
+# API key files
+api_keys.txt
+secrets.txt
+credentials.txt
+
+# SSH keys
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# ===========================================
+# PERSONAL DATA
+# ===========================================
+
+# Lead databases with customer info
+data/outreach_leads.json
+data/*.personal.json
+leads.json
+customers.json
+contacts.json
+
+# Logs that may contain sensitive info
+logs/*.log
+*.log
+
+# User-specific memory files
+MEMORY.md
+USER.md
+
+# ===========================================
+# PYTHON
+# ===========================================
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===========================================
+# IDE & EDITORS
+# ===========================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ===========================================
+# OS FILES
+# ===========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ===========================================
+# PROJECT-SPECIFIC
+# ===========================================
+
+# Generated voice files (large)
+generated/voice/*.mp3
+generated/video/*.mp4
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+
+# Claude project files (contain conversation history)
+.claude/
+
+# Config with personal settings
+config/personal.json
+clawdbot.json

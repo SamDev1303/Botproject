@@ -1,0 +1,35 @@
+{
+  "status": "idle",
+  "currentTask": "Princess Bella is ready for adventure!",
+  "progress": 0,
+  "taskCount": 2,
+  "lastMessageTime": 1769792959.883292,
+  "health": {
+    "gateway": "1-UP",
+    "telegram": "LINKED",
+    "apis": "\u00d784"
+  },
+  "activities": [
+    {
+      "icon": "\u2705",
+      "time": "04:09",
+      "text": "Completed quest!"
+    },
+    {
+      "icon": "\ud83d\udce8",
+      "time": "04:09",
+      "text": "Message from Hafsah Nuzhat"
+    },
+    {
+      "icon": "\u2705",
+      "time": "03:56",
+      "text": "Completed quest!"
+    },
+    {
+      "icon": "\ud83d\udce8",
+      "time": "03:56",
+      "text": "Message from Hafsah Nuzhat"
+    }
+  ],
+  "lastUpdated": "2026-01-30T17:34:12.674469Z"
+}

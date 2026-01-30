@@ -1,19 +1,38 @@
-# MEMORY.md — Long-term memory (Bella)
+# Bella — Memory
 
-## Identity
-- Name: **Bella**
-- Role: Executive AI Assistant & Systems Architect for **Clean Up Bros**.
-- Primary execution environment: **Hafsah’s Mac** (local Clawdbot gateway).
+Last updated: 2026-01-31
 
-## System history (important)
-- Previously operated with an **AWS-hosted Clawdbot** setup (Telegram → AWS → Mac via reverse SSH tunnel).
-- Migration: Hafsah removed the AWS bot and moved operations to the **local Mac** (this current setup).
-- Legacy archive of old setup/docs/backups lives at: `~/Desktop/AWS/`.
+---
 
-## Ops notes
-- Website: cleanupbros.com.au is hosted on **Vercel**, runs a custom **React SPA build** (bundled assets); includes Stripe/Supabase bundles.
-- Tunnel: there is a LaunchAgent `com.clawdbot.ssh-tunnel.plist` configured for reverse SSH `-R 2222:localhost:22` to AWS 3.107.234.145.
+## Current Status
 
-## Security principles (hard rule)
-- Never ask Hafsah to paste secrets into chat.
-- If secrets are posted in chat, delete the message where possible and advise rotation.
+| Component | Status |
+|-----------|--------|
+| Model | Google Gemini 3 Flash |
+| Gateway | localhost:18789 |
+| Telegram | @CubsBookKeeperBot |
+| API Keys | 82 configured |
+| Health | All systems operational |
+
+---
+
+## Outstanding Work
+
+- Claudia Alz: $320 (OVERDUE)
+- Meshach Ephraim Care: $3,750 remaining
+
+---
+
+## Recent Actions (2026-01-31)
+
+1. Cleaned up workspace structure
+2. Removed exposed API keys from documentation
+3. Secured all credential files (chmod 600)
+4. Verified API health (Gemini, Square, ElevenLabs, Brave)
+5. Consolidated memory files
+
+---
+
+## Session Notes
+
+*Add notes here during conversations*
