@@ -35,7 +35,7 @@ BASE_URL = f"https://api.twilio.com/2010-04-01/Accounts/{ACCOUNT_SID}"
 BUSINESS_PHONE = "0406 764 585"
 BUSINESS_PHONE_INTL = "+61406764585"
 WEBSITE = "cleanupbros.com.au"
-HAFSAH_PHONE = "+61415429117"  # Forward ALL SMS copies to Hafsah
+HAFSAH_PHONE = os.environ.get('HAFSAH_PHONE', '')  # Forward ALL SMS copies to Hafsah
 
 def api_request(endpoint, method="GET", data=None):
     """Make Twilio API request"""

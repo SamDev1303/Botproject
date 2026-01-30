@@ -49,7 +49,7 @@ TWILIO_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER', '+61483945127')
 BUSINESS_PHONE = "0406 764 585"
 BUSINESS_PHONE_INTL = "+61406764585"
 WEBSITE = "cleanupbros.com.au"
-HAFSAH_PHONE = "+61415429117"  # Forward ALL SMS copies to Hafsah
+HAFSAH_PHONE = os.environ.get('HAFSAH_PHONE', '')  # Forward ALL SMS copies to Hafsah
 
 # Lead tracking file
 LEADS_FILE = Path.home() / "clawd" / "data" / "outreach_leads.json"
