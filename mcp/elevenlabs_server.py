@@ -29,6 +29,10 @@ BASE_URL = "https://api.elevenlabs.io/v1"
 OUTPUT_DIR = Path.home() / "clawd" / "generated" / "voice"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Business contact - NEVER tell people to call Twilio number
+BUSINESS_PHONE = "0406 764 585"
+WEBSITE = "cleanupbros.com.au"
+
 # Default voice IDs (ElevenLabs preset voices)
 VOICES = {
     "rachel": "21m00Tcm4TlvDq8ikWAM",  # Female, warm
@@ -39,6 +43,8 @@ VOICES = {
     "arnold": "VR6AewLTigWG4xSOukaG",   # Male, crisp
     "adam": "pNInz6obpgDQGcFmaJgB",     # Male, deep
     "sam": "yoZ06aMxZJJ28mfd3POQ",      # Male, raspy
+    # GROK-STYLE: Fast, punchy, confident
+    "grok": "pNInz6obpgDQGcFmaJgB",     # Using Adam - deep, confident male
 }
 
 def api_request(endpoint, method="GET", data=None, is_audio=False):
@@ -162,7 +168,7 @@ def generate_marketing_audio(promo_text: str, voice: str = "rachel") -> str:
 
 @mcp.tool()
 def generate_cold_call_intro() -> str:
-    """Generate a professional cold call introduction"""
+    """Generate a professional cold call introduction (standard style)"""
     text = """Hello! My name is Sarah from Clean Up Bros, Sydney's trusted cleaning service.
 
 I'm reaching out because we work with property managers in your area,
@@ -179,6 +185,103 @@ or visit our website at cleanupbros.com.au.
 Thank you for your time!"""
 
     return generate_voice(text, voice="rachel", filename="cold_call_intro.mp3")
+
+# ============== GROK-STYLE COLD CALLS ==============
+
+@mcp.tool()
+def generate_grok_cold_call(company: str, contact_name: str = "") -> str:
+    """
+    Generate a GROK-STYLE cold call - fast, punchy, witty, confident.
+    No fluff. No corporate speak. Just direct and memorable.
+
+    This is the personality Hafsah wants - like Grok AI.
+    """
+    name_part = f"Is this {contact_name}? Perfect." if contact_name else "Quick 20 seconds."
+
+    # GROK STYLE: Fast, punchy, no filler words, confident, slightly edgy
+    text = f"""{name_part}
+
+Cold call. I know. Hate getting these too. But hear me out - 15 seconds.
+
+You're at {company}. You deal with cleaners. Some are good. Most aren't.
+
+I'm Hafsah. Clean Up Bros. We do end of lease. One stat: zero bond failures. Ever.
+
+Not asking for anything. Just saying - when your current cleaner ghosts you mid-lease,
+call 0406 764 585. That's 0406 764 585.
+
+Oh - don't call THIS number back. It's automated. Call the real one.
+
+Bella found you. She's our AI. Built by Shamal. I'm the human.
+
+Later."""
+
+    filename = f"grok_cold_{company.replace(' ', '_')[:20]}_{datetime.now().strftime('%H%M%S')}.mp3"
+    return generate_voice(text, voice="grok", filename=filename)
+
+@mcp.tool()
+def generate_grok_childcare_call(centre_name: str, contact_name: str = "") -> str:
+    """
+    GROK-STYLE cold call for childcare centres.
+    Fast, punchy, gets to the point.
+    """
+    name_part = f"{contact_name}?" if contact_name else "Hey."
+
+    text = f"""{name_part}
+
+15 seconds. Cold call. Apologies in advance.
+
+{centre_name}, right? Childcare. You care about hygiene more than most.
+
+I'm Hafsah. Clean Up Bros. We deep clean centres after hours.
+Parents notice clean. Kids touch everything. You know this.
+
+Not selling. Just - when you need someone reliable, call 0406 764 585.
+Don't call back THIS number. It's a robot. Call the real one.
+
+Found you via Bella - our AI.
+
+Cheers."""
+
+    filename = f"grok_childcare_{centre_name.replace(' ', '_')[:15]}_{datetime.now().strftime('%H%M%S')}.mp3"
+    return generate_voice(text, voice="grok", filename=filename)
+
+@mcp.tool()
+def generate_grok_followup_call(company: str, days_since: int = 3) -> str:
+    """
+    GROK-STYLE follow-up call. Even shorter and punchier.
+    """
+    text = f"""Hey. Quick follow-up.
+
+Called you {days_since} days ago about {company}. Clean Up Bros.
+
+Not chasing. Just - if your cleaner situation hasn't improved,
+we're still here. 0406 764 585.
+
+That's it. Short and sweet.
+
+Later."""
+
+    filename = f"grok_followup_{company.replace(' ', '_')[:15]}_{datetime.now().strftime('%H%M%S')}.mp3"
+    return generate_voice(text, voice="grok", filename=filename)
+
+@mcp.tool()
+def get_grok_voice_settings() -> dict:
+    """
+    Get optimized voice settings for Grok-style delivery.
+    Faster pace, more confidence, less robotic.
+    """
+    return {
+        "voice": "grok",
+        "model_id": "eleven_turbo_v2",  # Faster model
+        "voice_settings": {
+            "stability": 0.3,           # Less stable = more dynamic
+            "similarity_boost": 0.8,    # High similarity for consistency
+            "style": 0.5,               # Add some style variation
+            "use_speaker_boost": True   # Clearer articulation
+        },
+        "notes": "Use eleven_turbo_v2 for faster generation. Lower stability for more natural, dynamic delivery."
+    }
 
 # ============== VOICE MANAGEMENT ==============
 

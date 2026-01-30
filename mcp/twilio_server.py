@@ -306,6 +306,9 @@ def cold_outreach_call(to: str, business_name: str, contact_name: str = "") -> s
     Make a cold outreach call to a property manager or business.
     Professional script for Clean Up Bros.
     IMPORTANT: Tells clients NOT to call back Twilio number.
+
+    NOTE: For GROK-STYLE calls with ElevenLabs, use:
+    cold_outreach_call_grok() instead - it's faster and punchier.
     """
     to = format_au_number(to)
 
@@ -323,6 +326,56 @@ To reach us, call {BUSINESS_PHONE} or visit {WEBSITE}.
 Thank you for your time!"""
 
     return make_call(to, script)
+
+@mcp.tool()
+def cold_outreach_call_grok(to: str, business_name: str, contact_name: str = "") -> str:
+    """
+    Make a GROK-STYLE cold call - fast, punchy, witty, no fluff.
+    This is what Hafsah wants - like Grok AI personality.
+
+    Uses faster TTS settings and punchy script.
+    IMPORTANT: Tells clients NOT to call back Twilio number.
+    """
+    to = format_au_number(to)
+
+    name_part = f"Is this {contact_name}? Perfect. " if contact_name else ""
+
+    # GROK STYLE: Fast, direct, no corporate fluff
+    script = f"""{name_part}Cold call. I know. 15 seconds max.
+
+You're at {business_name}. You deal with cleaners. Some good. Most aren't.
+
+I'm Hafsah. Clean Up Bros. End of lease. Zero bond failures. Ever.
+
+Quick note - don't call this number back. It's automated.
+
+Real number: {BUSINESS_PHONE}. That's {BUSINESS_PHONE}.
+
+Found by Bella, our AI. Built by Shamal. I'm the human.
+
+Later."""
+
+    # Use Polly.Matthew for faster, punchier delivery (instead of Nicole)
+    twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say voice="Polly.Matthew" language="en-AU">{script}</Say>
+</Response>"""
+
+    data = {
+        "To": to,
+        "From": FROM_NUMBER,
+        "Twiml": twiml
+    }
+
+    result = api_request("/Calls.json", method="POST", data=data)
+
+    if "error" in result:
+        return f"Error: {result['error']}"
+
+    return f"""GROK-STYLE call initiated to {to}
+Call SID: {result.get('sid', 'unknown')}
+Status: {result.get('status', 'unknown')}
+Style: Fast, punchy, Grok personality"""
 
 @mcp.tool()
 def list_recent_calls(limit: int = 10) -> str:

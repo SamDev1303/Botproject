@@ -594,7 +594,10 @@ Not for everyone. But if you need us: 0406 764 585
 # ============== CALL OUTREACH ==============
 
 def make_twilio_call(to: str, message: str):
-    """Internal function to make call via Twilio"""
+    """
+    Internal function to make call via Twilio.
+    Uses Polly.Matthew for GROK-STYLE: faster, punchier, more confident delivery.
+    """
     phone = to.replace(" ", "").replace("-", "")
     if not phone.startswith('+'):
         if phone.startswith('0'):
@@ -605,9 +608,11 @@ def make_twilio_call(to: str, message: str):
     url = f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_SID}/Calls.json"
     credentials = base64.b64encode(f"{TWILIO_SID}:{TWILIO_TOKEN}".encode()).decode()
 
+    # GROK STYLE: Using Matthew voice for faster, punchier delivery
+    # Matthew is more dynamic than Nicole (which sounds too slow/corporate)
     twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Say voice="Polly.Nicole" language="en-AU">{message}</Say>
+    <Say voice="Polly.Matthew" language="en-AU">{message}</Say>
 </Response>"""
 
     data = urllib.parse.urlencode({
@@ -635,32 +640,31 @@ def make_twilio_call(to: str, message: str):
 @mcp.tool()
 def make_cold_call(to_phone: str, to_name: str, company: str) -> str:
     """
-    Make a cold outreach call with Bella's honest, pattern-interrupt style.
+    Make a GROK-STYLE cold call - fast, punchy, witty, no fluff.
     Built by Shamal with Claude Code.
     IMPORTANT: Tells clients NOT to call back the Twilio number.
+
+    Grok personality: Direct, confident, slightly edgy, wastes no time.
     """
-    script = f"""Hey! Quick heads up - this is a cold call.
+    # GROK STYLE: Fast, punchy, no corporate speak
+    script = f"""Hey! Cold call. I know. 20 seconds max.
 
-I know, I know. The bad news is: yes, it's a cold call. You can hang up if you want.
+{company}, right? You deal with cleaners.
 
-The good news? This is actually a well-researched cold call.
-I'm calling because I looked up {company}, saw you're in property management,
-and thought you might be tired of unreliable cleaners.
+Here's the thing - I'm Hafsah from Clean Up Bros. We do end of lease.
+One stat that matters: zero bond failures. Ever.
 
-I'm Hafsah from Clean Up Bros. We do end of lease cleans in Western Sydney.
-Bond-back guaranteed. We've never lost one.
+Not selling you anything right now.
 
-If you've got 30 seconds, I'd love to know - is your current cleaner actually reliable?
-If yes, great! Sorry to bother you.
+Just - when your current cleaner inevitably ghosts you, call {BUSINESS_PHONE}.
+That's {BUSINESS_PHONE}. Write it down.
 
-One important thing: please don't call back this number - it's an automated line.
+Important: don't call THIS number back. It's automated. Call the real one.
 
-To reach us, call {BUSINESS_PHONE} or visit {WEBSITE}. That's {BUSINESS_PHONE}.
+Bella found you. She's our AI. Built by Shamal with Claude Code.
+I'm the human. I do the cleaning.
 
-This call was researched by Bella, our AI assistant built by Shamal using Claude Code.
-She found you. I'm the human who runs the business.
-
-Thanks for your time!"""
+Later."""
 
     result = make_twilio_call(to_phone, script)
 
