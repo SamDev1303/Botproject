@@ -11,6 +11,10 @@ from pathlib import Path
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
 from mcp.validation import validate_phone, sanitize_input
+from mcp.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -45,9 +49,13 @@ def api_request(endpoint, method="GET", data=None):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"{method} {endpoint} - Success")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"{method} {endpoint} - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 def format_au_number(phone):
     """Format phone number for WhatsApp (no + prefix)"""
@@ -73,6 +81,7 @@ def send_whatsapp(to: str, message: str) -> str:
     try:
         validate_phone(to)
     except ValueError as e:
+        logger.warning(f"Invalid phone number provided: {to}")
         return f"Error: {e}"
 
     message = sanitize_input(message, max_length=4096)  # WhatsApp limit
@@ -89,9 +98,11 @@ def send_whatsapp(to: str, message: str) -> str:
     result = api_request(f"/{PHONE_ID}/messages", method="POST", data=data)
 
     if "error" in result:
+        logger.error(f"Failed to send WhatsApp to {to}: {result['error']}")
         return f"Error: {result['error']}"
 
     msg_id = result.get('messages', [{}])[0].get('id', 'unknown')
+    logger.info(f"WhatsApp sent to {to}, Message ID: {msg_id}")
     return f"""WhatsApp message sent to {to}
 Message ID: {msg_id}"""
 

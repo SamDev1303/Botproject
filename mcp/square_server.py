@@ -11,9 +11,13 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from mcp.server.fastmcp import FastMCP
+from mcp.logging_config import setup_logging
 
 # Sydney timezone for all date operations
 SYDNEY_TZ = ZoneInfo("Australia/Sydney")
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -50,19 +54,27 @@ def api_request(endpoint, method="GET", data=None):
     for attempt in range(max_retries):
         try:
             with urllib.request.urlopen(req, timeout=30) as response:
-                return json.loads(response.read().decode())
+                result = json.loads(response.read().decode())
+                logger.info(f"{method} {endpoint} - Success")
+                return result
         except urllib.error.HTTPError as e:
             error_body = e.read().decode()[:200]
             if e.code >= 500 and attempt < max_retries - 1:
                 import time
-                time.sleep(2 ** attempt)  # Exponential backoff
+                wait_time = 2 ** attempt
+                logger.warning(f"{method} {endpoint} - {e.code} error, retrying in {wait_time}s (attempt {attempt+1}/{max_retries})")
+                time.sleep(wait_time)
                 continue
+            logger.error(f"{method} {endpoint} - {e.code}: {error_body}")
             return {"error": f"{e.code}: {error_body}"}
         except urllib.error.URLError as e:
             if attempt < max_retries - 1:
                 import time
-                time.sleep(2 ** attempt)
+                wait_time = 2 ** attempt
+                logger.warning(f"{method} {endpoint} - Network error, retrying in {wait_time}s: {e}")
+                time.sleep(wait_time)
                 continue
+            logger.error(f"{method} {endpoint} - Connection failed: {e}")
             return {"error": f"Connection failed: {str(e)}"}
 
 # Create MCP server
@@ -96,6 +108,7 @@ def square_create_invoice(customer_email: str, amount_dollars: float, descriptio
     customer_id = None
     if customer_result.get('customers'):
         customer_id = customer_result['customers'][0]['id']
+        logger.info(f"Found existing customer: {customer_email}")
     else:
         # Create customer
         create_result = api_request("/customers", method="POST", data={
@@ -104,8 +117,10 @@ def square_create_invoice(customer_email: str, amount_dollars: float, descriptio
         })
         if create_result.get('customer'):
             customer_id = create_result['customer']['id']
+            logger.info(f"Created new customer: {customer_email}")
 
     if not customer_id:
+        logger.error(f"Failed to create/find customer: {customer_email}")
         return "Error: Could not create/find customer"
 
     # Get location ID
@@ -167,6 +182,7 @@ def square_create_invoice(customer_email: str, amount_dollars: float, descriptio
             "idempotency_key": str(uuid.uuid4())
         }
         api_request(f"/invoices/{invoice_id}/publish", method="POST", data=publish_data)
+        logger.info(f"Invoice published: {invoice_id} for {customer_email}, amount: ${amount_dollars:.2f}")
 
     return f"Invoice created for {customer_email}\nAmount: ${amount_dollars:.2f}\nDue: {due_date}\nInvoice ID: {invoice_id}"
 
@@ -272,6 +288,7 @@ def square_create_payment_link(amount_dollars: float, description: str) -> str:
         return f"Error: {result['error']}"
 
     link = result.get('payment_link', {})
+    logger.info(f"Payment link created: ${amount_dollars:.2f} - {description}")
     return f"Payment link created:\n{link.get('url', 'N/A')}\nAmount: ${amount_dollars:.2f}\nDescription: {description}"
 
 if __name__ == "__main__":

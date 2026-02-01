@@ -10,6 +10,10 @@ import urllib.error
 from pathlib import Path
 from datetime import datetime, timedelta
 from mcp.server.fastmcp import FastMCP
+from mcp.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -57,9 +61,10 @@ def get_access_token():
                 tokens['access_token'] = new_tokens['access_token']
                 with open(TOKEN_FILE, 'w') as f:
                     json.dump(tokens, f, indent=2)
+                logger.info("Successfully refreshed Google OAuth token")
                 return new_tokens['access_token']
         except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
-            print(f"Token refresh failed: {e}")
+            logger.error(f"Token refresh failed: {e}")
             pass
 
     return access_token
@@ -68,6 +73,7 @@ def api_request(url, method="GET", data=None):
     """Make authenticated API request"""
     token = get_access_token()
     if not token:
+        logger.error("No access token available")
         return {"error": "No access token. Run google-oauth-setup.py first."}
 
     headers = {"Authorization": f"Bearer {token}"}
@@ -79,9 +85,13 @@ def api_request(url, method="GET", data=None):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"{method} {url[:80]}... - Success")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"{method} {url[:80]}... - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 import urllib.parse
 

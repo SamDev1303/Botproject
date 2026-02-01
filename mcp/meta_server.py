@@ -10,6 +10,10 @@ import urllib.error
 from pathlib import Path
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
+from mcp.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -48,9 +52,13 @@ def api_request(endpoint, method="GET", data=None, params=None):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"{method} {endpoint[:60]}... - Success")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"{method} {endpoint[:60]}... - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 # Create MCP server
 mcp = FastMCP("Meta")

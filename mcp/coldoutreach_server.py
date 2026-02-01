@@ -23,6 +23,10 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from mcp.server.fastmcp import FastMCP
 from mcp.validation import validate_email, sanitize_input
+from mcp.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -80,7 +84,7 @@ def get_google_token():
             with urllib.request.urlopen(req) as response:
                 return json.loads(response.read().decode())['access_token']
         except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
-            print(f"Google token refresh failed: {e}")
+            logger.error(f"Google token refresh failed: {e}")
             pass
     return tokens.get('access_token')
 
@@ -103,9 +107,10 @@ def log_outreach_to_sheets(lead_name: str, company: str, channel: str, status: s
     try:
         req = urllib.request.Request(url, data=data, headers=headers, method="POST")
         urllib.request.urlopen(req)
+        logger.info(f"Logged outreach to Sheets: {lead_name} at {company} via {channel}")
         return True
     except (urllib.error.HTTPError, urllib.error.URLError) as e:
-        print(f"Email sending failed: {e}")
+        logger.error(f"Sheets logging failed: {e}")
         return False
 
 # Create MCP server
@@ -542,9 +547,13 @@ def _send_sms_raw(phone: str, message: str):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"Twilio SMS sent to {phone}")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"Twilio SMS to {phone} - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 def send_twilio_sms(to: str, message: str, forward_to_hafsah: bool = True):
     """Send SMS via Twilio and forward copy to Hafsah"""
@@ -643,9 +652,13 @@ def make_twilio_call(to: str, message: str):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"Twilio call initiated to {phone}")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"Twilio call to {phone} - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 @mcp.tool()
 def make_cold_call(to_phone: str, to_name: str, company: str) -> str:

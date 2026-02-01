@@ -13,6 +13,10 @@ from pathlib import Path
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
 from mcp.validation import validate_phone, sanitize_input
+from mcp.logging_config import setup_logging
+
+# Setup logging
+logger = setup_logging(__name__)
 
 # Load environment
 def load_env():
@@ -56,9 +60,13 @@ def api_request(endpoint, method="GET", data=None):
 
     try:
         with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
+            result = json.loads(response.read().decode())
+            logger.info(f"{method} {endpoint} - Success")
+            return result
     except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+        error_msg = e.read().decode()[:200]
+        logger.error(f"{method} {endpoint} - {e.code}: {error_msg}")
+        return {"error": f"{e.code}: {error_msg}"}
 
 def format_au_number(phone):
     """Format phone number for Australian format"""
@@ -97,6 +105,7 @@ def send_sms(to: str, message: str, forward_to_hafsah: bool = True) -> str:
     try:
         validate_phone(to)
     except ValueError as e:
+        logger.warning(f"Invalid phone number provided: {to}")
         return f"Error: {e}"
 
     message = sanitize_input(message, max_length=1600)  # SMS limit
@@ -106,8 +115,10 @@ def send_sms(to: str, message: str, forward_to_hafsah: bool = True) -> str:
     result = _send_sms_raw(to, message)
 
     if "error" in result:
+        logger.error(f"Failed to send SMS to {to}: {result['error']}")
         return f"Error: {result['error']}"
 
+    logger.info(f"SMS sent to {to}, SID: {result.get('sid', 'unknown')}")
     output = f"""SMS sent to {to}
 Message SID: {result.get('sid', 'unknown')}
 Status: {result.get('status', 'unknown')}"""
@@ -117,6 +128,7 @@ Status: {result.get('status', 'unknown')}"""
         copy_msg = f"[COPY TO {to}]\n{message}"
         copy_result = _send_sms_raw(HAFSAH_PHONE, copy_msg)
         if "error" not in copy_result:
+            logger.info("SMS copy forwarded to Hafsah")
             output += "\n📋 Copy forwarded to Hafsah"
 
     return output
