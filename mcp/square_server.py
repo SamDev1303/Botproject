@@ -8,8 +8,12 @@ import json
 import urllib.request
 import urllib.error
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from mcp.server.fastmcp import FastMCP
+
+# Sydney timezone for all date operations
+SYDNEY_TZ = ZoneInfo("Australia/Sydney")
 
 # Load environment
 def load_env():
@@ -34,7 +38,7 @@ def api_request(endpoint, method="GET", data=None):
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
         "Content-Type": "application/json",
-        "Square-Version": "2024-01-18"
+        "Square-Version": "2025-01-21"
     }
 
     if data:
@@ -42,11 +46,24 @@ def api_request(endpoint, method="GET", data=None):
 
     req = urllib.request.Request(url, data=data, headers=headers, method=method)
 
-    try:
-        with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
-    except urllib.error.HTTPError as e:
-        return {"error": f"{e.code}: {e.read().decode()[:200]}"}
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as response:
+                return json.loads(response.read().decode())
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode()[:200]
+            if e.code >= 500 and attempt < max_retries - 1:
+                import time
+                time.sleep(2 ** attempt)  # Exponential backoff
+                continue
+            return {"error": f"{e.code}: {error_body}"}
+        except urllib.error.URLError as e:
+            if attempt < max_retries - 1:
+                import time
+                time.sleep(2 ** attempt)
+                continue
+            return {"error": f"Connection failed: {str(e)}"}
 
 # Create MCP server
 mcp = FastMCP("Square")
@@ -70,7 +87,6 @@ def square_list_locations() -> str:
 def square_create_invoice(customer_email: str, amount_dollars: float, description: str, due_days: int = 7) -> str:
     """Create and send an invoice to a customer"""
     import uuid
-    from datetime import timedelta
 
     # First, get or create customer
     customer_result = api_request("/customers/search", method="POST", data={
@@ -96,8 +112,8 @@ def square_create_invoice(customer_email: str, amount_dollars: float, descriptio
     loc_result = api_request("/locations")
     location_id = loc_result.get('locations', [{}])[0].get('id', LOCATION_ID)
 
-    # Create invoice
-    due_date = (datetime.now() + timedelta(days=due_days)).strftime("%Y-%m-%d")
+    # Create invoice with Sydney timezone
+    due_date = (datetime.now(SYDNEY_TZ) + timedelta(days=due_days)).strftime("%Y-%m-%d")
     amount_cents = int(amount_dollars * 100)
 
     invoice_data = {
@@ -182,10 +198,10 @@ def square_list_invoices(status: str = "UNPAID") -> str:
 @mcp.tool()
 def square_list_payments(days: int = 7) -> str:
     """List recent payments from the last N days"""
-    from datetime import timedelta
-
-    end_time = datetime.utcnow().isoformat() + 'Z'
-    start_time = (datetime.utcnow() - timedelta(days=days)).isoformat() + 'Z'
+    # Use UTC for API calls but calculate based on Sydney time
+    now_utc = datetime.now(ZoneInfo("UTC"))
+    end_time = now_utc.isoformat().replace('+00:00', 'Z')
+    start_time = (now_utc - timedelta(days=days)).isoformat().replace('+00:00', 'Z')
 
     result = api_request(f"/payments?begin_time={start_time}&end_time={end_time}")
 
