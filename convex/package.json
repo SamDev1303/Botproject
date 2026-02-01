@@ -1,0 +1,14 @@
+{
+  "name": "bella-convex-memory",
+  "version": "1.0.0",
+  "description": "Convex database for Bella AI assistant memory management",
+  "scripts": {
+    "dev": "convex dev",
+    "deploy": "convex deploy",
+    "predev": "convex dev --once --configure=new"
+  },
+  "dependencies": {
+    "convex": "^1.17.4"
+  },
+  "devDependencies": {}
+}
