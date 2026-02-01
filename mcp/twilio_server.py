@@ -32,9 +32,9 @@ FROM_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER', '+61483945127')  # Default A
 BASE_URL = f"https://api.twilio.com/2010-04-01/Accounts/{ACCOUNT_SID}"
 
 # Business contact details - NEVER use Twilio number for callbacks
-BUSINESS_PHONE = "0406 764 585"
-BUSINESS_PHONE_INTL = "+61406764585"
-WEBSITE = "cleanupbros.com.au"
+BUSINESS_PHONE = os.environ.get('BUSINESS_PHONE', '')
+BUSINESS_PHONE_INTL = os.environ.get('BUSINESS_PHONE_INTL', '')
+WEBSITE = os.environ.get('BUSINESS_WEBSITE', 'cleanupbros.com.au')
 HAFSAH_PHONE = os.environ.get('HAFSAH_PHONE', '')  # Forward ALL SMS copies to Hafsah
 
 def api_request(endpoint, method="GET", data=None):
@@ -160,14 +160,18 @@ def send_payment_reminder(to: str, client_name: str, amount: float, invoice_id: 
 
     inv_ref = f" (Invoice #{invoice_id})" if invoice_id else ""
 
+    bank_name = os.environ.get('BANK_NAME', '')
+    bank_bsb = os.environ.get('BANK_BSB', '')
+    bank_account = os.environ.get('BANK_ACCOUNT', '')
+
     message = f"""Hi {client_name},
 
 Friendly reminder that payment of ${amount:.2f}{inv_ref} is due.
 
 Pay online: https://square.link/cleanupbros
-Bank: Clean Up Bros, BSB: 062-000, Acc: 1234567
+Bank: {bank_name}, BSB: {bank_bsb}, Acc: {bank_account}
 
-Questions? Call 0406 764 585
+Questions? Call {BUSINESS_PHONE}
 
 Thanks!
 - Clean Up Bros"""

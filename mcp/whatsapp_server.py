@@ -151,6 +151,9 @@ def send_payment_reminder_wa(to: str, client_name: str, amount: float, days_over
     else:
         urgency = "Payment is due soon."
 
+    bank_bsb = os.environ.get('BANK_BSB', '')
+    bank_account = os.environ.get('BANK_ACCOUNT', '')
+
     message = f"""*Payment Reminder* 💳
 
 Hi {client_name},
@@ -160,7 +163,7 @@ Hi {client_name},
 *Amount Due:* ${amount:.2f}
 
 *Payment Options:*
-• Bank Transfer: BSB 062-000, Acc 1234567
+• Bank Transfer: BSB {bank_bsb}, Acc {bank_account}
 • Pay Online: square.link/cleanupbros
 
 Please reply once paid or if you have any questions.
@@ -199,6 +202,9 @@ def send_completion_wa(to: str, client_name: str, amount: float) -> str:
     """Send a job completion message via WhatsApp"""
     to = format_au_number(to)
 
+    bank_bsb = os.environ.get('BANK_BSB', '')
+    bank_account = os.environ.get('BANK_ACCOUNT', '')
+
     message = f"""*Cleaning Complete* ✨
 
 Hi {client_name}!
@@ -208,7 +214,7 @@ Great news - your clean is finished!
 *Amount Due:* ${amount:.2f}
 
 *Payment Options:*
-• Bank Transfer: BSB 062-000, Acc 1234567
+• Bank Transfer: BSB {bank_bsb}, Acc {bank_account}
 • Pay Online: square.link/cleanupbros
 
 We hope you love your sparkling clean space!
