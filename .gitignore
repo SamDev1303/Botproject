@@ -153,3 +153,5 @@ temp/
 # Config with personal settings
 config/personal.json
 clawdbot.json
+!.claude/rules/
+!.claude/skills/
