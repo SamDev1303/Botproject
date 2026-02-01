@@ -12,6 +12,7 @@ import base64
 from pathlib import Path
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
+from mcp.validation import validate_phone, sanitize_input
 
 # Load environment
 def load_env():
@@ -92,6 +93,13 @@ def send_sms(to: str, message: str, forward_to_hafsah: bool = True) -> str:
     Phone numbers: 0412345678 or +61412345678
     Automatically forwards a copy to Hafsah unless disabled.
     """
+    # Validate and sanitize inputs
+    try:
+        validate_phone(to)
+    except ValueError as e:
+        return f"Error: {e}"
+
+    message = sanitize_input(message, max_length=1600)  # SMS limit
     to = format_au_number(to)
 
     # Send to client

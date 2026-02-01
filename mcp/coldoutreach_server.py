@@ -22,6 +22,7 @@ import base64
 from pathlib import Path
 from datetime import datetime, timedelta
 from mcp.server.fastmcp import FastMCP
+from mcp.validation import validate_email, sanitize_input
 
 # Load environment
 def load_env():
@@ -78,7 +79,8 @@ def get_google_token():
             req = urllib.request.Request('https://oauth2.googleapis.com/token', data=data)
             with urllib.request.urlopen(req) as response:
                 return json.loads(response.read().decode())['access_token']
-        except:
+        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
+            print(f"Google token refresh failed: {e}")
             pass
     return tokens.get('access_token')
 
@@ -102,7 +104,8 @@ def log_outreach_to_sheets(lead_name: str, company: str, channel: str, status: s
         req = urllib.request.Request(url, data=data, headers=headers, method="POST")
         urllib.request.urlopen(req)
         return True
-    except:
+    except (urllib.error.HTTPError, urllib.error.URLError) as e:
+        print(f"Email sending failed: {e}")
         return False
 
 # Create MCP server
@@ -230,6 +233,13 @@ def send_cold_email(to_email: str, to_name: str, company: str, template: str = "
 
     Built by Shamal with Claude Code - radically honest, no begging, just facts.
     """
+    # Validate and sanitize inputs
+    if not validate_email(to_email):
+        return f"Error: Invalid email address: {to_email}"
+
+    to_name = sanitize_input(to_name, max_length=100)
+    company = sanitize_input(company, max_length=200)
+
     templates = {
         # NEW: Bella's signature honest style
         "bella_honest": {

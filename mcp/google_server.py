@@ -58,7 +58,8 @@ def get_access_token():
                 with open(TOKEN_FILE, 'w') as f:
                     json.dump(tokens, f, indent=2)
                 return new_tokens['access_token']
-        except:
+        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
+            print(f"Token refresh failed: {e}")
             pass
 
     return access_token

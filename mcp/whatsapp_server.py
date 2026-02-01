@@ -10,6 +10,7 @@ import urllib.error
 from pathlib import Path
 from datetime import datetime
 from mcp.server.fastmcp import FastMCP
+from mcp.validation import validate_phone, sanitize_input
 
 # Load environment
 def load_env():
@@ -68,6 +69,13 @@ def send_whatsapp(to: str, message: str) -> str:
     Send a WhatsApp text message.
     Phone: 0412345678 or +61412345678
     """
+    # Validate and sanitize inputs
+    try:
+        validate_phone(to)
+    except ValueError as e:
+        return f"Error: {e}"
+
+    message = sanitize_input(message, max_length=4096)  # WhatsApp limit
     to = format_au_number(to)
 
     data = {

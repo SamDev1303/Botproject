@@ -96,7 +96,8 @@ def get_access_token():
                 with open(TOKEN_FILE, 'w') as f:
                     json.dump(tokens, f, indent=2)
                 return new_tokens['access_token']
-        except:
+        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError, KeyError) as e:
+            print(f"Token refresh failed: {e}")
             pass
 
     return tokens.get('access_token')
@@ -218,7 +219,8 @@ def get_income_summary(period: str = "month") -> str:
                 amount_str = row[3].replace("$", "").replace(",", "")
                 total += float(amount_str)
                 count += 1
-        except:
+        except (ValueError, IndexError, KeyError):
+            # Skip malformed rows
             continue
 
     gst = total / 11
@@ -327,7 +329,8 @@ def get_expense_summary(period: str = "month") -> str:
                     if cat_info["name"] == category and cat_info["gst_claimable"]:
                         gst_claimable += amount / 11
                         break
-        except:
+        except (ValueError, IndexError, KeyError):
+            # Skip malformed rows
             continue
 
     output = [f"📊 Expense Summary ({period}):", f"• Total: ${total:.2f}", f"• GST credits: ${gst_claimable:.2f}", "", "By Category:"]
@@ -404,7 +407,8 @@ def get_outstanding() -> str:
                 status = f"Due in {days_until} days"
 
             output.append(f"• {client}: ${amount:.2f} - {status}")
-        except:
+        except (ValueError, IndexError, KeyError):
+            # Skip malformed rows
             continue
 
     output.append("")
@@ -501,7 +505,8 @@ def calculate_bas(quarter: int = 0) -> str:
                 if start_date <= row_date <= end_date:
                     amount = float(row[3].replace("$", "").replace(",", ""))
                     income_total += amount
-            except:
+            except (ValueError, IndexError):
+                # Skip invalid expense rows
                 continue
 
     gst_collected = income_total / 11
@@ -521,7 +526,8 @@ def calculate_bas(quarter: int = 0) -> str:
                         if cat_info["name"] == category and cat_info["gst_claimable"]:
                             gst_credits += amount / 11
                             break
-            except:
+            except (ValueError, IndexError):
+                # Skip invalid expense rows
                 continue
 
     gst_payable = gst_collected - gst_credits
@@ -569,7 +575,8 @@ def profit_loss(period: str = "quarter") -> str:
                 row_date = datetime.strptime(row[0], "%Y-%m-%d")
                 if row_date >= start_date:
                     income_total += float(row[3].replace("$", "").replace(",", ""))
-            except:
+            except (ValueError, IndexError):
+                # Skip invalid expense rows
                 continue
 
     # Get expenses by category
@@ -585,7 +592,8 @@ def profit_loss(period: str = "quarter") -> str:
                     category = row[4] if len(row) > 4 else "Other"
                     expenses[category] = expenses.get(category, 0) + amount
                     expense_total += amount
-            except:
+            except (ValueError, IndexError):
+                # Skip invalid expense rows
                 continue
 
     # Get wages
@@ -600,7 +608,8 @@ def profit_loss(period: str = "quarter") -> str:
                     wages_total += float(row[4].replace("$", "").replace(",", ""))
                     if len(row) > 5:
                         super_total += float(row[5].replace("$", "").replace(",", ""))
-            except:
+            except (ValueError, IndexError):
+                # Skip invalid expense rows
                 continue
 
     # Calculate net income (GST-exclusive)
