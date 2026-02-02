@@ -46,6 +46,12 @@ logs/*.log
 # User-specific memory files
 MEMORY.md
 USER.md
+memory/
+!memory/.gitkeep
+!memory/README.md
+
+# Session logs that may contain API keys
+SESSION-*.md
 
 # ===========================================
 # PYTHON
