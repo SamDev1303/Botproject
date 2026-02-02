@@ -39,9 +39,11 @@ REDIRECT_URI = "http://localhost:8080/"
 SCOPES = [
     "https://www.googleapis.com/auth/gmail.send",
     "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.modify",  # Mark as read/unread
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.readonly",
     "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/adwords",  # Google Ads API
 ]
 
 TOKEN_FILE = os.path.expanduser("~/.clawdbot/google-oauth-tokens.json")
