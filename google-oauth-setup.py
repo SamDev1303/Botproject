@@ -37,13 +37,23 @@ if not CLIENT_ID or not CLIENT_SECRET:
 
 REDIRECT_URI = "http://localhost:8080/"
 SCOPES = [
+    # Gmail
     "https://www.googleapis.com/auth/gmail.send",
     "https://www.googleapis.com/auth/gmail.readonly",
     "https://www.googleapis.com/auth/gmail.modify",  # Mark as read/unread
+    # Google Sheets
     "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.readonly",
+    # Google Drive (full access)
+    "https://www.googleapis.com/auth/drive",
+    # Google Calendar
     "https://www.googleapis.com/auth/calendar",
-    "https://www.googleapis.com/auth/adwords",  # Google Ads API
+    # Google Ads
+    "https://www.googleapis.com/auth/adwords",
+    # YouTube
+    "https://www.googleapis.com/auth/youtube",  # Manage YouTube account
+    "https://www.googleapis.com/auth/youtube.readonly",  # View YouTube account
+    "https://www.googleapis.com/auth/youtube.upload",  # Upload videos
+    "https://www.googleapis.com/auth/youtube.force-ssl",  # Manage YouTube content
 ]
 
 TOKEN_FILE = os.path.expanduser("~/.clawdbot/google-oauth-tokens.json")
