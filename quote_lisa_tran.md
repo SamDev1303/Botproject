@@ -38,7 +38,7 @@
 ---
 
 ### **CONFIRMATION**
-To lock in your booking for **Thursday, Feb 5th**, please reply to this email or call **hafsah@cleanupbros.com.au**.
+To lock in your booking for **Thursday, Feb 5th**, please reply to this email or call **cleanupbros.au@gmail.com**.
 
 We look forward to making your home sparkle!
 

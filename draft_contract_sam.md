@@ -2,7 +2,7 @@
 
 **Service Provider:** Clean Up Bros (CUB)  
 **ABN:** 18 640 162 490  
-**Contact:** hafsah@cleanupbros.com.au  
+**Contact:** cleanupbros.au@gmail.com  
 
 ---
 
