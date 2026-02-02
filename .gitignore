@@ -161,3 +161,4 @@ config/personal.json
 clawdbot.json
 !.claude/rules/
 !.claude/skills/
+temp_google_creds.json
