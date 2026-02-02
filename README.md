@@ -920,6 +920,158 @@ A: Yes! The MIT license allows commercial use. You can even resell Bella-based s
 
 ---
 
+## Bella's API Access Guide (For Developers)
+
+### How Bella Accesses Gmail, Calendar & Google Services
+
+Bella uses OAuth 2.0 to securely access your Google services. The tokens are stored locally in `~/.clawdbot/google-oauth-tokens.json`.
+
+**Authorized Scopes (as of 2026-02-03):**
+- `gmail.send` - Send emails
+- `gmail.readonly` - Read emails
+- `gmail.modify` - Mark as read/unread, labels
+- `calendar` - Full calendar access
+- `spreadsheets` - Google Sheets access
+- `drive.readonly` - Read Google Drive files
+- `adwords` - Google Ads API
+
+### Quick Access Code Snippets
+
+**Read Gmail Messages:**
+```python
+import json
+import urllib.request
+from pathlib import Path
+
+# Load tokens
+with open(Path.home() / ".clawdbot" / "google-oauth-tokens.json") as f:
+    ACCESS_TOKEN = json.load(f)['access_token']
+
+# List recent messages
+req = urllib.request.Request(
+    'https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10',
+    headers={'Authorization': f'Bearer {ACCESS_TOKEN}'}
+)
+with urllib.request.urlopen(req) as resp:
+    messages = json.loads(resp.read().decode())
+    print(f"Found {len(messages.get('messages', []))} messages")
+```
+
+**Read Calendar Events:**
+```python
+# List upcoming events
+req = urllib.request.Request(
+    'https://www.googleapis.com/calendar/v3/calendars/primary/events?maxResults=10&orderBy=startTime&singleEvents=true&timeMin=2026-01-01T00:00:00Z',
+    headers={'Authorization': f'Bearer {ACCESS_TOKEN}'}
+)
+with urllib.request.urlopen(req) as resp:
+    events = json.loads(resp.read().decode())
+    for event in events.get('items', []):
+        print(f"- {event.get('summary')}: {event.get('start', {}).get('dateTime', event.get('start', {}).get('date'))}")
+```
+
+**Create Calendar Event:**
+```python
+import json
+import urllib.request
+
+event_data = {
+    "summary": "Cleaning: John Smith",
+    "location": "123 Main St, Sydney",
+    "start": {"dateTime": "2026-02-10T09:00:00+11:00"},
+    "end": {"dateTime": "2026-02-10T12:00:00+11:00"}
+}
+
+req = urllib.request.Request(
+    'https://www.googleapis.com/calendar/v3/calendars/primary/events',
+    headers={
+        'Authorization': f'Bearer {ACCESS_TOKEN}',
+        'Content-Type': 'application/json'
+    },
+    data=json.dumps(event_data).encode(),
+    method='POST'
+)
+with urllib.request.urlopen(req) as resp:
+    created = json.loads(resp.read().decode())
+    print(f"Created event: {created.get('htmlLink')}")
+```
+
+**Read Gmail Labels/Folders:**
+```python
+# List all Gmail labels (folders)
+req = urllib.request.Request(
+    'https://gmail.googleapis.com/gmail/v1/users/me/labels',
+    headers={'Authorization': f'Bearer {ACCESS_TOKEN}'}
+)
+with urllib.request.urlopen(req) as resp:
+    labels = json.loads(resp.read().decode())
+    for label in labels.get('labels', []):
+        print(f"- {label.get('name')} (ID: {label.get('id')})")
+```
+
+**Search Gmail:**
+```python
+import urllib.parse
+
+# Search for specific emails
+query = urllib.parse.quote('from:customer@example.com subject:invoice')
+req = urllib.request.Request(
+    f'https://gmail.googleapis.com/gmail/v1/users/me/messages?q={query}',
+    headers={'Authorization': f'Bearer {ACCESS_TOKEN}'}
+)
+with urllib.request.urlopen(req) as resp:
+    results = json.loads(resp.read().decode())
+    print(f"Found {len(results.get('messages', []))} matching emails")
+```
+
+### Test Scripts Available
+
+Run these from the `scripts/` directory:
+
+| Script | Purpose | Command |
+|--------|---------|---------|
+| `test_google_services.py` | Test all Google APIs | `python3 scripts/test_google_services.py` |
+| `api_health_check.py` | Test ALL configured APIs | `python3 scripts/api_health_check.py` |
+| `sync_memory_files.py` | Sync CLAUDE.md ↔ GEMINI.md | `python3 scripts/sync_memory_files.py` |
+| `session_logoff.py` | Save session & commit to GitHub | `python3 scripts/session_logoff.py` |
+
+### Google API Endpoints Reference
+
+| Service | Endpoint | Method |
+|---------|----------|--------|
+| Gmail - List Messages | `gmail.googleapis.com/gmail/v1/users/me/messages` | GET |
+| Gmail - Send Message | `gmail.googleapis.com/gmail/v1/users/me/messages/send` | POST |
+| Gmail - Get Labels | `gmail.googleapis.com/gmail/v1/users/me/labels` | GET |
+| Calendar - List Events | `calendar.googleapis.com/calendar/v3/calendars/primary/events` | GET |
+| Calendar - Create Event | `calendar.googleapis.com/calendar/v3/calendars/primary/events` | POST |
+| Sheets - Get Spreadsheet | `sheets.googleapis.com/v4/spreadsheets/{ID}` | GET |
+| Sheets - Update Values | `sheets.googleapis.com/v4/spreadsheets/{ID}/values/{RANGE}` | PUT |
+| Drive - List Files | `drive.googleapis.com/drive/v3/files` | GET |
+| Google Ads - List Customers | `googleads.googleapis.com/v18/customers:listAccessibleCustomers` | GET |
+
+---
+
+## Current Status (2026-02-03)
+
+| Component | Status |
+|-----------|--------|
+| Gmail | ✅ Working |
+| Calendar | ✅ Working (3 upcoming bookings) |
+| Google Sheets | ✅ Working |
+| Google Drive | ✅ Working |
+| Google Ads | ✅ OAuth authorized (enable API in Cloud Console) |
+| Square Payments | ✅ Working (production) |
+| Twilio SMS/Voice | ✅ Working |
+| WhatsApp Business | ⚠️ Check phone ID |
+| Telegram Bot | ✅ Working (@CubsBookKeeperBot) |
+| ElevenLabs Voice | ✅ Working |
+| Brave Search | ✅ Working |
+| Apify Scraping | ✅ Working |
+
+**Last Updated:** 2026-02-03 | **APIs Configured:** 100+ | **MCP Servers:** 15
+
+---
+
 <p align="center">
   <strong>Made with ❤️ in Sydney, Australia</strong>
 </p>
