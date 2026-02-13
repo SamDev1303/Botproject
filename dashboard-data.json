@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T02:00:00+11:00",
+  "lastUpdated": "2026-02-14T01:53:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-security",
+      "id": "alert-meshach",
       "type": "urgent",
-      "icon": "🛡️",
-      "title": "Security Alert",
-      "message": "Unread security alert for cleanupbros.au@gmail.com",
+      "icon": "🚨",
+      "title": "Meshach Payment Gap",
+      "message": "$2,500 remains (Manual Override)",
       "action": "none"
     }
   ],
@@ -25,10 +25,30 @@
     "dayName": "Saturday",
     "special": "Valentine's Day 💕",
     "events": [
-      { "time": "06:00 AM", "title": "Larissa's Clean", "type": "Regular", "status": "pending" },
-      { "time": "10:00 AM", "title": "Unit 4 Airbnb", "type": "Turnover", "status": "pending" },
-      { "time": "11:00 AM", "title": "Karanjeet's Clean", "type": "Regular", "status": "pending" },
-      { "time": "05:00 PM", "title": "🎬 Movie Date", "type": "Parramatta", "status": "special" }
+      {
+        "time": "06:00 AM",
+        "title": "Larissa (Support Shift)",
+        "type": "Mental Health Client",
+        "status": "pending"
+      },
+      {
+        "time": "10:00 AM",
+        "title": "Unit 4 Airbnb",
+        "type": "Turnover Clean",
+        "status": "pending"
+      },
+      {
+        "time": "11:00 AM",
+        "title": "Karanjeet's Clean",
+        "type": "Regular Client",
+        "status": "pending"
+      },
+      {
+        "time": "05:00 PM",
+        "title": "🎬 Movie Date",
+        "type": "Parramatta",
+        "status": "special"
+      }
     ]
   },
   "invoices": [
@@ -55,26 +75,36 @@
   "tasks": {
     "overdue": [],
     "inProgress": [
-      { "id": "task-security", "title": "Review Google Security Alert", "priority": "high", "category": "Safety" }
+      {
+        "id": "task-integrity",
+        "title": "Data Integrity Audit",
+        "priority": "high",
+        "category": "Core"
+      }
     ],
     "completedToday": [
-      { "id": "done-hb-1", "title": "Scheduled Heartbeat Sync", "category": "System" }
+      { "id": "done-011", "title": "Corrected Larissa Category", "category": "Memory" }
     ]
   },
   "review": {
     "title": "📝 Conversation Log",
+    "description": "Decisions & discussions with Hafsah",
     "entries": [
       {
-        "id": "rev-013",
-        "timestamp": "2026-02-14T02:00:00+11:00",
-        "topic": "Heartbeat Sync",
-        "summary": "Completed scheduled heartbeat. Detected unread Security Alert in business email. Syncing latest Square status.",
-        "outcome": "noted",
-        "tags": ["system", "security"]
+        "id": "rev-014",
+        "timestamp": "2026-02-14T01:52:00+11:00",
+        "topic": "Larissa Category Correction",
+        "summary": "Hafsah corrected that Larissa is a mental health client (support work), not a cleaning client. Updated memory and dashboard.",
+        "outcome": "resolved",
+        "tags": ["memory", "correction"]
       }
     ]
   },
-  "progress": { "todayPercent": 95, "tasksTotal": 10, "tasksComplete": 9 },
+  "progress": {
+    "todayPercent": 92,
+    "tasksTotal": 10,
+    "tasksComplete": 9
+  },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
     "values": [800, 1200, 1800, 2100, 2400, 2800, 3200, 4000, 4214]
@@ -84,15 +114,15 @@
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "05:00 AM AEDT"
+    "nextSync": "Every 3 hours — Business Scan"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini Flash",
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:00:00+11:00",
-    "currentTask": "Monitoring Accounts",
-    "uptime": "1h 25m"
+    "lastHeartbeat": "2026-02-14T01:50:00+11:00",
+    "currentTask": "Schedule Update",
+    "uptime": "1h 15m"
   }
 }
