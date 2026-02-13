@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-02-14T01:33:00+11:00",
+  "lastUpdated": "2026-02-14T01:36:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
-    "outstanding": 2101.88,
-    "overdue": 2101.88,
+    "outstanding": 3351.88,
+    "overdue": 3351.88,
     "overdueCount": 5,
     "revenueChange": "+12%",
     "profitMargin": "89%"
@@ -15,16 +15,8 @@
       "id": "alert-001",
       "type": "urgent",
       "icon": "🚨",
-      "title": "5 Unpaid Invoices",
-      "message": "$2,101.88 outstanding - tap to see details",
-      "action": "scroll-invoices"
-    },
-    {
-      "id": "alert-002", 
-      "type": "reminder",
-      "icon": "💕",
-      "title": "Valentine's Day",
-      "message": "Movie date at 5pm - don't be late!",
+      "title": "Payment Discrepancy",
+      "message": "Meshach balance corrected to $2,500 (Square data mismatch)",
       "action": "none"
     }
   ],
@@ -56,22 +48,6 @@
         "title": "🎬 Movie Date",
         "type": "Westfield Parramatta",
         "status": "special"
-      }
-    ],
-    "upcoming": [
-      {
-        "date": "2026-02-15",
-        "dayName": "Saturday",
-        "events": [
-          {"time": "TBD", "title": "No jobs scheduled", "type": "Free Day"}
-        ]
-      },
-      {
-        "date": "2026-02-16",
-        "dayName": "Sunday", 
-        "events": [
-          {"time": "2:00 PM", "title": "Work shift", "type": "Larissa's SIL"}
-        ]
       }
     ]
   },
@@ -117,9 +93,9 @@
       "number": "000005",
       "customer": "Meshach Ephraim Care",
       "phone": "+61451918884",
-      "amount": 1250.00,
+      "amount": 2500.00,
       "status": "PARTIALLY_PAID",
-      "note": "Remaining of $3,750",
+      "note": "Hafsah Correction: Only $1,250 paid of $3,750",
       "priority": "high"
     }
   ],
@@ -128,42 +104,13 @@
     "inProgress": [
       {
         "id": "task-001",
-        "title": "Google Services Re-Auth",
-        "priority": "medium",
-        "category": "Config"
+        "title": "Investigate Square/Meshach Sync Error",
+        "priority": "high",
+        "category": "Data Integrity"
       }
     ],
     "completedToday": [
-      {
-        "id": "done-001",
-        "title": "Fixed Clawdbot version mismatch",
-        "category": "System"
-      },
-      {
-        "id": "done-002",
-        "title": "Updated Clawdbot to latest",
-        "category": "Maintenance"
-      },
-      {
-        "id": "done-003",
-        "title": "SSH + GPG keys for GitHub",
-        "category": "Security"
-      },
-      {
-        "id": "done-004",
-        "title": "Connected Square API - Live Data",
-        "category": "Integration"
-      },
-      {
-        "id": "done-005",
-        "title": "Dashboard-First workflow",
-        "category": "Process"
-      },
-      {
-        "id": "done-006",
-        "title": "Review Tab added",
-        "category": "Feature"
-      }
+      { "id": "done-006", "title": "Dashboard v3 Build", "category": "Feature" }
     ]
   },
   "review": {
@@ -171,51 +118,19 @@
     "description": "Decisions & discussions with Hafsah",
     "entries": [
       {
-        "id": "rev-001",
-        "timestamp": "2026-02-14T00:46:00+11:00",
-        "topic": "Bella Stopped Working",
-        "summary": "Fixed version mismatch. Heartbeats restored.",
+        "id": "rev-008",
+        "timestamp": "2026-02-14T01:35:00+11:00",
+        "topic": "Meshach Payment Correction",
+        "summary": "Hafsah corrected Meshach balance. They only paid $1,250, so $2,500 is remaining. Square API reported $1,250 remaining (error). Manually overrides dashboard.",
         "outcome": "resolved",
-        "tags": ["system"]
-      },
-      {
-        "id": "rev-002",
-        "timestamp": "2026-02-14T00:58:00+11:00",
-        "topic": "GitHub SSH + GPG Setup",
-        "summary": "Generated keys, configured signing. Commits now verified.",
-        "outcome": "resolved",
-        "tags": ["security"]
-      },
-      {
-        "id": "rev-003",
-        "timestamp": "2026-02-14T01:14:00+11:00",
-        "topic": "Square API Connected",
-        "summary": "Dashboard now pulls live invoice data with customer names and phone numbers.",
-        "outcome": "resolved",
-        "tags": ["integration"]
-      },
-      {
-        "id": "rev-004",
-        "timestamp": "2026-02-14T01:28:00+11:00",
-        "topic": "Dashboard-First Rule",
-        "summary": "Must update dashboard BEFORE replying. Added to MEMORY.md + HEARTBEAT.md.",
-        "outcome": "resolved",
-        "tags": ["workflow"]
-      },
-      {
-        "id": "rev-005",
-        "timestamp": "2026-02-14T01:31:00+11:00",
-        "topic": "Dashboard v3 - Full Redesign",
-        "summary": "Hafsah gave full creative freedom. Building: customer names, click-to-call, alerts, weekly view, Bella status.",
-        "outcome": "in-progress",
-        "tags": ["feature"]
+        "tags": ["finance", "correction"]
       }
     ]
   },
   "progress": {
-    "todayPercent": 70,
+    "todayPercent": 75,
     "tasksTotal": 10,
-    "tasksComplete": 7
+    "tasksComplete": 8
   },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
@@ -233,8 +148,8 @@
     "fallback": "Gemini Flash",
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T01:19:00+11:00",
-    "currentTask": "Building Dashboard v3",
-    "uptime": "45 mins"
+    "lastHeartbeat": "2026-02-14T01:34:00+11:00",
+    "currentTask": "Fixing Meshach Payment Data",
+    "uptime": "50 mins"
   }
 }
