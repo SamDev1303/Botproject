@@ -51,13 +51,13 @@ TWILIO_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', '')
 TWILIO_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER', '+61483945127')
 
 # REAL BUSINESS CONTACT INFO - clients should call/message HERE, not Twilio
-BUSINESS_PHONE = "0406 764 585"
-BUSINESS_PHONE_INTL = "+61406764585"
-WEBSITE = "cleanupbros.com.au"
+BUSINESS_PHONE = os.environ.get('BUSINESS_PHONE', '0406 764 585')
+BUSINESS_PHONE_INTL = os.environ.get('BUSINESS_PHONE_INTL', '+61406764585')
+WEBSITE = os.environ.get('BUSINESS_WEBSITE', 'cleanupbros.com.au')
 HAFSAH_PHONE = os.environ.get('HAFSAH_PHONE', '')  # Forward ALL SMS copies to Hafsah
 
 # Lead tracking file
-LEADS_FILE = Path.home() / "clawd" / "data" / "outreach_leads.json"
+LEADS_FILE = Path.home() / ".clawdbot" / "data" / "outreach_leads.json"
 LEADS_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 # Google Sheets for logging
