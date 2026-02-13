@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T01:36:00+11:00",
+  "lastUpdated": "2026-02-14T01:38:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -15,8 +15,8 @@
       "id": "alert-001",
       "type": "urgent",
       "icon": "🚨",
-      "title": "Payment Discrepancy",
-      "message": "Meshach balance corrected to $2,500 (Square data mismatch)",
+      "title": "Scheduled Refresh",
+      "message": "Setting up 3-hour business sync for Gmail & Calendar",
       "action": "none"
     }
   ],
@@ -103,10 +103,10 @@
     "overdue": [],
     "inProgress": [
       {
-        "id": "task-001",
-        "title": "Investigate Square/Meshach Sync Error",
-        "priority": "high",
-        "category": "Data Integrity"
+        "id": "task-sync-3h",
+        "title": "Implement 3h Auto-Refresh Logic",
+        "priority": "medium",
+        "category": "Automation"
       }
     ],
     "completedToday": [
@@ -117,6 +117,14 @@
     "title": "📝 Conversation Log",
     "description": "Decisions & discussions with Hafsah",
     "entries": [
+      {
+        "id": "rev-009",
+        "timestamp": "2026-02-14T01:36:00+11:00",
+        "topic": "3-Hour Refresh Request",
+        "summary": "Hafsah requested a full business sync (Gmail, Calendar, etc.) every 3 hours. Setting up cron job.",
+        "outcome": "in-progress",
+        "tags": ["automation", "cron"]
+      },
       {
         "id": "rev-008",
         "timestamp": "2026-02-14T01:35:00+11:00",
@@ -141,15 +149,15 @@
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Monday 9:00 AM — Weekly bookkeeping"
+    "nextSync": "Every 3 hours — Gmail/Calendar/Invoices"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini Flash",
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T01:34:00+11:00",
-    "currentTask": "Fixing Meshach Payment Data",
-    "uptime": "50 mins"
+    "lastHeartbeat": "2026-02-14T01:37:00+11:00",
+    "currentTask": "Scheduling 3h Refresh Job",
+    "uptime": "55 mins"
   }
 }
