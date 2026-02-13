@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Dashboard - Clean Up Bros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        
+        .header .subtitle {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .header .model-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #00d9ff22;
+            border: 1px solid #00d9ff;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ff88;
+        }
+        
+        .stat-card .value.warning {
+            color: #ffaa00;
+        }
+        
+        .stat-card .value.danger {
+            color: #ff4757;
+        }
+        
+        .stat-card .label {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .kanban {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .kanban-column {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .kanban-column h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .kanban-column.today h3 { border-color: #00d9ff; color: #00d9ff; }
+        .kanban-column.pending h3 { border-color: #ffaa00; color: #ffaa00; }
+        .kanban-column.overdue h3 { border-color: #ff4757; color: #ff4757; }
+        .kanban-column.done h3 { border-color: #00ff88; color: #00ff88; }
+        
+        .task-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-left: 3px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .task-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        .task-card.high { border-color: #ff4757; }
+        .task-card.medium { border-color: #ffaa00; }
+        .task-card.low { border-color: #00ff88; }
+        .task-card.done { border-color: #00ff88; opacity: 0.7; }
+        
+        .task-card .title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .task-card .meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .task-card .tag {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            color: #aaa;
+        }
+        
+        .task-card .tag.urgent {
+            background: #ff475722;
+            color: #ff4757;
+        }
+        
+        .task-card .amount {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #00ff88;
+            margin-top: 8px;
+        }
+        
+        .task-card .amount.overdue {
+            color: #ff4757;
+        }
+        
+        .schedule-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .schedule-section h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-item .time {
+            width: 100px;
+            font-weight: 700;
+            color: #00d9ff;
+            font-size: 0.9rem;
+        }
+        
+        .schedule-item .event {
+            flex: 1;
+        }
+        
+        .schedule-item .event-title {
+            font-weight: 600;
+        }
+        
+        .schedule-item .event-type {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        
+        .schedule-item.special .time {
+            color: #ff6b9d;
+        }
+        
+        .memory-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .memory-section h3 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .memory-item {
+            padding: 10px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+        
+        .memory-item .label {
+            color: #888;
+            font-size: 0.75rem;
+            margin-bottom: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.8rem;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .refresh-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            color: #1a1a2e;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,217,255,0.3);
+            transition: transform 0.2s;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🦞 Bella Dashboard</h1>
+        <div class="subtitle">Clean Up Bros Command Centre</div>
+        <div class="model-badge">Primary: Claude Opus 4.5 | Fallback: Gemini Flash</div>
+    </div>
+    
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="value">$14,214</div>
+            <div class="label">Total Revenue</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">$12,674</div>
+            <div class="label">Net Profit</div>
+        </div>
+        <div class="stat-card">
+            <div class="value warning">$4,070</div>
+            <div class="label">Outstanding</div>
+        </div>
+        <div class="stat-card">
+            <div class="value danger">1</div>
+            <div class="label">Overdue Invoices</div>
+        </div>
+    </div>
+    
+    <div class="schedule-section">
+        <h3>📅 Today's Schedule — Friday 14 Feb (Valentine's Day 💕)</h3>
+        <div class="schedule-item">
+            <div class="time">06:00 AM</div>
+            <div class="event">
+                <div class="event-title">Larissa's Clean</div>
+                <div class="event-type">Regular Client</div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">Before 10AM</div>
+            <div class="event">
+                <div class="event-title">Unit 4 Airbnb</div>
+                <div class="event-type">Turnover Clean</div>
+            </div>
+        </div>
+        <div class="schedule-item">
+            <div class="time">11:00 AM</div>
+            <div class="event">
+                <div class="event-title">Karanjeet's Clean</div>
+                <div class="event-type">Regular Client</div>
+            </div>
+        </div>
+        <div class="schedule-item special">
+            <div class="time">05:00 PM</div>
+            <div class="event">
+                <div class="event-title">🎬 Movie Date @ Westfield Parramatta</div>
+                <div class="event-type">Valentine's Day!</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="kanban">
+        <div class="kanban-column overdue">
+            <h3>🚨 Overdue</h3>
+            <div class="task-card high">
+                <div class="title">Claudia Alz - Payment Chase</div>
+                <div class="amount overdue">$320.00</div>
+                <div class="meta">
+                    <span class="tag urgent">~57 days overdue</span>
+                    <span class="tag">Payment Collection</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="kanban-column pending">
+            <h3>⏳ In Progress</h3>
+            <div class="task-card medium">
+                <div class="title">Meshach Ephraim Care - Payment Plan</div>
+                <div class="amount">$1,750 remaining</div>
+                <div class="meta">
+                    <span class="tag">$2,000 paid of $3,750</span>
+                    <span class="tag">Payment Tracking</span>
+                </div>
+            </div>
+            <div class="task-card medium">
+                <div class="title">Memory Architecture Implementation</div>
+                <div class="meta">
+                    <span class="tag">Development</span>
+                    <span class="tag">In Progress</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="kanban-column done">
+            <h3>✅ Completed Today</h3>
+            <div class="task-card done">
+                <div class="title">Switched LLM to Claude Opus 4.5</div>
+                <div class="meta">
+                    <span class="tag">System</span>
+                </div>
+            </div>
+            <div class="task-card done">
+                <div class="title">Reorganised Project Structure</div>
+                <div class="meta">
+                    <span class="tag">9 scripts moved</span>
+                    <span class="tag">7 docs moved</span>
+                </div>
+            </div>
+            <div class="task-card done">
+                <div class="title">Added Gemini Fallback LLM</div>
+                <div class="meta">
+                    <span class="tag">Config</span>
+                </div>
+            </div>
+            <div class="task-card done">
+                <div class="title">Updated All Documentation</div>
+                <div class="meta">
+                    <span class="tag">HEARTBEAT.md</span>
+                    <span class="tag">TOOLS.md</span>
+                    <span class="tag">MEMORY.md</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="memory-section">
+        <h3>🧠 Key Memory Context</h3>
+        <div class="memory-item">
+            <div class="label">Business</div>
+            Clean Up Bros launched June 2025 • Website: cleanupbros.com.au • Business Phone: 0406 764 585
+        </div>
+        <div class="memory-item">
+            <div class="label">Finance Rule</div>
+            ALL payments must go through Square invoices → CommBank business account (BSB: 067 873 / Acc: 2135 8742)
+        </div>
+        <div class="memory-item">
+            <div class="label">Email Rule</div>
+            NEVER send emails without Hafsah's explicit approval. Always draft → show → wait for green light.
+        </div>
+        <div class="memory-item">
+            <div class="label">Next Sync</div>
+            Weekly bookkeeping sync scheduled every Monday 9:00 AM
+        </div>
+        <div class="memory-item">
+            <div class="label">School</div>
+            Diploma of Mental Health at INT College — starts 12th Feb 2026, finishes June 2026
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Last updated: <span class="pulse">14 Feb 2026 00:33 AEDT</span></p>
+        <p>Bella • Clean Up Bros Executive Assistant</p>
+    </div>
+    
+    <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
+</body>
+</html>
