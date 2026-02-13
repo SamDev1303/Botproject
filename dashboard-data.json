@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T03:30:00+11:00",
+  "lastUpdated": "2026-02-14T04:00:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -15,7 +15,7 @@
       "type": "info",
       "icon": "🦉",
       "title": "Night Watch Active",
-      "message": "Continuous sync active. Interface stabilized.",
+      "message": "Larissa shift in 2 hours.",
       "action": "none"
     }
   ],
@@ -48,10 +48,10 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-028",
-        "timestamp": "2026-02-14T03:30:00+11:00",
-        "topic": "03:30 AM Heartbeat Sync",
-        "summary": "Quiet hours sync. Outstanding unchanged at $3,351.88. All systems nominal.",
+        "id": "rev-029",
+        "timestamp": "2026-02-14T04:00:00+11:00",
+        "topic": "04:00 AM Heartbeat Sync",
+        "summary": "Quiet hours sync. Outstanding unchanged. Larissa shift in 2 hours.",
         "outcome": "resolved",
         "tags": ["heartbeat", "sync"]
       }
@@ -64,17 +64,17 @@
   },
   "memory": {
     "business": "cleanupbros.com.au",
-    "nextSync": "04:00 AM",
-    "insight": "Quiet night watch. No payment changes detected."
+    "nextSync": "04:30 AM",
+    "insight": "Pre-dawn watch. Shift countdown active."
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
     "status": "watching",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T03:30:00+11:00",
+    "lastHeartbeat": "2026-02-14T04:00:00+11:00",
     "currentTask": "Night Watch",
-    "uptime": "3h 05m",
+    "uptime": "3h 35m",
     "cognitiveState": "stable"
   }
 }
