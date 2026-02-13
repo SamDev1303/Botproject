@@ -1,22 +1,21 @@
 {
-  "lastUpdated": "2026-02-14T02:11:00+11:00",
+  "lastUpdated": "2026-02-14T02:15:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
     "outstanding": 3351.88,
-    "overdue": 3351.88,
     "overdueCount": 5,
     "revenueChange": "+12%",
     "profitMargin": "89%"
   },
   "alerts": [
     {
-      "id": "alert-watch",
+      "id": "alert-innovation",
       "type": "info",
-      "icon": "🦉",
-      "title": "Night Watch Active",
-      "message": "Continuous 30-minute sync loop active until morning.",
+      "icon": "💡",
+      "title": "Innovation Phase",
+      "message": "Overnight focus: Brainstorming & implementing system upgrades.",
       "action": "none"
     }
   ],
@@ -32,17 +31,16 @@
     ]
   },
   "invoices": [
-    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" },
-    { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467" },
-    { "number": "000045", "customer": "Maryam Al Atar", "amount": 150.00, "status": "UNPAID", "priority": "medium", "phone": "+61419992358" }
+    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" }
   ],
   "tasks": {
     "overdue": [],
     "inProgress": [
-      { "id": "task-overnight", "title": "Continuous Night Watch Sync", "priority": "high", "category": "Mission" }
+      { "id": "task-roadmapping", "title": "Developing Feature Roadmap v4", "priority": "high", "category": "Innovation" },
+      { "id": "task-mem-stream", "title": "Continuous Memory Streaming", "priority": "medium", "category": "Architecture" }
     ],
     "completedToday": [
-      { "id": "done-audit-v2", "title": "Precision Synchronization", "category": "Intelligence" }
+      { "id": "done-night-watch", "title": "Night Watch Protocol Set", "category": "Mission" }
     ]
   },
   "review": {
@@ -50,35 +48,33 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-023",
-        "timestamp": "2026-02-14T02:10:00+11:00",
-        "topic": "Mission: Night Watch",
-        "summary": "Hafsah commanded Bella to stay active and update the dashboard all night. Sync loop locked at 30-minute intervals for total accuracy.",
+        "id": "rev-024",
+        "timestamp": "2026-02-14T02:12:00+11:00",
+        "topic": "Mission Refinement",
+        "summary": "Hafsah clarified mission: Not just syncing every 30 mins, but actively evolving the system. Bella is now roadmapping v4 features for overnight implementation.",
         "outcome": "active",
-        "tags": ["mission", "nightwatch"]
+        "tags": ["innovation", "strategy"]
       }
     ]
   },
-  "progress": { "todayPercent": 98, "tasksTotal": 5, "tasksComplete": 4 },
+  "progress": { "todayPercent": 85, "tasksTotal": 8, "tasksComplete": 6 },
   "revenueHistory": {
     "labels": ["Aug", "Oct", "Dec", "Jan", "Feb"],
     "values": [120, 650, 1160, 5720, 14214]
   },
   "memory": {
-    "business": "cleanupbros.com.au • 0406 764 585",
-    "payments": "Square → CommBank (067 873 / 2135 8742)",
-    "emailRule": "Never send without explicit approval",
-    "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Continuous"
+    "business": "cleanupbros.com.au",
+    "nextSync": "Innovation Turn",
+    "insight": "Data without innovation is just a log; I am building an intelligence engine."
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
-    "status": "watching",
+    "status": "thinking",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:10:00+11:00",
-    "currentTask": "Overnight Night Watch",
-    "uptime": "1h 45m",
-    "cognitiveState": "hyper-vigilant"
+    "lastHeartbeat": "2026-02-14T02:15:00+11:00",
+    "currentTask": "Feature Roadmapping v4",
+    "uptime": "1h 50m",
+    "cognitiveState": "creative"
   }
 }
