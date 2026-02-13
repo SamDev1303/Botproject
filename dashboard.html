@@ -835,6 +835,135 @@
         .delay-3 { animation-delay: 0.3s; opacity: 0; }
         .delay-4 { animation-delay: 0.4s; opacity: 0; }
         .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .delay-6 { animation-delay: 0.6s; opacity: 0; }
+        .delay-7 { animation-delay: 0.7s; opacity: 0; }
+
+        /* Alerts Section */
+        .alerts-container { margin-bottom: 20px; }
+
+        .alert-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            animation: pulse-border 2s infinite;
+        }
+
+        .alert-card.urgent {
+            background: rgba(255, 59, 92, 0.15);
+            border: 1px solid rgba(255, 59, 92, 0.4);
+        }
+
+        .alert-card.reminder {
+            background: rgba(255, 107, 157, 0.15);
+            border: 1px solid rgba(255, 107, 157, 0.4);
+        }
+
+        .alert-card.info {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .alert-icon { font-size: 1.5rem; }
+        .alert-content { flex: 1; }
+        .alert-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
+        .alert-card.urgent .alert-title { color: var(--accent-red); }
+        .alert-card.reminder .alert-title { color: var(--accent-pink); }
+        .alert-message { font-size: 0.75rem; color: var(--text-secondary); }
+
+        /* Invoices Section */
+        .invoices-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .invoice-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px;
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .invoice-item.partial { border-left-color: var(--accent-orange); }
+
+        .invoice-info { flex: 1; }
+        .invoice-customer { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+        .invoice-details { font-size: 0.75rem; color: var(--text-secondary); }
+        .invoice-amount { font-weight: 800; font-size: 1.1rem; color: var(--accent-red); margin-right: 12px; }
+        .invoice-item.partial .invoice-amount { color: var(--accent-orange); }
+
+        .invoice-actions { display: flex; gap: 8px; }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .action-btn.call {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--accent-green);
+        }
+
+        .action-btn.sms {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .action-btn:active { transform: scale(0.9); }
+
+        /* Bella Status Widget */
+        .bella-status {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .bella-mini-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-purple);
+            object-fit: cover;
+        }
+
+        .bella-info { flex: 1; }
+        .bella-name { font-weight: 700; font-size: 0.95rem; color: var(--accent-purple); }
+        .bella-task { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+
+        .bella-pulse {
+            width: 12px;
+            height: 12px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
 
         /* Telegram WebApp Adjustments */
         @supports (padding: env(safe-area-inset-bottom)) {
@@ -938,6 +1067,33 @@
                     <span class="update-time">${formatTimeAgo(d.lastUpdated)}</span>
                 </div>
 
+                <!-- Alerts -->
+                ${d.alerts && d.alerts.length > 0 ? `
+                <div class="alerts-container animate-in">
+                    ${d.alerts.map(alert => `
+                        <div class="alert-card ${alert.type}">
+                            <span class="alert-icon">${alert.icon}</span>
+                            <div class="alert-content">
+                                <div class="alert-title">${alert.title}</div>
+                                <div class="alert-message">${alert.message}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
+
+                <!-- Bella Status -->
+                ${d.bella ? `
+                <div class="bella-status animate-in">
+                    <img src="${d.bella.avatar}" alt="Bella" class="bella-mini-avatar" onerror="this.outerHTML='<div style=\\'font-size:2rem\\'>🦞</div>'">
+                    <div class="bella-info">
+                        <div class="bella-name">Bella is ${d.bella.status}</div>
+                        <div class="bella-task">${d.bella.currentTask || 'Standing by'} • Last heartbeat ${formatTimeAgo(d.bella.lastHeartbeat)}</div>
+                    </div>
+                    <div class="bella-pulse"></div>
+                </div>
+                ` : ''}
+
                 <!-- Stats Grid -->
                 <div class="stats-grid animate-in delay-1">
                     <div class="stat-card revenue">
@@ -962,9 +1118,36 @@
                         <div class="stat-icon">🚨</div>
                         <div class="stat-value">$${formatNumber(d.stats.overdue)}</div>
                         <div class="stat-label">Overdue</div>
-                        <div class="stat-change negative">${d.tasks.overdue[0]?.daysOverdue || 0} days</div>
+                        <div class="stat-change negative">${d.invoices?.length || 0} invoices</div>
                     </div>
                 </div>
+
+                <!-- Invoices with Click-to-Call -->
+                ${d.invoices && d.invoices.length > 0 ? `
+                <div class="invoices-card animate-in delay-2" id="invoices-section">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <span class="icon">💳</span>
+                            Outstanding Invoices
+                        </div>
+                        <span class="section-badge">$${formatNumber(d.stats.outstanding)}</span>
+                    </div>
+                    
+                    ${d.invoices.map(inv => `
+                        <div class="invoice-item ${inv.status === 'PARTIALLY_PAID' ? 'partial' : ''}">
+                            <div class="invoice-info">
+                                <div class="invoice-customer">${inv.customer}</div>
+                                <div class="invoice-details">#${inv.number} • ${inv.status.replace('_', ' ')}${inv.note ? ' • ' + inv.note : ''}</div>
+                            </div>
+                            <div class="invoice-amount">$${formatNumber(inv.amount)}</div>
+                            <div class="invoice-actions">
+                                <a href="tel:${inv.phone}" class="action-btn call" title="Call">📞</a>
+                                <a href="sms:${inv.phone}" class="action-btn sms" title="SMS">💬</a>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+                ` : ''}
 
                 <!-- Today's Schedule -->
                 <div class="schedule-card animate-in delay-2">
@@ -1312,8 +1495,11 @@
         // Initial load
         loadDashboard();
 
-        // Auto-refresh every 5 minutes
-        setInterval(refreshData, 5 * 60 * 1000);
+        // Auto-refresh every 60 seconds
+        setInterval(refreshData, 60 * 1000);
+        
+        // Log to console
+        console.log('Dashboard v3 loaded - auto-refresh every 60s');
     </script>
 </body>
 </html>

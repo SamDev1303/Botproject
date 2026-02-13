@@ -1,15 +1,33 @@
 {
-  "lastUpdated": "2026-02-14T01:31:00+11:00",
+  "lastUpdated": "2026-02-14T01:33:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
-    "outstanding": 4601.88,
-    "overdue": 4601.88,
+    "outstanding": 2101.88,
+    "overdue": 2101.88,
     "overdueCount": 5,
     "revenueChange": "+12%",
     "profitMargin": "89%"
   },
+  "alerts": [
+    {
+      "id": "alert-001",
+      "type": "urgent",
+      "icon": "🚨",
+      "title": "5 Unpaid Invoices",
+      "message": "$2,101.88 outstanding - tap to see details",
+      "action": "scroll-invoices"
+    },
+    {
+      "id": "alert-002", 
+      "type": "reminder",
+      "icon": "💕",
+      "title": "Valentine's Day",
+      "message": "Movie date at 5pm - don't be late!",
+      "action": "none"
+    }
+  ],
   "schedule": {
     "date": "2026-02-14",
     "dayName": "Friday",
@@ -39,58 +57,80 @@
         "type": "Westfield Parramatta",
         "status": "special"
       }
+    ],
+    "upcoming": [
+      {
+        "date": "2026-02-15",
+        "dayName": "Saturday",
+        "events": [
+          {"time": "TBD", "title": "No jobs scheduled", "type": "Free Day"}
+        ]
+      },
+      {
+        "date": "2026-02-16",
+        "dayName": "Sunday", 
+        "events": [
+          {"time": "2:00 PM", "title": "Work shift", "type": "Larissa's SIL"}
+        ]
+      }
     ]
   },
+  "invoices": [
+    {
+      "id": "inv-000045",
+      "number": "000045",
+      "customer": "Maryam Al Atar",
+      "phone": "+61419992358",
+      "amount": 150.00,
+      "status": "UNPAID",
+      "priority": "high"
+    },
+    {
+      "id": "inv-000043",
+      "number": "000043",
+      "customer": "Janette Vamarasi",
+      "phone": "+61476164750",
+      "amount": 121.88,
+      "status": "UNPAID",
+      "priority": "high"
+    },
+    {
+      "id": "inv-000041",
+      "number": "000041",
+      "customer": "Herdip Gill - Pinnacle",
+      "phone": "+61421128467",
+      "amount": 435.00,
+      "status": "UNPAID",
+      "priority": "high"
+    },
+    {
+      "id": "inv-000040",
+      "number": "000040",
+      "customer": "Herdip Gill",
+      "phone": "+61421128467",
+      "amount": 145.00,
+      "status": "UNPAID",
+      "priority": "medium"
+    },
+    {
+      "id": "inv-000005",
+      "number": "000005",
+      "customer": "Meshach Ephraim Care",
+      "phone": "+61451918884",
+      "amount": 1250.00,
+      "status": "PARTIALLY_PAID",
+      "note": "Remaining of $3,750",
+      "priority": "high"
+    }
+  ],
   "tasks": {
-    "overdue": [
-      {
-        "id": "inv-000045",
-        "title": "Invoice #000045",
-        "amount": 150.00,
-        "priority": "high",
-        "category": "Payment"
-      },
-      {
-        "id": "inv-000043",
-        "title": "Invoice #000043",
-        "amount": 121.88,
-        "priority": "high",
-        "category": "Payment"
-      },
-      {
-        "id": "inv-000041",
-        "title": "Invoice #000041",
-        "amount": 435.00,
-        "priority": "high",
-        "category": "Payment"
-      },
-      {
-        "id": "inv-000040",
-        "title": "Invoice #000040",
-        "amount": 145.00,
-        "priority": "high",
-        "category": "Payment"
-      },
-      {
-        "id": "inv-000005",
-        "title": "Invoice #000005 (Partial)",
-        "amount": 3750.00,
-        "priority": "high",
-        "category": "Payment Plan"
-      }
-    ],
+    "overdue": [],
     "inProgress": [
       {
         "id": "task-001",
         "title": "Google Services Re-Auth",
         "priority": "medium",
         "category": "Config"
-      },
-      {
-        "id": "task-002",
-        "title": "Dashboard v3 Upgrade",
-        "priority": "high",
-        "category": "Feature"
       }
     ],
     "completedToday": [
@@ -106,33 +146,23 @@
       },
       {
         "id": "done-003",
-        "title": "Generated SSH key for GitHub",
+        "title": "SSH + GPG keys for GitHub",
         "category": "Security"
       },
       {
         "id": "done-004",
-        "title": "Generated GPG key for signing",
-        "category": "Security"
-      },
-      {
-        "id": "done-005",
         "title": "Connected Square API - Live Data",
         "category": "Integration"
       },
       {
-        "id": "done-006",
-        "title": "Dashboard auto-sync enabled",
-        "category": "System"
-      },
-      {
-        "id": "done-007",
-        "title": "Added Review Tab to dashboard",
-        "category": "Feature"
-      },
-      {
-        "id": "done-008",
-        "title": "Dashboard-First workflow implemented",
+        "id": "done-005",
+        "title": "Dashboard-First workflow",
         "category": "Process"
+      },
+      {
+        "id": "done-006",
+        "title": "Review Tab added",
+        "category": "Feature"
       }
     ]
   },
@@ -144,64 +174,48 @@
         "id": "rev-001",
         "timestamp": "2026-02-14T00:46:00+11:00",
         "topic": "Bella Stopped Working",
-        "summary": "Clawdbot had version mismatch (2026.1.24-2 vs 2026.1.24-3). Heartbeats stopped on Feb 12. Fixed by updating to latest version.",
+        "summary": "Fixed version mismatch. Heartbeats restored.",
         "outcome": "resolved",
-        "tags": ["system", "fix"]
+        "tags": ["system"]
       },
       {
         "id": "rev-002",
         "timestamp": "2026-02-14T00:58:00+11:00",
-        "topic": "GitHub SSH Setup",
-        "summary": "Generated new SSH key (ed25519) for GitHub repo access. Added to github.com/settings/ssh.",
+        "topic": "GitHub SSH + GPG Setup",
+        "summary": "Generated keys, configured signing. Commits now verified.",
         "outcome": "resolved",
-        "tags": ["security", "github"]
+        "tags": ["security"]
       },
       {
         "id": "rev-003",
-        "timestamp": "2026-02-14T00:59:00+11:00",
-        "topic": "GPG Key for Verified Commits",
-        "summary": "Created GPG signing key for Clean Up Bros. All future commits will show as Verified.",
+        "timestamp": "2026-02-14T01:14:00+11:00",
+        "topic": "Square API Connected",
+        "summary": "Dashboard now pulls live invoice data with customer names and phone numbers.",
         "outcome": "resolved",
-        "tags": ["security", "github"]
+        "tags": ["integration"]
       },
       {
         "id": "rev-004",
-        "timestamp": "2026-02-14T01:14:00+11:00",
-        "topic": "Dashboard Outdated Data",
-        "summary": "Hafsah flagged that dashboard had stale info (fake $2000 Michelle payment). Connected to live Square API. Now pulling real invoice data.",
+        "timestamp": "2026-02-14T01:28:00+11:00",
+        "topic": "Dashboard-First Rule",
+        "summary": "Must update dashboard BEFORE replying. Added to MEMORY.md + HEARTBEAT.md.",
         "outcome": "resolved",
-        "tags": ["data", "square"]
+        "tags": ["workflow"]
       },
       {
         "id": "rev-005",
-        "timestamp": "2026-02-14T01:24:00+11:00",
-        "topic": "Review Tab Added",
-        "summary": "Added Review tab to dashboard to track all conversations. Shows topic, summary, outcome status, and tags. Most recent entries at top.",
-        "outcome": "resolved",
-        "tags": ["feature", "dashboard"]
-      },
-      {
-        "id": "rev-006",
-        "timestamp": "2026-02-14T01:28:00+11:00",
-        "topic": "Dashboard-First Rule",
-        "summary": "Hafsah instructed: ALWAYS update dashboard BEFORE replying. Updated MEMORY.md and HEARTBEAT.md with this as Rule #1. Dashboard is now second source of truth.",
-        "outcome": "resolved",
-        "tags": ["workflow", "critical"]
-      },
-      {
-        "id": "rev-007",
         "timestamp": "2026-02-14T01:31:00+11:00",
-        "topic": "Dashboard v3 - Full Creative Freedom",
-        "summary": "Hafsah gave Bella full freedom to redesign dashboard to her standards. Planning: customer names on invoices, weekly view, quick actions, Bella status widget, alerts section.",
+        "topic": "Dashboard v3 - Full Redesign",
+        "summary": "Hafsah gave full creative freedom. Building: customer names, click-to-call, alerts, weekly view, Bella status.",
         "outcome": "in-progress",
-        "tags": ["feature", "redesign"]
+        "tags": ["feature"]
       }
     ]
   },
   "progress": {
-    "todayPercent": 65,
-    "tasksTotal": 13,
-    "tasksComplete": 8
+    "todayPercent": 70,
+    "tasksTotal": 10,
+    "tasksComplete": 7
   },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
@@ -220,6 +234,7 @@
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
     "lastHeartbeat": "2026-02-14T01:19:00+11:00",
-    "currentTask": "Dashboard v3 Redesign"
+    "currentTask": "Building Dashboard v3",
+    "uptime": "45 mins"
   }
 }
