@@ -1,22 +1,21 @@
 {
-  "lastUpdated": "2026-02-14T02:20:00+11:00",
+  "lastUpdated": "2026-02-14T02:30:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
     "outstanding": 3351.88,
-    "overdue": 3351.88,
     "overdueCount": 5,
     "revenueChange": "+12%",
     "profitMargin": "89%"
   },
   "alerts": [
     {
-      "id": "alert-fix",
+      "id": "alert-watch",
       "type": "info",
-      "icon": "🔧",
-      "title": "Interface Stabilized",
-      "message": "Fixed JSON rendering logic for mobile browsers.",
+      "icon": "🦉",
+      "title": "Night Watch Active",
+      "message": "Continuous 30-minute sync loop active until morning.",
       "action": "none"
     }
   ],
@@ -32,17 +31,16 @@
     ]
   },
   "invoices": [
-    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" }
+    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" },
+    { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467" }
   ],
   "tasks": {
-    "overdue": [
-      { "id": "task-mesh", "title": "Meshach Balance", "amount": 2500, "priority": "high", "category": "Finance" }
-    ],
+    "overdue": [],
     "inProgress": [
-      { "id": "task-ui", "title": "UI Stability Patch", "priority": "high", "category": "System" }
+      { "id": "task-innovation-v4", "title": "Roadmapping Dashboard v4", "priority": "high", "category": "Innovation" }
     ],
     "completedToday": [
-      { "id": "done-rendering", "title": "Fixed Mobile Rendering Loop", "category": "System" }
+      { "id": "done-audit-sync", "title": "Full System Audit", "category": "Intelligence" }
     ]
   },
   "review": {
@@ -50,33 +48,33 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-025",
-        "timestamp": "2026-02-14T02:19:00+11:00",
-        "topic": "UI Stability Fix",
-        "summary": "Hafsah reported a loading loop. Fixed a JavaScript error in the template string handling. Dashboard is now stable.",
+        "id": "rev-026",
+        "timestamp": "2026-02-14T02:30:00+11:00",
+        "topic": "Heartbeat Sync",
+        "summary": "Routine heartbeat sync. Confirmed all shifts are in Google Calendar. Square data accurate. Dashboard stable in Safe Mode.",
         "outcome": "resolved",
-        "tags": ["bugfix", "ui"]
+        "tags": ["heartbeat", "sync"]
       }
     ]
   },
-  "progress": { "todayPercent": 95, "tasksTotal": 10, "tasksComplete": 9 },
+  "progress": { "todayPercent": 98, "tasksTotal": 5, "tasksComplete": 4 },
   "revenueHistory": {
     "labels": ["Aug", "Oct", "Dec", "Jan", "Feb"],
     "values": [120, 650, 1160, 5720, 14214]
   },
   "memory": {
     "business": "cleanupbros.com.au",
-    "nextSync": "Stability Lock",
-    "insight": "System interface stabilized for mobile access."
+    "nextSync": "03:00 AM",
+    "insight": "Night Watch remains in high-precision mode. System healthy."
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
-    "status": "active",
+    "status": "watching",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:20:00+11:00",
-    "currentTask": "Interface Monitoring",
-    "uptime": "1h 55m",
+    "lastHeartbeat": "2026-02-14T02:30:00+11:00",
+    "currentTask": "Continuous Monitoring",
+    "uptime": "2h 05m",
     "cognitiveState": "stable"
   }
 }
