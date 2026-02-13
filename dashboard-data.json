@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T03:00:00+11:00",
+  "lastUpdated": "2026-02-14T03:30:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -48,10 +48,10 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-027",
-        "timestamp": "2026-02-14T03:00:00+11:00",
-        "topic": "03:00 AM Heartbeat Sync",
-        "summary": "Full system sync completed. Financials and schedule remain consistent. Dashboard performance optimized for mobile.",
+        "id": "rev-028",
+        "timestamp": "2026-02-14T03:30:00+11:00",
+        "topic": "03:30 AM Heartbeat Sync",
+        "summary": "Quiet hours sync. Outstanding unchanged at $3,351.88. All systems nominal.",
         "outcome": "resolved",
         "tags": ["heartbeat", "sync"]
       }
@@ -64,17 +64,17 @@
   },
   "memory": {
     "business": "cleanupbros.com.au",
-    "nextSync": "03:30 AM",
-    "insight": "Quiet night sync. All systems green."
+    "nextSync": "04:00 AM",
+    "insight": "Quiet night watch. No payment changes detected."
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
     "status": "watching",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T03:00:00+11:00",
-    "currentTask": "Overnight Innovation Research",
-    "uptime": "2h 35m",
-    "cognitiveState": "optimized"
+    "lastHeartbeat": "2026-02-14T03:30:00+11:00",
+    "currentTask": "Night Watch",
+    "uptime": "3h 05m",
+    "cognitiveState": "stable"
   }
 }
