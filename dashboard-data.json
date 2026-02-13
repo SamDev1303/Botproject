@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T02:03:00+11:00",
+  "lastUpdated": "2026-02-14T02:05:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-config",
+      "id": "alert-config-cmd",
       "type": "info",
-      "icon": "🔧",
-      "title": "Config Exported",
-      "message": "Providing Shamal with fallback configuration strings.",
+      "icon": "📜",
+      "title": "Config Command Sent",
+      "message": "Providing full 'config.patch' command for Shamal.",
       "action": "none"
     }
   ],
@@ -44,7 +44,7 @@
     "overdue": [],
     "inProgress": [],
     "completedToday": [
-      { "id": "done-015", "title": "Exported Fallback Config for Shamal", "category": "Support" }
+      { "id": "done-016", "title": "Provided Patch Command for Shamal", "category": "Support" }
     ]
   },
   "review": {
@@ -52,12 +52,12 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-018",
-        "timestamp": "2026-02-14T02:02:00+11:00",
-        "topic": "Configuration Sharing",
-        "summary": "Hafsah requested fallback configuration details for Shamal. Bella exported the standard Clawdbot alias strings.",
+        "id": "rev-019",
+        "timestamp": "2026-02-14T02:04:00+11:00",
+        "topic": "Configuration Patching",
+        "summary": "Hafsah requested the specific command for Shamal to update his configuration. Bella provided the JSON patch command.",
         "outcome": "resolved",
-        "tags": ["config", "shamal"]
+        "tags": ["config", "patch"]
       }
     ]
   },
@@ -79,8 +79,8 @@
     "status": "fully operational",
     "avatar": "bella-goddess-2026-02-14.png",
     "lastHeartbeat": "2026-02-14T02:00:00+11:00",
-    "currentTask": "Configuration Export",
-    "uptime": "1h 28m",
+    "currentTask": "Configuration Support",
+    "uptime": "1h 30m",
     "cognitiveState": "optimized"
   }
 }
