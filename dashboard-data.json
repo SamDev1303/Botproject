@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T01:19:00+11:00",
+  "lastUpdated": "2026-02-14T01:24:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -82,12 +82,6 @@
     "inProgress": [
       {
         "id": "task-001",
-        "title": "Dashboard Auto-Sync Setup",
-        "priority": "medium",
-        "category": "System"
-      },
-      {
-        "id": "task-002",
         "title": "Google Services Re-Auth",
         "priority": "medium",
         "category": "Config"
@@ -116,15 +110,66 @@
       },
       {
         "id": "done-005",
-        "title": "Connected Square API",
+        "title": "Connected Square API - Live Data",
         "category": "Integration"
+      },
+      {
+        "id": "done-006",
+        "title": "Dashboard auto-sync enabled",
+        "category": "System"
+      }
+    ]
+  },
+  "review": {
+    "title": "📝 Conversation Log",
+    "description": "Decisions & discussions with Hafsah",
+    "entries": [
+      {
+        "id": "rev-001",
+        "timestamp": "2026-02-14T00:46:00+11:00",
+        "topic": "Bella Stopped Working",
+        "summary": "Clawdbot had version mismatch (2026.1.24-2 vs 2026.1.24-3). Heartbeats stopped on Feb 12. Fixed by updating to latest version.",
+        "outcome": "resolved",
+        "tags": ["system", "fix"]
+      },
+      {
+        "id": "rev-002",
+        "timestamp": "2026-02-14T00:58:00+11:00",
+        "topic": "GitHub SSH Setup",
+        "summary": "Generated new SSH key (ed25519) for GitHub repo access. Added to github.com/settings/ssh.",
+        "outcome": "resolved",
+        "tags": ["security", "github"]
+      },
+      {
+        "id": "rev-003",
+        "timestamp": "2026-02-14T00:59:00+11:00",
+        "topic": "GPG Key for Verified Commits",
+        "summary": "Created GPG signing key for Clean Up Bros. All future commits will show as Verified.",
+        "outcome": "resolved",
+        "tags": ["security", "github"]
+      },
+      {
+        "id": "rev-004",
+        "timestamp": "2026-02-14T01:14:00+11:00",
+        "topic": "Dashboard Outdated Data",
+        "summary": "Hafsah flagged that dashboard had stale info (fake $2000 Michelle payment). Connected to live Square API. Now pulling real invoice data.",
+        "outcome": "resolved",
+        "tags": ["data", "square"]
+      },
+      {
+        "id": "rev-005",
+        "timestamp": "2026-02-14T01:24:00+11:00",
+        "topic": "Review Tab Request",
+        "summary": "Hafsah requested a Review tab to track all conversations. Dashboard is now second source of truth. Will update GitHub after every discussion.",
+        "outcome": "in-progress",
+        "tags": ["feature", "dashboard"]
       }
     ]
   },
   "progress": {
-    "todayPercent": 45,
+    "todayPercent": 55,
     "tasksTotal": 11,
-    "tasksComplete": 5
+    "tasksComplete": 6
   },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],

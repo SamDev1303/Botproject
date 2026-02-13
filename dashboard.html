@@ -648,6 +648,88 @@
             transition: all 0.2s ease;
         }
 
+        /* Review Section */
+        .review-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .review-timeline { display: flex; flex-direction: column; gap: 16px; }
+
+        .review-entry {
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-purple);
+            transition: all 0.2s ease;
+        }
+
+        .review-entry.resolved { border-left-color: var(--accent-green); }
+        .review-entry.in-progress { border-left-color: var(--accent-orange); }
+        .review-entry.noted { border-left-color: var(--accent-blue); }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .review-topic {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .review-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .review-summary {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .review-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+        .outcome-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .outcome-badge.resolved {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--accent-green);
+        }
+
+        .outcome-badge.in-progress {
+            background: rgba(255, 149, 0, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .outcome-badge.noted {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .review-tag {
+            padding: 4px 10px;
+            background: rgba(168, 85, 247, 0.15);
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--accent-purple);
+        }
+
         .memory-item:hover { background: var(--bg-card-hover); }
 
         .memory-icon {
@@ -1074,6 +1156,36 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Review Log -->
+                ${d.review ? `
+                <div class="review-card animate-in delay-6">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <span class="icon">📝</span>
+                            ${d.review.title || 'Conversation Log'}
+                        </div>
+                        <span class="section-badge">${d.review.entries?.length || 0} entries</span>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 16px;">${d.review.description || ''}</p>
+                    
+                    <div class="review-timeline">
+                        ${(d.review.entries || []).slice().reverse().map(entry => \`
+                            <div class="review-entry \${entry.outcome}">
+                                <div class="review-header">
+                                    <span class="review-topic">\${entry.topic}</span>
+                                    <span class="review-time">\${formatTimeAgo(entry.timestamp)}</span>
+                                </div>
+                                <div class="review-summary">\${entry.summary}</div>
+                                <div class="review-tags">
+                                    <span class="outcome-badge \${entry.outcome}">\${entry.outcome === 'resolved' ? '✓ Resolved' : entry.outcome === 'in-progress' ? '⏳ In Progress' : '📌 Noted'}</span>
+                                    \${(entry.tags || []).map(t => \`<span class="review-tag">\${t}</span>\`).join('')}
+                                </div>
+                            </div>
+                        \`).join('')}
+                    </div>
+                </div>
+                ` : ''}
             `;
 
             // Initialize chart
