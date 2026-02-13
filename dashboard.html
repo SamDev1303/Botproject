@@ -23,44 +23,19 @@
             --accent-red: #ff3b5c;
             --accent-pink: #ff6b9d;
             --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --gradient-purple: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
-            --gradient-orange: linear-gradient(135deg, #ff9500 0%, #ff5e3a 100%);
-            --gradient-pink: linear-gradient(135deg, #ff6b9d 0%, #c850c0 100%);
-            --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
             --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { font-size: 16px; -webkit-tap-highlight-color: transparent; }
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
             padding-bottom: 100px;
         }
 
-        .bg-gradient {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(0, 255, 136, 0.06) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
+        .container { padding: 16px; }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 100%;
-            padding: 16px;
-        }
-
-        /* Loading State */
         .loading {
             display: flex;
             flex-direction: column;
@@ -71,1436 +46,141 @@
         }
 
         .loading-spinner {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border: 3px solid var(--border-color);
             border-top-color: var(--accent-blue);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        .loading-text {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 24px 16px;
-            margin-bottom: 24px;
-        }
-
+        .header { text-align: center; padding: 24px 0; }
         .bella-avatar {
-            width: 80px;
-            height: 80px;
+            width: 80px; height: 80px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
             margin-bottom: 12px;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
         }
 
         .header h1 {
-            font-size: 1.75rem;
-            font-weight: 800;
+            font-size: 1.8rem;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
         }
 
-        .header .tagline {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .live-time {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 12px;
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.8); }
-        }
-
-        .model-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: rgba(168, 85, 247, 0.1);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--accent-purple);
-            margin-top: 12px;
-        }
-
-        .model-badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--accent-purple);
-            border-radius: 50%;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
         .stat-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            opacity: 1;
-        }
-
-        .stat-card:active { transform: scale(0.98); }
-
-        .stat-card.revenue::before { background: var(--gradient-primary); }
-        .stat-card.profit::before { background: var(--accent-green); }
-        .stat-card.outstanding::before { background: var(--gradient-orange); }
-        .stat-card.overdue::before { background: var(--accent-red); }
-
-        .stat-icon { font-size: 1.5rem; margin-bottom: 12px; }
-
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 4px;
-            letter-spacing: -0.5px;
-        }
-
-        .stat-card.revenue .stat-value { color: var(--accent-blue); }
-        .stat-card.profit .stat-value { color: var(--accent-green); }
-        .stat-card.outstanding .stat-value { color: var(--accent-orange); }
-        .stat-card.overdue .stat-value { color: var(--accent-red); }
-
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .stat-change {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            border-radius: 6px;
-            margin-top: 8px;
-            font-weight: 600;
-        }
-
-        .stat-change.positive {
-            background: rgba(0, 255, 136, 0.1);
-            color: var(--accent-green);
-        }
-
-        .stat-change.negative {
-            background: rgba(255, 59, 92, 0.1);
-            color: var(--accent-red);
-        }
-
-        /* Section Headers */
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            padding: 0 4px;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .section-title .icon { font-size: 1.25rem; }
-
-        .section-badge {
-            padding: 4px 10px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* Schedule Card */
-        .schedule-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .schedule-date {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .date-badge {
-            width: 56px;
-            height: 56px;
-            background: var(--gradient-pink);
             border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(255, 107, 157, 0.3);
+            padding: 16px;
         }
 
-        .date-badge .day {
-            font-size: 1.5rem;
-            font-weight: 800;
-            line-height: 1;
-        }
+        .stat-value { font-size: 1.2rem; font-weight: 800; color: var(--accent-blue); }
+        .stat-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; }
 
-        .date-badge .month {
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
-
-        .date-info h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .date-info .subtitle {
-            font-size: 0.8rem;
-            color: var(--accent-pink);
-            font-weight: 500;
-        }
-
-        .schedule-timeline {
-            position: relative;
-            padding-left: 24px;
-        }
-
-        .schedule-timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 8px;
-            bottom: 8px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-green), var(--accent-pink));
-            border-radius: 2px;
-        }
-
-        .schedule-item {
-            position: relative;
-            padding: 12px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .schedule-item::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 18px;
-            width: 12px;
-            height: 12px;
-            background: var(--bg-primary);
-            border: 3px solid var(--accent-blue);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .schedule-item.completed::before {
-            background: var(--accent-green);
-            border-color: var(--accent-green);
-        }
-
-        .schedule-item.current::before {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 12px var(--accent-blue);
-            animation: pulse 2s infinite;
-        }
-
-        .schedule-item.special::before {
-            background: var(--accent-pink);
-            border-color: var(--accent-pink);
-            box-shadow: 0 0 12px var(--accent-pink);
-        }
-
-        .schedule-time {
-            min-width: 70px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-        }
-
-        .schedule-item.special .schedule-time { color: var(--accent-pink); }
-
-        .schedule-content h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-
-        .schedule-content .type {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        /* Progress Ring */
-        .progress-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .progress-ring-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .progress-ring {
-            position: relative;
-            width: 120px;
-            height: 120px;
-        }
-
-        .progress-ring svg { transform: rotate(-90deg); }
-
-        .progress-ring circle {
-            fill: none;
-            stroke-width: 8;
-            stroke-linecap: round;
-        }
-
-        .progress-ring .bg { stroke: var(--border-color); }
-
-        .progress-ring .progress {
-            stroke: url(#gradient);
-            stroke-dasharray: 339.292;
-            transition: stroke-dashoffset 1s ease;
-        }
-
-        .progress-ring .center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .progress-ring .percentage {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .progress-ring .label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Kanban Board */
-        .kanban-container { margin-bottom: 24px; }
-
-        .kanban-scroll {
-            display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            padding-bottom: 16px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .kanban-scroll::-webkit-scrollbar { height: 6px; }
-        .kanban-scroll::-webkit-scrollbar-track { background: var(--bg-card); border-radius: 3px; }
-        .kanban-scroll::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
-
-        .kanban-column {
-            min-width: 280px;
-            max-width: 280px;
+        .section-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 16px;
-            scroll-snap-align: start;
-        }
-
-        .column-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .column-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .column-count {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .kanban-column.overdue .column-header { border-color: var(--accent-red); }
-        .kanban-column.overdue .column-title { color: var(--accent-red); }
-        .kanban-column.progress .column-header { border-color: var(--accent-orange); }
-        .kanban-column.progress .column-title { color: var(--accent-orange); }
-        .kanban-column.done .column-header { border-color: var(--accent-green); }
-        .kanban-column.done .column-title { color: var(--accent-green); }
-
-        .task-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .task-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 4px;
-        }
-
-        .task-card.priority-high::before { background: var(--accent-red); }
-        .task-card.priority-medium::before { background: var(--accent-orange); }
-        .task-card.priority-low::before { background: var(--accent-green); }
-
-        .task-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-card);
-            border-color: rgba(255, 255, 255, 0.15);
-        }
-
-        .task-card:active { transform: scale(0.98); }
-
-        .task-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .task-amount {
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .task-card.priority-high .task-amount { color: var(--accent-red); }
-        .task-card.priority-medium .task-amount { color: var(--accent-orange); }
-
-        .task-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .task-tag {
-            padding: 4px 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-        }
-
-        .task-tag.urgent {
-            background: rgba(255, 59, 92, 0.15);
-            color: var(--accent-red);
-        }
-
-        .task-tag.completed {
-            background: rgba(0, 255, 136, 0.15);
-            color: var(--accent-green);
-        }
-
-        /* Chart Section */
-        .chart-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
             padding: 20px;
-            margin-bottom: 24px;
+            margin-top: 24px;
         }
 
-        .chart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        .section-title { font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
 
-        .chart-container {
-            height: 200px;
-            position: relative;
-        }
-
-        /* Memory Section */
-        .memory-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .memory-grid { display: grid; gap: 12px; }
-
-        .memory-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 14px;
-            background: var(--bg-secondary);
-            border-radius: 14px;
-            transition: all 0.2s ease;
-        }
-
-        /* Review Section */
-        .review-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .review-timeline { display: flex; flex-direction: column; gap: 16px; }
+        .schedule-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.9rem; }
+        .schedule-time { color: var(--accent-blue); font-weight: 700; min-width: 65px; }
 
         .review-entry {
-            padding: 16px;
             background: var(--bg-secondary);
-            border-radius: 16px;
-            border-left: 4px solid var(--accent-purple);
-            transition: all 0.2s ease;
-        }
-
-        .review-entry.resolved { border-left-color: var(--accent-green); }
-        .review-entry.in-progress { border-left-color: var(--accent-orange); }
-        .review-entry.noted { border-left-color: var(--accent-blue); }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .review-topic {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .review-time {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .review-summary {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            border-radius: 12px;
+            padding: 12px;
             margin-bottom: 12px;
-        }
-
-        .review-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
-        .outcome-badge {
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .outcome-badge.resolved {
-            background: rgba(0, 255, 136, 0.15);
-            color: var(--accent-green);
-        }
-
-        .outcome-badge.in-progress {
-            background: rgba(255, 149, 0, 0.15);
-            color: var(--accent-orange);
-        }
-
-        .outcome-badge.noted {
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--accent-blue);
-        }
-
-        .review-tag {
-            padding: 4px 10px;
-            background: rgba(168, 85, 247, 0.15);
-            border-radius: 6px;
-            font-size: 0.65rem;
-            font-weight: 500;
-            color: var(--accent-purple);
-        }
-
-        .memory-item:hover { background: var(--bg-card-hover); }
-
-        .memory-icon {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-card);
-            border-radius: 10px;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .memory-content { flex: 1; min-width: 0; }
-
-        .memory-label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-
-        .memory-value {
+            border-left: 3px solid var(--accent-purple);
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.4;
         }
 
-        /* Last Updated Banner */
-        .update-banner {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 12px;
-            padding: 12px 16px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 0.8rem;
-        }
-
-        .update-banner .update-text {
-            color: var(--text-secondary);
-        }
-
-        .update-banner .update-time {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-
-        /* FAB Button */
-        .fab-container {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        .fab-container { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; }
         .fab {
-            width: 56px;
-            height: 56px;
-            background: var(--gradient-primary);
+            width: 50px; height: 50px;
+            border-radius: 25px;
+            background: var(--accent-blue);
+            color: black;
             border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--bg-primary);
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .fab.secondary {
-            width: 48px;
-            height: 48px;
             font-size: 1.2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            box-shadow: var(--shadow-card);
-        }
-
-        .fab:hover { transform: scale(1.1); }
-        .fab:active { transform: scale(0.95); }
-
-        /* Animations */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-in { animation: slideUp 0.5s ease forwards; }
-        .delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .delay-3 { animation-delay: 0.3s; opacity: 0; }
-        .delay-4 { animation-delay: 0.4s; opacity: 0; }
-        .delay-5 { animation-delay: 0.5s; opacity: 0; }
-        .delay-6 { animation-delay: 0.6s; opacity: 0; }
-        .delay-7 { animation-delay: 0.7s; opacity: 0; }
-
-        /* Alerts Section */
-        .alerts-container { margin-bottom: 20px; }
-
-        .alert-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            border-radius: 16px;
-            margin-bottom: 10px;
-            animation: pulse-border 2s infinite;
-        }
-
-        .alert-card.urgent {
-            background: rgba(255, 59, 92, 0.15);
-            border: 1px solid rgba(255, 59, 92, 0.4);
-        }
-
-        .alert-card.reminder {
-            background: rgba(255, 107, 157, 0.15);
-            border: 1px solid rgba(255, 107, 157, 0.4);
-        }
-
-        .alert-card.info {
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid rgba(0, 212, 255, 0.4);
-        }
-
-        @keyframes pulse-border {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .alert-icon { font-size: 1.5rem; }
-        .alert-content { flex: 1; }
-        .alert-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 2px; }
-        .alert-card.urgent .alert-title { color: var(--accent-red); }
-        .alert-card.reminder .alert-title { color: var(--accent-pink); }
-        .alert-message { font-size: 0.75rem; color: var(--text-secondary); }
-
-        /* Invoices Section */
-        .invoices-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .invoice-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px;
-            background: var(--bg-secondary);
-            border-radius: 14px;
-            margin-bottom: 10px;
-            border-left: 4px solid var(--accent-red);
-        }
-
-        .invoice-item.partial { border-left-color: var(--accent-orange); }
-
-        .invoice-info { flex: 1; }
-        .invoice-customer { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
-        .invoice-details { font-size: 0.75rem; color: var(--text-secondary); }
-        .invoice-amount { font-weight: 800; font-size: 1.1rem; color: var(--accent-red); margin-right: 12px; }
-        .invoice-item.partial .invoice-amount { color: var(--accent-orange); }
-
-        .invoice-actions { display: flex; gap: 8px; }
-
-        .action-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .action-btn.call {
-            background: rgba(0, 255, 136, 0.15);
-            color: var(--accent-green);
-        }
-
-        .action-btn.sms {
-            background: rgba(0, 212, 255, 0.15);
-            color: var(--accent-blue);
-        }
-
-        .action-btn:active { transform: scale(0.9); }
-
-        /* Bella Status Widget */
-        .bella-status {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            border-radius: 20px;
-            padding: 16px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .bella-mini-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid var(--accent-purple);
-            object-fit: cover;
-        }
-
-        .bella-info { flex: 1; }
-        .bella-name { font-weight: 700; font-size: 0.95rem; color: var(--accent-purple); }
-        .bella-task { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
-
-        .bella-pulse {
-            width: 12px;
-            height: 12px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        /* Telegram WebApp Adjustments */
-        @supports (padding: env(safe-area-inset-bottom)) {
-            body { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
-        }
-
-        /* Pull to Refresh Indicator */
-        .refresh-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        .refresh-indicator.active {
-            animation: refreshProgress 1s ease-in-out infinite;
-        }
-
-        @keyframes refreshProgress {
-            0% { transform: scaleX(0); transform-origin: left; }
-            50% { transform: scaleX(1); transform-origin: left; }
-            51% { transform: scaleX(1); transform-origin: right; }
-            100% { transform: scaleX(0); transform-origin: right; }
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
-    <div class="refresh-indicator" id="refreshIndicator"></div>
-    <div class="bg-gradient"></div>
-    
     <div class="container" id="app">
         <div class="loading">
             <div class="loading-spinner"></div>
-            <div class="loading-text">Loading Bella's Dashboard...</div>
+            <div>Synchronizing Neural Center...</div>
         </div>
     </div>
 
-    <!-- FAB Buttons -->
     <div class="fab-container">
-        <button class="fab secondary" onclick="refreshData()" title="Refresh">🔄</button>
-        <button class="fab" onclick="closeDashboard()" title="Close">✕</button>
+        <button class="fab" onclick="location.reload()">🔄</button>
     </div>
 
     <script>
-        const DATA_URL = 'dashboard-data.json';
-        let dashboardData = null;
-        let revenueChart = null;
-
-        // Fetch and render dashboard
-        async function loadDashboard() {
+        async function load() {
             try {
-                const response = await fetch(DATA_URL + '?t=' + Date.now());
-                dashboardData = await response.json();
-                renderDashboard();
-            } catch (error) {
-                console.error('Failed to load dashboard data:', error);
+                const res = await fetch('dashboard-data.json?t=' + Date.now());
+                const d = await res.json();
+                
                 document.getElementById('app').innerHTML = `
-                    <div class="loading">
-                        <div style="font-size: 3rem; margin-bottom: 20px;">😕</div>
-                        <div class="loading-text">Failed to load data. Pull down to retry.</div>
+                    <header class="header">
+                        <img src="${d.bella.avatar}" class="bella-avatar">
+                        <h1>Bella</h1>
+                        <p style="color: #888; font-size: 0.8rem;">Neural Command Center</p>
+                    </header>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">$${d.stats.totalRevenue.toLocaleString()}</div>
+                            <div class="stat-label">Total Revenue</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">$${d.stats.outstanding.toLocaleString()}</div>
+                            <div class="stat-label">Outstanding</div>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-title">📅 Today's Schedule</div>
+                        ${d.schedule.events.map(e => `
+                            <div class="schedule-item">
+                                <span class="schedule-time">${e.time}</span>
+                                <div>
+                                    <div style="font-weight:600">${e.title}</div>
+                                    <div style="font-size:0.75rem; color:#888">${e.type}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-title">🧠 Neural Sync Log</div>
+                        ${d.review.entries.slice().reverse().map(e => `
+                            <div class="review-entry">
+                                <div style="font-weight:700; margin-bottom:4px">${e.topic}</div>
+                                <div style="color:#aaa">${e.summary}</div>
+                            </div>
+                        `).join('')}
                     </div>
                 `;
+            } catch (e) {
+                document.getElementById('app').innerHTML = 'Error loading data. Please refresh.';
             }
         }
-
-        function renderDashboard() {
-            const d = dashboardData;
-            const scheduleDate = new Date(d.schedule.date);
-            const day = scheduleDate.getDate();
-            const month = scheduleDate.toLocaleString('en-AU', { month: 'short' }).toUpperCase();
-            
-            // Calculate progress ring offset (339.292 is circumference)
-            const progressOffset = 339.292 * (1 - (d.progress?.todayPercent || 0) / 100);
-
-            document.getElementById('app').innerHTML = \`
-                <!-- Header -->
-                <header class="header animate-in">
-                    <img src="\${d.bella.avatar}" alt="Bella" class="bella-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="logo" style="display:none; font-size: 2.5rem;">🦞</div>
-                    <h1>Bella</h1>
-                    <p class="tagline">Neural Command Center & Core Memory</p>
-                    <div class="live-time">
-                        <span class="live-dot"></span>
-                        <span id="liveTime">Loading...</span>
-                    </div>
-                    <div class="model-badge">
-                        <span class="dot"></span>
-                        \${d.bella.model} • \${d.bella.fallback} Fallback
-                    </div>
-                </header>
-
-                <!-- Update Banner -->
-                <div class="update-banner animate-in">
-                    <span class="update-text">📡 Last synced by \${d.updatedBy}</span>
-                    <span class="update-time">\${formatTimeAgo(d.lastUpdated)}</span>
-                </div>
-
-                <!-- Alerts -->
-                \${d.alerts && d.alerts.length > 0 ? \`
-                <div class="alerts-container animate-in">
-                    \${d.alerts.map(alert => \`
-                        <div class="alert-card \${alert.type}">
-                            <span class="alert-icon">\${alert.icon}</span>
-                            <div class="alert-content">
-                                <div class="alert-title">\${alert.title}</div>
-                                <div class="alert-message">\${alert.message}</div>
-                            </div>
-                        </div>
-                    \`).join('')}
-                </div>
-                \` : ''}
-
-                <!-- Bella Status -->
-                \${d.bella ? \`
-                <div class="bella-status animate-in">
-                    <img src="\${d.bella.avatar}" alt="Bella" class="bella-mini-avatar" onerror="this.outerHTML='<div style=\\'font-size:2rem\\'>🦞</div>'">
-                    <div class="bella-info">
-                        <div class="bella-name">Bella is \${d.bella.status}</div>
-                        <div class="bella-task">\${d.bella.currentTask || 'Standing by'} • Last heartbeat \${formatTimeAgo(d.bella.lastHeartbeat)}</div>
-                    </div>
-                    <div class="bella-pulse"></div>
-                </div>
-                \` : ''}
-
-                <!-- Stats Grid -->
-                <div class="stats-grid animate-in delay-1">
-                    <div class="stat-card revenue">
-                        <div class="stat-icon">💰</div>
-                        <div class="stat-value">$\${formatNumber(d.stats.totalRevenue)}</div>
-                        <div class="stat-label">Total Revenue</div>
-                        <div class="stat-change positive">↑ \${d.stats.revenueChange} this month</div>
-                    </div>
-                    <div class="stat-card profit">
-                        <div class="stat-icon">📈</div>
-                        <div class="stat-value">$\${formatNumber(d.stats.netProfit)}</div>
-                        <div class="stat-label">Net Profit</div>
-                        <div class="stat-change positive">↑ \${d.stats.profitMargin} margin</div>
-                    </div>
-                    <div class="stat-card outstanding">
-                        <div class="stat-icon">⏳</div>
-                        <div class="stat-value">$\${formatNumber(d.stats.outstanding)}</div>
-                        <div class="stat-label">Outstanding</div>
-                        <div class="stat-change negative">\${d.tasks?.overdue?.length + d.tasks?.inProgress?.length} invoices</div>
-                    </div>
-                    <div class="stat-card overdue">
-                        <div class="stat-icon">🚨</div>
-                        <div class="stat-value">$\${formatNumber(d.stats.overdue || 0)}</div>
-                        <div class="stat-label">Overdue</div>
-                        <div class="stat-change negative">\${d.invoices?.length || 0} invoices</div>
-                    </div>
-                </div>
-
-                <!-- Invoices with Click-to-Call -->
-                \${d.invoices && d.invoices.length > 0 ? \`
-                <div class="invoices-card animate-in delay-2" id="invoices-section">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">💳</span>
-                            Outstanding Invoices
-                        </div>
-                        <span class="section-badge">$\${formatNumber(d.stats.outstanding)}</span>
-                    </div>
-                    
-                    \${d.invoices.map(inv => \`
-                        <div class="invoice-item \${inv.status === 'PARTIALLY_PAID' ? 'partial' : ''}">
-                            <div class="invoice-info">
-                                <div class="invoice-customer">\${inv.customer}</div>
-                                <div class="invoice-details">#\${inv.number} • \${inv.status.replace('_', ' ')}\${inv.note ? ' • ' + inv.note : ''}</div>
-                            </div>
-                            <div class="invoice-amount">$\${formatNumber(inv.amount)}</div>
-                            <div class="invoice-actions">
-                                <a href="tel:\${inv.phone}" class="action-btn call" title="Call">📞</a>
-                                <a href="sms:\${inv.phone}" class="action-btn sms" title="SMS">💬</a>
-                            </div>
-                        </div>
-                    \`).join('')}
-                </div>
-                \` : ''}
-
-                <!-- Today's Schedule -->
-                <div class="schedule-card animate-in delay-2">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">📅</span>
-                            Today's Schedule
-                        </div>
-                        <span class="section-badge">\${d.schedule.events.length} events</span>
-                    </div>
-                    
-                    <div class="schedule-date">
-                        <div class="date-badge">
-                            <span class="day">\${day}</span>
-                            <span class="month">\${month}</span>
-                        </div>
-                        <div class="date-info">
-                            <h3>\${d.schedule.dayName}</h3>
-                            <span class="subtitle">\${d.schedule.special}</span>
-                        </div>
-                    </div>
-
-                    <div class="schedule-timeline">
-                        \${d.schedule.events.map(event => \`
-                            <div class="schedule-item \${event.status}">
-                                <span class="schedule-time">\${event.time}</span>
-                                <div class="schedule-content">
-                                    <h4>\${event.title}</h4>
-                                    <span class="type">\${event.type}</span>
-                                </div>
-                            </div>
-                        \`).join('')}
-                    </div>
-                </div>
-
-                <!-- Progress Ring -->
-                <div class="progress-card animate-in delay-3">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">🎯</span>
-                            System Objectives
-                        </div>
-                        <span class="section-badge">\${d.progress?.tasksComplete}/\${d.progress?.tasksTotal} tasks</span>
-                    </div>
-                    <div class="progress-ring-container">
-                        <div class="progress-ring">
-                            <svg width="120" height="120">
-                                <defs>
-                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#00d4ff" />
-                                        <stop offset="100%" stop-color="#00ff88" />
-                                    </linearGradient>
-                                </defs>
-                                <circle class="bg" cx="60" cy="60" r="54" />
-                                <circle class="progress" cx="60" cy="60" r="54" style="stroke-dashoffset: \${progressOffset}" />
-                            </svg>
-                            <div class="center">
-                                <div class="percentage">\${d.progress?.todayPercent}%</div>
-                                <div class="label">Complete</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kanban Board -->
-                <div class="kanban-container animate-in delay-3">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">🧠</span>
-                            Cognitive Queue
-                        </div>
-                        <span class="section-badge">Active Threads</span>
-                    </div>
-                    
-                    <div class="kanban-scroll">
-                        <!-- Overdue Column -->
-                        <div class="kanban-column overdue">
-                            <div class="column-header">
-                                <span class="column-title">🚨 Overdue</span>
-                                <span class="column-count">\${d.tasks?.overdue?.length || 0}</span>
-                            </div>
-                            \${(d.tasks?.overdue || []).map(task => \`
-                                <div class="task-card priority-\${task.priority}">
-                                    <div class="task-title">\${task.title}</div>
-                                    \${task.amount ? \`<div class="task-amount">$\${formatNumber(task.amount)}</div>\` : ''}
-                                    <div class="task-tags">
-                                        \${task.daysOverdue ? \`<span class="task-tag urgent">~\${task.daysOverdue} days overdue</span>\` : ''}
-                                        \${task.category ? \`<span class="task-tag">\${task.category}</span>\` : ''}
-                                    </div>
-                                </div>
-                            \`).join('')}
-                            \${d.tasks?.overdue?.length === 0 ? '<div style="text-align:center; color: var(--text-muted); padding: 20px;">🎉 Nothing overdue!</div>' : ''}
-                        </div>
-
-                        <!-- In Progress Column -->
-                        <div class="kanban-column progress">
-                            <div class="column-header">
-                                <span class="column-title">⏳ In Progress</span>
-                                <span class="column-count">\${d.tasks?.inProgress?.length || 0}</span>
-                            </div>
-                            \${(d.tasks?.inProgress || []).map(task => \`
-                                <div class="task-card priority-\${task.priority}">
-                                    <div class="task-title">\${task.title}</div>
-                                    \${task.amount ? \`<div class="task-amount">$\${formatNumber(task.amount)} remaining</div>\` : ''}
-                                    <div class="task-tags">
-                                        \${task.note ? \`<span class="task-tag">\${task.note}</span>\` : ''}
-                                        \${task.category ? \`<span class="task-tag">\${task.category}</span>\` : ''}
-                                    </div>
-                                </div>
-                            \`).join('')}
-                        </div>
-
-                        <!-- Done Column -->
-                        <div class="kanban-column done">
-                            <div class="column-header">
-                                <span class="column-title">✅ Done Today</span>
-                                <span class="column-count">\${d.tasks?.completedToday?.length || 0}</span>
-                            </div>
-                            \${(d.tasks?.completedToday || []).map(task => \`
-                                <div class="task-card priority-low">
-                                    <div class="task-title">\${task.title}</div>
-                                    <div class="task-tags">
-                                        \${task.category ? \`<span class="task-tag completed">✓ \${task.category}</span>\` : ''}
-                                        \${task.tags ? task.tags.map(t => \`<span class="task-tag completed">✓ \${t}</span>\`).join('') : ''}
-                                    </div>
-                                </div>
-                            \`).join('')}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Revenue Chart -->
-                <div class="chart-card animate-in delay-4">
-                    <div class="chart-header">
-                        <div class="section-title">
-                            <span class="icon">📊</span>
-                            Revenue Trend
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="revenueChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Quick Memory -->
-                <div class="memory-card animate-in delay-5">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">🧠</span>
-                            Quick Reference
-                        </div>
-                    </div>
-                    
-                    <div class="memory-grid">
-                        <div class="memory-item">
-                            <div class="memory-icon">🏢</div>
-                            <div class="memory-content">
-                                <div class="memory-label">Business</div>
-                                <div class="memory-value">\${d.memory.business}</div>
-                            </div>
-                        </div>
-                        <div class="memory-item">
-                            <div class="memory-icon">💳</div>
-                            <div class="memory-content">
-                                <div class="memory-label">Payments</div>
-                                <div class="memory-value">\${d.memory.payments}</div>
-                            </div>
-                        </div>
-                        <div class="memory-item">
-                            <div class="memory-icon">📧</div>
-                            <div class="memory-content">
-                                <div class="memory-label">Email Rule</div>
-                                <div class="memory-value">\${d.memory.emailRule}</div>
-                            </div>
-                        </div>
-                        <div class="memory-item">
-                            <div class="memory-icon">🎓</div>
-                            <div class="memory-content">
-                                <div class="memory-label">School</div>
-                                <div class="memory-value">\${d.memory.school}</div>
-                            </div>
-                        </div>
-                        <div class="memory-item">
-                            <div class="memory-icon">🔄</div>
-                            <div class="memory-content">
-                                <div class="memory-label">Next Sync</div>
-                                <div class="memory-value">\${d.memory.nextSync}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review Log -->
-                \${d.review ? \`
-                <div class="review-card animate-in delay-6">
-                    <div class="section-header">
-                        <div class="section-title">
-                            <span class="icon">📝</span>
-                            \${d.review.title || 'Conversation Log'}
-                        </div>
-                        <span class="section-badge">\${d.review.entries?.length || 0} entries</span>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 16px;">\${d.review.description || ''}</p>
-                    
-                    <div class="review-timeline">
-                        \${(d.review.entries || []).slice().reverse().map(entry => \`
-                            <div class="review-entry \${entry.outcome}">
-                                <div class="review-header">
-                                    <span class="review-topic">\${entry.topic}</span>
-                                    <span class="review-time">\${formatTimeAgo(entry.timestamp)}</span>
-                                </div>
-                                <div class="review-summary">\${entry.summary}</div>
-                                <div class="review-tags">
-                                    <span class="outcome-badge \${entry.outcome}">\${entry.outcome === 'resolved' ? '✓ Resolved' : entry.outcome === 'in-progress' ? '⏳ In Progress' : '📌 Noted'}</span>
-                                    \${(entry.tags || []).map(t => \`<span class="review-tag">\${t}</span>\`).join('')}
-                                </div>
-                            </div>
-                        \`).join('')}
-                    </div>
-                </div>
-                \` : ''}
-            \`;
-
-            // Initialize chart
-            initChart();
-            
-            // Start live time
-            updateTime();
-            setInterval(updateTime, 1000);
-        }
-
-        function initChart() {
-            const ctx = document.getElementById('revenueChart')?.getContext('2d');
-            if (!ctx) return;
-
-            const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-            gradient.addColorStop(0, 'rgba(0, 212, 255, 0.3)');
-            gradient.addColorStop(1, 'rgba(0, 212, 255, 0)');
-
-            revenueChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: dashboardData.revenueHistory.labels,
-                    datasets: [{
-                        label: 'Revenue',
-                        data: dashboardData.revenueHistory.values,
-                        borderColor: '#00d4ff',
-                        backgroundColor: gradient,
-                        borderWidth: 3,
-                        fill: true,
-                        tension: 0.4,
-                        pointBackgroundColor: '#00d4ff',
-                        pointBorderColor: '#0a0a0f',
-                        pointBorderWidth: 2,
-                        pointRadius: 4,
-                        pointHoverRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { color: '#606060', font: { size: 10, weight: 500 } }
-                        },
-                        y: {
-                            grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
-                            ticks: {
-                                color: '#606060',
-                                font: { size: 10, weight: 500 },
-                                callback: value => '$' + value.toLocaleString()
-                            }
-                        }
-                    },
-                    interaction: { intersect: false, mode: 'index' }
-                }
-            });
-        }
-
-        function updateTime() {
-            const el = document.getElementById('liveTime');
-            if (!el) return;
-            const now = new Date();
-            const options = { 
-                weekday: 'short',
-                hour: '2-digit', 
-                minute: '2-digit',
-                hour12: true,
-                timeZone: 'Australia/Sydney'
-            };
-            el.textContent = now.toLocaleString('en-AU', options) + ' AEDT';
-        }
-
-        function formatNumber(num) {
-            if (num === undefined || num === null) return '0';
-            return num.toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-        }
-
-        function formatTimeAgo(isoString) {
-            const date = new Date(isoString);
-            const now = new Date();
-            const diffMs = now - date;
-            const diffMins = Math.floor(diffMs / 60000);
-            
-            if (diffMins < 1) return 'Just now';
-            if (diffMins < 60) return \`\${diffMins}m ago\`;
-            
-            const diffHours = Math.floor(diffMins / 60);
-            if (diffHours < 24) return \`\${diffHours}h ago\`;
-            
-            return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
-        }
-
-        async function refreshData() {
-            const indicator = document.getElementById('refreshIndicator');
-            indicator.classList.add('active');
-            
-            await loadDashboard();
-            
-            setTimeout(() => {
-                indicator.classList.remove('active');
-            }, 500);
-        }
-
-        function closeDashboard() {
-            if (window.Telegram?.WebApp) {
-                window.Telegram.WebApp.close();
-            } else {
-                window.close();
-            }
-        }
-
-        // Telegram WebApp Integration
-        if (window.Telegram?.WebApp) {
-            const tg = window.Telegram.WebApp;
-            tg.ready();
-            tg.expand();
-            
-            tg.MainButton.setText('↻ Refresh Data');
-            tg.MainButton.show();
-            tg.MainButton.onClick(refreshData);
-        }
-
-        // Initial load
-        loadDashboard();
-
-        // Auto-refresh every 60 seconds
-        setInterval(refreshData, 60 * 1000);
-        
-        // Log to console
-        console.log('Dashboard v3 loaded - auto-refresh every 60s');
+        load();
     </script>
 </body>
 </html>
