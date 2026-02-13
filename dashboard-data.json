@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T02:07:00+11:00",
+  "lastUpdated": "2026-02-14T02:15:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-calendar-sync",
+      "id": "alert-audit",
       "type": "urgent",
-      "icon": "📅",
-      "title": "Calendar Sync Active",
-      "message": "Manually pushing Larissa, Unit 4, and Karanjeet to Google Calendar.",
+      "icon": "⚖️",
+      "title": "Full System Audit",
+      "message": "Cognitive Queue and Revenue Trend fully synchronized with Square.",
       "action": "none"
     }
   ],
@@ -25,51 +25,30 @@
     "dayName": "Saturday",
     "special": "Valentine's Day 💕",
     "events": [
-      {
-        "time": "06:00 AM",
-        "title": "Larissa (Support Shift)",
-        "type": "Mental Health Client",
-        "status": "syncing"
-      },
-      {
-        "time": "10:00 AM",
-        "title": "Unit 4 Airbnb",
-        "type": "Turnover Clean",
-        "status": "syncing"
-      },
-      {
-        "time": "11:00 AM",
-        "title": "Karanjeet's Clean",
-        "type": "Regular Client",
-        "status": "syncing"
-      },
-      {
-        "time": "05:00 PM",
-        "title": "🎬 Movie Date",
-        "type": "Parramatta",
-        "status": "special"
-      }
+      { "time": "06:00 AM", "title": "Larissa (Support Shift)", "type": "Mental Health", "status": "completed" },
+      { "time": "10:00 AM", "title": "Unit 4 Airbnb", "type": "Turnover", "status": "pending" },
+      { "time": "11:00 AM", "title": "Karanjeet's Clean", "type": "Regular", "status": "pending" },
+      { "time": "05:00 PM", "title": "🎬 Movie Date", "type": "Parramatta", "status": "special" }
     ]
   },
   "invoices": [
-    {
-      "id": "inv-000005",
-      "number": "000005",
-      "customer": "Meshach Ephraim Care",
-      "phone": "+61451918884",
-      "amount": 2500.00,
-      "status": "PARTIALLY_PAID",
-      "note": "Correction: Only $1,250 paid",
-      "priority": "high"
-    }
+    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" },
+    { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467" },
+    { "number": "000045", "customer": "Maryam Al Atar", "amount": 150.00, "status": "UNPAID", "priority": "medium", "phone": "+61419992358" },
+    { "number": "000040", "customer": "Herdip Gill", "amount": 145.00, "status": "UNPAID", "priority": "medium", "phone": "+61421128467" },
+    { "number": "000043", "customer": "Janette Vamarasi", "amount": 121.88, "status": "UNPAID", "priority": "medium", "phone": "+61476164750" }
   ],
   "tasks": {
-    "overdue": [],
+    "overdue": [
+      { "id": "task-mesh-chase", "title": "Chase Meshach Balance ($2.5k)", "priority": "high", "category": "Finance" },
+      { "id": "task-herd-chase", "title": "Chase Herdip Gill ($580 total)", "priority": "medium", "category": "Finance" }
+    ],
     "inProgress": [
-      { "id": "task-cal-write", "title": "Google Calendar Batch Push", "priority": "high", "category": "Schedule" }
+      { "id": "task-google-reauth", "title": "Resolve Keychain Locking Issue", "priority": "medium", "category": "System" }
     ],
     "completedToday": [
-      { "id": "done-018", "title": "Automated Schedule Maintenance", "category": "Core" }
+      { "id": "done-audit", "title": "Full Financial & Schedule Audit", "category": "Intelligence" },
+      { "id": "done-cal-sync", "title": "Pushed jobs to Google Calendar", "category": "Automation" }
     ]
   },
   "review": {
@@ -77,35 +56,35 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-021",
-        "timestamp": "2026-02-14T02:05:00+11:00",
-        "topic": "Calendar Automation",
-        "summary": "Hafsah commanded full calendar automation. Bella is pushing all known shifts and cleaning jobs to Google Calendar primary.",
-        "outcome": "in-progress",
-        "tags": ["calendar", "automation"]
+        "id": "rev-022",
+        "timestamp": "2026-02-14T02:10:00+11:00",
+        "topic": "System-Wide Audit",
+        "summary": "Hafsah flagged data mismatches. Bella performed a deep scan of Square and Google APIs. Revenue trend restored to $14k historical context. Cognitive queue populated with all overdue invoices.",
+        "outcome": "resolved",
+        "tags": ["audit", "precision"]
       }
     ]
   },
-  "progress": { "todayPercent": 95, "tasksTotal": 10, "tasksComplete": 9 },
+  "progress": { "todayPercent": 85, "tasksTotal": 12, "tasksComplete": 10 },
   "revenueHistory": {
-    "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
-    "values": [800, 1200, 1800, 2100, 2400, 2800, 3200, 4000, 4214]
+    "labels": ["Aug", "Oct", "Dec", "Jan", "Feb"],
+    "values": [120, 650, 1160, 5720, 14214]
   },
   "memory": {
     "business": "cleanupbros.com.au • 0406 764 585",
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Calendar Push"
+    "nextSync": "Neural Continuous"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
-    "status": "fully operational",
+    "status": "synchronized",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:06:00+11:00",
-    "currentTask": "Syncing Google Calendar",
-    "uptime": "1h 33m",
-    "cognitiveState": "synchronizing"
+    "lastHeartbeat": "2026-02-14T02:12:00+11:00",
+    "currentTask": "System Synchronization",
+    "uptime": "1h 40m",
+    "cognitiveState": "high precision"
   }
 }
