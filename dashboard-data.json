@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-14T00:53:00+11:00",
+  "lastUpdated": "2026-02-14T01:19:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
-    "outstanding": 4070.00,
-    "overdue": 320.00,
-    "overdueCount": 1,
+    "outstanding": 4601.88,
+    "overdue": 4601.88,
+    "overdueCount": 5,
     "revenueChange": "+12%",
     "profitMargin": "89%"
   },
@@ -44,22 +44,53 @@
   "tasks": {
     "overdue": [
       {
-        "id": "task-001",
-        "title": "Claudia Alz - Payment Chase",
-        "amount": 320.00,
-        "daysOverdue": 57,
+        "id": "inv-000045",
+        "title": "Invoice #000045",
+        "amount": 150.00,
         "priority": "high",
         "category": "Payment"
+      },
+      {
+        "id": "inv-000043",
+        "title": "Invoice #000043",
+        "amount": 121.88,
+        "priority": "high",
+        "category": "Payment"
+      },
+      {
+        "id": "inv-000041",
+        "title": "Invoice #000041",
+        "amount": 435.00,
+        "priority": "high",
+        "category": "Payment"
+      },
+      {
+        "id": "inv-000040",
+        "title": "Invoice #000040",
+        "amount": 145.00,
+        "priority": "high",
+        "category": "Payment"
+      },
+      {
+        "id": "inv-000005",
+        "title": "Invoice #000005 (Partial)",
+        "amount": 3750.00,
+        "priority": "high",
+        "category": "Payment Plan"
       }
     ],
     "inProgress": [
       {
-        "id": "task-002",
-        "title": "Meshach Ephraim Care",
-        "amount": 1750.00,
-        "note": "$2,000 paid of $3,750",
+        "id": "task-001",
+        "title": "Dashboard Auto-Sync Setup",
         "priority": "medium",
-        "category": "Payment Plan"
+        "category": "System"
+      },
+      {
+        "id": "task-002",
+        "title": "Google Services Re-Auth",
+        "priority": "medium",
+        "category": "Config"
       }
     ],
     "completedToday": [
@@ -70,20 +101,30 @@
       },
       {
         "id": "done-002",
-        "title": "Updated to latest Clawdbot",
+        "title": "Updated Clawdbot to latest",
         "category": "Maintenance"
       },
       {
         "id": "done-003",
-        "title": "Reset heartbeat monitoring",
-        "category": "System"
+        "title": "Generated SSH key for GitHub",
+        "category": "Security"
+      },
+      {
+        "id": "done-004",
+        "title": "Generated GPG key for signing",
+        "category": "Security"
+      },
+      {
+        "id": "done-005",
+        "title": "Connected Square API",
+        "category": "Integration"
       }
     ]
   },
   "progress": {
-    "todayPercent": 30,
-    "tasksTotal": 7,
-    "tasksComplete": 3
+    "todayPercent": 45,
+    "tasksTotal": 11,
+    "tasksComplete": 5
   },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
