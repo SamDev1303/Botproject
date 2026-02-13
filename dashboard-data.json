@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T02:05:00+11:00",
+  "lastUpdated": "2026-02-14T02:06:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-config-cmd",
-      "type": "info",
-      "icon": "📜",
-      "title": "Config Command Sent",
-      "message": "Providing full 'config.patch' command for Shamal.",
+      "id": "alert-schedule-sync",
+      "type": "urgent",
+      "icon": "📅",
+      "title": "Calendar Mismatch",
+      "message": "Only 'Avatar' found in Google Calendar. Syncing manual jobs.",
       "action": "none"
     }
   ],
@@ -25,7 +25,30 @@
     "dayName": "Saturday",
     "special": "Valentine's Day 💕",
     "events": [
-      { "time": "05:00 PM", "title": "🎬 Movie Date", "type": "Parramatta", "status": "special" }
+      {
+        "time": "06:00 AM",
+        "title": "Larissa (Support Shift)",
+        "type": "Mental Health Client",
+        "status": "pending"
+      },
+      {
+        "time": "10:00 AM",
+        "title": "Unit 4 Airbnb",
+        "type": "Turnover Clean",
+        "status": "pending"
+      },
+      {
+        "time": "11:00 AM",
+        "title": "Karanjeet's Clean",
+        "type": "Regular Client",
+        "status": "pending"
+      },
+      {
+        "time": "05:00 PM",
+        "title": "🎬 Movie Date (Avatar)",
+        "type": "Parramatta",
+        "status": "special"
+      }
     ]
   },
   "invoices": [
@@ -42,9 +65,11 @@
   ],
   "tasks": {
     "overdue": [],
-    "inProgress": [],
+    "inProgress": [
+      { "id": "task-cal-sync", "title": "Force Sync Manual Jobs to Calendar", "priority": "high", "category": "Schedule" }
+    ],
     "completedToday": [
-      { "id": "done-016", "title": "Provided Patch Command for Shamal", "category": "Support" }
+      { "id": "done-017", "title": "Full Saturday Schedule Restore", "category": "Memory" }
     ]
   },
   "review": {
@@ -52,16 +77,16 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-019",
-        "timestamp": "2026-02-14T02:04:00+11:00",
-        "topic": "Configuration Patching",
-        "summary": "Hafsah requested the specific command for Shamal to update his configuration. Bella provided the JSON patch command.",
+        "id": "rev-020",
+        "timestamp": "2026-02-14T02:05:00+11:00",
+        "topic": "Schedule Integrity",
+        "summary": "Hafsah questioned why only the movie date was visible. Bella found that Google Calendar is missing the manual business jobs. Force-synced manual memory back to dashboard.",
         "outcome": "resolved",
-        "tags": ["config", "patch"]
+        "tags": ["schedule", "fix"]
       }
     ]
   },
-  "progress": { "todayPercent": 100, "tasksTotal": 10, "tasksComplete": 10 },
+  "progress": { "todayPercent": 90, "tasksTotal": 10, "tasksComplete": 9 },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
     "values": [800, 1200, 1800, 2100, 2400, 2800, 3200, 4000, 4214]
@@ -71,16 +96,16 @@
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Neural Standby"
+    "nextSync": "Manual Schedule Restore"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
     "status": "fully operational",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:00:00+11:00",
-    "currentTask": "Configuration Support",
-    "uptime": "1h 30m",
-    "cognitiveState": "optimized"
+    "lastHeartbeat": "2026-02-14T02:05:00+11:00",
+    "currentTask": "Schedule Restoration",
+    "uptime": "1h 32m",
+    "cognitiveState": "alert"
   }
 }
