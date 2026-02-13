@@ -1042,12 +1042,12 @@
             const month = scheduleDate.toLocaleString('en-AU', { month: 'short' }).toUpperCase();
             
             // Calculate progress ring offset (339.292 is circumference)
-            const progressOffset = 339.292 * (1 - d.progress.todayPercent / 100);
+            const progressOffset = 339.292 * (1 - (d.progress?.todayPercent || 0) / 100);
 
-            document.getElementById('app').innerHTML = `
+            document.getElementById('app').innerHTML = \`
                 <!-- Header -->
                 <header class="header animate-in">
-                    <img src="${d.bella.avatar}" alt="Bella" class="bella-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="\${d.bella.avatar}" alt="Bella" class="bella-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <div class="logo" style="display:none; font-size: 2.5rem;">🦞</div>
                     <h1>Bella</h1>
                     <p class="tagline">Neural Command Center & Core Memory</p>
@@ -1057,97 +1057,97 @@
                     </div>
                     <div class="model-badge">
                         <span class="dot"></span>
-                        ${d.bella.model} • ${d.bella.fallback} Fallback
+                        \${d.bella.model} • \${d.bella.fallback} Fallback
                     </div>
                 </header>
 
                 <!-- Update Banner -->
                 <div class="update-banner animate-in">
-                    <span class="update-text">📡 Last synced by ${d.updatedBy}</span>
-                    <span class="update-time">${formatTimeAgo(d.lastUpdated)}</span>
+                    <span class="update-text">📡 Last synced by \${d.updatedBy}</span>
+                    <span class="update-time">\${formatTimeAgo(d.lastUpdated)}</span>
                 </div>
 
                 <!-- Alerts -->
-                ${d.alerts && d.alerts.length > 0 ? `
+                \${d.alerts && d.alerts.length > 0 ? \`
                 <div class="alerts-container animate-in">
-                    ${d.alerts.map(alert => `
-                        <div class="alert-card ${alert.type}">
-                            <span class="alert-icon">${alert.icon}</span>
+                    \${d.alerts.map(alert => \`
+                        <div class="alert-card \${alert.type}">
+                            <span class="alert-icon">\${alert.icon}</span>
                             <div class="alert-content">
-                                <div class="alert-title">${alert.title}</div>
-                                <div class="alert-message">${alert.message}</div>
+                                <div class="alert-title">\${alert.title}</div>
+                                <div class="alert-message">\${alert.message}</div>
                             </div>
                         </div>
-                    `).join('')}
+                    \`).join('')}
                 </div>
-                ` : ''}
+                \` : ''}
 
                 <!-- Bella Status -->
-                ${d.bella ? `
+                \${d.bella ? \`
                 <div class="bella-status animate-in">
-                    <img src="${d.bella.avatar}" alt="Bella" class="bella-mini-avatar" onerror="this.outerHTML='<div style=\\'font-size:2rem\\'>🦞</div>'">
+                    <img src="\${d.bella.avatar}" alt="Bella" class="bella-mini-avatar" onerror="this.outerHTML='<div style=\\'font-size:2rem\\'>🦞</div>'">
                     <div class="bella-info">
-                        <div class="bella-name">Bella is ${d.bella.status}</div>
-                        <div class="bella-task">${d.bella.currentTask || 'Standing by'} • Last heartbeat ${formatTimeAgo(d.bella.lastHeartbeat)}</div>
+                        <div class="bella-name">Bella is \${d.bella.status}</div>
+                        <div class="bella-task">\${d.bella.currentTask || 'Standing by'} • Last heartbeat \${formatTimeAgo(d.bella.lastHeartbeat)}</div>
                     </div>
                     <div class="bella-pulse"></div>
                 </div>
-                ` : ''}
+                \` : ''}
 
                 <!-- Stats Grid -->
                 <div class="stats-grid animate-in delay-1">
                     <div class="stat-card revenue">
                         <div class="stat-icon">💰</div>
-                        <div class="stat-value">$${formatNumber(d.stats.totalRevenue)}</div>
+                        <div class="stat-value">$\${formatNumber(d.stats.totalRevenue)}</div>
                         <div class="stat-label">Total Revenue</div>
-                        <div class="stat-change positive">↑ ${d.stats.revenueChange} this month</div>
+                        <div class="stat-change positive">↑ \${d.stats.revenueChange} this month</div>
                     </div>
                     <div class="stat-card profit">
                         <div class="stat-icon">📈</div>
-                        <div class="stat-value">$${formatNumber(d.stats.netProfit)}</div>
+                        <div class="stat-value">$\${formatNumber(d.stats.netProfit)}</div>
                         <div class="stat-label">Net Profit</div>
-                        <div class="stat-change positive">↑ ${d.stats.profitMargin} margin</div>
+                        <div class="stat-change positive">↑ \${d.stats.profitMargin} margin</div>
                     </div>
                     <div class="stat-card outstanding">
                         <div class="stat-icon">⏳</div>
-                        <div class="stat-value">$${formatNumber(d.stats.outstanding)}</div>
+                        <div class="stat-value">$\${formatNumber(d.stats.outstanding)}</div>
                         <div class="stat-label">Outstanding</div>
-                        <div class="stat-change negative">${d.tasks.overdue.length + d.tasks.inProgress.length} invoices</div>
+                        <div class="stat-change negative">\${d.tasks?.overdue?.length + d.tasks?.inProgress?.length} invoices</div>
                     </div>
                     <div class="stat-card overdue">
                         <div class="stat-icon">🚨</div>
-                        <div class="stat-value">$${formatNumber(d.stats.overdue)}</div>
+                        <div class="stat-value">$\${formatNumber(d.stats.overdue || 0)}</div>
                         <div class="stat-label">Overdue</div>
-                        <div class="stat-change negative">${d.invoices?.length || 0} invoices</div>
+                        <div class="stat-change negative">\${d.invoices?.length || 0} invoices</div>
                     </div>
                 </div>
 
                 <!-- Invoices with Click-to-Call -->
-                ${d.invoices && d.invoices.length > 0 ? `
+                \${d.invoices && d.invoices.length > 0 ? \`
                 <div class="invoices-card animate-in delay-2" id="invoices-section">
                     <div class="section-header">
                         <div class="section-title">
                             <span class="icon">💳</span>
                             Outstanding Invoices
                         </div>
-                        <span class="section-badge">$${formatNumber(d.stats.outstanding)}</span>
+                        <span class="section-badge">$\${formatNumber(d.stats.outstanding)}</span>
                     </div>
                     
-                    ${d.invoices.map(inv => `
-                        <div class="invoice-item ${inv.status === 'PARTIALLY_PAID' ? 'partial' : ''}">
+                    \${d.invoices.map(inv => \`
+                        <div class="invoice-item \${inv.status === 'PARTIALLY_PAID' ? 'partial' : ''}">
                             <div class="invoice-info">
-                                <div class="invoice-customer">${inv.customer}</div>
-                                <div class="invoice-details">#${inv.number} • ${inv.status.replace('_', ' ')}${inv.note ? ' • ' + inv.note : ''}</div>
+                                <div class="invoice-customer">\${inv.customer}</div>
+                                <div class="invoice-details">#\${inv.number} • \${inv.status.replace('_', ' ')}\${inv.note ? ' • ' + inv.note : ''}</div>
                             </div>
-                            <div class="invoice-amount">$${formatNumber(inv.amount)}</div>
+                            <div class="invoice-amount">$\${formatNumber(inv.amount)}</div>
                             <div class="invoice-actions">
-                                <a href="tel:${inv.phone}" class="action-btn call" title="Call">📞</a>
-                                <a href="sms:${inv.phone}" class="action-btn sms" title="SMS">💬</a>
+                                <a href="tel:\${inv.phone}" class="action-btn call" title="Call">📞</a>
+                                <a href="sms:\${inv.phone}" class="action-btn sms" title="SMS">💬</a>
                             </div>
                         </div>
-                    `).join('')}
+                    \`).join('')}
                 </div>
-                ` : ''}
+                \` : ''}
 
                 <!-- Today's Schedule -->
                 <div class="schedule-card animate-in delay-2">
@@ -1156,30 +1156,30 @@
                             <span class="icon">📅</span>
                             Today's Schedule
                         </div>
-                        <span class="section-badge">${d.schedule.events.length} events</span>
+                        <span class="section-badge">\${d.schedule.events.length} events</span>
                     </div>
                     
                     <div class="schedule-date">
                         <div class="date-badge">
-                            <span class="day">${day}</span>
-                            <span class="month">${month}</span>
+                            <span class="day">\${day}</span>
+                            <span class="month">\${month}</span>
                         </div>
                         <div class="date-info">
-                            <h3>${d.schedule.dayName}</h3>
-                            <span class="subtitle">${d.schedule.special}</span>
+                            <h3>\${d.schedule.dayName}</h3>
+                            <span class="subtitle">\${d.schedule.special}</span>
                         </div>
                     </div>
 
                     <div class="schedule-timeline">
-                        ${d.schedule.events.map(event => `
-                            <div class="schedule-item ${event.status}">
-                                <span class="schedule-time">${event.time}</span>
+                        \${d.schedule.events.map(event => \`
+                            <div class="schedule-item \${event.status}">
+                                <span class="schedule-time">\${event.time}</span>
                                 <div class="schedule-content">
-                                    <h4>${event.title}</h4>
-                                    <span class="type">${event.type}</span>
+                                    <h4>\${event.title}</h4>
+                                    <span class="type">\${event.type}</span>
                                 </div>
                             </div>
-                        `).join('')}
+                        \`).join('')}
                     </div>
                 </div>
 
@@ -1190,7 +1190,7 @@
                             <span class="icon">🎯</span>
                             System Objectives
                         </div>
-                        <span class="section-badge">${d.progress.tasksComplete}/${d.progress.tasksTotal} tasks</span>
+                        <span class="section-badge">\${d.progress?.tasksComplete}/\${d.progress?.tasksTotal} tasks</span>
                     </div>
                     <div class="progress-ring-container">
                         <div class="progress-ring">
@@ -1202,10 +1202,10 @@
                                     </linearGradient>
                                 </defs>
                                 <circle class="bg" cx="60" cy="60" r="54" />
-                                <circle class="progress" cx="60" cy="60" r="54" style="stroke-dashoffset: ${progressOffset}" />
+                                <circle class="progress" cx="60" cy="60" r="54" style="stroke-dashoffset: \${progressOffset}" />
                             </svg>
                             <div class="center">
-                                <div class="percentage">${d.progress.todayPercent}%</div>
+                                <div class="percentage">\${d.progress?.todayPercent}%</div>
                                 <div class="label">Complete</div>
                             </div>
                         </div>
@@ -1227,54 +1227,54 @@
                         <div class="kanban-column overdue">
                             <div class="column-header">
                                 <span class="column-title">🚨 Overdue</span>
-                                <span class="column-count">${d.tasks.overdue.length}</span>
+                                <span class="column-count">\${d.tasks?.overdue?.length || 0}</span>
                             </div>
-                            ${d.tasks.overdue.map(task => `
-                                <div class="task-card priority-${task.priority}">
-                                    <div class="task-title">${task.title}</div>
-                                    ${task.amount ? `<div class="task-amount">$${formatNumber(task.amount)}</div>` : ''}
+                            \${(d.tasks?.overdue || []).map(task => \`
+                                <div class="task-card priority-\${task.priority}">
+                                    <div class="task-title">\${task.title}</div>
+                                    \${task.amount ? \`<div class="task-amount">$\${formatNumber(task.amount)}</div>\` : ''}
                                     <div class="task-tags">
-                                        ${task.daysOverdue ? `<span class="task-tag urgent">~${task.daysOverdue} days overdue</span>` : ''}
-                                        ${task.category ? `<span class="task-tag">${task.category}</span>` : ''}
+                                        \${task.daysOverdue ? \`<span class="task-tag urgent">~\${task.daysOverdue} days overdue</span>\` : ''}
+                                        \${task.category ? \`<span class="task-tag">\${task.category}</span>\` : ''}
                                     </div>
                                 </div>
-                            `).join('')}
-                            ${d.tasks.overdue.length === 0 ? '<div style="text-align:center; color: var(--text-muted); padding: 20px;">🎉 Nothing overdue!</div>' : ''}
+                            \`).join('')}
+                            \${d.tasks?.overdue?.length === 0 ? '<div style="text-align:center; color: var(--text-muted); padding: 20px;">🎉 Nothing overdue!</div>' : ''}
                         </div>
 
                         <!-- In Progress Column -->
                         <div class="kanban-column progress">
                             <div class="column-header">
                                 <span class="column-title">⏳ In Progress</span>
-                                <span class="column-count">${d.tasks.inProgress.length}</span>
+                                <span class="column-count">\${d.tasks?.inProgress?.length || 0}</span>
                             </div>
-                            ${d.tasks.inProgress.map(task => `
-                                <div class="task-card priority-${task.priority}">
-                                    <div class="task-title">${task.title}</div>
-                                    ${task.amount ? `<div class="task-amount">$${formatNumber(task.amount)} remaining</div>` : ''}
+                            \${(d.tasks?.inProgress || []).map(task => \`
+                                <div class="task-card priority-\${task.priority}">
+                                    <div class="task-title">\${task.title}</div>
+                                    \${task.amount ? \`<div class="task-amount">$\${formatNumber(task.amount)} remaining</div>\` : ''}
                                     <div class="task-tags">
-                                        ${task.note ? `<span class="task-tag">${task.note}</span>` : ''}
-                                        ${task.category ? `<span class="task-tag">${task.category}</span>` : ''}
+                                        \${task.note ? \`<span class="task-tag">\${task.note}</span>\` : ''}
+                                        \${task.category ? \`<span class="task-tag">\${task.category}</span>\` : ''}
                                     </div>
                                 </div>
-                            `).join('')}
+                            \`).join('')}
                         </div>
 
                         <!-- Done Column -->
                         <div class="kanban-column done">
                             <div class="column-header">
                                 <span class="column-title">✅ Done Today</span>
-                                <span class="column-count">${d.tasks.completedToday.length}</span>
+                                <span class="column-count">\${d.tasks?.completedToday?.length || 0}</span>
                             </div>
-                            ${d.tasks.completedToday.map(task => `
+                            \${(d.tasks?.completedToday || []).map(task => \`
                                 <div class="task-card priority-low">
-                                    <div class="task-title">${task.title}</div>
+                                    <div class="task-title">\${task.title}</div>
                                     <div class="task-tags">
-                                        ${task.category ? `<span class="task-tag completed">✓ ${task.category}</span>` : ''}
-                                        ${task.tags ? task.tags.map(t => `<span class="task-tag completed">✓ ${t}</span>`).join('') : ''}
+                                        \${task.category ? \`<span class="task-tag completed">✓ \${task.category}</span>\` : ''}
+                                        \${task.tags ? task.tags.map(t => \`<span class="task-tag completed">✓ \${t}</span>\`).join('') : ''}
                                     </div>
                                 </div>
-                            `).join('')}
+                            \`).join('')}
                         </div>
                     </div>
                 </div>
@@ -1306,70 +1306,70 @@
                             <div class="memory-icon">🏢</div>
                             <div class="memory-content">
                                 <div class="memory-label">Business</div>
-                                <div class="memory-value">${d.memory.business}</div>
+                                <div class="memory-value">\${d.memory.business}</div>
                             </div>
                         </div>
                         <div class="memory-item">
                             <div class="memory-icon">💳</div>
                             <div class="memory-content">
                                 <div class="memory-label">Payments</div>
-                                <div class="memory-value">${d.memory.payments}</div>
+                                <div class="memory-value">\${d.memory.payments}</div>
                             </div>
                         </div>
                         <div class="memory-item">
                             <div class="memory-icon">📧</div>
                             <div class="memory-content">
                                 <div class="memory-label">Email Rule</div>
-                                <div class="memory-value">${d.memory.emailRule}</div>
+                                <div class="memory-value">\${d.memory.emailRule}</div>
                             </div>
                         </div>
                         <div class="memory-item">
                             <div class="memory-icon">🎓</div>
                             <div class="memory-content">
                                 <div class="memory-label">School</div>
-                                <div class="memory-value">${d.memory.school}</div>
+                                <div class="memory-value">\${d.memory.school}</div>
                             </div>
                         </div>
                         <div class="memory-item">
                             <div class="memory-icon">🔄</div>
                             <div class="memory-content">
                                 <div class="memory-label">Next Sync</div>
-                                <div class="memory-value">${d.memory.nextSync}</div>
+                                <div class="memory-value">\${d.memory.nextSync}</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Review Log -->
-                ${d.review ? `
+                \${d.review ? \`
                 <div class="review-card animate-in delay-6">
                     <div class="section-header">
                         <div class="section-title">
                             <span class="icon">📝</span>
-                            ${d.review.title || 'Conversation Log'}
+                            \${d.review.title || 'Conversation Log'}
                         </div>
-                        <span class="section-badge">${d.review.entries?.length || 0} entries</span>
+                        <span class="section-badge">\${d.review.entries?.length || 0} entries</span>
                     </div>
-                    <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 16px;">${d.review.description || ''}</p>
+                    <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 16px;">\${d.review.description || ''}</p>
                     
                     <div class="review-timeline">
-                        ${(d.review.entries || []).slice().reverse().map(entry => `
-                            <div class="review-entry ${entry.outcome}">
+                        \${(d.review.entries || []).slice().reverse().map(entry => \`
+                            <div class="review-entry \${entry.outcome}">
                                 <div class="review-header">
-                                    <span class="review-topic">${entry.topic}</span>
-                                    <span class="review-time">${formatTimeAgo(entry.timestamp)}</span>
+                                    <span class="review-topic">\${entry.topic}</span>
+                                    <span class="review-time">\${formatTimeAgo(entry.timestamp)}</span>
                                 </div>
-                                <div class="review-summary">${entry.summary}</div>
+                                <div class="review-summary">\${entry.summary}</div>
                                 <div class="review-tags">
-                                    <span class="outcome-badge ${entry.outcome}">${entry.outcome === 'resolved' ? '✓ Resolved' : entry.outcome === 'in-progress' ? '⏳ In Progress' : '📌 Noted'}</span>
-                                    ${(entry.tags || []).map(t => `<span class="review-tag">${t}</span>`).join('')}
+                                    <span class="outcome-badge \${entry.outcome}">\${entry.outcome === 'resolved' ? '✓ Resolved' : entry.outcome === 'in-progress' ? '⏳ In Progress' : '📌 Noted'}</span>
+                                    \${(entry.tags || []).map(t => \`<span class="review-tag">\${t}</span>\`).join('')}
                                 </div>
                             </div>
-                        `).join('')}
+                        \`).join('')}
                     </div>
                 </div>
-                ` : ''}
-            `;
+                \` : ''}
+            \`;
 
             // Initialize chart
             initChart();
@@ -1444,6 +1444,7 @@
         }
 
         function formatNumber(num) {
+            if (num === undefined || num === null) return '0';
             return num.toLocaleString('en-AU', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
         }
 
@@ -1454,10 +1455,10 @@
             const diffMins = Math.floor(diffMs / 60000);
             
             if (diffMins < 1) return 'Just now';
-            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffMins < 60) return \`\${diffMins}m ago\`;
             
             const diffHours = Math.floor(diffMins / 60);
-            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffHours < 24) return \`\${diffHours}h ago\`;
             
             return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
         }
