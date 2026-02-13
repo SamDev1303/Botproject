@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T01:38:00+11:00",
+  "lastUpdated": "2026-02-14T01:40:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-001",
+      "id": "alert-003",
       "type": "urgent",
-      "icon": "🚨",
-      "title": "Scheduled Refresh",
-      "message": "Setting up 3-hour business sync for Gmail & Calendar",
+      "icon": "🔑",
+      "title": "Google Auth Error",
+      "message": "Token expired or missing from keyring. Re-auth required.",
       "action": "none"
     }
   ],
@@ -103,14 +103,14 @@
     "overdue": [],
     "inProgress": [
       {
-        "id": "task-sync-3h",
-        "title": "Implement 3h Auto-Refresh Logic",
-        "priority": "medium",
-        "category": "Automation"
+        "id": "task-google-fix",
+        "title": "Fix Google Service Auth",
+        "priority": "high",
+        "category": "Maintenance"
       }
     ],
     "completedToday": [
-      { "id": "done-006", "title": "Dashboard v3 Build", "category": "Feature" }
+      { "id": "done-007", "title": "Verified Square Access", "category": "Security" }
     ]
   },
   "review": {
@@ -118,27 +118,19 @@
     "description": "Decisions & discussions with Hafsah",
     "entries": [
       {
-        "id": "rev-009",
-        "timestamp": "2026-02-14T01:36:00+11:00",
-        "topic": "3-Hour Refresh Request",
-        "summary": "Hafsah requested a full business sync (Gmail, Calendar, etc.) every 3 hours. Setting up cron job.",
+        "id": "rev-010",
+        "timestamp": "2026-02-14T01:39:00+11:00",
+        "topic": "Google Auth Failure",
+        "summary": "Hafsah asked why Google auth isn't working. Bella found 'Secret not found in keyring' error in gog tool. Likely requires manual refresh due to session reset or token expiry.",
         "outcome": "in-progress",
-        "tags": ["automation", "cron"]
-      },
-      {
-        "id": "rev-008",
-        "timestamp": "2026-02-14T01:35:00+11:00",
-        "topic": "Meshach Payment Correction",
-        "summary": "Hafsah corrected Meshach balance. They only paid $1,250, so $2,500 is remaining. Square API reported $1,250 remaining (error). Manually overrides dashboard.",
-        "outcome": "resolved",
-        "tags": ["finance", "correction"]
+        "tags": ["google", "fix"]
       }
     ]
   },
   "progress": {
-    "todayPercent": 75,
-    "tasksTotal": 10,
-    "tasksComplete": 8
+    "todayPercent": 78,
+    "tasksTotal": 9,
+    "tasksComplete": 7
   },
   "revenueHistory": {
     "labels": ["Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
@@ -156,8 +148,8 @@
     "fallback": "Gemini Flash",
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T01:37:00+11:00",
-    "currentTask": "Scheduling 3h Refresh Job",
-    "uptime": "55 mins"
+    "lastHeartbeat": "2026-02-14T01:38:00+11:00",
+    "currentTask": "Debugging Google Auth",
+    "uptime": "58 mins"
   }
 }
