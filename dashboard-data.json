@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T02:15:00+11:00",
+  "lastUpdated": "2026-02-14T02:11:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-audit",
-      "type": "urgent",
-      "icon": "⚖️",
-      "title": "Full System Audit",
-      "message": "Cognitive Queue and Revenue Trend fully synchronized with Square.",
+      "id": "alert-watch",
+      "type": "info",
+      "icon": "🦉",
+      "title": "Night Watch Active",
+      "message": "Continuous 30-minute sync loop active until morning.",
       "action": "none"
     }
   ],
@@ -25,7 +25,7 @@
     "dayName": "Saturday",
     "special": "Valentine's Day 💕",
     "events": [
-      { "time": "06:00 AM", "title": "Larissa (Support Shift)", "type": "Mental Health", "status": "completed" },
+      { "time": "06:00 AM", "title": "Larissa (Support Shift)", "type": "Mental Health", "status": "upcoming" },
       { "time": "10:00 AM", "title": "Unit 4 Airbnb", "type": "Turnover", "status": "pending" },
       { "time": "11:00 AM", "title": "Karanjeet's Clean", "type": "Regular", "status": "pending" },
       { "time": "05:00 PM", "title": "🎬 Movie Date", "type": "Parramatta", "status": "special" }
@@ -34,21 +34,15 @@
   "invoices": [
     { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" },
     { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467" },
-    { "number": "000045", "customer": "Maryam Al Atar", "amount": 150.00, "status": "UNPAID", "priority": "medium", "phone": "+61419992358" },
-    { "number": "000040", "customer": "Herdip Gill", "amount": 145.00, "status": "UNPAID", "priority": "medium", "phone": "+61421128467" },
-    { "number": "000043", "customer": "Janette Vamarasi", "amount": 121.88, "status": "UNPAID", "priority": "medium", "phone": "+61476164750" }
+    { "number": "000045", "customer": "Maryam Al Atar", "amount": 150.00, "status": "UNPAID", "priority": "medium", "phone": "+61419992358" }
   ],
   "tasks": {
-    "overdue": [
-      { "id": "task-mesh-chase", "title": "Chase Meshach Balance ($2.5k)", "priority": "high", "category": "Finance" },
-      { "id": "task-herd-chase", "title": "Chase Herdip Gill ($580 total)", "priority": "medium", "category": "Finance" }
-    ],
+    "overdue": [],
     "inProgress": [
-      { "id": "task-google-reauth", "title": "Resolve Keychain Locking Issue", "priority": "medium", "category": "System" }
+      { "id": "task-overnight", "title": "Continuous Night Watch Sync", "priority": "high", "category": "Mission" }
     ],
     "completedToday": [
-      { "id": "done-audit", "title": "Full Financial & Schedule Audit", "category": "Intelligence" },
-      { "id": "done-cal-sync", "title": "Pushed jobs to Google Calendar", "category": "Automation" }
+      { "id": "done-audit-v2", "title": "Precision Synchronization", "category": "Intelligence" }
     ]
   },
   "review": {
@@ -56,16 +50,16 @@
     "description": "Bella's Core Cognitive History",
     "entries": [
       {
-        "id": "rev-022",
+        "id": "rev-023",
         "timestamp": "2026-02-14T02:10:00+11:00",
-        "topic": "System-Wide Audit",
-        "summary": "Hafsah flagged data mismatches. Bella performed a deep scan of Square and Google APIs. Revenue trend restored to $14k historical context. Cognitive queue populated with all overdue invoices.",
-        "outcome": "resolved",
-        "tags": ["audit", "precision"]
+        "topic": "Mission: Night Watch",
+        "summary": "Hafsah commanded Bella to stay active and update the dashboard all night. Sync loop locked at 30-minute intervals for total accuracy.",
+        "outcome": "active",
+        "tags": ["mission", "nightwatch"]
       }
     ]
   },
-  "progress": { "todayPercent": 85, "tasksTotal": 12, "tasksComplete": 10 },
+  "progress": { "todayPercent": 98, "tasksTotal": 5, "tasksComplete": 4 },
   "revenueHistory": {
     "labels": ["Aug", "Oct", "Dec", "Jan", "Feb"],
     "values": [120, 650, 1160, 5720, 14214]
@@ -75,16 +69,16 @@
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Neural Continuous"
+    "nextSync": "Continuous"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini 3 Flash",
-    "status": "synchronized",
+    "status": "watching",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T02:12:00+11:00",
-    "currentTask": "System Synchronization",
-    "uptime": "1h 40m",
-    "cognitiveState": "high precision"
+    "lastHeartbeat": "2026-02-14T02:10:00+11:00",
+    "currentTask": "Overnight Night Watch",
+    "uptime": "1h 45m",
+    "cognitiveState": "hyper-vigilant"
   }
 }
