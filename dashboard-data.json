@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T01:42:00+11:00",
+  "lastUpdated": "2026-02-14T01:48:00+11:00",
   "updatedBy": "Bella",
   "stats": {
     "totalRevenue": 14214.42,
@@ -12,11 +12,11 @@
   },
   "alerts": [
     {
-      "id": "alert-004",
-      "type": "info",
-      "icon": "🧠",
-      "title": "Intelligence Upgrade",
-      "message": "Neural context expanded. Memory architecture reinforced.",
+      "id": "alert-meshach",
+      "type": "urgent",
+      "icon": "🚨",
+      "title": "Meshach Payment Gap",
+      "message": "$2,500 remains (Manual Override)",
       "action": "none"
     }
   ],
@@ -27,13 +27,23 @@
     "events": [
       {
         "time": "05:00 PM",
-        "title": "🎬 Movie Date (Avatar: Fire and Ash)",
-        "type": "Westfield Parramatta",
+        "title": "🎬 Movie Date (Avatar)",
+        "type": "Parramatta",
         "status": "special"
       }
     ]
   },
   "invoices": [
+    {
+      "id": "inv-000005",
+      "number": "000005",
+      "customer": "Meshach Ephraim Care",
+      "phone": "+61451918884",
+      "amount": 2500.00,
+      "status": "PARTIALLY_PAID",
+      "note": "Correction: Only $1,250 paid",
+      "priority": "high"
+    },
     {
       "id": "inv-000045",
       "number": "000045",
@@ -44,13 +54,12 @@
       "priority": "high"
     },
     {
-      "id": "inv-000005",
-      "number": "000005",
-      "customer": "Meshach Ephraim Care",
-      "phone": "+61451918884",
-      "amount": 2500.00,
-      "status": "PARTIALLY_PAID",
-      "note": "Correction: Only $1,250 paid",
+      "id": "inv-000041",
+      "number": "000041",
+      "customer": "Herdip Gill - Pinnacle",
+      "phone": "+61421128467",
+      "amount": 435.00,
+      "status": "UNPAID",
       "priority": "high"
     }
   ],
@@ -58,15 +67,14 @@
     "overdue": [],
     "inProgress": [
       {
-        "id": "task-brain-up",
-        "title": "Self-Optimisation & Learning",
+        "id": "task-integrity",
+        "title": "Data Integrity Audit",
         "priority": "high",
-        "category": "Evolution"
+        "category": "Core"
       }
     ],
     "completedToday": [
-      { "id": "done-008", "title": "Verified Google API Access", "category": "Connectivity" },
-      { "id": "done-009", "title": "Memory Architecture Refinement", "category": "Systems" }
+      { "id": "done-010", "title": "Simplified Dashboard UI", "category": "UX" }
     ]
   },
   "review": {
@@ -74,17 +82,17 @@
     "description": "Decisions & discussions with Hafsah",
     "entries": [
       {
-        "id": "rev-011",
-        "timestamp": "2026-02-14T01:41:00+11:00",
-        "topic": "Intelligence Upgrade",
-        "summary": "Hafsah commanded Bella to become smarter and update memory. Bella is re-indexing all business context and tightening workflow loops.",
+        "id": "rev-012",
+        "timestamp": "2026-02-14T01:47:00+11:00",
+        "topic": "Dashboard Simplification",
+        "summary": "Hafsah ordered the dashboard to be simple yet useful. Removed 'acting dumb' and ensured 'nothing overdrawn' is reflected correctly. Focus on high-value info only.",
         "outcome": "resolved",
-        "tags": ["evolution", "memory"]
+        "tags": ["ux", "simplicity"]
       }
     ]
   },
   "progress": {
-    "todayPercent": 82,
+    "todayPercent": 90,
     "tasksTotal": 10,
     "tasksComplete": 9
   },
@@ -97,15 +105,15 @@
     "payments": "Square → CommBank (067 873 / 2135 8742)",
     "emailRule": "Never send without explicit approval",
     "school": "Diploma Mental Health @ INT College • June 2026",
-    "nextSync": "Every 3 hours — Gmail/Calendar/Invoices"
+    "nextSync": "Every 3 hours — Business Scan"
   },
   "bella": {
     "model": "Claude Opus 4.5",
     "fallback": "Gemini Flash",
     "status": "online",
     "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T01:40:00+11:00",
-    "currentTask": "Self-Optimisation",
-    "uptime": "1h"
+    "lastHeartbeat": "2026-02-14T01:45:00+11:00",
+    "currentTask": "Dashboard Cleanup",
+    "uptime": "1h 10m"
   }
 }
