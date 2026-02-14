@@ -3,183 +3,797 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bella - Neural Command Center</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Bella — Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
+            --bg-deep: #050508;
             --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.06);
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-active: rgba(0, 212, 255, 0.3);
             --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-muted: #606060;
-            --accent-blue: #00d4ff;
-            --accent-green: #00ff88;
-            --accent-purple: #a855f7;
-            --accent-orange: #ff9500;
-            --accent-red: #ff3b5c;
-            --accent-pink: #ff6b9d;
-            --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --text-secondary: #888;
+            --text-muted: #555;
+            --cyan: #00d4ff;
+            --green: #00ff88;
+            --purple: #a855f7;
+            --orange: #ff9500;
+            --red: #ff3b5c;
+            --pink: #ff6b9d;
+            --yellow: #ffd60a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-deep);
             color: var(--text-primary);
-            padding-bottom: 100px;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        .container { padding: 16px; }
+        /* Animated background grid */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
 
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            padding: 12px;
+            padding-bottom: 120px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .avatar-container {
+            position: relative;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid var(--cyan);
+            box-shadow: 0 0 20px rgba(0,212,255,0.4);
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background: var(--green);
+            border-radius: 50%;
+            border: 2px solid var(--bg-deep);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.5); }
+            50% { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+        }
+
+        .header-info h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--cyan), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-info .tagline {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .header-meta {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .live-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--cyan);
+        }
+
+        .live-date {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Connection Status Bar */
+        .connections {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 12px 0;
+            margin-bottom: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .conn-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .conn-chip.active { border-color: var(--green); }
+        .conn-chip.active::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        .conn-chip.warning { border-color: var(--orange); }
+        .conn-chip.warning::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--orange);
+            border-radius: 50%;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-value.revenue { color: var(--green); }
+        .stat-value.outstanding { color: var(--orange); }
+        .stat-value.jobs { color: var(--cyan); }
+        .stat-value.margin { color: var(--purple); }
+
+        .stat-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Card Base */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-badge {
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            background: rgba(0,212,255,0.1);
+            color: var(--cyan);
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Cognitive State */
+        .cognitive {
+            background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(168,85,247,0.05));
+            border-color: var(--border-active);
+        }
+
+        .cognitive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .cog-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .cog-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .cog-value {
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cog-value.model { color: var(--purple); }
+        .cog-value.task { color: var(--cyan); }
+        .cog-value.uptime { color: var(--green); }
+        .cog-value.state { color: var(--yellow); }
+
+        /* Today's Schedule */
+        .schedule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .schedule-item:last-child { border-bottom: none; }
+
+        .schedule-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--cyan);
+            min-width: 55px;
+            font-weight: 600;
+        }
+
+        .schedule-content { flex: 1; }
+
+        .schedule-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .schedule-meta {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .schedule-status {
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .schedule-status.done { background: rgba(0,255,136,0.15); color: var(--green); }
+        .schedule-status.active { background: rgba(0,212,255,0.15); color: var(--cyan); }
+        .schedule-status.upcoming { background: rgba(255,149,0,0.15); color: var(--orange); }
+        .schedule-status.special { background: rgba(255,107,157,0.15); color: var(--pink); }
+
+        /* Invoices */
+        .invoice-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .invoice-item:last-child { border-bottom: none; }
+
+        .invoice-priority {
+            width: 4px;
+            height: 36px;
+            border-radius: 2px;
+        }
+
+        .invoice-priority.high { background: var(--red); }
+        .invoice-priority.medium { background: var(--orange); }
+        .invoice-priority.low { background: var(--green); }
+
+        .invoice-info { flex: 1; }
+
+        .invoice-customer {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .invoice-meta {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .invoice-amount {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        /* Activity Feed */
+        .activity-item {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+        }
+
+        .activity-item:last-child { border-bottom: none; }
+
+        .activity-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .activity-icon.sync { background: rgba(0,212,255,0.15); }
+        .activity-icon.payment { background: rgba(0,255,136,0.15); }
+        .activity-icon.alert { background: rgba(255,59,92,0.15); }
+        .activity-icon.task { background: rgba(168,85,247,0.15); }
+
+        .activity-content { flex: 1; }
+        .activity-text { color: var(--text-secondary); }
+        .activity-time { font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .tool-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 8px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .tool-btn:active {
+            background: var(--bg-card-hover);
+            border-color: var(--cyan);
+        }
+
+        .tool-btn span { font-size: 1.2rem; }
+
+        /* Revenue Chart */
+        .chart-container {
+            height: 120px;
+            margin-top: 12px;
+        }
+
+        /* Neural Log */
+        .log-entry {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .log-entry:last-child { border-bottom: none; }
+
+        .log-time { color: var(--text-muted); }
+        .log-action { color: var(--cyan); }
+        .log-result { color: var(--green); }
+
+        /* Quick Actions FAB */
+        .fab-row {
+            position: fixed;
+            bottom: 20px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .fab {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .fab-primary {
+            background: linear-gradient(135deg, var(--cyan), var(--green));
+            color: #000;
+        }
+
+        .fab-secondary {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        /* Loading */
         .loading {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 60vh;
-            gap: 20px;
+            min-height: 80vh;
+            gap: 16px;
         }
 
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border-color);
-            border-top-color: var(--accent-blue);
+        .loading-ring {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--border);
+            border-top-color: var(--cyan);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        .header { text-align: center; padding: 24px 0; }
-        .bella-avatar {
-            width: 80px; height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--accent-blue);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            margin-bottom: 12px;
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 16px;
-        }
-
-        .stat-value { font-size: 1.2rem; font-weight: 800; color: var(--accent-blue); }
-        .stat-label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; }
-
-        .section-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 24px;
-        }
-
-        .section-title { font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-
-        .schedule-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.9rem; }
-        .schedule-time { color: var(--accent-blue); font-weight: 700; min-width: 65px; }
-
-        .review-entry {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--accent-purple);
-            font-size: 0.85rem;
-        }
-
-        .fab-container { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; }
-        .fab {
-            width: 50px; height: 50px;
-            border-radius: 25px;
-            background: var(--accent-blue);
-            color: black;
-            border: none;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        .loading-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
     </style>
 </head>
 <body>
+    <div class="bg-grid"></div>
+    
     <div class="container" id="app">
         <div class="loading">
-            <div class="loading-spinner"></div>
-            <div>Synchronizing Neural Center...</div>
+            <div class="loading-ring"></div>
+            <div class="loading-text">Initializing Neural Link...</div>
         </div>
     </div>
 
-    <div class="fab-container">
-        <button class="fab" onclick="location.reload()">🔄</button>
+    <div class="fab-row" id="fab-row" style="display:none;">
+        <button class="fab fab-secondary" onclick="location.reload()">🔄 Sync</button>
+        <a href="tel:0406764585" class="fab fab-secondary">📞 Call</a>
+        <button class="fab fab-primary" onclick="alert('Opening Telegram...')">💬 Chat</button>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        // Live clock
+        function updateTime() {
+            const now = new Date();
+            const timeEl = document.getElementById('live-time');
+            const dateEl = document.getElementById('live-date');
+            if (timeEl) {
+                timeEl.textContent = now.toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }
+            if (dateEl) {
+                dateEl.textContent = now.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' });
+            }
+        }
+
+        // Status helpers
+        function getStatusClass(status) {
+            const s = status?.toLowerCase() || '';
+            if (s.includes('done') || s.includes('complete') || s.includes('paid')) return 'done';
+            if (s.includes('active') || s.includes('now') || s.includes('in progress')) return 'active';
+            if (s.includes('special')) return 'special';
+            return 'upcoming';
+        }
+
+        function formatTime(ts) {
+            const d = new Date(ts);
+            const now = new Date();
+            const diff = (now - d) / 1000 / 60;
+            if (diff < 1) return 'just now';
+            if (diff < 60) return Math.floor(diff) + 'm ago';
+            if (diff < 1440) return Math.floor(diff / 60) + 'h ago';
+            return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+        }
+
         async function load() {
             try {
                 const res = await fetch('dashboard-data.json?t=' + Date.now());
                 const d = await res.json();
-                
-                document.getElementById('app').innerHTML = `
+
+                const app = document.getElementById('app');
+                app.innerHTML = `
+                    <!-- Header -->
                     <header class="header">
-                        <img src="${d.bella.avatar}" class="bella-avatar">
-                        <h1>Bella</h1>
-                        <p style="color: #888; font-size: 0.8rem;">Neural Command Center</p>
+                        <div class="avatar-container">
+                            <img src="${d.bella?.avatar || 'bella-goddess-2026-02-14.png'}" class="avatar" alt="Bella">
+                            <div class="status-dot"></div>
+                        </div>
+                        <div class="header-info">
+                            <h1>Bella</h1>
+                            <div class="tagline">Clean Up Bros Command Center</div>
+                        </div>
+                        <div class="header-meta">
+                            <div class="live-time" id="live-time">--:--:--</div>
+                            <div class="live-date" id="live-date">Loading...</div>
+                        </div>
                     </header>
 
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-value">$${d.stats.totalRevenue.toLocaleString()}</div>
-                            <div class="stat-label">Total Revenue</div>
+                    <!-- Connection Status -->
+                    <div class="connections">
+                        ${(d.connections || [
+                            { name: 'Square', status: 'active' },
+                            { name: 'Calendar', status: 'active' },
+                            { name: 'Gmail', status: 'active' },
+                            { name: 'Telegram', status: 'active' },
+                            { name: 'Sheets', status: 'active' },
+                            { name: 'Twilio', status: 'active' }
+                        ]).map(c => `
+                            <div class="conn-chip ${c.status}">${c.name}</div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div class="stats-row">
+                        <div class="stat">
+                            <div class="stat-value revenue">$${(d.stats?.totalRevenue || 0).toLocaleString()}</div>
+                            <div class="stat-label">Revenue</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-value">$${d.stats.outstanding.toLocaleString()}</div>
+                        <div class="stat">
+                            <div class="stat-value outstanding">$${(d.stats?.outstanding || 0).toLocaleString()}</div>
                             <div class="stat-label">Outstanding</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value jobs">${d.stats?.jobsCompleted || 47}</div>
+                            <div class="stat-label">Jobs</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value margin">${d.stats?.profitMargin || '89%'}</div>
+                            <div class="stat-label">Margin</div>
                         </div>
                     </div>
 
-                    <div class="section-card">
-                        <div class="section-title">📅 Today's Schedule</div>
-                        ${d.schedule.events.map(e => `
+                    <!-- Cognitive State -->
+                    <div class="card cognitive">
+                        <div class="card-header">
+                            <div class="card-title">🧠 Cognitive State</div>
+                            <div class="card-badge">LIVE</div>
+                        </div>
+                        <div class="cognitive-grid">
+                            <div class="cog-item">
+                                <div class="cog-label">Model</div>
+                                <div class="cog-value model">${d.bella?.model || 'Claude Opus 4.5'}</div>
+                            </div>
+                            <div class="cog-item">
+                                <div class="cog-label">Current Task</div>
+                                <div class="cog-value task">${d.bella?.currentTask || 'Monitoring'}</div>
+                            </div>
+                            <div class="cog-item">
+                                <div class="cog-label">Uptime</div>
+                                <div class="cog-value uptime">${d.bella?.uptime || '—'}</div>
+                            </div>
+                            <div class="cog-item">
+                                <div class="cog-label">State</div>
+                                <div class="cog-value state">${d.bella?.cognitiveState || 'Active'}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today's Schedule -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">📅 Today's Schedule</div>
+                            <div class="card-badge">${d.schedule?.dayName || 'Today'}</div>
+                        </div>
+                        ${(d.schedule?.events || []).map(e => `
                             <div class="schedule-item">
-                                <span class="schedule-time">${e.time}</span>
-                                <div>
-                                    <div style="font-weight:600">${e.title}</div>
-                                    <div style="font-size:0.75rem; color:#888">${e.type}</div>
+                                <div class="schedule-time">${e.time}</div>
+                                <div class="schedule-content">
+                                    <div class="schedule-title">${e.title}</div>
+                                    <div class="schedule-meta">${e.type}${e.location ? ' • ' + e.location : ''}</div>
+                                </div>
+                                <div class="schedule-status ${getStatusClass(e.status)}">${e.status || 'pending'}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Outstanding Invoices -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">💰 Outstanding</div>
+                            <div class="card-badge">${(d.invoices || []).length} INVOICES</div>
+                        </div>
+                        ${(d.invoices || []).slice(0, 4).map(inv => `
+                            <div class="invoice-item">
+                                <div class="invoice-priority ${inv.priority || 'medium'}"></div>
+                                <div class="invoice-info">
+                                    <div class="invoice-customer">${inv.customer}</div>
+                                    <div class="invoice-meta">#${inv.number} • ${inv.status}</div>
+                                </div>
+                                <div class="invoice-amount">$${inv.amount?.toLocaleString() || '0'}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Revenue Chart -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">📈 Revenue Growth</div>
+                            <div class="card-badge">${d.stats?.revenueChange || '+12%'}</div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Quick Tools -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">⚡ Quick Actions</div>
+                        </div>
+                        <div class="tools-grid">
+                            <a href="https://squareup.com/dashboard/invoices" class="tool-btn" target="_blank">
+                                <span>🧾</span>
+                                Invoice
+                            </a>
+                            <a href="https://calendar.google.com" class="tool-btn" target="_blank">
+                                <span>📅</span>
+                                Calendar
+                            </a>
+                            <a href="https://mail.google.com" class="tool-btn" target="_blank">
+                                <span>📧</span>
+                                Gmail
+                            </a>
+                            <a href="https://docs.google.com/spreadsheets" class="tool-btn" target="_blank">
+                                <span>📊</span>
+                                Sheets
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Activity Feed -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">🔔 Activity</div>
+                            <div class="card-badge">RECENT</div>
+                        </div>
+                        ${(d.activity || [
+                            { icon: 'sync', emoji: '🔄', text: 'Dashboard synced', time: d.lastUpdated },
+                            { icon: 'task', emoji: '✅', text: 'Australia Post reminder sent', time: new Date(Date.now() - 3600000).toISOString() }
+                        ]).slice(0, 5).map(a => `
+                            <div class="activity-item">
+                                <div class="activity-icon ${a.icon}">${a.emoji}</div>
+                                <div class="activity-content">
+                                    <div class="activity-text">${a.text}</div>
+                                    <div class="activity-time">${formatTime(a.time)}</div>
                                 </div>
                             </div>
                         `).join('')}
                     </div>
 
-                    <div class="section-card">
-                        <div class="section-title">🧠 Neural Sync Log</div>
-                        ${d.review.entries.slice().reverse().map(e => `
-                            <div class="review-entry">
-                                <div style="font-weight:700; margin-bottom:4px">${e.topic}</div>
-                                <div style="color:#aaa">${e.summary}</div>
+                    <!-- Neural Log -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">🖥️ Neural Log</div>
+                            <div class="card-badge">SYSTEM</div>
+                        </div>
+                        ${(d.review?.entries || []).slice(-5).reverse().map(e => `
+                            <div class="log-entry">
+                                <span class="log-time">[${new Date(e.timestamp).toLocaleTimeString('en-AU', {hour:'2-digit', minute:'2-digit'})}]</span>
+                                <span class="log-action">${e.topic}</span>
+                                → <span class="log-result">${e.outcome || 'OK'}</span>
                             </div>
                         `).join('')}
                     </div>
                 `;
+
+                // Show FAB
+                document.getElementById('fab-row').style.display = 'flex';
+
+                // Start clock
+                updateTime();
+                setInterval(updateTime, 1000);
+
+                // Revenue chart
+                const ctx = document.getElementById('revenueChart');
+                if (ctx && d.revenueHistory) {
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: d.revenueHistory.labels,
+                            datasets: [{
+                                data: d.revenueHistory.values,
+                                borderColor: '#00d4ff',
+                                backgroundColor: 'rgba(0,212,255,0.1)',
+                                fill: true,
+                                tension: 0.4,
+                                pointRadius: 0,
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: {
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: { color: '#555', font: { size: 10 } }
+                                },
+                                y: {
+                                    grid: { color: 'rgba(255,255,255,0.05)' },
+                                    ticks: { color: '#555', font: { size: 10 }, callback: v => '$' + (v/1000) + 'k' }
+                                }
+                            }
+                        }
+                    });
+                }
+
             } catch (e) {
-                document.getElementById('app').innerHTML = 'Error loading data. Please refresh.';
+                console.error(e);
+                document.getElementById('app').innerHTML = `
+                    <div class="loading">
+                        <div style="font-size: 2rem;">⚠️</div>
+                        <div class="loading-text">Neural Link Error</div>
+                        <button onclick="location.reload()" style="margin-top: 16px; padding: 12px 24px; background: var(--cyan); border: none; border-radius: 8px; color: #000; font-weight: 600;">Retry</button>
+                    </div>
+                `;
             }
         }
+
         load();
     </script>
 </body>

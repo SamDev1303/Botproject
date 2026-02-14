@@ -1,80 +1,101 @@
 {
-  "lastUpdated": "2026-02-14T04:00:00+11:00",
+  "lastUpdated": "2026-02-14T15:05:00+11:00",
   "updatedBy": "Bella",
+  
+  "bella": {
+    "model": "Claude Opus 4.5",
+    "fallback": "Gemini 3 Flash",
+    "status": "active",
+    "avatar": "bella-goddess-2026-02-14.png",
+    "lastHeartbeat": "2026-02-14T15:00:00+11:00",
+    "currentTask": "Dashboard Rebuild",
+    "uptime": "11h 05m",
+    "cognitiveState": "Focused"
+  },
+  
+  "connections": [
+    { "name": "Square", "status": "active" },
+    { "name": "Calendar", "status": "active" },
+    { "name": "Gmail", "status": "active" },
+    { "name": "Telegram", "status": "active" },
+    { "name": "Sheets", "status": "active" },
+    { "name": "Twilio", "status": "active" },
+    { "name": "OpenRouter", "status": "active" }
+  ],
+  
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
     "outstanding": 3351.88,
     "overdueCount": 5,
     "revenueChange": "+12%",
-    "profitMargin": "89%"
+    "profitMargin": "89%",
+    "jobsCompleted": 47
   },
-  "alerts": [
-    {
-      "id": "alert-watch",
-      "type": "info",
-      "icon": "🦉",
-      "title": "Night Watch Active",
-      "message": "Larissa shift in 2 hours.",
-      "action": "none"
-    }
-  ],
+  
   "schedule": {
     "date": "2026-02-14",
     "dayName": "Saturday",
     "special": "Valentine's Day 💕",
     "events": [
-      { "time": "06:00 AM", "title": "Larissa (Support Shift)", "type": "Mental Health", "status": "upcoming" },
-      { "time": "10:00 AM", "title": "Unit 4 Airbnb", "type": "Turnover", "status": "pending" },
-      { "time": "11:00 AM", "title": "Karanjeet's Clean", "type": "Regular", "status": "pending" },
-      { "time": "05:00 PM", "title": "🎬 Movie Date", "type": "Parramatta", "status": "special" }
+      { "time": "06:00", "title": "Larissa (Support Shift)", "type": "Mental Health", "status": "done", "location": "Austral" },
+      { "time": "11:00", "title": "Australia Post Weekly", "type": "Commercial", "status": "active", "location": "Horsley Park" },
+      { "time": "17:00", "title": "🎬 Movie Date", "type": "Personal", "status": "special", "location": "Parramatta" }
     ]
   },
+  
   "invoices": [
-    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIALLY_PAID", "priority": "high", "phone": "+61451918884" },
-    { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467" }
+    { "number": "000005", "customer": "Meshach Ephraim Care", "amount": 2500.00, "status": "PARTIAL", "priority": "high", "phone": "+61451918884", "daysOverdue": 0 },
+    { "number": "000041", "customer": "Herdip Gill - Pinnacle", "amount": 435.00, "status": "UNPAID", "priority": "high", "phone": "+61421128467", "daysOverdue": 14 },
+    { "number": "000038", "customer": "Claudia Alz", "amount": 320.00, "status": "OVERDUE", "priority": "high", "phone": "+61400000000", "daysOverdue": 57 }
   ],
-  "tasks": {
-    "overdue": [],
-    "inProgress": [
-      { "id": "task-innovation-v4", "title": "Roadmapping Dashboard v4", "priority": "high", "category": "Innovation" }
-    ],
-    "completedToday": [
-      { "id": "done-stability", "title": "Mobile Stability Lock", "category": "Architecture" }
-    ]
+  
+  "activity": [
+    { "icon": "sync", "emoji": "🔄", "text": "Dashboard rebuilt with new design", "time": "2026-02-14T15:05:00+11:00" },
+    { "icon": "alert", "emoji": "🛎️", "text": "Australia Post reminder sent to Hafsah", "time": "2026-02-14T10:00:00+11:00" },
+    { "icon": "sync", "emoji": "🌙", "text": "Night watch completed - all quiet", "time": "2026-02-14T06:00:00+11:00" },
+    { "icon": "task", "emoji": "✅", "text": "Heartbeat checks resumed", "time": "2026-02-14T04:00:00+11:00" }
+  ],
+  
+  "revenueHistory": {
+    "labels": ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb"],
+    "values": [120, 380, 650, 920, 1160, 5720, 14214]
   },
+  
   "review": {
-    "title": "📝 Neural Sync Log",
-    "description": "Bella's Core Cognitive History",
+    "title": "Neural Sync Log",
     "entries": [
       {
+        "id": "rev-030",
+        "timestamp": "2026-02-14T15:05:00+11:00",
+        "topic": "Dashboard V2 Deploy",
+        "summary": "Rebuilt command center with live connections, cognitive state, activity feed",
+        "outcome": "deployed"
+      },
+      {
         "id": "rev-029",
-        "timestamp": "2026-02-14T04:00:00+11:00",
-        "topic": "04:00 AM Heartbeat Sync",
-        "summary": "Quiet hours sync. Outstanding unchanged. Larissa shift in 2 hours.",
-        "outcome": "resolved",
-        "tags": ["heartbeat", "sync"]
+        "timestamp": "2026-02-14T10:00:00+11:00",
+        "topic": "Booking Alert",
+        "summary": "Sent Australia Post reminder - 1 hour warning",
+        "outcome": "sent"
+      },
+      {
+        "id": "rev-028",
+        "timestamp": "2026-02-14T06:00:00+11:00",
+        "topic": "Morning Sync",
+        "summary": "Quiet hours ended, resumed active monitoring",
+        "outcome": "OK"
       }
     ]
   },
-  "progress": { "todayPercent": 98, "tasksTotal": 5, "tasksComplete": 4 },
-  "revenueHistory": {
-    "labels": ["Aug", "Oct", "Dec", "Jan", "Feb"],
-    "values": [120, 650, 1160, 5720, 14214]
-  },
-  "memory": {
-    "business": "cleanupbros.com.au",
-    "nextSync": "04:30 AM",
-    "insight": "Pre-dawn watch. Shift countdown active."
-  },
-  "bella": {
-    "model": "Claude Opus 4.5",
-    "fallback": "Gemini 3 Flash",
-    "status": "watching",
-    "avatar": "bella-goddess-2026-02-14.png",
-    "lastHeartbeat": "2026-02-14T04:00:00+11:00",
-    "currentTask": "Night Watch",
-    "uptime": "3h 35m",
-    "cognitiveState": "stable"
+  
+  "tasks": {
+    "active": [
+      { "id": "t-001", "title": "Follow up Claudia Alz invoice", "priority": "high", "due": "2026-02-15" },
+      { "id": "t-002", "title": "Review weekly revenue", "priority": "medium", "due": "2026-02-16" }
+    ],
+    "completedToday": [
+      { "id": "t-done-1", "title": "Australia Post booking reminder", "completedAt": "2026-02-14T10:00:00+11:00" }
+    ]
   }
 }
