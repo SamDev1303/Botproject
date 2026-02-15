@@ -362,7 +362,7 @@
                 <img id="avatar" src="assets/bella-goddess-2026-02-14.png" alt="Bella">
             </div>
             <h2 id="bella-name">BELLA ELITE</h2>
-            <p id="bella-model">CORE v5.0</p>
+            <p id="bella-model">CORE v6.0</p>
         </div>
 
         <div class="menu-items" style="flex:1">
@@ -488,10 +488,15 @@
 
                 card.innerHTML = `
                     <div class="priority-chip" style="background: ${priorityColor}"></div>
-                    <h3>${t.title}</h3>
-                    <div class="card-footer">
-                        <span class="badge">${t.tag}</span>
-                        <div style="font-size: 0.6rem; color: var(--text-dim)">#${t.id || 'TASK'}</div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="font-size: 1.5rem">${t.icon || '📄'}</span>
+                        <div style="flex: 1">
+                            <h3 style="margin-bottom: 8px">${t.title}</h3>
+                            <div class="card-footer">
+                                <span class="badge">${t.tag}</span>
+                                <div style="font-size: 0.6rem; color: var(--text-dim)">#${t.id || 'TASK'}</div>
+                            </div>
+                        </div>
                     </div>
                 `;
 
@@ -499,13 +504,14 @@
                     toggleDetails(`
                         <h2 style="margin-bottom: 20px; font-weight: 400">${t.title}</h2>
                         <div class="tag" style="display:inline-block; margin-bottom: 30px">${t.tag}</div>
-                        <p style="color: var(--text-dim); line-height: 1.8; margin-bottom: 30px">
+                        <p style="color: var(--text-dim); line-height: 1.8; margin-bottom: 32px">
+                            ${t.title}<br><br>
                             This task is currently in ${id.replace('tasks-', '')} status. 
                             Priority level is ${t.priority.toUpperCase()}.
                         </p>
                         <div style="background: var(--glass); padding: 20px; border-radius: 12px; border: 1px solid var(--border)">
-                            <h4 style="margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase">System Context</h4>
-                            <p style="font-size: 0.85rem; color: var(--accent)">Analyzing memory nodes for relevant dependencies...</p>
+                            <h4 style="margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase">System Intelligence</h4>
+                            <p style="font-size: 0.85rem; color: var(--accent)">Neural node link verified. Context updated via Active Memory Sync.</p>
                         </div>
                     `);
                 };
