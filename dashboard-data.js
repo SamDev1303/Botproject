@@ -1,6 +1,7 @@
 window.dashboardData = {
-  "lastUpdated": "2026-02-15T13:31:16.661522",
-  "updatedBy": "Bella Memory Bridge",
+  "lastUpdated": "2026-02-15T13:34:54.978778",
+  "updatedBy": "Bella Neural Engine",
+  "system_state": "ACTIVE",
   "stats": {
     "totalRevenue": 14214.42,
     "netProfit": 12673.54,
@@ -28,25 +29,25 @@ window.dashboardData = {
     ],
     "done": [
       {
-        "id": "c-857650",
+        "id": "c-760907",
         "title": "Switched primary LLM from Gemini to Claude (anthropic/claude-sonnet-4-20250514)",
         "tag": "Completed",
         "priority": "low"
       },
       {
-        "id": "c-457930",
+        "id": "c--85763",
         "title": "Reorganised project structure (moved scripts, docs, memory files)",
         "tag": "Completed",
         "priority": "low"
       },
       {
-        "id": "c--45596",
+        "id": "c-106797",
         "title": "Removed duplicate files (GEMINI.md, temp_google_creds.json)",
         "tag": "Completed",
         "priority": "low"
       },
       {
-        "id": "c-776622",
+        "id": "c-613079",
         "title": "Updated all documentation (CLAUDE.md, HEARTBEAT.md, TOOLS.md, MEMORY.md, BELLA.md)",
         "tag": "Completed",
         "priority": "low"
@@ -54,7 +55,8 @@ window.dashboardData = {
     ]
   },
   "bella": {
-    "model": "Claude Opus 4.5",
-    "avatar": "assets/bella-goddess-2026-02-14.png"
+    "model": "LLM switched to Claude Code. Project structure reorganised. All docs updated 14/02/2026.",
+    "avatar": "assets/bella-goddess-2026-02-14.png",
+    "soul_frequency": "1.2Hz"
   }
 }
