@@ -1,10 +1,10 @@
 {
-  "updated": "2026-02-02T00:00:00+11:00",
+  "updated": "2026-02-14T00:00:00+11:00",
   "schema_version": "1.0",
   "active_tasks": [
     {
       "id": "task-001",
-      "description": "Follow up with Claudia Alz for $320 payment (45 days overdue)",
+      "description": "Follow up with Claudia Alz for $320 payment (~57 days overdue)",
       "status": "pending",
       "priority": "high",
       "created": "2026-02-01",
@@ -20,11 +20,18 @@
       "category": "payment_tracking"
     }
   ],
-  "completed_today": [],
-  "recent_actions": [
-    "Updated Phase 1 security improvements to GitHub",
-    "Created comprehensive memory architecture",
-    "Updated README with detailed installation guide"
+  "completed_today": [
+    "Switched primary LLM from Gemini to Claude (anthropic/claude-sonnet-4-20250514)",
+    "Reorganised project structure (moved scripts, docs, memory files)",
+    "Removed duplicate files (GEMINI.md, temp_google_creds.json)",
+    "Updated all documentation (CLAUDE.md, HEARTBEAT.md, TOOLS.md, MEMORY.md, BELLA.md)"
   ],
-  "notes": "Memory system overhaul in progress - implementing hierarchical architecture"
+  "recent_actions": [
+    "LLM switch: Gemini → Claude in clawdbot.json and auth-profiles.json",
+    "Moved 9 Python scripts from root to scripts/",
+    "Moved 7 doc files to docs/ subdirectories",
+    "Moved 3 memory files to proper locations",
+    "Updated CLAUDE.md with tool usage priority tiers"
+  ],
+  "notes": "LLM switched to Claude Code. Project structure reorganised. All docs updated 14/02/2026."
 }

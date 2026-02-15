@@ -2,7 +2,7 @@
 
 **GitHub:** https://github.com/SamDev1303/Botproject
 **Started:** 2026-01-31
-**Last Updated:** 2026-02-02
+**Last Updated:** 2026-02-14
 **Current Phase:** Phase 2 (Logging & Monitoring) - 50% complete
 
 ---
@@ -190,7 +190,20 @@
 **Files Changed:** 21
 **Insertions:** 1,497+
 
-**Session Log:** `SESSION-2026-02-02.md`
+**Session Log:** `memory/sessions/2026-02/SESSION-2026-02-02.md`
+
+---
+
+### Session 2026-02-14 (Current)
+**Completed:**
+- ✅ **LLM switched from Gemini → Claude** (anthropic/claude-sonnet-4-20250514)
+- ✅ Project reorganised (9 scripts, 7 docs, 3 memory files moved)
+- ✅ Duplicate files removed (GEMINI.md, temp_google_creds.json)
+- ✅ All documentation updated (CLAUDE.md, HEARTBEAT.md, TOOLS.md, MEMORY.md, BELLA.md)
+- ✅ Tool usage priority analysis added
+
+**Files Moved:** 19+
+**Files Removed:** 2 duplicates
 
 ---
 
@@ -237,8 +250,8 @@
 
 | Item | Location |
 |------|----------|
-| **Latest Session Log** | `SESSION-2026-02-02.md` |
-| **Project Instructions** | `CLAUDE.md` / `GEMINI.md` |
+| **Latest Session Log** | `memory/sessions/2026-02/` |
+| **Project Instructions** | `CLAUDE.md` |
 | **Memory Architecture** | `MEMORY_ARCHITECTURE.md` |
 | **Improvement Plan** | Original plan in session logs |
 | **Current Tasks** | `memory/working/current-tasks.json` |

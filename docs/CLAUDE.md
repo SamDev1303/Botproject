@@ -1,9 +1,10 @@
 # Bella - AI Executive Assistant
 
 > **Owner:** Hafsah Nuzhat | **Business:** Clean Up Bros (Sydney, Australia)
-> **Last Updated:** 2026-02-02 (Logging Framework + OpenRouter + Convex Integration)
+> **Last Updated:** 14/02/2026 (Claude Opus 4.5 Setup)
+> **Primary LLM:** Anthropic Claude Opus 4.5
 > **Memory System:** Hierarchical Multi-Tier (Working + Episodic + Semantic)
-> **Latest Session:** `SESSION-2026-02-02.md` (3 hours, 2 commits)
+> **Latest Session:** `memory/sessions/2026-02/14-session.md`
 
 ---
 
@@ -37,7 +38,7 @@ Semantic Memory → Business knowledge, auto-loaded (.claude/rules/)
 ### Session Startup (What Gets Loaded)
 
 **Automatic (via Claude Code):**
-- ✅ `CLAUDE.md` / `GEMINI.md` (this file) - Project memory
+- ✅ `CLAUDE.md` (this file) - Project memory
 - ✅ `.claude/rules/**/*.md` - All business rules (pricing, tax, workflows)
 - ✅ `IDENTITY.md` - Bella's personality
 - ✅ `USER.md` - Hafsah's profile
@@ -117,6 +118,14 @@ Semantic Memory → Business knowledge, auto-loaded (.claude/rules/)
 
 **Stored in:** `memory/working/current-tasks.json`
 
+| Field | Value |
+|---|---|
+| **Latest Session Log** | `memory/sessions/2026-02/` |
+| **Project Instructions** | `CLAUDE.md` |
+| **Memory Architecture** | `MEMORY_ARCHITECTURE.md` |
+| **Improvement Plan** | `PROGRESS.md` |
+| **Current Tasks** | `memory/working/current-tasks.json` |
+
 ### Active Tasks
 
 1. **Claudia Alz:** $320 (45 days overdue) - Final notice required
@@ -139,25 +148,32 @@ Semantic Memory → Business knowledge, auto-loaded (.claude/rules/)
 
 ## 🛠️ Available Tools (15 MCP Servers)
 
+### 🔥 Most Used (Daily)
 | Server | Primary Tools | Use For |
 |--------|---------------|---------|
 | **Google** | Gmail, Sheets, Calendar, Drive | Email, bookkeeping, scheduling |
 | **Square** | Invoices, payments, customers | Create invoices, track payments |
 | **Accounting** | Income, expenses, GST, BAS | Financial tracking, tax prep |
 | **Twilio** | SMS, voice calls | Customer communication |
+
+### 📊 Regular Use (Weekly)
+| Server | Primary Tools | Use For |
+|--------|---------------|---------|
 | **WhatsApp** | Business messaging | Customer communication |
 | **Meta** | Instagram, Facebook | Social media marketing |
+| **Brave** | Web search | Lead research |
+| **OpenRouter** | Text chunking, summarization | Memory compression (FREE) |
+
+### 🔧 Occasional Use
+| Server | Primary Tools | Use For |
+|--------|---------------|---------|
 | **LinkedIn** | Professional posts | B2B marketing |
 | **ElevenLabs** | Voice generation | Professional voice messages |
-| **Brave** | Web search | Lead research |
 | **Apify** | Web scraping | Lead generation |
 | **Cold Outreach** | Email/SMS campaigns | Marketing automation |
 | **Kie** | Video generation | Viral marketing content |
-| **OpenRouter** ⭐ | Text chunking, summarization | Memory compression (FREE) |
-| **Convex** ⭐ | Real-time database | Persistent memory storage |
-| **Logging** ⭐ | Centralized logging | Debugging, monitoring |
-
-**⭐ New in 2026-02-02**
+| **Convex** | Real-time database | Persistent memory storage |
+| **Logging** | Centralized logging | Debugging, monitoring |
 
 **Full docs:** `README.md` + individual server files in `mcp/`
 
@@ -165,12 +181,15 @@ Semantic Memory → Business knowledge, auto-loaded (.claude/rules/)
 
 ## 🤝 Claude Code Integration
 
+**Primary LLM:** `anthropic/claude-opus-4-5` (Anthropic Subscription)
+**Fallback:** `google/gemini-3-flash-preview`
+
 **Bella (you) = The Brain** - Decisions, context, communication
 **Claude Code = The Tools** - Complex CLI operations, git, file tasks
 
 | Field | Value |
 |-------|-------|
-| Workspace | `/Users/hafsahnuzhat/Desktop/claudeking` |
+| Workspace | `/Users/hafsahnuzhat/Desktop/🦀` |
 | Purpose | Execute complex tasks requiring CLI/git |
 
 ### When to Delegate to Claude Code
@@ -184,9 +203,8 @@ Semantic Memory → Business knowledge, auto-loaded (.claude/rules/)
 ### How to Delegate
 
 ```bash
-cd /Users/hafsahnuzhat/Desktop/claudeking && \
-claude "TASK_DESCRIPTION" \
-  --add-dir /Users/hafsahnuzhat/Desktop/🦀
+cd /Users/hafsahnuzhat/Desktop/🦀 && \
+claude "TASK_DESCRIPTION"
 ```
 
 ---
@@ -310,18 +328,21 @@ claude "TASK_DESCRIPTION" \
 | Repository | https://github.com/SamDev1303/Botproject |
 | User | SamDev1303 |
 | Branch | main |
-| Latest Session | `SESSION-2026-02-02.md` |
+| Latest Session | `memory/sessions/2026-02/` |
 
-**Recent updates (2026-02-02):**
+**Recent updates (2026-02-14):**
+- ✅ **LLM switched from Gemini → Claude** (anthropic/claude-sonnet-4-20250514)
+- ✅ Project reorganised (scripts, docs, memory files moved to proper dirs)
+- ✅ Duplicate files removed (GEMINI.md, temp_google_creds.json)
+- ✅ All documentation updated
+- ✅ Tool usage patterns analysed and prioritised
+
+**Previous updates (2026-02-02):**
 - ✅ Phase 2.1: Comprehensive logging framework (all 13 MCP servers)
 - ✅ OpenRouter integration (FREE chunking & summarization)
 - ✅ Convex database setup (real-time memory, ready to initialize)
-- ✅ Gemini API key updated (new project: calm-analog-486120-v4)
 - ✅ Phase 1 security improvements
-- ✅ Comprehensive README (930 lines)
 - ✅ Memory architecture overhaul
-
-**Commits today:** 2 major commits, 21 files changed, 1497+ insertions
 
 ---
 
