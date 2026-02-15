@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella - Neural Kanban</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0d1117;
+            --bg-col: #161b22;
+            --bg-card: #21262d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #238636;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-col);
+        }
+        h1 { margin: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .refresh-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .refresh-btn:hover { background: #30363d; }
+        
+        .board {
+            flex: 1;
+            display: flex;
+            padding: 24px;
+            gap: 24px;
+            overflow-x: auto;
+        }
+        
+        .column {
+            background: var(--bg-col);
+            min-width: 300px;
+            max-width: 350px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+        }
+        
+        .col-header {
+            padding: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .task-list {
+            padding: 12px;
+            overflow-y: auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .task-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            cursor: move;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-color: var(--text-muted);
+        }
+        
+        .tag {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .tag.Finance { color: var(--accent-green); background: rgba(35, 134, 54, 0.2); }
+        .tag.Innovation { color: var(--accent-purple); background: rgba(163, 113, 247, 0.15); }
+        
+        .count-badge {
+            background: var(--border);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .meta {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .priority-high { color: #ff7b72; font-weight: 600; }
+        
+        /* Dragula drag styles if added later */
+        .gu-mirror { position: fixed !important; margin: 0 !important; z-index: 9999 !important; opacity: 0.8; }
+        .gu-hide { display: none !important; }
+        .gu-unselectable { user-select: none !important; }
+        .gu-transit { opacity: 0.2; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🦁 Bella Command Center</h1>
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
+    </header>
+
+    <div class="board" id="board">
+        <div class="column">
+            <div class="col-header">
+                To Do <span class="count-badge" id="count-todo">0</span>
+            </div>
+            <div class="task-list" id="col-todo">
+                <!-- Tasks injected here -->
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-header">
+                In Progress <span class="count-badge" id="count-inprogress">0</span>
+            </div>
+            <div class="task-list" id="col-inprogress">
+                <!-- Tasks injected here -->
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-header">
+                Done <span class="count-badge" id="count-done">0</span>
+            </div>
+            <div class="task-list" id="col-done">
+                <!-- Tasks injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadBoard() {
+            try {
+                const res = await fetch('dashboard-data.json?t=' + Date.now());
+                const data = await res.json();
+                
+                renderColumn('col-todo', data.tasks.todo, 'count-todo');
+                renderColumn('col-inprogress', data.tasks.in_progress, 'count-inprogress');
+                renderColumn('col-done', data.tasks.done, 'count-done');
+
+            } catch (e) {
+                console.error("Failed to load dashboard data", e);
+            }
+        }
+
+        function renderColumn(colId, tasks, countId) {
+            const container = document.getElementById(colId);
+            container.innerHTML = '';
+            document.getElementById(countId).innerText = tasks ? tasks.length : 0;
+            
+            if (!tasks) return;
+
+            tasks.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'task-card';
+                card.innerHTML = `
+                    <div style="font-weight: 500">${t.title}</div>
+                    <div class="meta">
+                        ${t.priority ? `<span class="priority-${t.priority}">${t.priority.toUpperCase()}</span>` : '<span></span>'}
+                    </div>
+                    ${t.tag ? `<span class="tag ${t.tag}">${t.tag}</span>` : ''}
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        loadBoard();
+        // Auto-refresh every 30s
+        setInterval(loadBoard, 30000);
+    </script>
+</body>
+</html>
