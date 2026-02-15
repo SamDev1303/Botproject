@@ -4,262 +4,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella - Neural Kanban</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>🦁 Bella Neural Dashboard v4</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --bg-body: #0d1117;
-            --bg-col: #161b22;
-            --bg-card: #21262d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent-blue: #58a6ff;
-            --accent-green: #238636;
-            --accent-purple: #a371f7;
-            --border: #30363d;
+            --bg: #05070a;
+            --panel: rgba(13, 17, 23, 0.7);
+            --accent: #7c4dff;
+            --accent-glow: rgba(124, 77, 255, 0.3);
+            --text: #e6edf3;
+            --text-dim: #8b949e;
+            --border: rgba(48, 54, 61, 0.5);
+            --glass: rgba(255, 255, 255, 0.03);
+
+            --high: #ff5252;
+            --medium: #ffab40;
+            --low: #448aff;
+            --critical: #d500f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-body);
-            color: var(--text-main);
-            margin: 0;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(124, 77, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 184, 212, 0.05) 0%, transparent 40%);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
             height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
+        /* --- Global Header / Metrics Bar --- */
         header {
-            padding: 16px 24px;
+            padding: 20px 40px;
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--bg-col);
+            z-index: 100;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 1.2rem;
+        .brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .refresh-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
+        .brand h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .refresh-btn:hover {
-            background: #30363d;
-        }
-
-        .board {
-            flex: 1;
+        .metrics-grid {
             display: flex;
-            padding: 24px;
-            gap: 24px;
+            gap: 30px;
+        }
+
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .metric-value.trend-up {
+            color: #00e676;
+        }
+
+        /* --- Main Content --- */
+        main {
+            flex: 1;
+            padding: 30px 40px;
+            display: flex;
+            gap: 25px;
             overflow-x: auto;
         }
 
         .column {
-            background: var(--bg-col);
-            min-width: 300px;
-            max-width: 350px;
-            border-radius: 12px;
+            flex: 1;
+            min-width: 350px;
+            background: var(--panel);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
+            border-radius: 16px;
             display: flex;
             flex-direction: column;
-            max-height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .column:hover {
+            border-color: var(--accent);
         }
 
         .col-header {
-            padding: 16px;
-            font-weight: 600;
+            padding: 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .task-list {
-            padding: 12px;
-            overflow-y: auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .task-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 12px;
-            cursor: move;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .task-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            border-color: var(--text-muted);
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 12px;
-            background: rgba(88, 166, 255, 0.15);
-            color: var(--accent-blue);
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .tag.Finance {
-            color: var(--accent-green);
-            background: rgba(35, 134, 54, 0.2);
-        }
-
-        .tag.Innovation {
-            color: var(--accent-purple);
-            background: rgba(163, 113, 247, 0.15);
+        .col-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
         }
 
         .count-badge {
-            background: var(--border);
-            padding: 2px 8px;
-            border-radius: 12px;
+            background: var(--glass);
+            padding: 2px 10px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            color: var(--text-muted);
+            border: 1px solid var(--border);
         }
 
-        .meta {
-            margin-top: 8px;
+        .task-list {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* --- Task Cards --- */
+        .task-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+            border-color: rgba(124, 77, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-title {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .task-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.75rem;
-            color: var(--text-muted);
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(124, 77, 255, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(124, 77, 255, 0.2);
+            text-transform: uppercase;
+        }
+
+        .priority-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
         }
 
         .priority-high {
-            color: #ff7b72;
-            font-weight: 600;
+            background-color: var(--high);
+            box-shadow: 0 0 8px var(--high);
         }
 
-        /* Dragula drag styles if added later */
-        .gu-mirror {
-            position: fixed !important;
-            margin: 0 !important;
-            z-index: 9999 !important;
-            opacity: 0.8;
+        .priority-medium {
+            background-color: var(--medium);
+            box-shadow: 0 0 8px var(--medium);
         }
 
-        .gu-hide {
-            display: none !important;
+        .priority-low {
+            background-color: var(--low);
+            box-shadow: 0 0 8px var(--low);
         }
 
-        .gu-unselectable {
-            user-select: none !important;
+        .priority-critical {
+            background-color: var(--critical);
+            box-shadow: 0 0 8px var(--critical);
         }
 
-        .gu-transit {
-            opacity: 0.2;
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-dim);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 10px 40px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+        }
+
+        #status-light {
+            width: 8px;
+            height: 8px;
+            background: #00e676;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            box-shadow: 0 0 10px #00e676;
+        }
+
+        /* --- Animation --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .task-card {
+            animation: fadeIn 0.4s ease forwards;
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <h1>🦁 Bella Command Center</h1>
-        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh</button>
+        <div class="brand">
+            <span style="font-size: 1.5rem">🦁</span>
+            <div>
+                <h1>BELLA NEURAL</h1>
+                <div style="font-size: 0.7rem; color: var(--accent); letter-spacing: 2px;">COMMAND v4.0</div>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">Daily Revenue</span>
+                <span class="metric-value" id="stat-revenue">$0.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">Net Profit</span>
+                <span class="metric-value" id="stat-profit">$0.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">Outstanding</span>
+                <span class="metric-value trend-up" id="stat-outstanding">$0.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">Margin</span>
+                <span class="metric-value" id="stat-margin">0%</span>
+            </div>
+        </div>
     </header>
 
-    <div class="board" id="board">
+    <main id="board">
         <div class="column">
             <div class="col-header">
-                To Do <span class="count-badge" id="count-todo">0</span>
+                <span class="col-title">To Do</span>
+                <span class="count-badge" id="count-todo">0</span>
             </div>
-            <div class="task-list" id="col-todo">
-                <!-- Tasks injected here -->
-            </div>
+            <div class="task-list" id="col-todo"></div>
         </div>
 
         <div class="column">
             <div class="col-header">
-                In Progress <span class="count-badge" id="count-inprogress">0</span>
+                <span class="col-title">In Progress</span>
+                <span class="count-badge" id="count-inprogress">0</span>
             </div>
-            <div class="task-list" id="col-inprogress">
-                <!-- Tasks injected here -->
-            </div>
+            <div class="task-list" id="col-inprogress"></div>
         </div>
 
         <div class="column">
             <div class="col-header">
-                Done <span class="count-badge" id="count-done">0</span>
+                <span class="col-title">Completed</span>
+                <span class="count-badge" id="count-done">0</span>
             </div>
-            <div class="task-list" id="col-done">
-                <!-- Tasks injected here -->
-            </div>
+            <div class="task-list" id="col-done"></div>
         </div>
-    </div>
+    </main>
 
-    <!-- Load data first -->
+    <footer>
+        <div>
+            <span id="status-light"></span>
+            SYNCED WITH BELLA MEMORY
+        </div>
+        <div id="last-updated">LAST UPDATED: NEVER</div>
+    </footer>
+
+    <!-- Load data bridge -->
     <script src="dashboard-data.js"></script>
 
     <script>
-        async function loadBoard() {
-            try {
-                // Use the global variable if available, otherwise try fetch as backup (though we prefer variable)
-                let data = window.dashboardData;
+        function render() {
+            const data = window.dashboardData;
+            if (!data) return;
 
-                if (!data) {
-                    // Fallback for dev/debug
-                    console.log("Global data not found, try fetching JSON...");
-                    const res = await fetch('dashboard-data.json?t=' + Date.now());
-                    data = await res.json();
-                }
+            // Updated Stats
+            document.getElementById('stat-revenue').innerText = '$' + data.stats.totalRevenue.toLocaleString();
+            document.getElementById('stat-profit').innerText = '$' + data.stats.netProfit.toLocaleString();
+            document.getElementById('stat-outstanding').innerText = '$' + data.stats.outstanding.toLocaleString();
+            document.getElementById('stat-margin').innerText = data.stats.profitMargin;
+            document.getElementById('last-updated').innerText = 'LAST SYSTEM SYNC: ' + new Date(data.lastUpdated).toLocaleTimeString();
 
-                renderColumn('col-todo', data.tasks.todo, 'count-todo');
-                renderColumn('col-inprogress', data.tasks.in_progress, 'count-inprogress');
-                renderColumn('col-done', data.tasks.done, 'count-done');
-
-            } catch (e) {
-                console.error("Failed to load dashboard data", e);
-                document.getElementById('board').innerHTML = '<div style="padding:20px;color:red">Error loading data. Check console.</div>';
-            }
+            // Render Columns
+            renderCol('col-todo', data.tasks.todo, 'count-todo');
+            renderCol('col-inprogress', data.tasks.in_progress, 'count-inprogress');
+            renderCol('col-done', data.tasks.done, 'count-done');
         }
 
-        function renderColumn(colId, tasks, countId) {
-            const container = document.getElementById(colId);
+        function renderCol(id, tasks, countId) {
+            const container = document.getElementById(id);
             container.innerHTML = '';
-            document.getElementById(countId).innerText = tasks ? tasks.length : 0;
+            document.getElementById(countId).innerText = tasks.length;
 
-            if (!tasks) return;
-
-            tasks.forEach(t => {
+            tasks.forEach((t, index) => {
                 const card = document.createElement('div');
                 card.className = 'task-card';
+                card.style.animationDelay = (index * 0.05) + 's';
+
                 card.innerHTML = `
-                    <div style="font-weight: 500">${t.title}</div>
-                    <div class="meta">
-                        ${t.priority ? `<span class="priority-${t.priority}">${t.priority.toUpperCase()}</span>` : '<span></span>'}
+                    <div class="task-title">${t.title}</div>
+                    <div class="task-meta">
+                        <span class="tag">${t.tag}</span>
+                        <span class="priority-dot priority-${t.priority}"></span>
                     </div>
-                    ${t.tag ? `<span class="tag ${t.tag}">${t.tag}</span>` : ''}
                 `;
                 container.appendChild(card);
             });
         }
 
-        loadBoard();
-        // Auto-refresh every 30s
-        setInterval(() => window.location.reload(), 30000);
+        render();
+        // Visual refresh every 60s
+        setInterval(() => window.location.reload(), 60000);
     </script>
 </body>
 
