@@ -3,69 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BELLA OS | MOBILE</title>
+    <title>BELLA OS | TERMINAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; }
-        .app-container { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { width: 100%; height: 100%; background: #000; color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; overflow: hidden; font-size: 10px; }
+        .app { display: flex; flex-direction: column; height: 100vh; width: 100vw; border: 1px solid #111; }
         
-        header { height: 36px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; background: #050505; shrink: 0; }
-        .logo { font-weight: 900; font-style: italic; font-size: 12px; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        main { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 2px; min-height: 0; }
-        
-        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; height: 38px; shrink: 0; }
-        .stat-card { background: #0d0d0d; border: 1px solid #222; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .stat-label { font-size: 7px; font-weight: 800; color: #555; text-transform: uppercase; }
-        .stat-value { font-size: 11px; font-weight: 900; line-height: 1; }
+        /* HEADER: SINGLE LINE */
+        header { height: 22px; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; padding: 0 6px; background: #080808; shrink: 0; }
+        .logo { font-weight: 900; color: #6366f1; }
+        .ticker { flex: 1; overflow: hidden; white-space: nowrap; margin: 0 10px; color: #444; }
 
-        .middle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; flex: 1; min-height: 0; }
-        .box { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 4px; padding: 4px; display: flex; flex-direction: column; min-height: 0; }
-        .box-label { font-size: 7px; font-weight: 900; color: #333; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; }
-        .scroll-list { flex: 1; overflow-y: auto; font-size: 8px; line-height: 1.1; }
-        .scroll-list::-webkit-scrollbar { display: none; }
-        .item { padding: 2px 0; border-bottom: 1px solid #121212; }
+        /* STATS: ULTRA SLIM */
+        .vitals { display: flex; height: 28px; border-bottom: 1px solid #222; shrink: 0; background: #050505; }
+        .stat { flex: 1; border-right: 1px solid #222; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .stat:last-child { border-right: none; }
+        .val { font-weight: 900; font-size: 12px; }
+        .lab { font-size: 7px; color: #555; font-weight: 800; }
+
+        /* CORE GRID: 100% HEIGHT FILL */
+        main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0; min-height: 0; }
+        .cell { border-right: 1px solid #111; border-bottom: 1px solid #111; padding: 4px; display: flex; flex-direction: column; min-height: 0; position: relative; }
+        .cell:nth-child(2n) { border-right: none; }
+        .cell:nth-child(n+3) { border-bottom: none; }
+        .cell-label { font-size: 7px; font-weight: 900; color: #222; position: absolute; top: 2px; right: 4px; z-index: 10; text-transform: uppercase; }
         
-        .bottom-section { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 4px; padding: 4px; height: 80px; shrink: 0; }
-        
-        .pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .list { flex: 1; overflow-y: auto; }
+        .list::-webkit-scrollbar { display: none; }
+        .row { padding: 3px 0; border-bottom: 1px solid #080808; word-break: break-all; }
+        .row b { color: #6366f1; }
+        .row span { color: #555; font-size: 8px; }
+
+        /* SYSTEM PULSE */
+        .pulse { width: 4px; height: 4px; background: #10b981; border-radius: 50%; display: inline-block; box-shadow: 0 0 5px #10b981; }
     </style>
 </head>
 <body>
-    <div class="app-container">
+    <div class="app">
         <header>
-            <div class="logo uppercase tracking-tighter">BELLA OS</div>
-            <div id="ticker" class="text-[9px] font-mono flex gap-2 overflow-hidden px-4"></div>
-            <div class="flex items-center gap-1">
-                <div class="w-1 h-1 bg-green-500 rounded-full pulse"></div>
-                <span id="clock" class="text-[9px] font-mono text-gray-600 uppercase">--:--</span>
+            <div class="logo">BELLA_OS_v2.6</div>
+            <div id="ticker" class="ticker">--</div>
+            <div class="flex items-center gap-2">
+                <span id="time" style="color:#666;">--:--</span>
+                <div class="pulse"></div>
             </div>
         </header>
 
+        <div class="vitals">
+            <div class="stat"><span class="lab">REV</span><b class="val" id="v-rev">--</b></div>
+            <div class="stat"><span class="lab">DUE</span><b class="val text-orange-600" id="v-due">--</b></div>
+            <div class="stat"><span class="lab">LEAD</span><b class="val text-emerald-500" id="v-lead">--</b></div>
+        </div>
+
         <main>
-            <div class="stats-row">
-                <div class="stat-card"><p class="stat-label">REV</p><b class="stat-value" id="val-rev">--</b></div>
-                <div class="stat-card"><p class="stat-label">DUE</p><b class="stat-value text-orange-500" id="val-due">--</b></div>
-                <div class="stat-card"><p class="stat-label">LEAD</p><b class="stat-value text-green-500" id="val-lead">--</b></div>
+            <div class="cell">
+                <div class="cell-label">Neural_Streams</div>
+                <div id="tasks" class="list"></div>
             </div>
-
-            <div class="middle-grid">
-                <div class="box">
-                    <div class="box-label"><span>STREAMS</span><i class="fas fa-bolt text-indigo-900"></i></div>
-                    <div id="tasks" class="scroll-list"></div>
-                </div>
-                <div class="box">
-                    <div class="box-label"><span>CRONS</span><i class="fas fa-clock text-gray-900"></i></div>
-                    <div id="crons" class="scroll-list"></div>
-                </div>
+            <div class="cell">
+                <div class="cell-label">Active_Crons</div>
+                <div id="crons" class="list"></div>
             </div>
-
-            <div class="bottom-section">
-                <div class="box-label"><span>PATTERNS</span><i class="fas fa-brain text-purple-900"></i></div>
-                <div id="patterns" class="scroll-list"></div>
+            <div class="cell" style="grid-column: span 2;">
+                <div class="cell-label">Intelligence_Patterns</div>
+                <div id="patterns" class="list"></div>
             </div>
         </main>
     </div>
@@ -75,23 +77,19 @@
             try {
                 const r = await fetch('dashboard-data.json?v=' + Date.now());
                 const d = await r.json();
-                document.getElementById('clock').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-                document.getElementById('val-rev').innerText = d.stats?.revenueMTD || '--';
-                document.getElementById('val-due').innerText = d.stats?.unpaidInvoices || '--';
-                document.getElementById('val-lead').innerText = d.stats?.leads || '--';
-
+                document.getElementById('time').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
+                document.getElementById('v-rev').innerText = d.stats?.revenueMTD || '--';
+                document.getElementById('v-due').innerText = d.stats?.unpaidInvoices || '--';
+                document.getElementById('v-lead').innerText = d.stats?.leads || '--';
                 if (d.portfolio) {
-                    document.getElementById('ticker').innerHTML = d.portfolio.map(s => `
-                        <span class="whitespace-nowrap font-bold">${s.ticker} <span class="${s.change >= 0 ? 'text-green-500' : 'text-red-500'} text-[7px]">${s.change}%</span></span>
-                    `).join('');
+                    document.getElementById('ticker').innerHTML = d.portfolio.map(s => `${s.ticker}:${s.change}%`).join(' | ');
                 }
-
-                document.getElementById('tasks').innerHTML = d.liveTasks.map(t => `<div class="item"><b>${t.label}</b>: ${t.status}</div>`).join('');
-                document.getElementById('crons').innerHTML = d.crons.map(c => `<div class="item"><b>${c.name}</b> <span class="text-gray-500">${c.schedule.expr}</span></div>`).join('');
-                document.getElementById('patterns').innerHTML = d.patterns.map(p => `<div class="item text-gray-400">"${p.description}"</div>`).join('');
+                document.getElementById('tasks').innerHTML = d.liveTasks.map(t => `<div class="row"><b>${t.label}</b><br>${t.status}</div>`).join('');
+                document.getElementById('crons').innerHTML = d.crons.map(c => `<div class="row"><b>${c.name}</b><br><span>${c.schedule.expr}</span></div>`).join('');
+                document.getElementById('patterns').innerHTML = d.patterns.map(p => `<div class="row" style="color:#bbb;">> ${p.description} <span style="font-size:7px;">[${p.date}]</span></div>`).join('');
             } catch(e) {}
         }
-        setInterval(sync, 15000);
+        setInterval(sync, 10000);
         sync();
     </script>
 </body>
