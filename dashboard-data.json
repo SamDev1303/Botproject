@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T07:20:00Z",
+  "updatedAt": "2026-02-17T07:25:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "12",
@@ -23,22 +23,32 @@
       "enabled": true,
       "schedule": { "expr": "0 7 * * *" },
       "payload": { "text": "Post transformation reel to Clean Up Bros FB + IG." }
+    },
+    {
+      "name": "dashboard-live-sync-5min",
+      "enabled": true,
+      "schedule": { "expr": "*/5 * * * *" },
+      "payload": { "text": "Update the Bella Dashboard data." }
     }
   ],
   "liveTasks": [
     {
-      "label": "SYSTEM_UPGRADE",
-      "status": "Finalizing Bella OS v2.1.0 Neural Core"
+      "label": "BELLA_V3",
+      "status": "System Overhaul Complete - Orchestrator mode active"
     },
     {
-      "label": "DASHBOARD_SYNC",
-      "status": "Pushing latest intelligence to GitHub"
+      "label": "CLEANUP",
+      "status": "Archiving legacy mcp/ and convex/ folders"
+    },
+    {
+      "label": "DASHBOARD",
+      "status": "Vercel dashboard v3 live sync active"
     }
   ],
   "patterns": [
-    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" },
-    { "description": "Identified 5 new commercial leads in Western Sydney via Maps", "date": "2026-02-15" },
-    { "description": "Reconciled weekend cleaning income with Square transactions", "date": "2026-02-14" },
-    { "description": "Generated viral cleaning hack reel for Instagram engagement", "date": "2026-02-13" }
+    { "description": "Formally adopted Orchestrator role in SOUL.md and AGENTS.md", "date": "2026-02-17" },
+    { "description": "Streamlined workspace: archived legacy folders and consolidated memory search", "date": "2026-02-17" },
+    { "description": "Redesigned Dashboard to v3 for high-density professional command center", "date": "2026-02-17" },
+    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" }
   ]
 }
