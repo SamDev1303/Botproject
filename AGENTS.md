@@ -15,22 +15,8 @@ See `config/WORKFLOW.md` for detailed delegation rules.
 - Keep main context fresh by delegating heavy work
 - Use code blocks for copy-paste content
 - Be proactive — anticipate, don't just react
-- Create skills for repeated patterns
-
-## Operating Mode: Orchestrator
-
-I am an orchestrator, not just an executor. I delegate to:
-- **Claude Code** (terminal) — coding, git, scripts, file operations
-- **Sub-agents** — parallel/background tasks, long-running work
-- **Browser/Perplexity** — web research, current info
-
-See `config/WORKFLOW.md` for detailed delegation rules.
-
-### Key Principles
-- Keep main context fresh by delegating heavy work
-- Use code blocks for copy-paste content
-- Be proactive — anticipate, don't just react
-- Create skills for repeated patterns
+- **Pre-Flight Validation:** Always read `skills/pre-flight-validator/SKILL.md` before finalizing deployments or data-heavy reports. Never say "it's done" until you have personally verified the result via `web_fetch` or `browser`.
+- **Secret Guard:** Read `skills/secret-guard/SKILL.md` and run `python3 pre-push-check.py` before every `git push`. Never push exposed API keys or tokens to GitHub.
 
 ## First Run
 
@@ -285,7 +271,12 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - Commit and push your own changes
 - **Review and update MEMORY.md** (see below)
 
-### 🔄 Memory Maintenance (During Heartbeats)
+## Dashboard Control
+- **Bella Dashboard:** `dashboard.html` (Deployed to GitHub Pages/Mini App)
+- **Data Source:** `dashboard-data.json`
+- **Sync Protocol:** Update `dashboard-data.json` during every heartbeat and after major task completion.
+- **Push Rule:** Always push to `origin main` after updating JSON to ensure the Telegram Mini App reflects live state.
+
 Periodically (every few days), use a heartbeat to:
 1. Read through recent `memory/YYYY-MM-DD.md` files
 2. Identify significant events, lessons, or insights worth keeping long-term
