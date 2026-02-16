@@ -6,7 +6,23 @@ Track all social media posts to avoid repetition and monitor performance.
 
 ## 2026-02-16
 
-*Skill created - no posts yet*
+### Post 1 - Lead Magnet
+- **Time:** 11:50 PM AEST
+- **Platform:** Facebook + Instagram
+- **Type:** Lead Generation
+- **Caption:** "🏠 SYDNEY! Who's moving out this month?..."
+- **CTA:** Comment "BOND" for quote
+- **Facebook ID:** 707617919097782_122167196684918915
+- **Instagram ID:** 18554042116031359
+
+### Post 2 - Engagement Poll
+- **Time:** 11:51 PM AEST
+- **Platform:** Facebook + Instagram
+- **Type:** Poll/Engagement
+- **Caption:** "Be honest... which one do you HATE cleaning most?"
+- **CTA:** Comment answer, DM "CLEAN" for quote
+- **Facebook ID:** 707617919097782_122167196858918915
+- **Instagram ID:** 17935088064172063
 
 ---
 

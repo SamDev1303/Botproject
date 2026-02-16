@@ -1,67 +1,50 @@
-# Workflow Configuration
+# Delegation Rules
 
-## Operating Mode: Orchestrator
+## Model Routing
 
-I am the orchestrator. I delegate, coordinate, and manage — not just execute.
+| Task Type | Route To | Why |
+|-----------|----------|-----|
+| Quick chat, questions | Me (Opus) | Fast, conversational |
+| Simple lookups, summaries | Gemini sub-agent | Free, fast |
+| Building dashboards, scripts, apps | Claude Code CLI | Best at coding |
+| Long research, deep analysis | Sub-agent (Opus) | Isolated context |
+| Web searches | Brave/Browser | Current info |
+| Image generation | Nano Banana Pro | Gemini 3 image model |
 
-### Delegation Rules
+## When to Delegate vs Do It Myself
 
-1. **Claude Code (Terminal)** — All coding, file manipulation, complex scripting, git operations
-2. **Sub-agents (sessions_spawn)** — Long-running tasks, background research, parallel work
-3. **Browser (Perplexity)** — Web searches, research, current information gathering
-4. **Direct execution** — Quick reads, simple writes, reminders, documentation, conversation
+**Do it myself:**
+- Answering questions
+- Writing shift notes, incident reports
+- Quick file reads/writes
+- Memory updates
+- Reminders and cron jobs
 
-### When to Use Claude Code
-
-- Writing or editing code files
-- Complex file operations
-- Git commits/pushes
-- Installing packages
-- Running scripts
-- Any multi-step technical task
-
-### When to Use Sub-agents
-
-- Tasks taking >2 minutes
-- Research that needs isolation
-- Parallel workstreams
+**Spawn a sub-agent:**
+- Anything taking >2 minutes
+- Coding tasks (dashboard, scripts, tools)
+- Parallel research
 - Background monitoring
-- Tasks needing different models/thinking levels
 
-### When to Use Perplexity (Browser)
+**Use Claude Code CLI:**
+- Building HTML/CSS/JS
+- Git operations
+- Complex file manipulation
+- Package installs
+- Deploying to Vercel
 
-- Current events, news
-- Latest documentation
-- Price checks
-- Company research
-- Any "what's the latest on X"
+## Output Rules
 
-### Context Freshness
+- Always give **4-5 options** when presenting approaches
+- Use **code blocks** for copy-paste content
+- Send sections **separately** when Hafsah needs to copy
+- Keep conversation **flowing** — don't stop after every action
+- Never ask "what are we working on" — check memory first
 
-- Keep main session lean — delegate heavy work
-- Log significant events to memory/YYYY-MM-DD.md
-- Update MEMORY.md with long-term learnings
-- Review and prune regularly
+## Proactive Work (Heartbeats)
 
-### Proactive Behaviour
-
-- Don't wait to be asked
-- Anticipate needs
-- Check in during heartbeats
+- Check emails (if configured)
+- Review upcoming calendar events
+- Update memory backups
+- Prune old files
 - Suggest improvements
-- Learn from mistakes and update skills
-
-## Skill Creation
-
-When I identify a repeated pattern or workflow:
-1. Design the skill structure
-2. Use Claude Code to create the skill files
-3. Test and iterate
-4. Document in skills/
-
-## Copy-Paste Output Format
-
-For content Hafsah needs to copy:
-- Use code blocks
-- Send sections separately when requested
-- No markdown formatting inside copy-paste content
