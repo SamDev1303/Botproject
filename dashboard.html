@@ -11,68 +11,60 @@
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; }
         .app-container { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
         
-        /* HEADER: TIGHTEST POSSIBLE */
-        header { height: 40px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; background: #050505; shrink: 0; }
-        .logo { font-weight: 900; font-style: italic; font-size: 14px; letter-spacing: -1px; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header { height: 36px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; background: #050505; shrink: 0; }
+        .logo { font-weight: 900; font-style: italic; font-size: 12px; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* CONTENT: GRID FILLING ALL SPACE */
-        main { flex: 1; display: grid; grid-template-rows: auto 1fr auto; gap: 4px; padding: 4px; min-height: 0; }
+        main { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 2px; min-height: 0; }
         
-        /* STAT CARDS: HORIZONTAL ROW */
-        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-        .stat-card { background: #0d0d0d; border: 1px solid #222; border-radius: 6px; padding: 6px; text-align: center; }
-        .stat-label { font-size: 8px; font-weight: 800; color: #666; text-transform: uppercase; margin-bottom: 2px; }
-        .stat-value { font-size: 14px; font-weight: 900; line-height: 1; }
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; height: 38px; shrink: 0; }
+        .stat-card { background: #0d0d0d; border: 1px solid #222; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .stat-label { font-size: 7px; font-weight: 800; color: #555; text-transform: uppercase; }
+        .stat-value { font-size: 11px; font-weight: 900; line-height: 1; }
 
-        /* MIDDLE SECTION: TWO COLUMNS */
-        .middle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; min-height: 0; }
-        .box { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 6px; padding: 6px; display: flex; flex-direction: column; min-height: 0; }
-        .box-label { font-size: 8px; font-weight: 900; color: #444; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; }
-        .scroll-list { flex: 1; overflow-y: auto; font-size: 9px; line-height: 1.2; }
+        .middle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; flex: 1; min-height: 0; }
+        .box { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 4px; padding: 4px; display: flex; flex-direction: column; min-height: 0; }
+        .box-label { font-size: 7px; font-weight: 900; color: #333; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; }
+        .scroll-list { flex: 1; overflow-y: auto; font-size: 8px; line-height: 1.1; }
         .scroll-list::-webkit-scrollbar { display: none; }
-        .item { padding: 4px 0; border-bottom: 1px solid #121212; }
+        .item { padding: 2px 0; border-bottom: 1px solid #121212; }
         
-        /* BOTTOM PATTERNS: WIDE */
-        .bottom-section { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 6px; padding: 8px; height: 120px; display: flex; flex-direction: column; }
+        .bottom-section { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 4px; padding: 4px; height: 80px; shrink: 0; }
         
         .pulse { animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header>
             <div class="logo uppercase tracking-tighter">BELLA OS</div>
-            <div id="ticker" class="text-[10px] font-mono flex gap-3 overflow-hidden"></div>
-            <div class="flex items-center gap-2">
-                <div class="w-1.5 h-1.5 bg-green-500 rounded-full pulse"></div>
-                <span id="clock" class="text-[10px] font-mono text-gray-500 uppercase">--:--</span>
+            <div id="ticker" class="text-[9px] font-mono flex gap-2 overflow-hidden px-4"></div>
+            <div class="flex items-center gap-1">
+                <div class="w-1 h-1 bg-green-500 rounded-full pulse"></div>
+                <span id="clock" class="text-[9px] font-mono text-gray-600 uppercase">--:--</span>
             </div>
         </header>
 
         <main>
-            <!-- TOP: VITALS -->
             <div class="stats-row">
                 <div class="stat-card"><p class="stat-label">REV</p><b class="stat-value" id="val-rev">--</b></div>
                 <div class="stat-card"><p class="stat-label">DUE</p><b class="stat-value text-orange-500" id="val-due">--</b></div>
                 <div class="stat-card"><p class="stat-label">LEAD</p><b class="stat-value text-green-500" id="val-lead">--</b></div>
             </div>
 
-            <!-- MIDDLE: STREAMS & CRONS -->
             <div class="middle-grid">
                 <div class="box">
-                    <div class="box-label"><span>NEURAL STREAM</span><i class="fas fa-bolt text-indigo-500"></i></div>
+                    <div class="box-label"><span>STREAMS</span><i class="fas fa-bolt text-indigo-900"></i></div>
                     <div id="tasks" class="scroll-list"></div>
                 </div>
                 <div class="box">
-                    <div class="box-label"><span>ACTIVE CRONS</span><i class="fas fa-clock text-gray-500"></i></div>
+                    <div class="box-label"><span>CRONS</span><i class="fas fa-clock text-gray-900"></i></div>
                     <div id="crons" class="scroll-list"></div>
                 </div>
             </div>
 
-            <!-- BOTTOM: PATTERNS -->
             <div class="bottom-section">
-                <div class="box-label"><span>INTELLIGENCE PATTERNS</span><i class="fas fa-brain text-purple-500"></i></div>
+                <div class="box-label"><span>PATTERNS</span><i class="fas fa-brain text-purple-900"></i></div>
                 <div id="patterns" class="scroll-list"></div>
             </div>
         </main>
@@ -83,7 +75,6 @@
             try {
                 const r = await fetch('dashboard-data.json?v=' + Date.now());
                 const d = await r.json();
-                
                 document.getElementById('clock').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                 document.getElementById('val-rev').innerText = d.stats?.revenueMTD || '--';
                 document.getElementById('val-due').innerText = d.stats?.unpaidInvoices || '--';
@@ -91,13 +82,13 @@
 
                 if (d.portfolio) {
                     document.getElementById('ticker').innerHTML = d.portfolio.map(s => `
-                        <span class="flex gap-1"><b>${s.ticker}</b><span class="${s.change >= 0 ? 'text-green-500' : 'text-red-500'}">${s.change}%</span></span>
+                        <span class="whitespace-nowrap font-bold">${s.ticker} <span class="${s.change >= 0 ? 'text-green-500' : 'text-red-500'} text-[7px]">${s.change}%</span></span>
                     `).join('');
                 }
 
-                document.getElementById('tasks').innerHTML = d.liveTasks.map(t => `<div class="item"><b>${t.label}</b><br><span class="text-gray-500">${t.status}</span></div>`).join('');
-                document.getElementById('crons').innerHTML = d.crons.map(c => `<div class="item"><b>${c.name}</b><br><span class="text-indigo-400 font-mono">${c.schedule.expr}</span></div>`).join('');
-                document.getElementById('patterns').innerHTML = d.patterns.map(p => `<div class="item text-gray-300">"${p.description}" <span class="text-[7px] text-gray-600">${p.date}</span></div>`).join('');
+                document.getElementById('tasks').innerHTML = d.liveTasks.map(t => `<div class="item"><b>${t.label}</b>: ${t.status}</div>`).join('');
+                document.getElementById('crons').innerHTML = d.crons.map(c => `<div class="item"><b>${c.name}</b> <span class="text-gray-500">${c.schedule.expr}</span></div>`).join('');
+                document.getElementById('patterns').innerHTML = d.patterns.map(p => `<div class="item text-gray-400">"${p.description}"</div>`).join('');
             } catch(e) {}
         }
         setInterval(sync, 15000);
