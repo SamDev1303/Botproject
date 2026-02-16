@@ -2,8 +2,9 @@
   "updatedAt": "2026-02-17T07:35:00Z",
   "stats": {
     "leads": "154",
-    "unpaidInvoices": "12",
-    "revenueMTD": "$14,214"
+    "unpaidInvoices": "5",
+    "revenueMTD": "$14,214",
+    "outstandingBalance": "$4,590.40"
   },
   "portfolio": [
     { "ticker": "TSLA", "name": "Tesla", "price": "842.12", "change": 2.4 },
@@ -34,14 +35,18 @@
   ],
   "liveTasks": [
     {
-      "label": "HEARTBEAT_PULSE",
-      "status": "Checking news, portfolio, and business vitals"
+      "label": "SQUARE_SOT_SYNC",
+      "status": "Verified: Square API is now the ONLY financial source of truth."
+    },
+    {
+      "label": "PRE_FLIGHT_CHECK",
+      "status": "Mandatory validation active for all clinical/financial data."
     }
   ],
   "patterns": [
+    { "description": "Resolved Meshach (Ephraim Care) discrepancy: $3,750 remaining.", "date": "2026-02-17" },
     { "description": "Unified Bella OS Dashboard into high-density 3-column layout", "date": "2026-02-17" },
     { "description": "Hardcoded Pre-Flight Hot-Testing into core architectural logic", "date": "2026-02-17" },
-    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" },
-    { "description": "Identified 5 new commercial leads in Western Sydney via Maps", "date": "2026-02-15" }
+    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" }
   ]
 }
