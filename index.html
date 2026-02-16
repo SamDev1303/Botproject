@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦁 Bella Neural Elite v5</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030508;
+            --sidebar: rgba(8, 11, 15, 0.95);
+            --content-bg: #05080c;
+            --accent: #00d2ff;
+            --accent-purple: #9d50bb;
+            --accent-glow: rgba(0, 210, 255, 0.4);
+            --text: #f0f3f6;
+            --text-dim: #9aaab9;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(20, 25, 33, 0.6);
+            --glass: rgba(255, 255, 255, 0.02);
+
+            --high: #ff4757;
+            --medium: #ffa502;
+            --low: #2ed573;
+            --critical: #eb4d4b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 100% 0%, rgba(157, 80, 187, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(0, 210, 255, 0.08) 0%, transparent 50%);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar Navigation --- */
+        nav {
+            width: 280px;
+            background: var(--sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+        }
+
+        .identity {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .avatar-frame {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px var(--accent-glow);
+            position: relative;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bg);
+        }
+
+        .identity h2 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .identity p {
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        /* --- Neural Heartbeat --- */
+        .heartbeat-widget {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+        .heartbeat-header {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pulse-line {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .pulse-bar {
+            width: 3px;
+            background: var(--accent);
+            border-radius: 10px;
+            animation: pulse-grow 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse-grow {
+
+            0%,
+            100% {
+                height: 5px;
+                opacity: 0.3;
+            }
+
+            50% {
+                height: 25px;
+                opacity: 1;
+            }
+        }
+
+        /* --- Top Metrics Bar --- */
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--content-bg);
+        }
+
+        header {
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .metrics-bar {
+            display: flex;
+            gap: 40px;
+        }
+
+        .metric-card {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .m-label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .m-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .m-trend {
+            font-size: 0.7rem;
+            color: #2ed573;
+            background: rgba(46, 213, 115, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* --- Kanban Layout --- */
+        main {
+            flex: 1;
+            padding: 30px 40px;
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .col-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            padding-left: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .col-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .tasks-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+
+        /* --- Elite Cards --- */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: var(--accent);
+            background: rgba(30, 40, 50, 0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .priority-chip {
+            width: 40px;
+            height: 4px;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Details Panel --- */
+        #details-overlay {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--sidebar);
+            border-left: 1px solid var(--border);
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            padding: 50px 30px;
+            backdrop-filter: blur(30px);
+        }
+
+        #details-overlay.open {
+            right: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            color: var(--text-dim);
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+
+        /* --- Utility --- */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .card {
+            animation: slideIn 0.5s ease backwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="identity">
+            <div class="avatar-frame">
+                <img id="avatar" src="assets/bella-goddess-2026-02-14.png" alt="Bella">
+            </div>
+            <h2 id="bella-name">BELLA ELITE</h2>
+            <p id="bella-model">CORE v6.0</p>
+        </div>
+
+        <div class="menu-items" style="flex:1">
+            <!-- Navigation links would go here -->
+        </div>
+
+        <div class="heartbeat-widget">
+            <div class="heartbeat-header">
+                <span>Soul Frequency</span>
+                <span id="soul-freq">1.2Hz</span>
+            </div>
+            <div class="pulse-line" id="heartbeat-bars">
+                <!-- Bars injected by JS -->
+            </div>
+            <div style="font-size: 0.6rem; color: var(--text-dim); margin-top: 10px;">
+                STATUS: <span id="sys-state" style="color: var(--accent)">ACTIVE</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-area">
+        <header>
+            <div>
+                <div style="font-size: 0.8rem; color: var(--text-dim); letter-spacing: 2px; margin-bottom: 5px;">
+                    BUSINESS INTELLIGENCE</div>
+                <h1 style="font-size: 2rem; font-weight: 300;">Control Center</h1>
+            </div>
+
+            <div class="metrics-bar">
+                <div class="metric-card">
+                    <span class="m-label">Revenue</span>
+                    <span class="m-value" id="m-revenue">$0.00 <span class="m-trend">+12%</span></span>
+                </div>
+                <div class="metric-card">
+                    <span class="m-label">Net Profit</span>
+                    <span class="m-value" id="m-profit">$0.00</span>
+                </div>
+                <div class="metric-card">
+                    <span class="m-label">Margin</span>
+                    <span class="m-value" id="m-margin">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="board">
+            <div class="col">
+                <div class="col-title">To Do <span class="count-badge" id="c-todo">0</span></div>
+                <div class="tasks-container" id="tasks-todo"></div>
+            </div>
+            <div class="col">
+                <div class="col-title">In Progress <span class="count-badge" id="c-inprogress">0</span></div>
+                <div class="tasks-container" id="tasks-inprogress"></div>
+            </div>
+            <div class="col">
+                <div class="col-title">Completed <span class="count-badge" id="c-done">0</span></div>
+                <div class="tasks-container" id="tasks-done"></div>
+            </div>
+        </main>
+    </div>
+
+    <div id="details-overlay">
+        <span class="close-btn" onclick="toggleDetails()">✕</span>
+        <div id="details-content">
+            <!-- Injected by click -->
+        </div>
+    </div>
+
+    <script src="dashboard-data.js"></script>
+
+    <script>
+        // Init Pulse Bars
+        const hbContainer = document.getElementById('heartbeat-bars');
+        for (let i = 0; i < 30; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'pulse-bar';
+            bar.style.animationDelay = (i * 0.05) + 's';
+            hbContainer.appendChild(bar);
+        }
+
+        function toggleDetails(content = null) {
+            const overlay = document.getElementById('details-overlay');
+            if (content) {
+                document.getElementById('details-content').innerHTML = content;
+                overlay.classList.add('open');
+            } else {
+                overlay.classList.remove('open');
+            }
+        }
+
+        function render() {
+            const data = window.dashboardData;
+            if (!data) return;
+
+            // Header Metrics
+            document.getElementById('m-revenue').innerHTML = `$${data.stats.totalRevenue.toLocaleString()} <span class="m-trend">${data.stats.revenueChange}</span>`;
+            document.getElementById('m-profit').innerText = `$${data.stats.netProfit.toLocaleString()}`;
+            document.getElementById('m-margin').innerText = data.stats.profitMargin;
+
+            // Sidebar Info
+            document.getElementById('avatar').src = data.bella.avatar;
+            document.getElementById('soul-freq').innerText = data.bella.soul_frequency;
+            document.getElementById('sys-state').innerText = data.system_state;
+            document.getElementById('bella-model').innerText = data.bella.model;
+
+            // Columns
+            renderCol('tasks-todo', data.tasks.todo, 'c-todo', 'high');
+            renderCol('tasks-inprogress', data.tasks.in_progress, 'c-inprogress', 'accent');
+            renderCol('tasks-done', data.tasks.done, 'c-done', 'low');
+        }
+
+        function renderCol(id, tasks, countId, theme) {
+            const container = document.getElementById(id);
+            container.innerHTML = '';
+            document.getElementById(countId).innerText = tasks.length;
+
+            tasks.forEach((t, i) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.animationDelay = (i * 0.1) + 's';
+
+                const priorityColor = t.priority === 'critical' || t.priority === 'high' ? 'var(--high)' :
+                    t.priority === 'medium' ? 'var(--medium)' : 'var(--low)';
+
+                card.innerHTML = `
+                    <div class="priority-chip" style="background: ${priorityColor}"></div>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <span style="font-size: 1.5rem">${t.icon || '📄'}</span>
+                        <div style="flex: 1">
+                            <h3 style="margin-bottom: 8px">${t.title}</h3>
+                            <div class="card-footer">
+                                <span class="badge">${t.tag}</span>
+                                <div style="font-size: 0.6rem; color: var(--text-dim)">#${t.id || 'TASK'}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                card.onclick = () => {
+                    toggleDetails(`
+                        <h2 style="margin-bottom: 20px; font-weight: 400">${t.title}</h2>
+                        <div class="tag" style="display:inline-block; margin-bottom: 30px">${t.tag}</div>
+                        <p style="color: var(--text-dim); line-height: 1.8; margin-bottom: 32px">
+                            ${t.title}<br><br>
+                            This task is currently in ${id.replace('tasks-', '')} status. 
+                            Priority level is ${t.priority.toUpperCase()}.
+                        </p>
+                        <div style="background: var(--glass); padding: 20px; border-radius: 12px; border: 1px solid var(--border)">
+                            <h4 style="margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase">System Intelligence</h4>
+                            <p style="font-size: 0.85rem; color: var(--accent)">Neural node link verified. Context updated via Active Memory Sync.</p>
+                        </div>
+                    `);
+                };
+
+                container.appendChild(card);
+            });
+        }
+
+        render();
+        // Refresh every 3 minutes
+        setInterval(() => window.location.reload(), 180000);
+    </script>
+</body>
+
+</html>
