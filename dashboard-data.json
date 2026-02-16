@@ -1,0 +1,38 @@
+{
+  "updatedAt": "2026-02-17T07:05:00Z",
+  "crons": [
+    {
+      "name": "Hafsah-Morning-Routine",
+      "enabled": true,
+      "schedule": { "expr": "06:35" },
+      "payload": { "message": "Business Mode: Calendar, Inbox, Leads, Invoices." }
+    },
+    {
+      "name": "commercial-outreach-daily",
+      "enabled": true,
+      "schedule": { "expr": "0 10 * * *" },
+      "payload": { "text": "Check commercial-prospects.md, follow up on leads." }
+    },
+    {
+      "name": "social-morning-post",
+      "enabled": true,
+      "schedule": { "expr": "0 7 * * *" },
+      "payload": { "text": "Post morning content to Clean Up Bros FB + IG." }
+    }
+  ],
+  "liveTasks": [
+    {
+      "label": "SYSTEM_UPGRADE",
+      "status": "Vector DB Priming & Pattern Extraction"
+    },
+    {
+      "label": "DASHBOARD_SYNC",
+      "status": "Pushing updates to GitHub for Telegram"
+    }
+  ],
+  "patterns": [
+    { "description": "Handled clinician shift notes for Larissa Marks", "date": "2026-02-16" },
+    { "description": "Commercial lead enrichment for Sydney CBD", "date": "2026-02-15" },
+    { "description": "Automated Square-to-Sheet reconciliation", "date": "2026-02-14" }
+  ]
+}

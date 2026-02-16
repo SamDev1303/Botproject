@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#0a0a0a',
+                            surface: '#121212',
+                            border: '#1f1f1f',
+                            accent: '#6366f1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0a0a0a; color: #e5e5e5; }
+        .glass { background: rgba(18, 18, 18, 0.8); backdrop-filter: blur(12px); border: 1px solid #1f1f1f; }
+        .kanban-col { min-height: 80vh; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #1f1f1f; border-radius: 10px; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <header class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-2xl font-bold tracking-tighter text-white">BELLA COMMAND CENTER</h1>
+            <p class="text-sm text-gray-500">Live Agent Activity & Cron Orchestration</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <div id="status-dot" class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <span class="text-xs font-mono text-gray-400" id="last-update">Updating...</span>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 kanban-col">
+        <!-- CRON JOBS / INBOX -->
+        <div class="glass rounded-xl p-4">
+            <h2 class="text-sm font-semibold mb-4 flex items-center gap-2 text-indigo-400">
+                <i class="fas fa-clock"></i> ACTIVE CRONS
+            </h2>
+            <div id="cron-list" class="space-y-3">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+
+        <!-- ACTIVE TASKS / IN PROGRESS -->
+        <div class="glass rounded-xl p-4 bg-opacity-40">
+            <h2 class="text-sm font-semibold mb-4 flex items-center gap-2 text-yellow-400">
+                <i class="fas fa-spinner fa-spin"></i> LIVE OPERATIONS
+            </h2>
+            <div id="task-list" class="space-y-3">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+
+        <!-- COMPLETED / HISTORY -->
+        <div class="glass rounded-xl p-4 bg-opacity-40 border-green-900/20">
+            <h2 class="text-sm font-semibold mb-4 flex items-center gap-2 text-green-400">
+                <i class="fas fa-check-circle"></i> PATTERN MEMORY
+            </h2>
+            <div id="history-list" class="space-y-3">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('dashboard-data.json');
+                const data = await response.json();
+                
+                document.getElementById('last-update').innerText = 'LAST SYNC: ' + new Date(data.updatedAt).toLocaleTimeString();
+
+                // Render Crons
+                const cronList = document.getElementById('cron-list');
+                cronList.innerHTML = data.crons.map(cron => `
+                    <div class="p-3 bg-dark-bg border border-dark-border rounded-lg hover:border-indigo-500 transition-colors group">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-xs font-bold text-gray-300 truncate w-3/4">${cron.name}</span>
+                            <span class="text-[10px] bg-indigo-900/30 text-indigo-400 px-1.5 py-0.5 rounded">${cron.enabled ? 'ON' : 'OFF'}</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 line-clamp-2">${cron.payload.text || cron.payload.message || ''}</p>
+                        <div class="mt-2 flex justify-between items-center">
+                             <span class="text-[9px] text-gray-600 font-mono">${cron.schedule.expr || 'ONCE'}</span>
+                             <button class="opacity-0 group-hover:opacity-100 text-[10px] text-indigo-400 font-bold uppercase tracking-widest transition-opacity">Toggle</button>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Render Live Ops
+                const taskList = document.getElementById('task-list');
+                taskList.innerHTML = data.liveTasks.map(task => `
+                    <div class="p-3 bg-dark-bg border border-yellow-900/20 rounded-lg">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                            <span class="text-xs font-bold text-gray-200">${task.label}</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-1 mb-2">
+                            <div class="bg-yellow-500 h-1 rounded-full animate-pulse" style="width: 70%"></div>
+                        </div>
+                        <p class="text-[10px] text-gray-500">${task.status}</p>
+                    </div>
+                `).join('');
+
+                // Render History
+                const historyList = document.getElementById('history-list');
+                historyList.innerHTML = data.patterns.map(p => `
+                    <div class="p-2 border-l-2 border-green-500/30 bg-green-900/5 rounded-r-lg mb-2">
+                        <p class="text-[11px] text-gray-400 italic">"${p.description}"</p>
+                        <span class="text-[9px] text-gray-600 uppercase font-bold tracking-tighter">${p.date}</span>
+                    </div>
+                `).join('');
+
+            } catch (e) {
+                console.error("Dashboard sync error", e);
+            }
+        }
+
+        setInterval(loadData, 30000);
+        loadData();
+    </script>
+</body>
+</html>
