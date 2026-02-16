@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T09:15:00+11:00",
+  "updatedAt": "2026-02-17T09:20:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -18,7 +18,7 @@
       "name": "dashboard-live-sync-5min",
       "enabled": true,
       "schedule": { "expr": "*/5 * * * *" },
-      "status": "Running (last sync 09:15 AM AEDT)"
+      "status": "Running (last sync 09:20 AM AEDT)"
     },
     {
       "name": "commercial-outreach-daily",
@@ -44,7 +44,7 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "Live sync completed at 09:15 AM AEDT."
+      "status": "Live sync completed at 09:20 AM AEDT."
     },
     {
       "label": "MESH_BALANCE",
@@ -60,7 +60,7 @@
   "activeSessions": {
     "mainSession": "telegram:6580764332",
     "model": "gemini-3-flash-preview",
-    "lastActivity": "2026-02-17T08:50:00+11:00",
+    "lastActivity": "2026-02-17T09:20:00+11:00",
     "cronSession": "cron:bc2c5294-dashboard-sync",
     "cronModel": "claude-opus-4-5",
     "totalActiveSessions": 2
