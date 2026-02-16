@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T10:10:00+11:00",
+  "updatedAt": "2026-02-17T10:15:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -18,7 +18,7 @@
       "name": "dashboard-live-sync-5min",
       "enabled": true,
       "schedule": { "expr": "*/5 * * * *" },
-      "status": "Running (last sync 10:10 AM AEDT)"
+      "status": "Running (last sync 10:15 AM AEDT)"
     },
     {
       "name": "commercial-outreach-daily",
@@ -44,7 +44,7 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "Live sync completed at 10:10 AM AEDT."
+      "status": "Live sync completed at 10:15 AM AEDT."
     },
     {
       "label": "MESH_BALANCE",
@@ -56,6 +56,7 @@
     }
   ],
   "patterns": [
+    { "description": "Dashboard 5-min sync active — cron running on schedule.", "date": "2026-02-17" },
     { "description": "Commercial outreach scan completed — Minchinbury warehouse, NDIS partnership, pub cleaning leads identified.", "date": "2026-02-17" },
     { "description": "SOT Locked: Square API confirmed as sole financial source of truth.", "date": "2026-02-17" },
     { "description": "System hardened: ABC clinical reporting standards implemented via specialized skills.", "date": "2026-02-17" },
