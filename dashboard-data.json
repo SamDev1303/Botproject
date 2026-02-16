@@ -1,47 +1,44 @@
 {
-  "updatedAt": "2026-02-17T07:25:00Z",
+  "updatedAt": "2026-02-17T07:20:00Z",
+  "stats": {
+    "leads": "154",
+    "unpaidInvoices": "12",
+    "revenueMTD": "$14,214"
+  },
   "crons": [
-    {
-      "name": "dashboard-live-sync-5min",
-      "enabled": true,
-      "schedule": "*/5 * * * *",
-      "lastRun": "2026-02-17T07:20:00Z",
-      "status": "success"
-    },
     {
       "name": "Hafsah-Morning-Routine",
       "enabled": true,
-      "schedule": "06:35",
-      "status": "active"
+      "schedule": { "expr": "06:35" },
+      "payload": { "message": "Calendar sync, Inbox triage, Booking confirmations, Unpaid Invoices, Revenue Actions." }
+    },
+    {
+      "name": "commercial-outreach-daily",
+      "enabled": true,
+      "schedule": { "expr": "0 10 * * *" },
+      "payload": { "text": "Check commercial-prospects.md, follow up on leads." }
     },
     {
       "name": "social-morning-post",
       "enabled": true,
-      "schedule": "07:00",
-      "status": "active"
+      "schedule": { "expr": "0 7 * * *" },
+      "payload": { "text": "Post transformation reel to Clean Up Bros FB + IG." }
     }
   ],
   "liveTasks": [
     {
-      "label": "DASHBOARD_SYNC",
-      "status": "Success - Pulse Live v3.1",
-      "timestamp": "2026-02-17T07:25:00Z"
+      "label": "SYSTEM_UPGRADE",
+      "status": "Finalizing Bella OS v2.1.0 Neural Core"
     },
     {
-      "label": "SOCIAL_POST",
-      "status": "Morning content published (Oven Transformation)",
-      "timestamp": "2026-02-17T07:00:00Z"
+      "label": "DASHBOARD_SYNC",
+      "status": "Pushing latest intelligence to GitHub"
     }
   ],
   "patterns": [
-    { "description": "Transitioned to Gemini 3 Flash for performance", "date": "2026-02-17" },
-    { "description": "Resolved Meshach financial discrepancy (Square SOT)", "date": "2026-02-17" },
-    { "description": "Implemented Pulse Mini App for Telegram", "date": "2026-02-17" },
-    { "description": "Handled shift notes for Larissa Marks", "date": "2026-02-16" }
-  ],
-  "finance": {
-    "outstanding": "$4,590.40",
-    "lastUpdate": "2026-02-17",
-    "source": "Square API"
-  }
+    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" },
+    { "description": "Identified 5 new commercial leads in Western Sydney via Maps", "date": "2026-02-15" },
+    { "description": "Reconciled weekend cleaning income with Square transactions", "date": "2026-02-14" },
+    { "description": "Generated viral cleaning hack reel for Instagram engagement", "date": "2026-02-13" }
+  ]
 }
