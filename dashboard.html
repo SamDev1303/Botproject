@@ -1,157 +1,107 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella OS | Command Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BELLA OS | MOBILE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
-                    colors: { bella: { bg: '#050505', surface: '#0d0d0d', border: '#1a1a1a', accent: '#6366f1', warning: '#f59e0b', success: '#10b981' } }
-                }
-            }
-        }
-    </script>
     <style>
-        * { box-sizing: border-box; }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #050505; color: #f1f1f1; font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; }
-        .main-container { display: flex; flex-direction: column; height: 100vh; width: 100vw; padding: 4px; gap: 4px; }
-        .glass { background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; }
-        .accent-text { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .custom-scroll::-webkit-scrollbar { width: 3px; }
-        .custom-scroll::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .grid-full { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; flex: 1; min-height: 0; }
-        .box { display: flex; flex-direction: column; padding: 8px; min-height: 0; }
-        .label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #666; border-bottom: 1px solid #222; margin-bottom: 6px; padding-bottom: 2px; display: flex; justify-content: space-between; align-items: center; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; }
+        .app-container { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
+        
+        /* HEADER: TIGHTEST POSSIBLE */
+        header { height: 40px; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; background: #050505; shrink: 0; }
+        .logo { font-weight: 900; font-style: italic; font-size: 14px; letter-spacing: -1px; background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* CONTENT: GRID FILLING ALL SPACE */
+        main { flex: 1; display: grid; grid-template-rows: auto 1fr auto; gap: 4px; padding: 4px; min-height: 0; }
+        
+        /* STAT CARDS: HORIZONTAL ROW */
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        .stat-card { background: #0d0d0d; border: 1px solid #222; border-radius: 6px; padding: 6px; text-align: center; }
+        .stat-label { font-size: 8px; font-weight: 800; color: #666; text-transform: uppercase; margin-bottom: 2px; }
+        .stat-value { font-size: 14px; font-weight: 900; line-height: 1; }
+
+        /* MIDDLE SECTION: TWO COLUMNS */
+        .middle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; min-height: 0; }
+        .box { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 6px; padding: 6px; display: flex; flex-direction: column; min-height: 0; }
+        .box-label { font-size: 8px; font-weight: 900; color: #444; border-bottom: 1px solid #1a1a1a; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .scroll-list { flex: 1; overflow-y: auto; font-size: 9px; line-height: 1.2; }
+        .scroll-list::-webkit-scrollbar { display: none; }
+        .item { padding: 4px 0; border-bottom: 1px solid #121212; }
+        
+        /* BOTTOM PATTERNS: WIDE */
+        .bottom-section { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 6px; padding: 8px; height: 120px; display: flex; flex-direction: column; }
+        
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
-    <div class="main-container">
-        <!-- HEADER ROW: LOGO + STOCKS + VITALS -->
-        <header class="glass box flex-row items-center justify-between py-1 px-4 shrink-0">
-            <div class="flex items-center gap-4">
-                <h1 class="text-base font-black italic accent-text tracking-tighter uppercase leading-none">BELLA OS</h1>
-                <div class="flex gap-3 border-l border-white/10 pl-4 overflow-x-auto no-scrollbar items-center" id="stock-ticker">
-                    <!-- Ticker -->
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="flex gap-4">
-                    <div class="text-right"><p class="text-[7px] font-black text-gray-500 uppercase">Rev</p><span class="text-xs font-bold text-white leading-none" id="stat-revenue">--</span></div>
-                    <div class="text-right"><p class="text-[7px] font-black text-gray-500 uppercase">Due</p><span class="text-xs font-bold text-bella-warning leading-none" id="stat-invoices">--</span></div>
-                    <div class="text-right"><p class="text-[7px] font-black text-gray-500 uppercase">Lead</p><span class="text-xs font-bold text-bella-success leading-none" id="stat-leads">--</span></div>
-                </div>
-                <div class="flex items-center gap-2 border-l border-white/10 pl-4">
-                    <div class="w-1.5 h-1.5 bg-bella-success rounded-full shadow-[0_0_5px_#10b981]"></div>
-                    <span class="text-[8px] font-mono text-gray-400" id="last-update">--:--:--</span>
-                </div>
+    <div class="app-container">
+        <header>
+            <div class="logo uppercase tracking-tighter">BELLA OS</div>
+            <div id="ticker" class="text-[10px] font-mono flex gap-3 overflow-hidden"></div>
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-green-500 rounded-full pulse"></div>
+                <span id="clock" class="text-[10px] font-mono text-gray-500 uppercase">--:--</span>
             </div>
         </header>
 
-        <!-- MAIN BODY: NO WASTED SPACE -->
-        <div class="grid-full">
-            <!-- COL 1: OPS & CRONS -->
-            <div class="col-span-3 flex flex-col gap-1 min-h-0">
-                <div class="glass box flex-1">
-                    <div class="label"><span>Neural Streams</span><i class="fas fa-wave-square text-bella-accent"></i></div>
-                    <div id="task-list" class="flex-1 overflow-y-auto custom-scroll space-y-1"></div>
+        <main>
+            <!-- TOP: VITALS -->
+            <div class="stats-row">
+                <div class="stat-card"><p class="stat-label">REV</p><b class="stat-value" id="val-rev">--</b></div>
+                <div class="stat-card"><p class="stat-label">DUE</p><b class="stat-value text-orange-500" id="val-due">--</b></div>
+                <div class="stat-card"><p class="stat-label">LEAD</p><b class="stat-value text-green-500" id="val-lead">--</b></div>
+            </div>
+
+            <!-- MIDDLE: STREAMS & CRONS -->
+            <div class="middle-grid">
+                <div class="box">
+                    <div class="box-label"><span>NEURAL STREAM</span><i class="fas fa-bolt text-indigo-500"></i></div>
+                    <div id="tasks" class="scroll-list"></div>
                 </div>
-                <div class="glass box flex-1">
-                    <div class="label"><span>Active Crons</span><span class="text-[7px] font-mono" id="cron-count">0</span></div>
-                    <div id="cron-list" class="flex-1 overflow-y-auto custom-scroll space-y-1"></div>
+                <div class="box">
+                    <div class="box-label"><span>ACTIVE CRONS</span><i class="fas fa-clock text-gray-500"></i></div>
+                    <div id="crons" class="scroll-list"></div>
                 </div>
             </div>
 
-            <!-- COL 2: CORE INTELLIGENCE -->
-            <div class="col-span-6 flex flex-col min-h-0">
-                <div class="glass box flex-1">
-                    <div class="label"><span>Intelligence Patterns</span><i class="fas fa-brain text-bella-accent"></i></div>
-                    <div id="history-list" class="flex-1 overflow-y-auto custom-scroll space-y-2 pr-1"></div>
-                </div>
+            <!-- BOTTOM: PATTERNS -->
+            <div class="bottom-section">
+                <div class="box-label"><span>INTELLIGENCE PATTERNS</span><i class="fas fa-brain text-purple-500"></i></div>
+                <div id="patterns" class="scroll-list"></div>
             </div>
-
-            <!-- COL 3: PORTFOLIO & SYS -->
-            <div class="col-span-3 flex flex-col gap-1 min-h-0">
-                <div class="glass box flex-1">
-                    <div class="label"><span>Market Depth</span><i class="fas fa-chart-line text-bella-accent"></i></div>
-                    <div id="stock-list-side" class="space-y-1 flex-1 overflow-y-auto custom-scroll"></div>
-                </div>
-                <div class="glass box shrink-0 py-2">
-                    <div class="label">System Health</div>
-                    <div class="grid grid-cols-2 gap-x-2 text-[8px] font-mono text-gray-400 uppercase">
-                        <span>Model</span><span class="text-white text-right">Gemini-3</span>
-                        <span>Sec</span><span class="text-bella-success text-right">Guard_ON</span>
-                        <span>Push</span><span class="text-white text-right">Live_Sync</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
 
     <script>
-        async function loadData() {
+        async function sync() {
             try {
-                const response = await fetch('dashboard-data.json?t=' + Date.now());
-                const data = await response.json();
-                document.getElementById('last-update').innerText = new Date(data.updatedAt).toLocaleTimeString();
-                document.getElementById('stat-revenue').innerText = data.stats?.revenueMTD || '--';
-                document.getElementById('stat-invoices').innerText = data.stats?.unpaidInvoices || '--';
-                document.getElementById('stat-leads').innerText = data.stats?.leads || '--';
+                const r = await fetch('dashboard-data.json?v=' + Date.now());
+                const d = await r.json();
+                
+                document.getElementById('clock').innerText = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                document.getElementById('val-rev').innerText = d.stats?.revenueMTD || '--';
+                document.getElementById('val-due').innerText = d.stats?.unpaidInvoices || '--';
+                document.getElementById('val-lead').innerText = d.stats?.leads || '--';
 
-                if (data.portfolio) {
-                    const ticker = document.getElementById('stock-ticker');
-                    ticker.innerHTML = data.portfolio.map(s => `
-                        <div class="flex items-center gap-1.5 whitespace-nowrap">
-                            <span class="text-[9px] font-black text-white">${s.ticker}</span>
-                            <span class="text-[8px] font-mono ${s.change >= 0 ? 'text-bella-success' : 'text-red-500'}">${s.change >= 0 ? '+' : ''}${s.change}%</span>
-                        </div>
-                    `).join('<div class="w-px h-2 bg-white/10 mx-1"></div>');
-
-                    const sideList = document.getElementById('stock-list-side');
-                    sideList.innerHTML = data.portfolio.map(s => `
-                        <div class="flex justify-between items-center p-1 bg-white/[0.02] border border-white/5 rounded">
-                            <span class="text-[8px] font-bold text-gray-200">${s.name}</span>
-                            <span class="text-[8px] font-mono text-white">$${s.price}</span>
-                        </div>
+                if (d.portfolio) {
+                    document.getElementById('ticker').innerHTML = d.portfolio.map(s => `
+                        <span class="flex gap-1"><b>${s.ticker}</b><span class="${s.change >= 0 ? 'text-green-500' : 'text-red-500'}">${s.change}%</span></span>
                     `).join('');
                 }
 
-                const cronList = document.getElementById('cron-list');
-                document.getElementById('cron-count').innerText = data.crons.length;
-                cronList.innerHTML = data.crons.map(c => `
-                    <div class="p-1.5 bg-white/[0.03] border border-white/5 rounded">
-                        <div class="flex justify-between text-[8px] font-black text-white uppercase tracking-tighter">
-                            <span>${c.name}</span><span class="text-bella-accent">${c.schedule.expr}</span>
-                        </div>
-                    </div>
-                `).join('');
-
-                const taskList = document.getElementById('task-list');
-                taskList.innerHTML = data.liveTasks.map(t => `
-                    <div class="p-1.5 bg-white/[0.03] border border-yellow-500/10 rounded">
-                        <p class="text-[8px] font-black text-yellow-500 uppercase leading-none mb-1">${t.label}</p>
-                        <p class="text-[9px] text-gray-300 font-medium truncate">${t.status}</p>
-                    </div>
-                `).join('');
-
-                const historyList = document.getElementById('history-list');
-                historyList.innerHTML = data.patterns.map(p => `
-                    <div class="p-2 rounded border-l border-bella-success/30 bg-white/[0.02]">
-                        <p class="text-[9px] text-gray-200 leading-tight">"${p.description}"</p>
-                        <p class="text-[7px] font-black text-gray-600 mt-1 uppercase font-mono">${p.date}</p>
-                    </div>
-                `).join('');
-            } catch (e) { console.error(e); }
+                document.getElementById('tasks').innerHTML = d.liveTasks.map(t => `<div class="item"><b>${t.label}</b><br><span class="text-gray-500">${t.status}</span></div>`).join('');
+                document.getElementById('crons').innerHTML = d.crons.map(c => `<div class="item"><b>${c.name}</b><br><span class="text-indigo-400 font-mono">${c.schedule.expr}</span></div>`).join('');
+                document.getElementById('patterns').innerHTML = d.patterns.map(p => `<div class="item text-gray-300">"${p.description}" <span class="text-[7px] text-gray-600">${p.date}</span></div>`).join('');
+            } catch(e) {}
         }
-        setInterval(loadData, 30000);
-        loadData();
+        setInterval(sync, 15000);
+        sync();
     </script>
 </body>
 </html>
