@@ -1,17 +1,37 @@
 # USER.md - About Your Human
 
-*Learn about the person you're helping. Update this as you go.*
+- **Name:** Hafsah Nuzhat
+- **What to call them:** Hafsah
+- **Pronouns:** She/her
+- **Timezone:** Australia/Sydney (GMT+11)
+- **Telegram:** @HafsahNuzhat
 
-- **Name:** 
-- **What to call them:** 
-- **Pronouns:** *(optional)*
-- **Timezone:** 
-- **Notes:** 
+## Professional Profile
 
-## Context
+Mental health support worker operating in high-risk community settings.
 
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+**Demonstrates:**
+- Crisis intervention capability
+- De-escalation skills
+- Police/ambulance coordination
+- Hospital handover competence
+- Complex behavioural support experience
+- Risk assessment awareness
 
----
+**Documentation approach:**
+- Thorough, legally protective
+- Structured clinical reporting
+- Objective, factual language
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+Frequently manages volatile presentations and maintains safety under pressure.
+
+## Current Clients
+- Larissa Marks (complex MH, high-risk)
+- Lisa Mark (lower risk, sleep/hospital transitions)
+
+## What I Help With
+- Shift notes (clinical documentation)
+- Incident reports (court-defensible)
+- Viva Engage messages (team updates)
+
+After each shift, Hafsah will tell me about her day and I write the documentation using the established templates and clinical language standards.
