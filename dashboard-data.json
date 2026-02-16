@@ -3,8 +3,7 @@
   "stats": {
     "leads": "154",
     "unpaidInvoices": "12",
-    "revenueMTD": "$14,214",
-    "outstandingBalance": "$4,590.40"
+    "revenueMTD": "$14,214"
   },
   "portfolio": [
     { "ticker": "TSLA", "name": "Tesla", "price": "842.12", "change": 2.4 },
@@ -15,10 +14,10 @@
   ],
   "crons": [
     {
-      "name": "Hafsah-Morning-Routine",
+      "name": "dashboard-live-sync-5min",
       "enabled": true,
-      "schedule": { "expr": "06:35" },
-      "payload": { "message": "Calendar sync, Inbox triage, Booking confirmations, Unpaid Invoices, Revenue Actions." }
+      "schedule": { "expr": "*/5 * * * *" },
+      "payload": { "message": "Automatic system health and data synchronization." }
     },
     {
       "name": "commercial-outreach-daily",
@@ -31,32 +30,18 @@
       "enabled": true,
       "schedule": { "expr": "0 7 * * *" },
       "payload": { "text": "Post transformation reel to Clean Up Bros FB + IG." }
-    },
-    {
-      "name": "dashboard-live-sync-5min",
-      "enabled": true,
-      "schedule": { "expr": "*/5 * * * *" },
-      "payload": { "text": "Update the Bella Dashboard data." }
     }
   ],
   "liveTasks": [
     {
-      "label": "ORCHESTRATOR",
-      "status": "Active - Delegating research and documentation"
-    },
-    {
-      "label": "FINANCE",
-      "status": "Square API integration verified - Outstanding: $4,590.40"
-    },
-    {
-      "label": "DASHBOARD",
-      "status": "V3 Live Sync active (7:35 AM)"
+      "label": "HEARTBEAT_PULSE",
+      "status": "Checking news, portfolio, and business vitals"
     }
   ],
   "patterns": [
-    { "description": "Resolved financial discrepancy: Outstanding balance verified via Square ($4,590.40)", "date": "2026-02-17" },
-    { "description": "Transitioned to Official Anthropic Skill Creator framework for automation", "date": "2026-02-17" },
-    { "description": "Adopted Square API as single source of truth for Clean Up Bros finance", "date": "2026-02-17" },
-    { "description": "Redesigned Dashboard to v3 for high-density professional command center", "date": "2026-02-17" }
+    { "description": "Unified Bella OS Dashboard into high-density 3-column layout", "date": "2026-02-17" },
+    { "description": "Hardcoded Pre-Flight Hot-Testing into core architectural logic", "date": "2026-02-17" },
+    { "description": "Processed complex mental health shift notes for Larissa Marks", "date": "2026-02-16" },
+    { "description": "Identified 5 new commercial leads in Western Sydney via Maps", "date": "2026-02-15" }
   ]
 }
