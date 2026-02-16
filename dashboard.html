@@ -24,22 +24,29 @@
         }
     </script>
     <style>
-        body { background-color: #0a0a0a; color: #e5e5e5; }
-        .glass { background: rgba(18, 18, 18, 0.8); backdrop-filter: blur(12px); border: 1px solid #1f1f1f; }
+        body { background-color: #0a0a0a; color: #e5e5e5; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(18, 18, 18, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 8px 32px 0 rgba(0,0,0,0.8); }
         .kanban-col { min-height: 80vh; }
+        .accent-gradient { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-glow:hover { box-shadow: 0 0 15px rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.4); }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #1f1f1f; border-radius: 10px; }
+        @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .status-pulse { animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
     </style>
 </head>
 <body class="p-4 md:p-8">
-    <header class="flex justify-between items-center mb-8">
+    <header class="flex justify-between items-center mb-10 border-b border-dark-border pb-6">
         <div>
-            <h1 class="text-2xl font-bold tracking-tighter text-white">BELLA COMMAND CENTER</h1>
-            <p class="text-sm text-gray-500">Live Agent Activity & Cron Orchestration</p>
+            <h1 class="text-3xl font-black tracking-tighter text-white uppercase italic">Bella <span class="accent-gradient">OS</span></h1>
+            <p class="text-xs font-mono text-gray-500 mt-1 uppercase tracking-widest">Neural Link Active • Sydney, AU</p>
         </div>
-        <div class="flex items-center gap-4">
-            <div id="status-dot" class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span class="text-xs font-mono text-gray-400" id="last-update">Updating...</span>
+        <div class="text-right">
+            <div class="flex items-center justify-end gap-3 mb-1">
+                <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">System Health</span>
+                <div id="status-dot" class="w-2.5 h-2.5 bg-green-500 rounded-full status-pulse shadow-[0_0_8px_#22c55e]"></div>
+            </div>
+            <span class="text-[10px] font-mono text-gray-600" id="last-update">SYNC_PENDING</span>
         </div>
     </header>
 
@@ -86,15 +93,18 @@
                 // Render Crons
                 const cronList = document.getElementById('cron-list');
                 cronList.innerHTML = data.crons.map(cron => `
-                    <div class="p-3 bg-dark-bg border border-dark-border rounded-lg hover:border-indigo-500 transition-colors group">
-                        <div class="flex justify-between items-start mb-1">
-                            <span class="text-xs font-bold text-gray-300 truncate w-3/4">${cron.name}</span>
-                            <span class="text-[10px] bg-indigo-900/30 text-indigo-400 px-1.5 py-0.5 rounded">${cron.enabled ? 'ON' : 'OFF'}</span>
+                    <div class="p-4 bg-dark-bg/50 border border-dark-border rounded-xl card-glow transition-all group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-1">
+                            <div class="w-1 h-1 rounded-full ${cron.enabled ? 'bg-indigo-500' : 'bg-gray-700'}"></div>
                         </div>
-                        <p class="text-[11px] text-gray-500 line-clamp-2">${cron.payload.text || cron.payload.message || ''}</p>
-                        <div class="mt-2 flex justify-between items-center">
-                             <span class="text-[9px] text-gray-600 font-mono">${cron.schedule.expr || 'ONCE'}</span>
-                             <button class="opacity-0 group-hover:opacity-100 text-[10px] text-indigo-400 font-bold uppercase tracking-widest transition-opacity">Toggle</button>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[11px] font-black text-gray-200 uppercase tracking-tight truncate w-3/4">${cron.name}</span>
+                            <span class="text-[9px] font-mono text-gray-500">${cron.schedule.expr || 'ONCE'}</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 leading-relaxed mb-3">${cron.payload.text || cron.payload.message || ''}</p>
+                        <div class="flex items-center justify-between opacity-40 group-hover:opacity-100 transition-opacity">
+                            <span class="text-[8px] font-mono text-indigo-500/50 uppercase tracking-tighter italic">Trigger: next-heartbeat</span>
+                            <i class="fas fa-bolt text-[9px] text-indigo-400"></i>
                         </div>
                     </div>
                 `).join('');
@@ -102,15 +112,16 @@
                 // Render Live Ops
                 const taskList = document.getElementById('task-list');
                 taskList.innerHTML = data.liveTasks.map(task => `
-                    <div class="p-3 bg-dark-bg border border-yellow-900/20 rounded-lg">
-                        <div class="flex items-center gap-2 mb-2">
-                            <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-                            <span class="text-xs font-bold text-gray-200">${task.label}</span>
+                    <div class="p-4 bg-dark-bg/80 border border-yellow-900/10 rounded-xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-yellow-500/20"></div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-black text-yellow-500 uppercase tracking-widest">${task.label}</span>
+                            <i class="fas fa-circle-notch fa-spin text-yellow-600 text-[10px]"></i>
                         </div>
-                        <div class="w-full bg-gray-800 rounded-full h-1 mb-2">
-                            <div class="bg-yellow-500 h-1 rounded-full animate-pulse" style="width: 70%"></div>
+                        <p class="text-xs text-gray-300 font-medium mb-2">${task.status}</p>
+                        <div class="w-full bg-gray-900 rounded-full h-1">
+                            <div class="bg-yellow-500 h-1 rounded-full shadow-[0_0_8px_rgba(234,179,8,0.4)]" style="width: 85%"></div>
                         </div>
-                        <p class="text-[10px] text-gray-500">${task.status}</p>
                     </div>
                 `).join('');
 
