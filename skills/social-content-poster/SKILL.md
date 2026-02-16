@@ -206,15 +206,32 @@ If no time for research, use these reliable formats:
 3. **Story poll** "Coffee or tea while we clean your place? ☕🍵"
 4. **Quote graphic** "A clean home is a happy home"
 
-## Account Setup (One-Time)
+## Connected Accounts
 
-If not yet configured:
+**Facebook Page:** CLEAN UP BROS (ID: 707617919097782)
+**Instagram:** Linked (ID: 17841475542958087)
 
-1. Create Facebook Page for Clean Up Bros
-2. Convert Instagram to Business Account
-3. Link Instagram to Facebook Page
-4. Set up Meta Business Suite
-5. (Optional) Get Meta API access for full automation
+API credentials in `~/.clawdbot/.env`:
+- `META_SYSTEM_USER_TOKEN`
+- `META_BUSINESS_ID`
+
+## API Posting Commands
+
+```bash
+# List accounts
+python3 scripts/post_to_meta.py list
+
+# Post text only to Facebook
+python3 scripts/post_to_meta.py post "Your caption here"
+
+# Post image to both Facebook + Instagram
+python3 scripts/post_to_meta.py post "Your caption" --image https://url-to-image.jpg
+
+# Post Reel to Instagram
+python3 scripts/post_to_meta.py reel "Your caption" --video https://url-to-video.mp4
+```
+
+**Note:** Instagram requires PUBLIC image/video URLs. Upload to a hosting service first if needed.
 
 ## Files
 
