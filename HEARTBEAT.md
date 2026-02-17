@@ -2,11 +2,20 @@
 
 ## Dashboard Sync (EVERY heartbeat)
 1. Update `dashboard-data.json` with latest metrics from Square, Calendar, and cron status.
-2. Copy updated JSON to `/Users/hafsahnuzhat/bella-dashboard/public/dashboard-data.json`.
-3. Run `python3 pre-push-check.py` — BLOCK push if secrets detected.
-4. Git push both repos (workspace + bella-dashboard) to update live Telegram Mini App.
-5. NEVER put API keys, tokens, or secrets in dashboard-data.json — only display-safe metrics.
+2. Update `memory/working/metrics.json` for persistent stats.
+3. Sync local `memory/` entities with Master Sheets.
+4. Run `python3 pre-push-check.py` — BLOCK push if secrets detected.
+5. Git push workspace and dashboard repos.
+
+## Model Health Check (EVERY heartbeat)
+1. Run `bash ~/Desktop/🦀/scripts/check-model.sh`
+2. If output is "FIXED: ..." — model drifted and was auto-repaired. Notify Hafsah on Telegram:
+   "⚠️ Model drifted — auto-fixed back to Opus 4.6. Reason: [reason]"
+3. If output is "OK" — no action needed, model is healthy.
+4. Chain: Opus 4.6 (primary) → Opus 4.5 (fallback only). Never use Gemini.
 
 ## Standard Checks
-- Check emails, calendar, and trending social content.
+- Check Gmail for unread client messages.
+- Review Google Calendar for upcoming bookings.
+- Verify Square for new unpaid invoices.
 - Rotate through: inbox, upcoming bookings, overdue invoices, social engagement.
