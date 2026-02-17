@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T19:10:00+11:00",
+  "updatedAt": "2026-02-17T19:15:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -9,14 +9,14 @@
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "contextUsage": "0%",
+    "contextUsage": "89%",
     "sessions": 6,
     "memory": {
       "filesIndexed": 48,
       "chunks": 320,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "7:10 PM AEDT"
+    "lastHeartbeat": "7:15 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -54,11 +54,13 @@
   "liveTasks": [
     { "label": "CONNECTEAM_OVERHAUL", "status": "⚠️ Sub-agents hit Gemini 429 rate limits — paused" },
     { "label": "CONNECTEAM_NAV_CLEANUP", "status": "✅ Complete — 13 features archived, sidebar streamlined" },
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 7:10 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 7:15 PM AEDT ✅" },
     { "label": "CONNECTEAM_FORMS", "status": "✅ All 4 checklists Published (Airbnb 12 fields, End of Lease, Deep Clean, General)" },
     { "label": "TRAINING_CONTENT", "status": "✅ Complete: WHS, Chemical Safety, NDIS, Equipment published" },
     { "label": "BRANDING", "status": "✅ Complete: Logo uploaded to Connecteam + welcome screen enabled + 3 staff badges" },
-    { "label": "SOCIAL_MEDIA", "status": "✅ FB + IG posted @ 7:00 PM — POV transformation post live" }
+    { "label": "SOCIAL_MEDIA", "status": "✅ FB + IG posted @ 7:00 PM — POV transformation post live" },
+    { "label": "BOOKKEEPING_RESEARCH", "status": "✅ Complete — 27KB guide at references/BOOKKEEPING-GUIDE.md" },
+    { "label": "WORKSPACE_AUDIT", "status": "✅ Complete — 32.6KB audit at references/WORKSPACE-AUDIT.md" }
   ],
   "patterns": [
     { "description": "Square API = ONLY source of truth for all financial data. No local notes.", "date": "2026-02-17" },
@@ -68,13 +70,14 @@
     { "description": "Branding overhaul complete: logo + welcome screen + staff badges via Nano Banana Pro.", "date": "2026-02-17" },
     { "description": "All 4 cleaning checklists Published in Connecteam (Airbnb finalized with 12 fields).", "date": "2026-02-17" },
     { "description": "Social media POV post live on FB + IG — AI-generated transformation image.", "date": "2026-02-17" },
-    { "description": "6 sessions active at 7:10 PM — bookkeeping-research + workspace-audit sub-agents spawned.", "date": "2026-02-17" }
+    { "description": "Bookkeeping research + workspace audit sub-agents completed successfully.", "date": "2026-02-17" },
+    { "description": "6 sessions active — main + 2 finished sub-agents + cron + 2 completed sub-agents.", "date": "2026-02-17" }
   ],
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": "3 active (dashboard-live-sync-5min, commercial-outreach-daily, social-morning-post)",
-    "subAgents": ["bookkeeping-research 🔄", "workspace-audit 🔄", "connecteam-forms-finish ✅", "connecteam-nav-cleanup ✅"],
-    "lastActivity": "Dashboard Sync @ 7:10 PM AEDT"
+    "subAgents": ["bookkeeping-research ✅", "workspace-audit ✅", "connecteam-forms-finish ✅", "connecteam-nav-cleanup ✅"],
+    "lastActivity": "Dashboard Sync @ 7:15 PM AEDT"
   },
   "social": {
     "lastPost": "POV: You finally stopped spending your whole weekend scrubbing and hired the pros",
