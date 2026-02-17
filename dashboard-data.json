@@ -1,19 +1,19 @@
 {
-  "lastUpdated": "2026-02-17T19:35:00+11:00",
+  "lastUpdated": "2026-02-17T19:42:00+11:00",
   "stats": {
     "revenueMTD": 3515,
     "outstandingBalance": 4155.40,
     "unpaidInvoices": 4,
     "activeLeads": 68,
-    "gstPayable": 319.55
+    "gstPayable": 0
   },
   "bella": {
     "model": "claude-opus-4-6",
-    "activeSessions": 12,
-    "totalSkills": 19,
-    "lastHeartbeat": "2026-02-17T19:35:00+11:00",
-    "memoryFiles": 35,
-    "memoryLastRestructured": "2026-02-17T19:20:00+11:00"
+    "activeSessions": 2,
+    "totalSkills": 20,
+    "lastHeartbeat": "2026-02-17T19:42:00+11:00",
+    "memoryFiles": 38,
+    "roles": 20
   },
   "financial": {
     "unpaidDetails": [
@@ -23,7 +23,8 @@
       {"client": "Herdip Gill", "invoice": "#000045", "amount": 150.00, "status": "UNPAID"}
     ],
     "totalOutstanding": 4155.40,
-    "recentPayments": []
+    "gstRegistered": false,
+    "structure": "Sole Trader"
   },
   "calendar": {
     "today": [],
@@ -31,33 +32,17 @@
       {"date": "2026-02-19", "time": "20:00", "summary": "🧹 U3 Atkinson Cleaning"}
     ]
   },
-  "crons": {
-    "status": "active",
-    "lastChecked": "2026-02-17T19:35:00+11:00",
-    "note": "dashboard-live-sync-5min running"
-  },
   "liveTasks": [
-    {"task": "Master Hub Protocol", "status": "Complete", "timestamp": "2026-02-17T19:25:00+11:00"},
-    {"task": "Memory Restructure", "status": "Complete", "timestamp": "2026-02-17T19:20:00+11:00"},
-    {"task": "Client Log Sync (20 customers)", "status": "Complete", "timestamp": "2026-02-17T19:25:00+11:00"},
-    {"task": "6 New Skills Created", "status": "Complete", "timestamp": "2026-02-17T19:28:00+11:00"},
-    {"task": "Daily Log Consolidation", "status": "Complete", "timestamp": "2026-02-17T19:26:00+11:00"},
-    {"task": "Archive Extraction (6 scripts)", "status": "Complete", "timestamp": "2026-02-17T19:30:00+11:00"},
-    {"task": "MEMORY.md Full Update", "status": "Complete", "timestamp": "2026-02-17T19:33:00+11:00"},
-    {"task": "Dashboard Cron Sync", "status": "Running", "timestamp": "2026-02-17T19:35:00+11:00"}
+    {"task": "Bookkeeping Role #20", "status": "Complete", "timestamp": "2026-02-17T19:35:00+11:00"},
+    {"task": "11-Tab Bookkeeping Sheet", "status": "Live", "timestamp": "2026-02-17T19:40:00+11:00"},
+    {"task": "Master Hub Protocol", "status": "Active", "timestamp": "2026-02-17T19:25:00+11:00"}
   ],
   "patterns": [
-    "Cross-reference protocol established: Square → Sheet → Gmail → Task Log",
-    "19 skills operational (13 existing + 6 new)",
-    "Master Ops Sheet is the unified dashboard hub",
-    "Orchestrator mode fully active with sub-agent delegation",
-    "Memory restructured with consolidated daily logs (Feb 13/16/17)",
-    "6 production scripts extracted from archive to scripts/"
+    "Sole Trader logic enabled (No GST)",
+    "Shamal recorded as Employee",
+    "Arieta recorded as Manual/Private",
+    "20 roles operational"
   ],
-  "activeSessions": {
-    "main": "agent:main:main",
-    "subAgents": ["sheet-sync", "skill-creation", "daily-consolidation", "memory-restructure", "archive-extraction", "memory-update"]
-  },
   "social": {
     "lastPost": "2026-02-17 (FB + IG before/after transformation)",
     "engagement": "pending review"
