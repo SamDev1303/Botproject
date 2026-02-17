@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T01:45:00Z",
+  "updatedAt": "2026-02-17T01:50:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -19,13 +19,13 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" } }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live sync completed at 12:45 PM AEST." },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync completed at 12:50 PM AEST." },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT." },
-    { "label": "SESSIONS_ACTIVE", "status": "2 sessions active. Main session on gemini-3-flash." },
-    { "label": "CRON_STATUS", "status": "Cron running (gateway timeout recovered)." }
+    { "label": "SESSIONS_ACTIVE", "status": "2 sessions active. Main on gemini-3-flash, cron on opus." },
+    { "label": "CRON_STATUS", "status": "dashboard-live-sync running. Gateway recovered from timeout." }
   ],
   "patterns": [
-    { "description": "Dashboard cron sync executed (12:45 PM AEST).", "date": "2026-02-17" },
+    { "description": "Dashboard cron sync executed (12:50 PM AEST).", "date": "2026-02-17" },
     { "description": "Outstanding balance: $4,590.40 (Meshach $3,750 included).", "date": "2026-02-17" },
     { "description": "Clinical documentation system operational for Larissa/Lisa.", "date": "2026-02-16" },
     { "description": "Bella OS v3.0 mobile-first layout deployed.", "date": "2026-02-17" }
