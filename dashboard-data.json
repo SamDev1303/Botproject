@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T10:10:00+11:00",
+  "lastUpdated": "2026-02-18T10:15:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T10:10:00+11:00",
+    "lastHeartbeat": "2026-02-18T10:15:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,15 +76,15 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 10:10 AEDT", "timestamp": "2026-02-18 10:10"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 10:10"},
-    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift | Daily 90% (3h 49m) | Weekly 11% (2d 17h)", "timestamp": "2026-02-18 10:10"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 10:10"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 10:10"},
-    {"label": "SESSION_NOTE", "status": "ℹ️ Karanjeet 10:30 IN PROGRESS (Hafsah) | Pinnacle 11:30 upcoming (Shamal)", "timestamp": "2026-02-18 10:10"},
-    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 10:10"},
-    {"label": "TOKEN_USAGE", "status": "ℹ️ Daily 90% left (3h 49m) | Weekly 11% left (2d 17h)", "timestamp": "2026-02-18 10:10"},
-    {"label": "COMMERCIAL_OUTREACH", "status": "✅ 12 hot leads pulled, 3 cold emails drafted — awaiting Gmail auth fix", "timestamp": "2026-02-18 10:10"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 10:15 AEDT", "timestamp": "2026-02-18 10:15"},
+    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 10:15"},
+    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift | Daily 86% (3h 44m) | Weekly 11% (2d 17h)", "timestamp": "2026-02-18 10:15"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 10:15"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 10:15"},
+    {"label": "SESSION_NOTE", "status": "ℹ️ Karanjeet 10:30 IN PROGRESS (Hafsah) | Pinnacle 11:30 upcoming (Shamal)", "timestamp": "2026-02-18 10:15"},
+    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 10:15"},
+    {"label": "TOKEN_USAGE", "status": "ℹ️ Daily 86% left (3h 44m) | Weekly 11% left (2d 17h)", "timestamp": "2026-02-18 10:15"},
+    {"label": "COMMERCIAL_OUTREACH", "status": "✅ 12 hot leads pulled, 3 cold emails drafted — awaiting Gmail auth fix", "timestamp": "2026-02-18 10:15"}
   ],
   "patterns": [
     {"description": "Dashboard cron sync 10:10 AEDT — routine cycle", "date": "2026-02-18"},
@@ -103,10 +103,10 @@
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T10:10:00+11:00",
+    "lastActivity": "2026-02-18T10:15:00+11:00",
     "active": [
       {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 10:07", "model": "anthropic/claude-opus-4-6", "status": "Active — 77k tokens"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 10:10", "model": "anthropic/claude-opus-4-6"}
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 10:15", "model": "anthropic/claude-opus-4-6"}
     ]
   },
   "social": {
