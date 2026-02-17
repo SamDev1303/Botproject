@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T04:30:00+11:00",
+  "lastUpdated": "2026-02-18T04:35:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T04:30:00+11:00",
+    "lastHeartbeat": "2026-02-18T04:35:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -73,31 +73,32 @@
     {"id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 04:30 AEDT", "timestamp": "2026-02-18 04:30"},
-    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE | Meshach due Mar 5", "timestamp": "2026-02-18 04:30"},
+    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 04:35 AEDT", "timestamp": "2026-02-18 04:35"},
+    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE | Meshach due Mar 5", "timestamp": "2026-02-18 04:35"},
     {"label": "SOCIAL_REELS", "status": "FB+IG Reels Published", "timestamp": "2026-02-18 02:05"},
     {"label": "SYSTEM_OVERHAUL", "status": "Orchestrator Mode Active", "timestamp": "2026-02-17 23:00"},
-    {"label": "MEMORY_SEARCH", "status": "⚠️ Gemini embeddings API key invalid — search disabled", "timestamp": "2026-02-18 04:30"}
+    {"label": "MEMORY_SEARCH", "status": "⚠️ Gemini embeddings API key invalid — search disabled", "timestamp": "2026-02-18 04:35"},
+    {"label": "MAIN_SESSION", "status": "⚠️ Gemini Flash API key invalid — main session errors", "timestamp": "2026-02-18 04:35"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 04:30 AEDT — overnight quiet cycle", "date": "2026-02-18"},
-    {"description": "Model running on Opus 4.6 — healthy, no drift detected", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 04:35 AEDT — overnight quiet cycle", "date": "2026-02-18"},
+    {"description": "Model running on Opus 4.6 (cron) — healthy, no drift", "date": "2026-02-18"},
+    {"description": "⚠️ Main session on Gemini Flash — 400 API_KEY_INVALID error", "date": "2026-02-18"},
     {"description": "⚠️ memory_search disabled — Gemini embeddings API key invalid (400)", "date": "2026-02-18"},
-    {"description": "Cron list timed out — gateway may be under load at 4:30 AM", "date": "2026-02-18"},
+    {"description": "Cron list gateway timeout — gateway under load at 4:35 AM", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Today: Karanjeet 10:30 + Pinnacle 11:30 (2 cleans)", "date": "2026-02-18"},
     {"description": "Meshach $3,750 balance due Mar 5 — not yet overdue", "date": "2026-02-18"},
-    {"description": "Usage: 5h 96% daily left, 17% weekly left", "date": "2026-02-18"},
-    {"description": "Hafsah last active 04:29 AM — brief check-in", "date": "2026-02-18"}
+    {"description": "Usage: 5h daily 93% left, 17% weekly left", "date": "2026-02-18"}
   ],
   "activeSessions": {
-    "main": "claude-opus-4-6",
+    "main": "gemini-3-flash-preview (⚠️ API key invalid)",
     "cronJobs": 1,
-    "lastActivity": "2026-02-18T04:30:00+11:00",
+    "lastActivity": "2026-02-18T04:35:00+11:00",
     "active": [
-      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 04:29", "model": "claude-opus-4-6"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 04:30", "model": "claude-opus-4-6"}
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 04:29", "model": "gemini-3-flash-preview", "status": "⚠️ API key error"},
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 04:35", "model": "claude-opus-4-6"}
     ]
   },
   "social": {
