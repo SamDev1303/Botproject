@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T06:00:00Z",
+  "updatedAt": "2026-02-17T06:05:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -10,13 +10,13 @@
   "bella": {
     "model": "anthropic/claude-opus-4-6",
     "contextUsage": "0%",
-    "sessions": 3,
+    "sessions": 4,
     "memory": {
       "filesIndexed": 47,
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "5:00 PM AEDT"
+    "lastHeartbeat": "5:05 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -52,23 +52,23 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 5:00 PM AEDT" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 5:05 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "CONNECTEAM_SETUP", "status": "Sub-agent rate-limited (Gemini 429) — roster skill scripts working, Forms pending" },
-    { "label": "SESSION_STATUS", "status": "3 sessions — Opus 4 cron + connecteam-setup sub-agent (rate-limited) + main (Gemini Flash)" },
+    { "label": "CONNECTEAM_SETUP", "status": "Sub-agent running — NotebookLM + forms pending, roster scripts operational" },
+    { "label": "SESSION_STATUS", "status": "4 sessions — Opus cron + 2 sub-agents (connecteam-setup, connecteam-notebooklm) + main" },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 5:00 PM: Calendar updated with Wed U3 Atkinson + Sat Pinnacle. Connecteam sub-agent still rate-limited (Gemini 429). Gateway cron list timed out — transient.", "date": "2026-02-17" },
+    { "description": "Dashboard 5-min sync @ 5:05 PM: 4 active sessions. Connecteam sub-agents running (setup + notebooklm). Gateway cron list timed out — transient. Calendar: Wed U3 Atkinson, Sat Pinnacle.", "date": "2026-02-17" },
     { "description": "Connecteam roster skill fully built (7 scripts, 11 jobs created). Forms creation pending via sub-agent.", "date": "2026-02-17" },
     { "description": "Square SOT rule enforced. Meshach balance corrected to $3,750 from live Square data.", "date": "2026-02-17" },
     { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" }
   ],
   "activeSessions": {
-    "main": "google/gemini-3-flash-preview",
+    "main": "anthropic/claude-opus-4-6",
     "cronJobs": 3,
-    "subAgents": ["connecteam-setup (rate-limited)"],
-    "lastActivity": "Dashboard sync @ 5:00 PM AEDT"
+    "subAgents": ["connecteam-setup", "connecteam-notebooklm"],
+    "lastActivity": "Dashboard sync @ 5:05 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
