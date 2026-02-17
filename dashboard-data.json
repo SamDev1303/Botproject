@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T06:25:00Z",
+  "updatedAt": "2026-02-17T06:30:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -16,7 +16,7 @@
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "5:25 PM AEDT"
+    "lastHeartbeat": "5:30 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -33,7 +33,7 @@
       { "month": "Feb", "revenue": 14214, "expenses": 4100 }
     ],
     "overdueAccounts": [
-      { "client": "Meshach Ephraim Care", "amount": "$3,750", "daysOverdue": 30, "lastContact": "Payment plan active", "status": "MONITORING" }
+      { "client": "Meshach Ephraim Care", "amount": "$3,750", "daysOverdue": 30, "lastContact": "Payment plan active — due 5 Mar 2026", "status": "MONITORING" }
     ]
   },
   "calendar": {
@@ -52,14 +52,14 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:25 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:30 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "CONNECTEAM_SETUP", "status": "Roster scripts active (7 scripts, 11 jobs). Training guides written (WHS, Chemical, NDIS, Equipment)." },
+    { "label": "CONNECTEAM_SETUP", "status": "Roster active (7 scripts, 11 jobs). 4 training guides written (WHS, Chemical, NDIS, Equipment). KB upload in progress." },
     { "label": "SESSION_STATUS", "status": "7 sessions (1 main, 1 cron, 5 sub-agents). Gemini rate limits hit on some sub-agents." },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard sync @ 5:25 PM: 7 sessions active. Training guides completed — navigating Connecteam KB upload.", "date": "2026-02-17" },
+    { "description": "Dashboard sync @ 5:30 PM: 7 sessions active. Training guides completed — Connecteam KB upload ongoing.", "date": "2026-02-17" },
     { "description": "Connecteam roster skill fully built (11 jobs created). 4 training guides written: WHS, Chemical Safety, NDIS, Equipment.", "date": "2026-02-17" },
     { "description": "Square SOT rule enforced. Meshach balance confirmed at $3,750 (due 5 Mar).", "date": "2026-02-17" },
     { "description": "Gemini rate limits (429) hit on sub-agents — some stalled. Main session on Opus stable.", "date": "2026-02-17" },
@@ -69,7 +69,7 @@
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 3,
     "subAgents": ["connecteam-final", "notebooklm-connecteam", "connecteam-manual", "connecteam-notebooklm", "connecteam-setup"],
-    "lastActivity": "Dashboard sync @ 5:25 PM AEDT"
+    "lastActivity": "Dashboard sync @ 5:30 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
