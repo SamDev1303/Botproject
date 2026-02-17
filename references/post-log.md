@@ -1,5 +1,17 @@
 # Social Media Post Log
 
+## 2026-02-18 (Tue 7:00 AM AEDT) — Morning Post
+- **Platform:** Facebook + Instagram
+- **Type:** Quick Cleaning Hack (Tuesday rotation)
+- **Topic:** Dishwasher tablet shower glass hack (trending Feb 2026)
+- **Image:** AI-generated flat-lay — dishwasher tablet + sparkling shower glass with "HACK OF THE WEEK" overlay
+- **Caption Hook:** "Stop scrubbing your shower glass like it owes you money. 🚿😤"
+- **Facebook Photo ID:** 122167458224918915 (Post: 707617919097782_122167458242918915)
+- **Instagram Media ID:** 18083773895337200 (Container: 17874125991518099)
+- **Image Host:** https://files.catbox.moe/x0sje8.png
+- **Hashtags:** #cleanupbros #cleaninghack #showercleaning #hardwaterstains #dishwashertablet #cleaningtips #sydneycleaning #liverpoolnsw #westernsydney #cleaningtransformation #satisfyingcleaning #cleantok #cleaningmotivation #bondcleaning #endofleasecleaning
+- **Engagement:** [check after 24hrs]
+
 ## 2026-02-18 (Wed ~2:45 AM AEDT) — Post #2
 - **Platform:** Facebook + Instagram
 - **Type:** Short viral video — Tile scrubbing ASMR/satisfying (8 sec)
