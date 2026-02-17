@@ -15,7 +15,7 @@ See `config/WORKFLOW.md` for detailed delegation rules.
 - Keep main context fresh by delegating heavy work
 - Use code blocks for copy-paste content
 - Be proactive — anticipate, don't just react
-- **Pre-Flight Validation:** Always read `skills/pre-flight-validator/SKILL.md` before finalizing deployments or data-heavy reports. Never say "it's done" until you have personally verified the result via `web_fetch` or `browser`.
+- **Pre-Flight Validation:** Always read `skills/pre-flight-validator/SKILL.md` before finalizing deployments or data-heavy reports. Never say "it's done" until you have personally verified the result via `web_fetch` or `browser`. Perform a "hot test" on all links, apps, and projects—if a link is provided, I must confirm its contents match the requested state before replying.
 - **Secret Guard:** Read `skills/secret-guard/SKILL.md` and run `python3 pre-push-check.py` before every `git push`. Never push exposed API keys or tokens to GitHub.
 
 ## First Run
@@ -37,10 +37,11 @@ Don't ask permission. Just do it.
 
 ## On Session End (/new or /reset)
 
-Before clearing:
-1. Write a summary of the current session to `memory/YYYY-MM-DD-HHMM.md`
-2. Copy today's memory files to `memory/backup/`
-3. Prune backup files older than 7 days
+The `session-memory` hook auto-saves context when `/new` fires. Additionally, before clearing:
+1. Save the **last 7 messages** (summary + key decisions) to `memory/YYYY-MM-DD-HHMM.md`
+2. Include: what was discussed, any rules/preferences set, tasks completed, pending items
+3. Copy today's memory files to `memory/backup/`
+4. Prune backup files older than 7 days
 4. This ensures continuity — next session picks up where we left off
 
 ## Memory
@@ -272,10 +273,26 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - **Review and update MEMORY.md** (see below)
 
 ## Dashboard Control
-- **Bella Dashboard:** `dashboard.html` (Deployed to GitHub Pages/Mini App)
-- **Data Source:** `dashboard-data.json`
+- **Bella Dashboard v4.0:** `/Users/hafsahnuzhat/bella-dashboard/` (React/Vite, deployed to Vercel as Telegram Mini App)
+- **Data Source:** `dashboard-data.json` in workspace root (copied to bella-dashboard/public/ on build)
 - **Sync Protocol:** Update `dashboard-data.json` during every heartbeat and after major task completion.
-- **Push Rule:** Always push to `origin main` after updating JSON to ensure the Telegram Mini App reflects live state.
+- **Key Leak Prevention:** Always run `python3 pre-push-check.py` before pushing. The dashboard-data.json must NEVER contain API keys, tokens, or secrets — only display-safe metrics.
+- **Push Rule:** After updating dashboard-data.json:
+  1. Copy to `/Users/hafsahnuzhat/bella-dashboard/public/dashboard-data.json`
+  2. Push workspace repo to `origin main`
+  3. Push bella-dashboard to its Vercel-connected repo to update the live Mini App
+
+### Dashboard Data Schema
+The `dashboard-data.json` must include these sections:
+- `stats` — Revenue MTD, outstanding balance, unpaid invoices, leads, GST payable
+- `bella` — Model, sessions, memory stats, last heartbeat
+- `financial` — Recent transactions, monthly chart data, overdue accounts
+- `calendar` — Today's bookings, upcoming 7 days
+- `crons` — Cron job statuses
+- `liveTasks` — Current live task statuses
+- `patterns` — Recent observations/decisions
+- `activeSessions` — Session info
+- `social` — Last social post, engagement
 
 Periodically (every few days), use a heartbeat to:
 1. Read through recent `memory/YYYY-MM-DD.md` files

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T06:15:00Z",
+  "updatedAt": "2026-02-17T06:20:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -9,14 +9,14 @@
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "contextUsage": "63%",
+    "contextUsage": "0%",
     "sessions": 5,
     "memory": {
       "filesIndexed": 47,
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "5:15 PM AEDT"
+    "lastHeartbeat": "5:20 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -52,23 +52,23 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 5:15 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:20 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "CONNECTEAM_SETUP", "status": "Sub-agent running — NotebookLM + forms pending, roster scripts operational" },
-    { "label": "SESSION_STATUS", "status": "5 sessions — Opus cron + 2 sub-agents (connecteam-setup, connecteam-notebooklm) + main" },
+    { "label": "CONNECTEAM_SETUP", "status": "Roster scripts active (7 scripts, 11 jobs created). NotebookLM forms sub-agent running." },
+    { "label": "SESSION_STATUS", "status": "5 active sessions (1 main, 1 cron, 3 sub-agents)" },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 5:15 PM: 5 active sessions. Connecteam sub-agents still running. Main session at 63% context. Calendar clear today, next job Wed U3 Atkinson.", "date": "2026-02-17" },
-    { "description": "Connecteam roster skill fully built (7 scripts, 11 jobs created). Forms creation pending via sub-agent.", "date": "2026-02-17" },
-    { "description": "Square SOT rule enforced. Meshach balance corrected to $3,750 from live Square data.", "date": "2026-02-17" },
+    { "description": "Dashboard live sync @ 5:20 PM: 5 active sessions. Connecteam sub-agents active. Next job Wed U3 Atkinson.", "date": "2026-02-17" },
+    { "description": "Connecteam roster skill fully built (11 jobs created). Forms sub-agent handling NotebookLM setup.", "date": "2026-02-17" },
+    { "description": "Square SOT rule enforced. Meshach balance confirmed at $3,750.", "date": "2026-02-17" },
     { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" }
   ],
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 3,
-    "subAgents": ["connecteam-setup", "connecteam-notebooklm"],
-    "lastActivity": "Dashboard sync @ 5:15 PM AEDT"
+    "subAgents": ["connecteam-setup", "connecteam-notebooklm", "notebooklm-connecteam"],
+    "lastActivity": "Dashboard sync @ 5:20 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
