@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T00:20:00+11:00",
+  "lastUpdated": "2026-02-18T00:25:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": "$4,590.40",
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T00:20:00+11:00",
+    "lastHeartbeat": "2026-02-18T00:25:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -61,30 +61,34 @@
   "calendar": {
     "today": [],
     "upcoming": [
-      { "title": "🧹 U3 Atkinson Cleaning", "time": "20:00", "type": "cleaning" }
+      { "title": "🧹 U3 Atkinson Cleaning", "time": "20:00", "date": "2026-02-19", "type": "cleaning" }
     ]
   },
   "crons": [
     { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-18 00:20" },
+    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-18 00:25" },
     { "label": "INVOICE_CHECK", "status": "Claudia Invoice Query", "timestamp": "2026-02-17 23:37" },
     { "label": "SYSTEM_OVERHAUL", "status": "Orchestrator Mode Active", "timestamp": "2026-02-17 23:00" }
   ],
   "patterns": [
-    { "description": "Model Stability: Rate limit monitoring active (Opus/Gemini)", "date": "2026-02-17" },
+    { "description": "Cron dashboard sync running on Opus 4.6 — stable", "date": "2026-02-18" },
+    { "description": "Main session on Gemini 3 Pro — model drift detected", "date": "2026-02-18" },
     { "description": "Major System Overhaul: Commands, Memory, Dashboard v3, Cleanup", "date": "2026-02-17" },
-    { "description": "Workflow Update: Orchestrator Mode & Delegation Rules", "date": "2026-02-17" },
     { "description": "Migrated 20 active client entries to Master Operations Log", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "anthropic/claude-opus-4-6",
+    "main": "gemini-3-pro-preview",
     "cronJobs": 1,
-    "lastActivity": "2026-02-18T00:20:00+11:00",
+    "lastActivity": "2026-02-18T00:25:00+11:00",
     "active": [
       { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 00:09", "model": "gemini-3-pro-preview" },
-      { "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 00:20" }
+      { "key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 00:25", "model": "claude-opus-4-6" }
     ]
+  },
+  "social": {
+    "lastPost": null,
+    "engagement": "N/A"
   }
 }
