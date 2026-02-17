@@ -1,39 +1,76 @@
 {
-  "updatedAt": "2026-02-17T04:25:00Z",
+  "updatedAt": "2026-02-17T04:30:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
     "revenueMTD": "$14,214",
-    "outstandingBalance": "$4,590.40"
+    "outstandingBalance": "$4,590.40",
+    "gstPayable": "$417.31"
   },
-  "portfolio": [
-    { "ticker": "TSLA", "name": "Tesla", "price": "842.12", "change": 2.4 },
-    { "ticker": "ASML", "name": "ASML Holding", "price": "712.45", "change": 1.1 },
-    { "ticker": "AAPL", "name": "Apple", "price": "189.30", "change": -0.4 },
-    { "ticker": "GOOG", "name": "Alphabet", "price": "142.10", "change": 0.8 },
-    { "ticker": "HOOD", "name": "Robinhood", "price": "18.45", "change": 3.2 }
-  ],
+  "bella": {
+    "model": "claude-opus-4-6",
+    "contextUsage": "42%",
+    "sessions": 2,
+    "memory": {
+      "filesIndexed": 47,
+      "chunks": 312,
+      "cacheStatus": "warm"
+    },
+    "lastHeartbeat": "3:30 PM AEDT"
+  },
+  "financial": {
+    "recentTransactions": [
+      { "id": "1", "client": "Sarah M.", "amount": "$380", "date": "15/02/2026", "type": "payment", "status": "completed" },
+      { "id": "2", "client": "James K.", "amount": "$280", "date": "14/02/2026", "type": "payment", "status": "completed" },
+      { "id": "3", "client": "Airbnb Host", "amount": "$120", "date": "13/02/2026", "type": "invoice", "status": "pending" }
+    ],
+    "monthlyData": [
+      { "month": "Sep", "revenue": 8200, "expenses": 3100 },
+      { "month": "Oct", "revenue": 9800, "expenses": 3400 },
+      { "month": "Nov", "revenue": 11200, "expenses": 3800 },
+      { "month": "Dec", "revenue": 13500, "expenses": 4200 },
+      { "month": "Jan", "revenue": 12800, "expenses": 3900 },
+      { "month": "Feb", "revenue": 14214, "expenses": 4100 }
+    ],
+    "overdueAccounts": [
+      { "client": "Meshach Ephraim Care", "amount": "$3,750", "daysOverdue": 30, "lastContact": "Payment plan active", "status": "MONITORING" }
+    ]
+  },
+  "calendar": {
+    "today": [
+      { "title": "No bookings today", "time": "-", "type": "reminder" }
+    ],
+    "upcoming": [
+      { "title": "2BR End of Lease Clean", "time": "Mar 13 @ 10:00 AM", "location": "Liverpool", "type": "cleaning" }
+    ]
+  },
   "crons": [
     { "name": "dashboard-live-sync-5min", "enabled": true, "schedule": { "expr": "*/5 * * * *" }, "status": "running" },
     { "name": "commercial-outreach-daily", "enabled": true, "schedule": { "expr": "0 10 * * *" }, "status": "ok" },
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 3:25 PM AEDT" },
-    { "label": "CALENDAR_UPDATE", "status": "Cleaning scheduled: March 13th @ 10:00 AM" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 3:30 PM AEDT" },
+    { "label": "CALENDAR_UPDATE", "status": "Next clean: March 13th @ 10:00 AM, Liverpool" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "SESSION_STATUS", "status": "Main session active — Opus 4.6" }
+    { "label": "SESSION_STATUS", "status": "2 sessions active — Opus 4.6" },
+    { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 3:25 PM: All systems nominal. Cron gateway timeout (non-critical, retry next cycle).", "date": "2026-02-17" },
-    { "description": "Scheduled new cleaning job: March 13, 10:00 AM - 12:00 PM.", "date": "2026-02-17" },
-    { "description": "Engagement poll posted: 'Worst chore to clean?' with AI-generated transformation asset.", "date": "2026-02-17" },
-    { "description": "Verified outstanding balance: $4,590.40 (Meshach $3,750 included).", "date": "2026-02-17" },
-    { "description": "Clinical docs system operational — shift notes + incident reports templated.", "date": "2026-02-16" }
+    { "description": "Dashboard 5-min sync @ 3:30 PM: All systems nominal.", "date": "2026-02-17" },
+    { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" },
+    { "description": "Incident report filed: Larissa Marks medication refusal (15/02).", "date": "2026-02-16" },
+    { "description": "NDIS invoice: Janette Vamarasi $127.70 (2hrs + 12km travel).", "date": "2026-02-16" },
+    { "description": "Meshach outstanding corrected to $3,750 (was hallucinated $2k payment).", "date": "2026-02-17" }
   ],
   "activeSessions": {
     "main": "claude-opus-4-6",
     "cronJobs": 3,
-    "lastActivity": "Dashboard sync @ 3:25 PM AEDT"
+    "lastActivity": "Dashboard sync @ 3:30 PM AEDT"
+  },
+  "social": {
+    "lastPost": "Engagement poll: 'Worst chore to clean?'",
+    "engagement": "12 reactions, 3 comments",
+    "platform": "Instagram"
   }
 }
