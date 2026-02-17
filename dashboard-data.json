@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T19:15:00+11:00",
+  "updatedAt": "2026-02-17T18:20:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -10,13 +10,13 @@
   "bella": {
     "model": "anthropic/claude-opus-4-6",
     "contextUsage": "5.1%",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 48,
       "chunks": 320,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "6:15 PM AEDT"
+    "lastHeartbeat": "6:20 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -52,23 +52,23 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "CONNECTEAM_OVERHAUL", "status": "In Progress: Staff bios & branding update" },
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 6:15 PM AEDT ✅" },
+    { "label": "CONNECTEAM_OVERHAUL", "status": "⚠️ Sub-agents hitting Gemini 429 rate limits — paused" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 6:20 PM AEDT ✅" },
     { "label": "CONNECTEAM_FORMS", "status": "Validation in progress: End of Lease, Deep Clean, General, Airbnb" },
     { "label": "TRAINING_CONTENT", "status": "Complete: WHS, Chemical Safety, NDIS, Equipment published ✅" }
   ],
   "patterns": [
     { "description": "Square API = ONLY source of truth for all financial data. No local notes.", "date": "2026-02-17" },
     { "description": "Connecteam Scheduler fully operational: 11 job locations, 3 staff synced.", "date": "2026-02-17" },
-    { "description": "Training content published: WHS, Chemical Safety, NDIS, Equipment courses.", "date": "2026-02-17" },
-    { "description": "Hafsah prefers simplified button options (1-2 max per reply).", "date": "2026-02-17" },
-    { "description": "Sub-agents active: claude-code-browser-overhaul, connecteam-overhaul-gemini.", "date": "2026-02-17" }
+    { "description": "⚠️ Gemini Flash 429 rate limits hitting multiple sub-agents — 6 sub-agents errored.", "date": "2026-02-17" },
+    { "description": "Main session on Gemini Flash operational; sub-agents need retry/backoff.", "date": "2026-02-17" },
+    { "description": "Hafsah prefers simplified button options (1-2 max per reply).", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "anthropic/claude-opus-4-6",
-    "cronJobs": "3 active",
-    "subAgents": ["claude-code-browser-overhaul", "connecteam-overhaul-gemini-fixed", "connecteam-overhaul-gemini"],
-    "lastActivity": "Dashboard Sync @ 6:15 PM AEDT"
+    "main": "google/gemini-3-flash-preview",
+    "cronJobs": "3 active (cron list timed out this cycle)",
+    "subAgents": ["claude-code-browser-overhaul", "connecteam-overhaul-gemini-fixed", "connecteam-overhaul-gemini", "connecteam-setup-finalization", "connecteam-completion-v2", "connecteam-training-setup", "connecteam-final", "connecteam-manual"],
+    "lastActivity": "Dashboard Sync @ 6:20 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
