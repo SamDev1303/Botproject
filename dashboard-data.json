@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T18:12:00Z",
+  "updatedAt": "2026-02-17T18:15:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -9,14 +9,14 @@
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "contextUsage": "4.2%",
-    "sessions": 5,
+    "contextUsage": "5.1%",
+    "sessions": 10,
     "memory": {
       "filesIndexed": 48,
       "chunks": 320,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "6:12 PM AEDT"
+    "lastHeartbeat": "6:15 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -53,17 +53,17 @@
   ],
   "liveTasks": [
     { "label": "CONNECTEAM_OVERHAUL", "status": "In Progress: Staff bios & branding update" },
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 6:12 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 6:15 PM AEDT ✅" },
     { "label": "CONNECTEAM_FORMS", "status": "Validation in progress: End of Lease, Deep Clean, General, Airbnb" }
   ],
   "patterns": [
-    { "description": "Resolved financial hallucination regarding Meshach; Square balance confirmed at $3,750.", "date": "2026-02-17" },
-    { "description": "Transitioned to Orchestrator mode; delegated heavy tasks to sub-agents.", "date": "2026-02-17" },
-    { "description": "Implemented 'Dashboard-First' rule for business operations.", "date": "2026-02-17" }
+    { "description": "Strict Square API compliance enforced for all financial reporting.", "date": "2026-02-17" },
+    { "description": "Connecteam Scheduler integration fully operational; 11 job locations synced.", "date": "2026-02-17" },
+    { "description": "Training content for WHS, Chemical Safety, NDIS, and Equipment published.", "date": "2026-02-17" }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
-    "cronJobs": "3 active (dashboard-sync, commercial, social)",
+    "cronJobs": "3 active",
     "subAgents": ["connecteam-overhaul-gemini", "connecteam-setup-finalization"],
     "lastActivity": "Live Dashboard Sync"
   },
