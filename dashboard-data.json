@@ -52,23 +52,23 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:50 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:55 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
     { "label": "CONNECTEAM_KB", "status": "Training guides written. Connecteam training setup sub-agent active." },
-    { "label": "SESSION_STATUS", "status": "5 active sessions. Main session on Gemini Flash stable." },
+    { "label": "SESSION_STATUS", "status": "21 active sessions. Version mismatch detected (2.24.2 vs 2.24.3)." },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard sync @ 5:50 PM: 5 sessions active. Dashboard-First rule enforced.", "date": "2026-02-17" },
+    { "description": "Dashboard sync @ 5:55 PM: 21 sessions active. Gateway version mismatch (2.24.2 vs 2.24.3) noted.", "date": "2026-02-17" },
     { "description": "Resolved Meshach financial discrepancy: Square confirmed $3,750 remaining.", "date": "2026-02-17" },
     { "description": "Enforced Square API as ONLY source of truth for financial data.", "date": "2026-02-17" },
     { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
-    "cronJobs": "Unable to fetch (gateway timeout)",
-    "subAgents": ["connecteam-training-setup", "connecteam-final", "notebooklm-connecteam"],
-    "lastActivity": "Dashboard sync @ 5:50 PM AEDT"
+    "cronJobs": "3 active (dashboard-sync, commercial, social)",
+    "subAgents": ["connecteam-training-setup", "connecteam-final", "notebooklm-connecteam", "connecteam-completion-v2"],
+    "lastActivity": "Dashboard sync @ 5:55 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
