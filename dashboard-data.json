@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T05:45:00+11:00",
+  "lastUpdated": "2026-02-18T05:50:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T05:45:00+11:00",
+    "lastHeartbeat": "2026-02-18T05:50:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,16 +76,19 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 05:45 AEDT", "timestamp": "2026-02-18 05:45"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 05:45"},
-    {"label": "MODEL_STATUS", "status": "✅ claude-opus-4-6 (cron) / gemini-3-pro (main, 69k tokens)", "timestamp": "2026-02-18 05:45"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 05:45"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 05:45"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 05:50 AEDT", "timestamp": "2026-02-18 05:50"},
+    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 05:50"},
+    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 (cron) · Gemini 3 Pro (main, 69k tokens) · Opus 5h 76% left", "timestamp": "2026-02-18 05:50"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 05:50"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 05:50"},
+    {"label": "SESSION_NOTE", "status": "ℹ️ Hafsah switched main to Gemini 3 Pro at 04:30 — late night config", "timestamp": "2026-02-18 05:50"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 05:45 AEDT — routine cycle, gateway cron timeout persists", "date": "2026-02-18"},
-    {"description": "⚠️ Gateway cron list timeout persistent (05:35–05:45) — not blocking syncs", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 05:50 AEDT — routine cycle, gateway cron timeout persists", "date": "2026-02-18"},
+    {"description": "⚠️ Gateway cron list timeout persistent (05:35–05:50) — not blocking syncs", "date": "2026-02-18"},
     {"description": "Main session on Gemini 3 Pro (69k tokens used), cron on Opus 4.6", "date": "2026-02-18"},
+    {"description": "Hafsah switched main to Gemini 3 Pro at ~04:30 AM — Opus untouched as default", "date": "2026-02-18"},
+    {"description": "Gemini API key error hit at 05:00 AM — session recovered after /new", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Today: Karanjeet 10:30 (Hafsah) + Pinnacle 11:30 (Shamal) — 2 cleans", "date": "2026-02-18"},
@@ -96,10 +99,10 @@
   "activeSessions": {
     "main": "google/gemini-3-pro-preview",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T05:45:00+11:00",
+    "lastActivity": "2026-02-18T05:50:00+11:00",
     "active": [
-      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 05:45", "model": "google/gemini-3-pro-preview", "status": "Active — 69k tokens"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:45", "model": "anthropic/claude-opus-4-6"}
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 05:50", "model": "google/gemini-3-pro-preview", "status": "Active — 69k tokens"},
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:50", "model": "anthropic/claude-opus-4-6"}
     ]
   },
   "social": {
