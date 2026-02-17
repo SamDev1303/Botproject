@@ -26,6 +26,19 @@ Track all social media posts to avoid repetition and monitor performance.
 
 ---
 
+## 2026-02-17
+
+### Post 1 - Engagement Poll
+- **Time:** 12:45 PM AEST
+- **Platform:** Instagram (Facebook API permission error)
+- **Type:** Poll/Engagement
+- **Caption:** "Be honest... which one do you HATE cleaning most?"
+- **Image:** 2026-02-17-kitchen-transformation.png
+- **Hashtags:** 6
+- **Instagram ID:** 18092472784840570
+
+---
+
 ## Template
 
 ```

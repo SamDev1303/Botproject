@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T12:00:00+11:00",
+  "updatedAt": "2026-02-17T12:50:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -14,72 +14,17 @@
     { "ticker": "HOOD", "name": "Robinhood", "price": "18.45", "change": 3.2 }
   ],
   "crons": [
-    {
-      "name": "dashboard-live-sync-5min",
-      "enabled": true,
-      "schedule": { "expr": "*/5 * * * *" },
-      "status": "Running (last sync 12:00 PM AEDT)"
-    },
-    {
-      "name": "commercial-outreach-daily",
-      "enabled": true,
-      "schedule": { "expr": "0 10 * * *" },
-      "payload": { "text": "Check commercial-prospects.md, follow up on leads." }
-    },
-    {
-      "name": "social-morning-post",
-      "enabled": true,
-      "schedule": { "expr": "0 7 * * *" },
-      "payload": { "text": "Post transformation reel to Clean Up Bros FB + IG." }
-    },
-    {
-      "name": "weekly-biz-review",
-      "enabled": true,
-      "schedule": { "expr": "0 9 * * 1" },
-      "payload": { "text": "Weekly performance report with Square reconciliation." }
-    },
-    {
-      "name": "weekly-wage-reminder",
-      "enabled": true,
-      "schedule": { "expr": "0 22 * * 4" },
-      "payload": { "text": "Process staff wages and send invoices." }
-    }
+    { "name": "dashboard-live-sync-5min", "enabled": true, "schedule": { "expr": "*/5 * * * *" } },
+    { "name": "commercial-outreach-daily", "enabled": true, "schedule": { "expr": "0 10 * * *" } },
+    { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" } }
   ],
   "liveTasks": [
-    {
-      "label": "SQUARE_SOT_SYNC",
-      "status": "Verified: Square API is the ONLY financial source of truth."
-    },
-    {
-      "label": "PRE_FLIGHT_CHECK",
-      "status": "Mandatory validation active for all clinical/financial data."
-    },
-    {
-      "label": "DASHBOARD_SYNC",
-      "status": "Live sync completed at 12:00 PM AEDT."
-    },
-    {
-      "label": "MESH_BALANCE",
-      "status": "Confirmed $3,750 outstanding (Square verified)."
-    },
-    {
-      "label": "COMMERCIAL_OUTREACH",
-      "status": "Morning scan complete — 4 hot leads identified."
-    }
+    { "label": "SOCIAL_POST", "status": "Lunch engagement poll posted to Instagram (01:00 PM)." },
+    { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT." }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync active — cron running on schedule.", "date": "2026-02-17" },
-    { "description": "Commercial outreach scan completed — Minchinbury warehouse, NDIS partnership, pub cleaning leads identified.", "date": "2026-02-17" },
-    { "description": "SOT Locked: Square API confirmed as sole financial source of truth.", "date": "2026-02-17" },
-    { "description": "System hardened: ABC clinical reporting standards implemented via specialized skills.", "date": "2026-02-17" },
-    { "description": "Outstanding business balance verified at $4,590.40 via live Square sync.", "date": "2026-02-17" }
-  ],
-  "activeSessions": {
-    "mainSession": "telegram:6580764332",
-    "model": "gemini-3-flash-preview",
-    "lastActivity": "2026-02-17T12:00:00+11:00",
-    "cronSession": "cron:dashboard-live-sync-5min",
-    "cronModel": "claude-opus-4-5",
-    "totalActiveSessions": 5
-  }
+    { "description": "Engagement poll posted: 'Worst chore to clean?' with AI-generated transformation asset.", "date": "2026-02-17" },
+    { "description": "Verified outstanding balance: $4,590.40 (Meshach $3,750 included).", "date": "2026-02-17" },
+    { "description": "Bella OS v3.0 deployed: Mobile-first high-density vertical layout.", "date": "2026-02-17" }
+  ]
 }
