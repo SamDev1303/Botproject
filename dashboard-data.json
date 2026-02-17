@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-17T19:55:00+11:00",
+  "lastUpdated": "2026-02-17T19:50:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
-    "outstandingBalance": "$4,155.40",
-    "unpaidInvoices": "4",
+    "outstandingBalance": "$4,590.40",
+    "unpaidInvoices": "5",
     "leads": "68",
     "gstPayable": "$0.00"
   },
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-17T19:55:00+11:00",
+    "lastHeartbeat": "2026-02-17T19:50:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -50,7 +50,7 @@
       { "client": "Meshach Ephraim Care", "amount": "$3,750.00", "daysOverdue": 0, "lastContact": "2026-02-17", "status": "Partial" },
       { "client": "McKayla Vamarasi", "amount": "$255.40", "daysOverdue": 14, "lastContact": "2026-02-17", "status": "Unpaid" }
     ],
-    "totalOutstanding": 4155.40,
+    "totalOutstanding": 4590.40,
     "unpaidDetails": [
       { "client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750, "status": "PARTIALLY_PAID", "due": "2026-03-05" },
       { "client": "McKayla Vamarasi", "invoice": "#000049", "amount": 127.7, "status": "UNPAID" },
@@ -64,18 +64,24 @@
       { "title": "🧹 U3 Atkinson Cleaning", "time": "20:00", "type": "cleaning" }
     ]
   },
-  "crons": [],
+  "crons": [
+    { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "running" }
+  ],
   "liveTasks": [
-    { "label": "DASHBOARD_UPGRADE", "status": "Tabs & Cards Logic Deployed", "timestamp": "2026-02-17 19:55" },
+    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-17 19:50" },
     { "label": "BOOKKEEPING_SETUP", "status": "11 Tabs Configured", "timestamp": "2026-02-17 19:40" }
   ],
   "patterns": [
     { "description": "GST set to NO (Hafsah not registered)", "date": "2026-02-17" },
-    { "description": "Arieta mapped to Donation logic", "date": "2026-02-17" }
+    { "description": "Arieta mapped to Donation logic", "date": "2026-02-17" },
+    { "description": "Orchestrator mode enabled for automation", "date": "2026-02-16" }
   ],
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
-    "cronJobs": 36,
-    "lastActivity": "2026-02-17T19:55:00+11:00"
+    "cronJobs": 1,
+    "lastActivity": "2026-02-17T19:50:00+11:00",
+    "active": [
+      { "key": "agent:main:main", "label": "Main Session", "lastSeen": "2026-02-17 19:49" }
+    ]
   }
 }
