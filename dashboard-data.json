@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T18:15:00Z",
+  "updatedAt": "2026-02-17T19:15:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -8,9 +8,9 @@
     "gstPayable": "$417.31"
   },
   "bella": {
-    "model": "google/gemini-3-flash-preview",
+    "model": "anthropic/claude-opus-4-6",
     "contextUsage": "5.1%",
-    "sessions": 10,
+    "sessions": 5,
     "memory": {
       "filesIndexed": 48,
       "chunks": 320,
@@ -54,18 +54,21 @@
   "liveTasks": [
     { "label": "CONNECTEAM_OVERHAUL", "status": "In Progress: Staff bios & branding update" },
     { "label": "DASHBOARD_SYNC", "status": "Live sync @ 6:15 PM AEDT ✅" },
-    { "label": "CONNECTEAM_FORMS", "status": "Validation in progress: End of Lease, Deep Clean, General, Airbnb" }
+    { "label": "CONNECTEAM_FORMS", "status": "Validation in progress: End of Lease, Deep Clean, General, Airbnb" },
+    { "label": "TRAINING_CONTENT", "status": "Complete: WHS, Chemical Safety, NDIS, Equipment published ✅" }
   ],
   "patterns": [
-    { "description": "Strict Square API compliance enforced for all financial reporting.", "date": "2026-02-17" },
-    { "description": "Connecteam Scheduler integration fully operational; 11 job locations synced.", "date": "2026-02-17" },
-    { "description": "Training content for WHS, Chemical Safety, NDIS, and Equipment published.", "date": "2026-02-17" }
+    { "description": "Square API = ONLY source of truth for all financial data. No local notes.", "date": "2026-02-17" },
+    { "description": "Connecteam Scheduler fully operational: 11 job locations, 3 staff synced.", "date": "2026-02-17" },
+    { "description": "Training content published: WHS, Chemical Safety, NDIS, Equipment courses.", "date": "2026-02-17" },
+    { "description": "Hafsah prefers simplified button options (1-2 max per reply).", "date": "2026-02-17" },
+    { "description": "Sub-agents active: claude-code-browser-overhaul, connecteam-overhaul-gemini.", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "google/gemini-3-flash-preview",
+    "main": "anthropic/claude-opus-4-6",
     "cronJobs": "3 active",
-    "subAgents": ["connecteam-overhaul-gemini", "connecteam-setup-finalization"],
-    "lastActivity": "Live Dashboard Sync"
+    "subAgents": ["claude-code-browser-overhaul", "connecteam-overhaul-gemini-fixed", "connecteam-overhaul-gemini"],
+    "lastActivity": "Dashboard Sync @ 6:15 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
