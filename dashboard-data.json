@@ -10,13 +10,13 @@
   "bella": {
     "model": "anthropic/claude-opus-4-6",
     "contextUsage": "0%",
-    "sessions": 7,
+    "sessions": 5,
     "memory": {
       "filesIndexed": 47,
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "5:30 PM AEDT"
+    "lastHeartbeat": "5:35 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -52,10 +52,10 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:30 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:35 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "CONNECTEAM_SETUP", "status": "Roster active (7 scripts, 11 jobs). 4 training guides written (WHS, Chemical, NDIS, Equipment). KB upload in progress." },
-    { "label": "SESSION_STATUS", "status": "7 sessions (1 main, 1 cron, 5 sub-agents). Gemini rate limits hit on some sub-agents." },
+    { "label": "CONNECTEAM_KB", "status": "4 training guides written (WHS, Chemical, NDIS, Equipment). KB upload active." },
+    { "label": "SESSION_STATUS", "status": "5 active sessions. Gemini rate limits observed on sub-agents." },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
@@ -68,8 +68,8 @@
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 3,
-    "subAgents": ["connecteam-final", "notebooklm-connecteam", "connecteam-manual", "connecteam-notebooklm", "connecteam-setup"],
-    "lastActivity": "Dashboard sync @ 5:30 PM AEDT"
+    "subAgents": ["connecteam-final", "notebooklm-connecteam", "connecteam-manual"],
+    "lastActivity": "Dashboard sync @ 5:35 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
