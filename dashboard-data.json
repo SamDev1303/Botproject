@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T04:00:00Z",
+  "updatedAt": "2026-02-17T04:10:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -19,10 +19,10 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 3:00 PM AEDT" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 3:10 PM AEDT" },
     { "label": "CALENDAR_UPDATE", "status": "Cleaning scheduled: March 13th @ 10:00 AM" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "SESSION_STATUS", "status": "Main session active (119K tokens)" }
+    { "label": "SESSION_STATUS", "status": "Main session active (62K tokens)" }
   ],
   "patterns": [
     { "description": "Dashboard 5-min sync: All systems nominal.", "date": "2026-02-17" },
@@ -31,8 +31,8 @@
     { "description": "Verified outstanding balance: $4,590.40 (Meshach $3,750 included).", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "gemini-3-flash-preview (119K tokens)",
-    "cronJobs": 4,
-    "lastActivity": "Dashboard sync @ 3:00 PM AEDT"
+    "main": "gemini-3-flash-preview (62K tokens)",
+    "cronJobs": 3,
+    "lastActivity": "Dashboard sync @ 3:10 PM AEDT"
   }
 }
