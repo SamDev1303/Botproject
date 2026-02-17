@@ -1,88 +1,134 @@
 {
   "updatedAt": "2026-02-17T19:20:00+11:00",
   "stats": {
-    "leads": "154",
-    "unpaidInvoices": "5",
-    "revenueMTD": "$14,214",
-    "outstandingBalance": "$4,590.40",
-    "gstPayable": "$417.31"
+    "revenueMTD": 3515.00,
+    "outstandingBalance": 4155.40,
+    "unpaidInvoices": 3,
+    "leads": 0,
+    "gstPayable": 319.55,
+    "paymentsThisMonth": 13,
+    "meshachBalance": 3750.00,
+    "meshachDue": "2026-03-05"
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "contextUsage": "89%",
-    "sessions": 9,
-    "memory": {
-      "filesIndexed": 48,
-      "chunks": 320,
-      "cacheStatus": "warm"
-    },
-    "lastHeartbeat": "7:20 PM AEDT"
+    "activeSessions": 9,
+    "memoryFiles": 35,
+    "skills": 13,
+    "lastHeartbeat": "2026-02-17T19:15:00+11:00",
+    "status": "Memory restructure in progress — embedding & consolidating all memories",
+    "memoryStatus": "RESTRUCTURING — Creating optimized semantic-search-friendly memory architecture"
   },
   "financial": {
     "recentTransactions": [
-      { "id": "1", "client": "Sarah M.", "amount": "$380", "date": "15/02/2026", "type": "payment", "status": "completed" },
-      { "id": "2", "client": "James K.", "amount": "$280", "date": "14/02/2026", "type": "payment", "status": "completed" },
-      { "id": "3", "client": "Airbnb Host", "amount": "$120", "date": "13/02/2026", "type": "invoice", "status": "pending" }
+      {"date": "2026-02-16", "description": "Pinnacle", "amount": 435.00, "status": "PAID"},
+      {"date": "2026-02-16", "description": "Unit 3", "amount": 145.00, "status": "PAID"},
+      {"date": "2026-02-13", "description": "End Of Lease", "amount": 380.00, "status": "PAID"},
+      {"date": "2026-02-07", "description": "Pinnacle", "amount": 290.00, "status": "PAID"},
+      {"date": "2026-02-07", "description": "General clean", "amount": 800.00, "status": "PAID"},
+      {"date": "2026-02-06", "description": "Unit 3", "amount": 145.00, "status": "PAID"},
+      {"date": "2026-02-06", "description": "Unit 4", "amount": 145.00, "status": "PAID"},
+      {"date": "2026-02-06", "description": "General clean", "amount": 150.00, "status": "PAID"},
+      {"date": "2026-02-05", "description": "End of Lease", "amount": 300.00, "status": "PAID"},
+      {"date": "2026-02-03", "description": "Pinnacle", "amount": 435.00, "status": "PAID"}
     ],
-    "monthlyData": [
-      { "month": "Sep", "revenue": 8200, "expenses": 3100 },
-      { "month": "Oct", "revenue": 9800, "expenses": 3400 },
-      { "month": "Nov", "revenue": 11200, "expenses": 3800 },
-      { "month": "Dec", "revenue": 13500, "expenses": 4200 },
-      { "month": "Jan", "revenue": 12800, "expenses": 3900 },
-      { "month": "Feb", "revenue": 14214, "expenses": 4100 }
+    "unpaidInvoices": [
+      {"number": "000049", "client": "Janette Vamarasi", "amount": 127.70, "due": "2026-02-16", "status": "UNPAID"},
+      {"number": "000047", "client": "Janette Vamarasi", "amount": 127.70, "due": "2026-02-16", "status": "UNPAID"},
+      {"number": "000045", "client": "Unknown", "amount": 150.00, "due": "2026-02-13", "status": "UNPAID"},
+      {"number": "000005", "client": "Meshach (Ephraim Care)", "amount": 5000.00, "paid": 1250.00, "balance": 3750.00, "due": "2026-03-05", "status": "PARTIALLY_PAID"}
     ],
-    "overdueAccounts": [
-      { "client": "Meshach Ephraim Care", "amount": "$3,750", "daysOverdue": 30, "lastContact": "Payment plan active — due 5 Mar 2026", "status": "MONITORING" }
+    "monthlyChart": [
+      {"month": "Jan 2026", "revenue": 8103.97},
+      {"month": "Feb 2026 (MTD)", "revenue": 3515.00}
     ]
   },
   "calendar": {
-    "today": [
-      { "title": "No bookings today", "time": "-", "type": "reminder" }
-    ],
+    "today": [],
     "upcoming": [
-      { "title": "U3 Atkinson Cleaning", "time": "Wed 19 Feb @ 8-10 PM", "location": "Atkinson", "type": "cleaning" },
-      { "title": "Pinnacle Building Cleaning", "time": "Sat 22 Feb (all day)", "location": "Pinnacle", "type": "cleaning" },
-      { "title": "2BR End of Lease Clean", "time": "Mar 13 @ 10:00 AM", "location": "Liverpool", "type": "cleaning" }
+      {"date": "2026-02-19", "time": "8:00 PM - 10:00 PM", "event": "🧹 U3 Atkinson Cleaning"},
+      {"date": "2026-02-22", "time": "All day", "event": "🧹 Pinnacle Building Cleaning"}
     ]
   },
-  "crons": [
-    { "name": "dashboard-live-sync-5min", "enabled": true, "schedule": { "expr": "*/5 * * * *" }, "status": "running" },
-    { "name": "commercial-outreach-daily", "enabled": true, "schedule": { "expr": "0 10 * * *" }, "status": "ok" },
-    { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
-  ],
+  "crons": {
+    "total": 36,
+    "active": [
+      {"name": "Morning Routine", "schedule": "6:35 AM daily", "status": "✅ last ran successfully"},
+      {"name": "Dashboard Sync", "schedule": "Every 5 min", "status": "✅ running"},
+      {"name": "Social Morning Post", "schedule": "7:00 AM daily", "status": "✅ active"},
+      {"name": "Commercial Outreach", "schedule": "10:00 AM daily", "status": "✅ active"},
+      {"name": "Social Lunch Post", "schedule": "12:00 PM daily", "status": "✅ active"},
+      {"name": "Social Evening Post", "schedule": "7:00 PM daily", "status": "✅ active"},
+      {"name": "Maryam Reminder (Night)", "schedule": "Mon 8:00 PM", "status": "✅ active"},
+      {"name": "Maryam Reminder (Morning)", "schedule": "Tue 8:00 AM", "status": "✅ active"},
+      {"name": "Karan AusPost (Night)", "schedule": "Fri 8:00 PM", "status": "✅ active"},
+      {"name": "Karan AusPost (Morning)", "schedule": "Sat 10:00 AM", "status": "✅ active"},
+      {"name": "Thursday Invoice/Wages", "schedule": "Thu 10:00 PM", "status": "✅ active"},
+      {"name": "Tuition Fee Reminder", "schedule": "Thu 10:00 AM", "status": "✅ active"},
+      {"name": "Weekly Airbnb Summary", "schedule": "Sun 9:00 PM", "status": "✅ active"},
+      {"name": "Weekly Business Review", "schedule": "Mon 9:00 AM", "status": "✅ active"},
+      {"name": "Weekly Social Research", "schedule": "Sun 9:00 AM", "status": "✅ active"}
+    ]
+  },
   "liveTasks": [
-    { "label": "CONNECTEAM_OVERHAUL", "status": "✅ Complete — All checklists, branding, training, sidebar done" },
-    { "label": "CONNECTEAM_NAV_CLEANUP", "status": "✅ Complete — 13 features archived, sidebar streamlined" },
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 7:20 PM AEDT ✅" },
-    { "label": "CONNECTEAM_FORMS", "status": "✅ All 4 checklists Published (Airbnb 12 fields, End of Lease, Deep Clean, General)" },
-    { "label": "TRAINING_CONTENT", "status": "✅ Complete: WHS, Chemical Safety, NDIS, Equipment published" },
-    { "label": "BRANDING", "status": "✅ Complete: Logo uploaded + welcome screen + 3 staff badges" },
-    { "label": "SOCIAL_MEDIA", "status": "✅ FB + IG posted @ 7:00 PM — POV transformation post live" },
-    { "label": "BOOKKEEPING_RESEARCH", "status": "✅ Complete — 27KB guide at references/BOOKKEEPING-GUIDE.md" },
-    { "label": "WORKSPACE_AUDIT", "status": "✅ Complete — 32.6KB audit at references/WORKSPACE-AUDIT.md" },
-    { "label": "MASTER_OPS_SHEET", "status": "✅ Created — 4 tabs, 15 API integrations logged" },
-    { "label": "MEMORY_RESTRUCTURE", "status": "🔄 Sub-agent spawned" }
+    {"task": "Memory Restructure & Embedding", "status": "🔄 In Progress", "agent": "memory-restructure"},
+    {"task": "Dashboard Data Sync", "status": "✅ Complete", "agent": "main"},
+    {"task": "Workspace Audit", "status": "✅ Complete", "agent": "workspace-audit"},
+    {"task": "Bookkeeping Research", "status": "✅ Complete", "agent": "bookkeeping-research"},
+    {"task": "Connecteam Forms", "status": "✅ Complete", "agent": "connecteam-forms-finish"},
+    {"task": "Connecteam Nav Cleanup", "status": "✅ Complete", "agent": "connecteam-nav-cleanup"},
+    {"task": "Sheets Consolidation", "status": "🔄 Running", "agent": "sheets-consolidation"},
+    {"task": "Archive Review", "status": "🔄 Running", "agent": "archive-review"}
   ],
   "patterns": [
-    { "description": "Square API = ONLY source of truth for all financial data. No local notes.", "date": "2026-02-17" },
-    { "description": "Connecteam fully operational: forms, roster, branding, training all live.", "date": "2026-02-17" },
-    { "description": "Master Ops Sheet created (4 tabs) — central tracking for clients, bookkeeping, tasks, APIs.", "date": "2026-02-17" },
-    { "description": "Infrastructure overhaul completed: 5 phases (audit → SOT → sheets → bookkeeping → docs).", "date": "2026-02-17" },
-    { "description": "Social media POV post live on FB + IG — AI-generated transformation image.", "date": "2026-02-17" },
-    { "description": "Bookkeeping research + workspace audit sub-agents completed successfully.", "date": "2026-02-17" },
-    { "description": "9 sessions active — main + 4 finished sub-agents + cron + 3 spawned sub-agents.", "date": "2026-02-17" }
+    {"date": "2026-02-17", "observation": "Memory restructure initiated — consolidating 35+ memory files into semantic-search-optimized architecture"},
+    {"date": "2026-02-17", "observation": "Full infrastructure overhaul complete: Master Ops Sheet, workspace audit, bookkeeping guide"},
+    {"date": "2026-02-17", "observation": "Connecteam fully configured: 11 jobs, 4 checklists, branding, training courses, sidebar cleanup"},
+    {"date": "2026-02-17", "observation": "Square SOT rule enforced after Meshach data correction — no more local memory for financial data"},
+    {"date": "2026-02-17", "observation": "Social media posted: Before/After transformation on FB + IG"},
+    {"date": "2026-02-16", "observation": "Clinical documentation system created with Larissa Marks incident report"},
+    {"date": "2026-02-14", "observation": "Dashboard v3 deployed, GitHub SSH + GPG signing configured"}
   ],
-  "activeSessions": {
-    "main": "anthropic/claude-opus-4-6",
-    "cronJobs": "3 active (dashboard-live-sync-5min, commercial-outreach-daily, social-morning-post)",
-    "subAgents": ["bookkeeping-research ✅", "workspace-audit ✅", "connecteam-forms-finish ✅", "connecteam-nav-cleanup ✅", "memory-restructure 🔄", "sheets-consolidation 🔄", "archive-review 🔄"],
-    "lastActivity": "Dashboard Sync @ 7:20 PM AEDT"
-  },
+  "activeSessions": [
+    {"label": "main", "status": "Active", "model": "claude-opus-4-6"},
+    {"label": "memory-restructure", "status": "Running", "model": "claude-opus-4-6"},
+    {"label": "archive-review", "status": "Running", "model": "claude-opus-4-6"},
+    {"label": "sheets-consolidation", "status": "Running", "model": "claude-opus-4-6"},
+    {"label": "workspace-audit", "status": "Complete", "model": "claude-opus-4-6"},
+    {"label": "bookkeeping-research", "status": "Complete", "model": "claude-opus-4-6"},
+    {"label": "connecteam-forms-finish", "status": "Complete", "model": "claude-opus-4-5"},
+    {"label": "connecteam-nav-cleanup", "status": "Complete", "model": "claude-opus-4-5"}
+  ],
   "social": {
-    "lastPost": "POV: You finally stopped spending your whole weekend scrubbing and hired the pros",
-    "engagement": "12 reactions, 3 comments",
-    "platform": "Facebook + Instagram",
-    "postedAt": "7:00 PM AEDT"
+    "lastPost": {
+      "date": "2026-02-17",
+      "platform": "Facebook + Instagram",
+      "type": "Before/After Transformation",
+      "caption": "POV: You finally stopped spending your whole weekend scrubbing and hired the pros",
+      "fbPostId": "707617919097782_122167368572918915",
+      "igMediaId": "17852324340627022"
+    },
+    "cronSchedule": "3x daily (7AM, 12PM, 7PM) + weekly research Sundays"
+  },
+  "staff": {
+    "roster": [
+      {"name": "Hafsah Nuzhat", "role": "Owner & Director", "id": "CUB-001", "connecteamId": "11925732"},
+      {"name": "Shamal Krishna", "role": "Operations Manager", "id": "CUB-002", "connecteamId": "11925807"},
+      {"name": "Arieta Cinavilakeba", "role": "Cleaning Technician", "id": "CUB-003", "connecteamId": "13917939"}
+    ]
+  },
+  "infrastructure": {
+    "skills": [
+      "square-sync", "clinical-documentation", "clean-up-bros-ops", "bella-dashboard-manager",
+      "connecteam-roster", "social-content-poster", "viral-ads-creator", "client-onboarding",
+      "pre-flight-validator", "secret-guard", "skill-creator", "mcp-orchestrator", "gog"
+    ],
+    "apis": [
+      "Square", "Google (Gmail/Calendar/Sheets/Drive/YouTube)", "Connecteam", "Meta (FB/IG)",
+      "Twilio", "WhatsApp", "OpenAI", "Anthropic", "Gemini", "ElevenLabs", "Brave Search",
+      "Apify", "Telegram", "LinkedIn", "AWS", "Sentry", "Kie AI"
+    ],
+    "masterOpsSheet": "1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU",
+    "financeBackupSheet": "1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q"
   }
 }
