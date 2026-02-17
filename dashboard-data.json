@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T05:40:00+11:00",
+  "lastUpdated": "2026-02-18T05:45:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T05:40:00+11:00",
+    "lastHeartbeat": "2026-02-18T05:45:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,15 +76,15 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 05:40 AEDT", "timestamp": "2026-02-18 05:40"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timed out — sessions healthy", "timestamp": "2026-02-18 05:40"},
-    {"label": "MODEL_STATUS", "status": "✅ claude-opus-4-6 (cron) / gemini-3-pro (main)", "timestamp": "2026-02-18 05:40"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 + Janette $255.40 OVERDUE", "timestamp": "2026-02-18 05:40"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway timeout on cron list — 4 jobs visible via sessions", "timestamp": "2026-02-18 05:40"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 05:45 AEDT", "timestamp": "2026-02-18 05:45"},
+    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 05:45"},
+    {"label": "MODEL_STATUS", "status": "✅ claude-opus-4-6 (cron) / gemini-3-pro (main, 69k tokens)", "timestamp": "2026-02-18 05:45"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 05:45"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 05:45"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 05:40 AEDT — routine cycle, no changes to financials", "date": "2026-02-18"},
-    {"description": "⚠️ Gateway cron list still timing out — persistent since 05:35", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 05:45 AEDT — routine cycle, gateway cron timeout persists", "date": "2026-02-18"},
+    {"description": "⚠️ Gateway cron list timeout persistent (05:35–05:45) — not blocking syncs", "date": "2026-02-18"},
     {"description": "Main session on Gemini 3 Pro (69k tokens used), cron on Opus 4.6", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
@@ -96,10 +96,10 @@
   "activeSessions": {
     "main": "google/gemini-3-pro-preview",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T05:40:00+11:00",
+    "lastActivity": "2026-02-18T05:45:00+11:00",
     "active": [
-      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 05:40", "model": "google/gemini-3-pro-preview", "status": "Active — 69k tokens"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:40", "model": "anthropic/claude-opus-4-6"}
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 05:45", "model": "google/gemini-3-pro-preview", "status": "Active — 69k tokens"},
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:45", "model": "anthropic/claude-opus-4-6"}
     ]
   },
   "social": {
