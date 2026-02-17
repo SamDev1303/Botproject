@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T11:45:00+11:00",
+  "updatedAt": "2026-02-17T11:50:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -18,7 +18,7 @@
       "name": "dashboard-live-sync-5min",
       "enabled": true,
       "schedule": { "expr": "*/5 * * * *" },
-      "status": "Running (last sync 11:45 AM AEDT)"
+      "status": "Running (last sync 11:50 AM AEDT)"
     },
     {
       "name": "commercial-outreach-daily",
@@ -44,7 +44,7 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "Live sync completed at 11:45 AM AEDT."
+      "status": "Live sync completed at 11:50 AM AEDT."
     },
     {
       "label": "MESH_BALANCE",
