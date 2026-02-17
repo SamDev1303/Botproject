@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T07:40:00+11:00",
+  "lastUpdated": "2026-02-18T07:45:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T07:40:00+11:00",
+    "lastHeartbeat": "2026-02-18T07:45:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,17 +76,17 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 07:40 AEDT", "timestamp": "2026-02-18 07:40"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 07:40"},
-    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift · stable", "timestamp": "2026-02-18 07:40"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 07:40"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 07:40"},
-    {"label": "SESSION_NOTE", "status": "ℹ️ 2 cleans today — Karanjeet 10:30 (Hafsah), Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 07:40"},
-    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 07:40"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 07:45 AEDT", "timestamp": "2026-02-18 07:45"},
+    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 07:45"},
+    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift · 5h 35% daily left", "timestamp": "2026-02-18 07:45"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 07:45"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 07:45"},
+    {"label": "SESSION_NOTE", "status": "ℹ️ 2 cleans today — Karanjeet 10:30 (Hafsah), Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 07:45"},
+    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 07:45"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 07:30 AEDT — routine cycle, all systems nominal", "date": "2026-02-18"},
-    {"description": "⚠️ Gateway cron list timeout persistent (05:35–07:30) — not blocking syncs", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 07:45 AEDT — routine cycle, all systems nominal", "date": "2026-02-18"},
+    {"description": "⚠️ Gateway cron list timeout persistent (05:35–07:45) — not blocking syncs", "date": "2026-02-18"},
     {"description": "Model check OK — Opus 4.6 stable, no drift detected", "date": "2026-02-18"},
     {"description": "Main session on Opus 4.6 (58k tokens), cron on Opus 4.6", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
@@ -100,7 +100,7 @@
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T07:40:00+11:00",
+    "lastActivity": "2026-02-18T07:45:00+11:00",
     "active": [
       {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 07:05", "model": "anthropic/claude-opus-4-6", "status": "Active — 58k tokens"},
       {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 07:35", "model": "anthropic/claude-opus-4-6"}
