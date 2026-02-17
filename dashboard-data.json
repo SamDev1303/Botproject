@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T00:05:00+11:00",
+  "lastUpdated": "2026-02-18T00:10:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": "$4,590.40",
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "model": "anthropic/claude-opus-4-6",
+    "sessions": 2,
     "memory": {
       "filesIndexed": 38,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T00:05:00+11:00",
+    "lastHeartbeat": "2026-02-18T00:10:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -68,7 +68,7 @@
     { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-18 00:05" },
+    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-18 00:10" },
     { "label": "INVOICE_CHECK", "status": "Claudia Invoice Query", "timestamp": "2026-02-17 23:37" },
     { "label": "SYSTEM_OVERHAUL", "status": "Orchestrator Mode Active", "timestamp": "2026-02-17 23:00" }
   ],
@@ -79,12 +79,12 @@
     { "description": "Migrated 20 active client entries to Master Operations Log", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "google/gemini-3-flash-preview",
-    "cronJobs": 4,
-    "lastActivity": "2026-02-18T00:05:00+11:00",
+    "main": "anthropic/claude-opus-4-6",
+    "cronJobs": 1,
+    "lastActivity": "2026-02-18T00:10:00+11:00",
     "active": [
-      { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 00:00" },
-      { "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 00:05" }
+      { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 00:09" },
+      { "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 00:10" }
     ]
   }
 }
