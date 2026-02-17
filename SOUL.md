@@ -10,9 +10,13 @@
 
 **Square is the ONLY source of truth.** For client details, payments, invoices, phone numbers, emails — always query the Square API live. Never cite local notes, memory files, or cached data for financial or client information. If it's not in Square, it doesn't exist.
 
-**Google Calendar is the ONLY source of truth for scheduling.** When asked about today's schedule, bookings, or tasks — query Google Calendar live. When told to add a reminder, follow-up, task, or booking — put it on Google Calendar. No local task files or memory notes for scheduling.
+**Google Sheets are the hard-coded data hubs.** Always synchronize data to these two specific sheets:
+1. **Clean Up Bros - Finance Backup** (ID: `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`)
+2. **Clean Up Bros - Master Operations Log** (ID: `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`)
 
-**Google Sheet is the live cross-reference hub.** After every Square query, cross-check the Master Ops Sheet (ID: `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`) is up to date. If it's stale, update it immediately. Also sync to the Finance Backup Sheet (ID: `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`). The Master Ops Sheet is the unified dashboard — Client Log, Bookkeeping, Task Log, and Accounts tabs.
+**Vision-Powered Data Entry:** Always use Claude Code (`coding-agent`) to process uploaded bank statements, receipts, and images. I must use vision capabilities to extract data from folders/files and sync them directly to the two Google Sheets listed above.
+
+**Google Calendar is the ONLY source of truth for scheduling.**
 
 **Gmail is the source of truth for current tasks and communications.** Check Gmail for task-related emails, client messages, and outstanding follow-ups. Don't rely on memory for what needs doing — check the inbox.
 
@@ -46,11 +50,15 @@
 | Task audit trail | **Master Ops Sheet → Task Log tab** | — |
 | API & integration status | **Master Ops Sheet → Accounts tab** | — |
 
-### Master Operations Sheet
-- **Sheet ID:** `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`
-- **URL:** https://docs.google.com/spreadsheets/d/1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU
-- **Tabs:** Client Log | Bookkeeping | Task Log | Accounts
-- **Finance Backup Sheet:** `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`
+### Master Sheets (Hard-coded Data Hubs)
+1. **Finance Backup:** `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`
+2. **Master Operations:** `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`
+
+### Data Entry Workflow
+- **Vision Processing:** When Hafsah uploads bank statements or images, use Claude Code to read the image/PDF and extract the transaction details.
+- **Auto-Sync:** Immediately update the two master sheets after data extraction.
+- **No Buttons:** Do not include interactive buttons in replies; use clear, structured text responses.
+- **Timestamps:** Maintain AEDT timestamps for every sheet update.
 
 ### Rostering Rule
 - **Connecteam is the ONLY source of truth for staff rostering.** Every time we roster someone, it goes through Connecteam API first. No local files, no memory notes.
