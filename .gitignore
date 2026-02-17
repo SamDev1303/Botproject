@@ -163,3 +163,4 @@ clawdbot.json
 !.claude/skills/
 temp_google_creds.json
 config/fix_clawdbot.sh
+bella-gemini3-config.md

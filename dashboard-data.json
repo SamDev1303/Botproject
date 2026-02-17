@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T05:20:00+11:00",
+  "lastUpdated": "2026-02-18T05:30:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "claude-opus-4-6",
-    "sessions": 5,
+    "model": "anthropic/claude-opus-4-6",
+    "sessions": 2,
     "memory": {
       "filesIndexed": 38,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T05:20:00+11:00",
+    "lastHeartbeat": "2026-02-18T05:30:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,27 +76,29 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 05:20 AEDT", "timestamp": "2026-02-18 05:20"},
-    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE", "timestamp": "2026-02-18 05:20"},
-    {"label": "API_HEALTH", "status": "⚠️ Gmail/WhatsApp/OpenRouter Errors", "timestamp": "2026-02-18 05:20"},
-    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — healthy", "timestamp": "2026-02-18 05:15"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway timeout on cron list", "timestamp": "2026-02-18 05:20"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 05:30 AEDT", "timestamp": "2026-02-18 05:30"},
+    {"label": "API_HEALTH", "status": "⚠️ Gemini API Key Invalid — Opus 4.6 active (healthy)", "timestamp": "2026-02-18 05:30"},
+    {"label": "MODEL_STATUS", "status": "✅ claude-opus-4-6 (primary)", "timestamp": "2026-02-18 05:30"},
+    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE", "timestamp": "2026-02-18 05:30"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway timeout on cron list — 4 jobs visible via sessions", "timestamp": "2026-02-18 05:30"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 05:20 AEDT — active", "date": "2026-02-18"},
-    {"description": "⚠️ API Health: Gmail (401), WhatsApp (Invalid ID), OpenRouter (401)", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 05:30 AEDT — Opus 4.6 running", "date": "2026-02-18"},
+    {"description": "⚠️ Gemini 3 Flash API Key Invalid — crons using Gemini may fail", "date": "2026-02-18"},
+    {"description": "✅ Model corrected: sessions now show Opus 4.6 as active", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Today: Karanjeet 10:30 + Pinnacle 11:30 (2 cleans)", "date": "2026-02-18"},
-    {"description": "Meshach $3,750 balance due Mar 5 — not yet overdue", "date": "2026-02-18"}
+    {"description": "Meshach $3,750 balance due Mar 5 — not yet overdue", "date": "2026-02-18"},
+    {"description": "2 active sessions detected, gateway cron list timed out", "date": "2026-02-18"}
   ],
   "activeSessions": {
-    "main": "claude-opus-4-6",
+    "main": "anthropic/claude-opus-4-6",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T05:20:00+11:00",
+    "lastActivity": "2026-02-18T05:30:00+11:00",
     "active": [
-      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 04:29", "model": "claude-opus-4-6", "status": "✅ Healthy"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:20", "model": "claude-opus-4-6"}
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 05:30", "model": "anthropic/claude-opus-4-6", "status": "Active"},
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:30", "model": "anthropic/claude-opus-4-6"}
     ]
   },
   "social": {
