@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T08:55:00+11:00",
+  "lastUpdated": "2026-02-18T09:00:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T08:55:00+11:00",
+    "lastHeartbeat": "2026-02-18T09:00:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -76,14 +76,14 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 08:55 AEDT", "timestamp": "2026-02-18 08:55"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 08:55"},
-    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift | Weekly 12% (2d 19h) | Daily 26% (5h)", "timestamp": "2026-02-18 08:55"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 08:55"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 08:55"},
-    {"label": "SESSION_NOTE", "status": "ℹ️ 2 cleans today — Karanjeet 10:30 (Hafsah), Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 08:55"},
-    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 08:55"},
-    {"label": "TOKEN_USAGE", "status": "ℹ️ Daily 26% left (5h) | Weekly 12% left (2d 19h)", "timestamp": "2026-02-18 08:55"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 09:00 AEDT", "timestamp": "2026-02-18 09:00"},
+    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 09:00"},
+    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift | Weekly 12% (2d 18h) | Daily 100% (5h)", "timestamp": "2026-02-18 09:00"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 09:00"},
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 09:00"},
+    {"label": "SESSION_NOTE", "status": "ℹ️ 2 cleans today — Karanjeet 10:30 (Hafsah), Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 09:00"},
+    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 09:00"},
+    {"label": "TOKEN_USAGE", "status": "ℹ️ Daily 100% left (5h) | Weekly 12% left (2d 18h)", "timestamp": "2026-02-18 09:00"}
   ],
   "patterns": [
     {"description": "Dashboard cron sync 08:50 AEDT — routine cycle, all systems nominal", "date": "2026-02-18"},
@@ -96,20 +96,20 @@
     {"description": "Meshach $3,750 balance due Mar 5 — not yet overdue", "date": "2026-02-18"},
     {"description": "Claudia Alz confirmed PAID IN FULL — removed from debtors", "date": "2026-02-18"},
     {"description": "Social morning post (FB+IG) went out at 07:05 — engagement processing", "date": "2026-02-18"},
-    {"description": "Opus usage: daily 27% (5h), weekly 12% (2d 19h) — conservative use advised", "date": "2026-02-18"},
+    {"description": "Opus usage: daily 100% (5h reset), weekly 12% (2d 18h) — fresh daily quota", "date": "2026-02-18"},
     {"description": "TOOLS.md consolidated with 26 scripts + 160 MCP tools + 12 crons", "date": "2026-02-18"}
   ],
   "activeSessions": {
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T08:55:00+11:00",
+    "lastActivity": "2026-02-18T09:00:00+11:00",
     "active": [
       {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 08:10", "model": "anthropic/claude-opus-4-6", "status": "Active — 59k tokens"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 08:55", "model": "anthropic/claude-opus-4-6"}
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 09:00", "model": "anthropic/claude-opus-4-6"}
     ]
   },
   "social": {
     "lastPost": "2026-02-18 07:05 — FB+IG morning content (Reels + static)",
-    "engagement": "Processing — 1h 45m since post"
+    "engagement": "Processing — 1h 55m since post"
   }
 }
