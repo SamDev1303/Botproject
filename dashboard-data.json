@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T14:45:00Z",
+  "updatedAt": "2026-02-17T03:45:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -14,17 +14,24 @@
     { "ticker": "HOOD", "name": "Robinhood", "price": "18.45", "change": 3.2 }
   ],
   "crons": [
-    { "name": "dashboard-live-sync-5min", "enabled": true, "schedule": { "expr": "*/5 * * * *" } },
-    { "name": "commercial-outreach-daily", "enabled": true, "schedule": { "expr": "0 10 * * *" } },
-    { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" } }
+    { "name": "dashboard-live-sync-5min", "enabled": true, "schedule": { "expr": "*/5 * * * *" }, "status": "running" },
+    { "name": "commercial-outreach-daily", "enabled": true, "schedule": { "expr": "0 10 * * *" }, "status": "ok" },
+    { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "CALENDAR_UPDATE", "status": "New cleaning appointment scheduled for March 13th at 10:00 AM." },
-    { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT." }
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync running (5-min cycle)" },
+    { "label": "CALENDAR_UPDATE", "status": "New cleaning appointment: March 13th @ 10:00 AM" },
+    { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" }
   ],
   "patterns": [
+    { "description": "Dashboard sync job triggered — auto-refresh active.", "date": "2026-02-17" },
     { "description": "Scheduled new cleaning job: March 13, 10:00 AM - 12:00 PM.", "date": "2026-02-17" },
     { "description": "Engagement poll posted: 'Worst chore to clean?' with AI-generated transformation asset.", "date": "2026-02-17" },
     { "description": "Verified outstanding balance: $4,590.40 (Meshach $3,750 included).", "date": "2026-02-17" }
-  ]
+  ],
+  "activeSessions": {
+    "main": "gemini-3-flash-preview (119K tokens)",
+    "cronJobs": 4,
+    "lastActivity": "Calendar booking confirmed"
+  }
 }
