@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-17T19:50:00+11:00",
+  "lastUpdated": "2026-02-17T20:00:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": "$4,590.40",
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "anthropic/claude-opus-4-6",
+    "model": "google/gemini-3-flash-preview",
     "sessions": 10,
     "memory": {
       "filesIndexed": 38,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-17T19:50:00+11:00",
+    "lastHeartbeat": "2026-02-17T20:00:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -65,23 +65,24 @@
     ]
   },
   "crons": [
-    { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "running" }
+    { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-17 19:50" },
-    { "label": "BOOKKEEPING_SETUP", "status": "11 Tabs Configured", "timestamp": "2026-02-17 19:40" }
+    { "label": "DASHBOARD_SYNC", "status": "Live Data Pushed", "timestamp": "2026-02-17 20:00" },
+    { "label": "SECRET_CLEANUP", "status": "PAT/Tokens Removed", "timestamp": "2026-02-17 19:17" }
   ],
   "patterns": [
-    { "description": "GST set to NO (Hafsah not registered)", "date": "2026-02-17" },
-    { "description": "Arieta mapped to Donation logic", "date": "2026-02-17" },
-    { "description": "Orchestrator mode enabled for automation", "date": "2026-02-16" }
+    { "description": "Secret cleanup: GitHub PAT and Telegram tokens removed from history/files", "date": "2026-02-17" },
+    { "description": "Square API confirmed as single source of truth for finance", "date": "2026-02-17" },
+    { "description": "Orchestrator mode enabled for task delegation", "date": "2026-02-16" }
   ],
   "activeSessions": {
-    "main": "anthropic/claude-opus-4-6",
+    "main": "google/gemini-3-flash-preview",
     "cronJobs": 1,
-    "lastActivity": "2026-02-17T19:50:00+11:00",
+    "lastActivity": "2026-02-17T20:00:00+11:00",
     "active": [
-      { "key": "agent:main:main", "label": "Main Session", "lastSeen": "2026-02-17 19:49" }
+      { "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-17 20:00" },
+      { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-17 19:59" }
     ]
   }
 }
