@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T05:45:00Z",
+  "updatedAt": "2026-02-17T05:55:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -8,7 +8,7 @@
     "gstPayable": "$417.31"
   },
   "bella": {
-    "model": "claude-opus-4-6",
+    "model": "anthropic/claude-opus-4-6",
     "contextUsage": "14%",
     "sessions": 3,
     "memory": {
@@ -16,7 +16,7 @@
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "4:45 PM AEDT"
+    "lastHeartbeat": "4:55 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -50,24 +50,22 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 4:45 PM AEDT" },
-    { "label": "CALENDAR_UPDATE", "status": "Next clean: March 13th @ 10:00 AM, Liverpool" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 4:55 PM AEDT" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "SESSION_STATUS", "status": "3 sessions active — Opus 4.6 (incl. connecteam-setup sub-agent)" },
+    { "label": "SESSION_STATUS", "status": "3 sessions active — Opus 4 cron + connecteam-setup sub-agent (Gemini quota hit) + main (Gemini Flash)" },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 4:45 PM: 3 active sessions (main + cron + connecteam-setup). Cron list gateway timeout (recurring, non-critical).", "date": "2026-02-17" },
-    { "description": "Connecteam setup sub-agent spawned and active.", "date": "2026-02-17" },
-    { "description": "Square confirmed Meshach balance $3,750 outstanding (deposit $1,250 paid).", "date": "2026-02-17" },
+    { "description": "Dashboard 5-min sync @ 4:55 PM: 3 active sessions. Connecteam sub-agent hit Gemini rate limit (429). Gateway cron list timed out — transient.", "date": "2026-02-17" },
+    { "description": "Connecteam setup sub-agent active but rate-limited. Clinical documentation system established.", "date": "2026-02-17" },
     { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" },
     { "description": "Incident report filed: Larissa Marks medication refusal (15/02).", "date": "2026-02-16" }
   ],
   "activeSessions": {
-    "main": "claude-opus-4-6",
+    "main": "google/gemini-3-flash-preview",
     "cronJobs": 3,
-    "subAgents": ["connecteam-setup"],
-    "lastActivity": "Dashboard sync @ 4:45 PM AEDT"
+    "subAgents": ["connecteam-setup (rate-limited)"],
+    "lastActivity": "Dashboard sync @ 4:55 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
