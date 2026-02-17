@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T05:15:00+11:00",
+  "lastUpdated": "2026-02-18T05:20:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T05:15:00+11:00",
+    "lastHeartbeat": "2026-02-18T05:20:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -54,10 +54,10 @@
     "totalOutstanding": 4305.4,
     "unpaidDetails": [
       {"client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750, "status": "PARTIALLY_PAID", "due": "2026-03-05"},
-      {"client": "Maryam Al Atar", "invoice": "#000051", "amount": 150, "status": "UNPAID"},
-      {"client": "Maryam Al Atar", "invoice": "#000050", "amount": 150, "status": "UNPAID"},
-      {"client": "Janette Vamarasi", "invoice": "#000049", "amount": 127.7, "status": "UNPAID"},
-      {"client": "Janette Vamarasi", "invoice": "#000047", "amount": 127.7, "status": "UNPAID"}
+      {"client": "Maryam Al Atar", "invoice": "#000048", "amount": 150, "status": "OVERDUE", "due": "2026-02-17"},
+      {"client": "Maryam Al Atar", "invoice": "#000045", "amount": 150, "status": "OVERDUE", "due": "2026-02-13"},
+      {"client": "Janette Vamarasi", "invoice": "#000049", "amount": 127.7, "status": "OVERDUE", "due": "2026-02-16"},
+      {"client": "Janette Vamarasi", "invoice": "#000047", "amount": 127.7, "status": "OVERDUE", "due": "2026-02-16"}
     ]
   },
   "calendar": {
@@ -76,17 +76,15 @@
     {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 05:15 AEDT", "timestamp": "2026-02-18 05:15"},
-    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE | Meshach due Mar 5", "timestamp": "2026-02-18 05:15"},
-    {"label": "SOCIAL_REELS", "status": "FB+IG Reels Published", "timestamp": "2026-02-18 02:05"},
-    {"label": "SYSTEM_OVERHAUL", "status": "Orchestrator Mode Active", "timestamp": "2026-02-17 23:00"},
+    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 05:20 AEDT", "timestamp": "2026-02-18 05:20"},
+    {"label": "INVOICE_CHECK", "status": "Maryam $300 + Janette $255.40 OVERDUE", "timestamp": "2026-02-18 05:20"},
+    {"label": "API_HEALTH", "status": "⚠️ Gmail/WhatsApp/OpenRouter Errors", "timestamp": "2026-02-18 05:20"},
     {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — healthy", "timestamp": "2026-02-18 05:15"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway timeout on cron list", "timestamp": "2026-02-18 05:15"}
+    {"label": "CRON_STATUS", "status": "⚠️ Gateway timeout on cron list", "timestamp": "2026-02-18 05:20"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 05:15 AEDT — active", "date": "2026-02-18"},
-    {"description": "✅ Main session active (Telegram)", "date": "2026-02-18"},
-    {"description": "⚠️ Cron list gateway timeout at 05:15 — intermittent", "date": "2026-02-18"},
+    {"description": "Dashboard cron sync 05:20 AEDT — active", "date": "2026-02-18"},
+    {"description": "⚠️ API Health: Gmail (401), WhatsApp (Invalid ID), OpenRouter (401)", "date": "2026-02-18"},
     {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
     {"description": "Today: Karanjeet 10:30 + Pinnacle 11:30 (2 cleans)", "date": "2026-02-18"},
@@ -95,10 +93,10 @@
   "activeSessions": {
     "main": "claude-opus-4-6",
     "cronJobs": 4,
-    "lastActivity": "2026-02-18T05:15:00+11:00",
+    "lastActivity": "2026-02-18T05:20:00+11:00",
     "active": [
       {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 04:29", "model": "claude-opus-4-6", "status": "✅ Healthy"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:15", "model": "claude-opus-4-6"}
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 05:20", "model": "claude-opus-4-6"}
     ]
   },
   "social": {
