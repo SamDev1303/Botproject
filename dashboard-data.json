@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T10:45:00+11:00",
+  "lastUpdated": "2026-02-18T10:48:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "anthropic/claude-opus-4-6",
+    "model": "google/gemini-3-flash-preview",
     "sessions": 2,
     "memory": {
       "filesIndexed": 38,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T10:45:00+11:00",
+    "lastHeartbeat": "2026-02-18T10:48:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -70,47 +70,54 @@
     ]
   },
   "crons": [
-    {"id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active"},
-    {"id": "ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9", "label": "unknown", "status": "active"},
-    {"id": "8b185f2e-bced-4d9f-b702-6c3369150a13", "label": "unknown", "status": "active"},
-    {"id": "392fe7f2-f8fc-4add-a20c-075558fe08ba", "label": "unknown", "status": "active"}
+    {"id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T10:36:00+11:00"},
+    {"id": "b2d4d12f", "label": "social-morning-post", "status": "active", "lastRun": "2026-02-18T07:00:00+11:00"},
+    {"id": "eb3caa8f", "label": "social-lunch-post", "status": "active", "nextRun": "2026-02-18T12:00:00+11:00"},
+    {"id": "28e4173e", "label": "social-evening-post", "status": "active", "nextRun": "2026-02-18T19:00:00+11:00"},
+    {"id": "fa2d2e5f", "label": "commercial-outreach-daily", "status": "active", "lastRun": "2026-02-18T10:00:00+11:00"},
+    {"id": "411de93c", "label": "Maryam Al Atar Morning", "status": "active", "lastRun": "2026-02-18T08:00:00+11:00"},
+    {"id": "469bfd31", "label": "atkinson-u3-feb19-reminder", "status": "active", "nextRun": "2026-02-19T08:00:00+11:00"},
+    {"id": "8b185f2e", "label": "Weekly Business Review", "status": "active", "nextRun": "2026-02-23T09:00:00+11:00"},
+    {"id": "392fe7f2", "label": "weekly-airbnb-reminder", "status": "active", "nextRun": "2026-02-22T21:00:00+11:00"},
+    {"id": "ba9f3a18", "label": "thursday-invoice-wages", "status": "active", "nextRun": "2026-02-19T22:00:00+11:00"},
+    {"id": "ff24890b", "label": "Tuition Fee Reminder", "status": "active", "nextRun": "2026-02-19T10:00:00+11:00"},
+    {"id": "870a7392", "label": "Karanjeet Aus Post Night Before", "status": "active", "nextRun": "2026-02-20T20:00:00+11:00"},
+    {"id": "c3865e06", "label": "Karanjeet Aus Post Morning", "status": "active", "nextRun": "2026-02-21T10:00:00+11:00"}
   ],
   "liveTasks": [
-    {"label": "DASHBOARD_SYNC", "status": "✅ Cron Push — 10:45 AEDT", "timestamp": "2026-02-18 10:45"},
-    {"label": "API_HEALTH", "status": "⚠️ Gateway cron list timeout persists — sessions healthy (2 active)", "timestamp": "2026-02-18 10:45"},
-    {"label": "MODEL_STATUS", "status": "✅ Opus 4.6 — no drift | Daily 83% | Weekly 11%", "timestamp": "2026-02-18 10:45"},
-    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 10:45"},
-    {"label": "CRON_STATUS", "status": "⚠️ Gateway cron list timeout — 4 jobs confirmed via sessions", "timestamp": "2026-02-18 10:45"},
-    {"label": "SESSION_NOTE", "status": "ℹ️ Karanjeet 10:30 IN PROGRESS (Hafsah) | Pinnacle 11:30 upcoming (Shamal)", "timestamp": "2026-02-18 10:45"},
-    {"label": "SOCIAL_POST", "status": "✅ FB+IG morning post completed at 07:05 AEDT", "timestamp": "2026-02-18 10:45"},
-    {"label": "TOKEN_USAGE", "status": "ℹ️ Main session: 77.5k tokens | Daily 83% | Weekly 11%", "timestamp": "2026-02-18 10:45"},
-    {"label": "COMMERCIAL_OUTREACH", "status": "✅ 12 hot leads pulled, 3 cold emails drafted — awaiting Gmail auth fix", "timestamp": "2026-02-18 10:45"}
+    {"label": "DASHBOARD_SYNC", "status": "✅ Updated 10:48 AEDT", "timestamp": "2026-02-18 10:48"},
+    {"label": "MODEL_STATUS", "status": "✅ Gemini 3 Flash Preview (switched by Shamal)", "timestamp": "2026-02-18 10:48"},
+    {"label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 10:48"},
+    {"label": "SOCIAL_POST", "status": "✅ Morning post live (Dishwasher hack) — lunch post at 12pm", "timestamp": "2026-02-18 10:48"},
+    {"label": "COMMERCIAL_OUTREACH", "status": "✅ 12 leads prioritized, 3 cold emails drafted — Gmail auth blocking sends", "timestamp": "2026-02-18 10:48"},
+    {"label": "GMAIL_AUTH", "status": "❌ 401 Unauthorized — needs re-auth", "timestamp": "2026-02-18 10:48"},
+    {"label": "ANTHROPIC_AUTH", "status": "❌ 403 token revoked at 09:15 — cron affected", "timestamp": "2026-02-18 10:48"},
+    {"label": "SCHEDULE_TODAY", "status": "🧹 Karanjeet 10:30 (Hafsah) | Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 10:48"}
   ],
   "patterns": [
-    {"description": "Dashboard cron sync 10:45 AEDT — routine cycle", "date": "2026-02-18"},
-    {"description": "⚠️ Gateway cron list timeout persistent since 05:35 — not blocking syncs", "date": "2026-02-18"},
-    {"description": "Model self-healed back to Opus 4.6 overnight (was set to Gemini Flash)", "date": "2026-02-18"},
-    {"description": "Karanjeet deep clean 10:30 IN PROGRESS (Hafsah) | Pinnacle 11:30 upcoming (Shamal)", "date": "2026-02-18"},
-    {"description": "Maryam Al Atar $300 overdue (5 days) — needs follow-up", "date": "2026-02-18"},
-    {"description": "Janette Vamarasi $255.40 overdue (2 days) — needs follow-up", "date": "2026-02-18"},
-    {"description": "Meshach $3,750 balance due Mar 5 — not yet overdue", "date": "2026-02-18"},
-    {"description": "Claudia Alz confirmed PAID IN FULL — removed from debtors", "date": "2026-02-18"},
-    {"description": "Social morning post (FB+IG) went out at 07:05 — 3h in", "date": "2026-02-18"},
-    {"description": "Commercial outreach: 12 hot leads, 3 draft emails ready — Gmail auth 401 blocking sends", "date": "2026-02-18"},
-    {"description": "Opus usage: daily 83% (3h 19m), weekly 11% (2d 17h)", "date": "2026-02-18"},
-    {"description": "TOOLS.md consolidated with 26 scripts + 160 MCP tools + 12 crons", "date": "2026-02-18"}
+    {"description": "Model switched to Gemini 3 Flash Preview per Shamal's request", "date": "2026-02-18"},
+    {"description": "Morning social post live: Dishwasher tablet shower glass hack (FB+IG)", "date": "2026-02-18"},
+    {"description": "Commercial outreach: 12 leads from Apollo, #1 target Westside Strata (600+ buildings)", "date": "2026-02-18"},
+    {"description": "3 cold emails drafted for strata managers — blocked by Gmail 401", "date": "2026-02-18"},
+    {"description": "Anthropic OAuth token revoked at 09:15 — cron jobs affected", "date": "2026-02-18"},
+    {"description": "Gmail auth down since early AM — Hafsah notified, awaiting re-auth", "date": "2026-02-18"},
+    {"description": "Maryam Al Atar $300 overdue (5 days) — payment reminder needed", "date": "2026-02-18"},
+    {"description": "Janette Vamarasi $255.40 overdue (2 days) — payment reminder needed", "date": "2026-02-18"},
+    {"description": "Meshach $3,750 balance due Mar 5 — on track", "date": "2026-02-18"},
+    {"description": "Claudia Alz confirmed PAID IN FULL — removed from debtors", "date": "2026-02-18"}
   ],
   "activeSessions": {
-    "main": "anthropic/claude-opus-4-6",
-    "cronJobs": 4,
-    "lastActivity": "2026-02-18T10:45:00+11:00",
+    "main": "google/gemini-3-flash-preview",
+    "cronJobs": 13,
+    "lastActivity": "2026-02-18T10:48:00+11:00",
     "active": [
-      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 10:45", "model": "anthropic/claude-opus-4-6", "status": "Active — 77.5k tokens"},
-      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 10:45", "model": "anthropic/claude-opus-4-6"}
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 10:48", "model": "google/gemini-3-flash-preview", "status": "Active"},
+      {"key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 10:36", "status": "OK"}
     ]
   },
   "social": {
-    "lastPost": "2026-02-18 07:05 — FB+IG morning content (Reels + static)",
-    "engagement": "Processing — 3h since post"
+    "lastPost": "2026-02-18 07:05 — Dishwasher tablet shower glass hack (FB+IG)",
+    "engagement": "Monitoring — 3.5h since post",
+    "nextPost": "2026-02-18 12:00 — Lunch content (engagement poll or BTS)"
   }
 }
