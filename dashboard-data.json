@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T06:40:00Z",
+  "updatedAt": "2026-02-17T06:45:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -16,7 +16,7 @@
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "5:40 PM AEDT"
+    "lastHeartbeat": "5:45 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -52,14 +52,14 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:40 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 5:45 PM AEDT ✅" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "CONNECTEAM_KB", "status": "Training guides written (WHS, Chemical, NDIS, Equipment). Connecteam training setup sub-agent active." },
-    { "label": "SESSION_STATUS", "status": "7 sessions (1 main + 3 crons + 3 sub-agents). Gemini 429 rate limits observed." },
+    { "label": "CONNECTEAM_KB", "status": "Training guides written (WHS, Chemical, NDIS, Equipment). Connecteam training setup sub-agent active on Opus." },
+    { "label": "SESSION_STATUS", "status": "7 sessions (1 main + 6 sub-agents/crons). Gemini 429 rate limits on flash sub-agents." },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard sync @ 5:40 PM: 7 sessions active. Connecteam training KB upload sub-agent spawned on Opus.", "date": "2026-02-17" },
+    { "description": "Dashboard sync @ 5:45 PM: 7 sessions active. Connecteam training KB sub-agent running on Opus.", "date": "2026-02-17" },
     { "description": "Gemini rate limits (429) hitting sub-agents — connecteam-final and connecteam-manual stalled. Main session on Opus stable.", "date": "2026-02-17" },
     { "description": "Connecteam roster skill fully built — 11 jobs, 7 scripts, all tested. Training guides completed.", "date": "2026-02-17" },
     { "description": "Square SOT rule enforced. Meshach balance confirmed at $3,750 (due 5 Mar).", "date": "2026-02-17" },
@@ -69,7 +69,7 @@
     "main": "anthropic/claude-opus-4-6",
     "cronJobs": 3,
     "subAgents": ["connecteam-training-setup", "connecteam-final", "notebooklm-connecteam", "connecteam-manual"],
-    "lastActivity": "Dashboard sync @ 5:40 PM AEDT"
+    "lastActivity": "Dashboard sync @ 5:45 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
