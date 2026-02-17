@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T05:20:00Z",
+  "updatedAt": "2026-02-17T05:25:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -16,7 +16,7 @@
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "4:20 PM AEDT"
+    "lastHeartbeat": "4:25 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -50,14 +50,14 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 4:20 PM AEDT" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 4:25 PM AEDT" },
     { "label": "CALENDAR_UPDATE", "status": "Next clean: March 13th @ 10:00 AM, Liverpool" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
     { "label": "SESSION_STATUS", "status": "2 sessions active — Opus 4.6" },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 4:20 PM: 2 active sessions, cron gateway timeout (recurring, non-critical). All systems nominal.", "date": "2026-02-17" },
+    { "description": "Dashboard 5-min sync @ 4:25 PM: 2 active sessions, cron gateway timeout (recurring, non-critical). All systems nominal.", "date": "2026-02-17" },
     { "description": "Square confirmed Meshach balance $3,750 outstanding (deposit $1,250 paid).", "date": "2026-02-17" },
     { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" },
     { "description": "Incident report filed: Larissa Marks medication refusal (15/02).", "date": "2026-02-16" },
@@ -66,7 +66,7 @@
   "activeSessions": {
     "main": "claude-opus-4-6",
     "cronJobs": 3,
-    "lastActivity": "Dashboard sync @ 4:20 PM AEDT"
+    "lastActivity": "Dashboard sync @ 4:25 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
