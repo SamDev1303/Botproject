@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T03:28:46+11:00",
+  "lastUpdated": "2026-02-18T04:10:21+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,254 +15,87 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T03:28:46+11:00",
+    "lastHeartbeat": "2026-02-18T04:10:21+11:00",
     "roles": 20
   },
   "roles": [
-    {
-      "name": "Accounts Controller",
-      "description": "Owns the 11-tab Master Operations Sheet and unified ledger."
-    },
-    {
-      "name": "Bookkeeper",
-      "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)."
-    },
-    {
-      "name": "Square Manager",
-      "description": "Live invoicing, payments, and client contact record synchronization."
-    },
-    {
-      "name": "Staff Scheduler",
-      "description": "Connecteam roster management and staff shift assignments."
-    },
-    {
-      "name": "Clinical Documenter",
-      "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)."
-    },
-    {
-      "name": "Calendar Master",
-      "description": "Google Calendar integration for all cleans and business appointments."
-    },
-    {
-      "name": "Task Logger",
-      "description": "Timestamping every action to the Master Ops Sheet Task Log."
-    },
-    {
-      "name": "Email Manager",
-      "description": "Monitoring Gmail for business tasks and client communications."
-    },
-    {
-      "name": "Dashboard Manager",
-      "description": "Updating the Pulse Mini App live on Vercel with real-time data."
-    },
-    {
-      "name": "Lead Gen Specialist",
-      "description": "Managing 1,600+ Apollo leads and tracking commercial outreach."
-    },
-    {
-      "name": "Social Media Manager",
-      "description": "FB/IG content creation and before/after transformation posts."
-    },
-    {
-      "name": "Secret Guard",
-      "description": "Scanning pushes and guarding credentials with pre-push checks."
-    },
-    {
-      "name": "Pre-Flight Validator",
-      "description": "Mandatory internal audit of facts and Square data before replying."
-    },
-    {
-      "name": "Memory Architect",
-      "description": "Search-optimized memory restructuring and daily log consolidation."
-    },
-    {
-      "name": "Communications Agent",
-      "description": "Twilio SMS & WhatsApp confirmations for bookings and payments."
-    },
-    {
-      "name": "Automation Orchestrator",
-      "description": "Spawning isolated sub-agents for heavy background data processing."
-    },
-    {
-      "name": "Donation Manager",
-      "description": "Handling Arieta's private expense mapping and privacy wall."
-    },
-    {
-      "name": "Skill Creator",
-      "description": "Designing and packaging specialized tools for workspace gaps."
-    },
-    {
-      "name": "Airbnb Coordinator",
-      "description": "Tracking turnovers and guest checkouts across 5 properties."
-    },
-    {
-      "name": "NDIS Specialist",
-      "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation."
-    }
+    {"name": "Accounts Controller", "description": "Owns the 11-tab Master Operations Sheet and unified ledger."},
+    {"name": "Bookkeeper", "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)."},
+    {"name": "Square Manager", "description": "Live invoicing, payments, and client contact record synchronization."},
+    {"name": "Staff Scheduler", "description": "Connecteam roster management and staff shift assignments."},
+    {"name": "Clinical Documenter", "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)."},
+    {"name": "Calendar Master", "description": "Google Calendar integration for all cleans and business appointments."},
+    {"name": "Task Logger", "description": "Timestamping every action to the Master Ops Sheet Task Log."},
+    {"name": "Email Manager", "description": "Monitoring Gmail for business tasks and client communications."},
+    {"name": "Dashboard Manager", "description": "Updating the Pulse Mini App live on Vercel with real-time data."},
+    {"name": "Lead Gen Specialist", "description": "Managing 1,600+ Apollo leads and tracking commercial outreach."},
+    {"name": "Social Media Manager", "description": "FB/IG content creation and before/after transformation posts."},
+    {"name": "Secret Guard", "description": "Scanning pushes and guarding credentials with pre-push checks."},
+    {"name": "Pre-Flight Validator", "description": "Mandatory internal audit of facts and Square data before replying."},
+    {"name": "Memory Architect", "description": "Search-optimized memory restructuring and daily log consolidation."},
+    {"name": "Communications Agent", "description": "Twilio SMS & WhatsApp confirmations for bookings and payments."},
+    {"name": "Automation Orchestrator", "description": "Spawning isolated sub-agents for heavy background data processing."},
+    {"name": "Donation Manager", "description": "Handling Arieta's private expense mapping and privacy wall."},
+    {"name": "Skill Creator", "description": "Designing and packaging specialized tools for workspace gaps."},
+    {"name": "Airbnb Coordinator", "description": "Tracking turnovers and guest checkouts across 5 properties."},
+    {"name": "NDIS Specialist", "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation."}
   ],
   "financial": {
     "recentTransactions": [],
     "monthlyData": [
-      {
-        "month": "Jan",
-        "revenue": 14214,
-        "expenses": 1540
-      },
-      {
-        "month": "Feb",
-        "revenue": 3515,
-        "expenses": 800
-      }
+      {"month": "Jan", "revenue": 14214, "expenses": 1540},
+      {"month": "Feb", "revenue": 3515, "expenses": 800}
     ],
     "overdueAccounts": [
-      {
-        "client": "Meshach Ephraim Care",
-        "amount": "$3,750.00",
-        "daysOverdue": 0,
-        "lastContact": "2026-02-17",
-        "status": "Partial"
-      },
-      {
-        "client": "McKayla Vamarasi",
-        "amount": "$255.40",
-        "daysOverdue": 14,
-        "lastContact": "2026-02-17",
-        "status": "Unpaid"
-      }
+      {"client": "Meshach Ephraim Care", "amount": "$3,750.00", "daysOverdue": 0, "lastContact": "2026-02-17", "status": "Partial"},
+      {"client": "McKayla Vamarasi", "amount": "$255.40", "daysOverdue": 14, "lastContact": "2026-02-17", "status": "Unpaid"}
     ],
     "totalOutstanding": 4590.4,
     "unpaidDetails": [
-      {
-        "client": "Meshach Ephraim Care",
-        "invoice": "#000005",
-        "amount": 3750,
-        "status": "PARTIALLY_PAID",
-        "due": "2026-03-05"
-      },
-      {
-        "client": "McKayla Vamarasi",
-        "invoice": "#000049",
-        "amount": 127.7,
-        "status": "UNPAID"
-      },
-      {
-        "client": "McKayla Vamarasi",
-        "invoice": "#000047",
-        "amount": 127.7,
-        "status": "UNPAID"
-      },
-      {
-        "client": "Herdip Gill",
-        "invoice": "#000045",
-        "amount": 150,
-        "status": "UNPAID"
-      }
+      {"client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750, "status": "PARTIALLY_PAID", "due": "2026-03-05"},
+      {"client": "McKayla Vamarasi", "invoice": "#000049", "amount": 127.7, "status": "UNPAID"},
+      {"client": "McKayla Vamarasi", "invoice": "#000047", "amount": 127.7, "status": "UNPAID"},
+      {"client": "Herdip Gill", "invoice": "#000045", "amount": 150, "status": "UNPAID"}
     ]
   },
   "calendar": {
     "today": [
-      {
-        "title": "\ud83e\uddf9 Karanjeet House Deep Clean (Hafsah)",
-        "time": "10:30 - 14:00",
-        "date": "2026-02-18",
-        "type": "cleaning"
-      },
-      {
-        "title": "\ud83e\uddf9 Pinnacle Unit 4 (Shamal)",
-        "time": "11:30 - 13:30",
-        "date": "2026-02-18",
-        "type": "cleaning"
-      }
+      {"title": "🧹 Karanjeet House Deep Clean (Hafsah)", "time": "10:30 - 14:00", "date": "2026-02-18", "type": "cleaning"},
+      {"title": "🧹 Pinnacle Unit 4 (Shamal)", "time": "11:30 - 13:30", "date": "2026-02-18", "type": "cleaning"}
     ],
     "upcoming": [
-      {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
-        "time": "20:00",
-        "date": "2026-02-19",
-        "type": "cleaning"
-      }
+      {"title": "🧹 U3 Atkinson Cleaning", "time": "20:00", "date": "2026-02-19", "type": "cleaning"}
     ]
   },
   "crons": [
-    {
-      "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
-      "label": "dashboard-live-sync-5min",
-      "status": "active"
-    }
+    {"id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "active"}
   ],
   "liveTasks": [
-    {
-      "label": "DASHBOARD_SYNC",
-      "status": "Cron Push \u2014 03:25 AEDT",
-      "timestamp": "2026-02-18 03:25"
-    },
-    {
-      "label": "INVOICE_CHECK",
-      "status": "Claudia Invoice Query \u2014 PAID",
-      "timestamp": "2026-02-17 23:37"
-    },
-    {
-      "label": "SOCIAL_REELS",
-      "status": "FB+IG Reels Published",
-      "timestamp": "2026-02-18 02:05"
-    },
-    {
-      "label": "SYSTEM_OVERHAUL",
-      "status": "Orchestrator Mode Active",
-      "timestamp": "2026-02-17 23:00"
-    }
+    {"label": "DASHBOARD_SYNC", "status": "Cron Push — 04:10 AEDT", "timestamp": "2026-02-18 04:10"},
+    {"label": "INVOICE_CHECK", "status": "Claudia Invoice Query — PAID", "timestamp": "2026-02-17 23:37"},
+    {"label": "SOCIAL_REELS", "status": "FB+IG Reels Published", "timestamp": "2026-02-18 02:05"},
+    {"label": "SYSTEM_OVERHAUL", "status": "Orchestrator Mode Active", "timestamp": "2026-02-17 23:00"}
   ],
   "patterns": [
-    {
-      "description": "Dashboard cron sync 03:25 AEDT \u2014 overnight quiet cycle",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "FB+IG reels published successfully at 02:05",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Hafsah asleep \u2014 last active 02:05, 2 cleans scheduled today",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Today's schedule: Karanjeet 10:30 + Pinnacle 11:30 (2 cleans)",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Claudia Alz confirmed PAID IN FULL \u2014 removed from debtors",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Self-healing model scripts created & added to heartbeat",
-      "date": "2026-02-17"
-    },
-    {
-      "description": "Usage: 5h 3% left on daily, 18% left on weekly \u2014 conserving overnight",
-      "date": "2026-02-18"
-    }
+    {"description": "Dashboard cron sync 04:10 AEDT — overnight quiet cycle", "date": "2026-02-18"},
+    {"description": "FB+IG reels published successfully at 02:05", "date": "2026-02-18"},
+    {"description": "Hafsah asleep — last active 02:05, 2 cleans scheduled today", "date": "2026-02-18"},
+    {"description": "Today's schedule: Karanjeet 10:30 + Pinnacle 11:30 (2 cleans)", "date": "2026-02-18"},
+    {"description": "Claudia Alz confirmed PAID IN FULL — removed from debtors", "date": "2026-02-18"},
+    {"description": "Self-healing model scripts created & added to heartbeat", "date": "2026-02-17"},
+    {"description": "Usage conserving — overnight low-activity cycle", "date": "2026-02-18"}
   ],
   "activeSessions": {
     "main": "claude-opus-4-6",
     "cronJobs": 1,
-    "lastActivity": "2026-02-18T03:25:00+11:00",
+    "lastActivity": "2026-02-18T04:10:21+11:00",
     "active": [
-      {
-        "key": "agent:main:main",
-        "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-18 02:05",
-        "model": "claude-opus-4-6"
-      },
-      {
-        "key": "agent:main:cron:bc2c5294",
-        "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 03:25",
-        "model": "claude-opus-4-6"
-      }
+      {"key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 02:05", "model": "claude-opus-4-6"},
+      {"key": "agent:main:cron:bc2c5294", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 04:10", "model": "claude-opus-4-6"}
     ]
   },
   "social": {
-    "lastPost": "2026-02-18 02:05 \u2014 FB+IG Reels (Cleaning team video)",
+    "lastPost": "2026-02-18 02:05 — FB+IG Reels (Cleaning team video)",
     "engagement": "Processing"
   }
 }
