@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T19:00:00+11:00",
+  "updatedAt": "2026-02-17T19:05:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -9,14 +9,14 @@
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "contextUsage": "5.8%",
-    "sessions": 7,
+    "contextUsage": "0%",
+    "sessions": 5,
     "memory": {
       "filesIndexed": 48,
       "chunks": 320,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "7:00 PM AEDT"
+    "lastHeartbeat": "7:05 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -54,7 +54,7 @@
   "liveTasks": [
     { "label": "CONNECTEAM_OVERHAUL", "status": "⚠️ Sub-agents hit Gemini 429 rate limits — paused" },
     { "label": "CONNECTEAM_NAV_CLEANUP", "status": "✅ Complete — admin sidebar not toggleable; users auto-hide unused features" },
-    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 7:00 PM AEDT ✅" },
+    { "label": "DASHBOARD_SYNC", "status": "Live sync @ 7:05 PM AEDT ✅" },
     { "label": "CONNECTEAM_FORMS", "status": "✅ All 4 checklists Published (Airbnb 12 fields, End of Lease, Deep Clean, General)" },
     { "label": "TRAINING_CONTENT", "status": "✅ Complete: WHS, Chemical Safety, NDIS, Equipment published" },
     { "label": "BRANDING", "status": "✅ Complete: Logo + 3 staff badges generated" }
@@ -67,13 +67,13 @@
     { "description": "Branding overhaul complete: logo + staff badges via Nano Banana Pro.", "date": "2026-02-17" },
     { "description": "All 4 cleaning checklists now Published in Connecteam (Airbnb finalized with 12 fields).", "date": "2026-02-17" },
     { "description": "Cron list gateway timeout persists — non-blocking, dashboard data carried forward.", "date": "2026-02-17" },
-    { "description": "7 active sessions at 7:00 PM — connecteam sub-agents winding down.", "date": "2026-02-17" }
+    { "description": "5 active sessions at 7:05 PM — sub-agents winding down, forms + nav tasks complete.", "date": "2026-02-17" }
   ],
   "activeSessions": {
-    "main": "anthropic/claude-opus-4-6 (Gemini Flash on heartbeat)",
+    "main": "anthropic/claude-opus-4-6",
     "cronJobs": "3 active (dashboard-live-sync-5min, commercial-outreach-daily, social-morning-post)",
-    "subAgents": ["connecteam-forms-finish ✅", "connecteam-nav-cleanup ✅", "claude-code-browser-overhaul ❌429", "connecteam-overhaul-gemini-fixed ❌429", "connecteam-overhaul-gemini ⚠️"],
-    "lastActivity": "Dashboard Sync @ 7:00 PM AEDT"
+    "subAgents": ["connecteam-forms-finish ✅", "connecteam-nav-cleanup ✅", "claude-code-browser-overhaul ❌429"],
+    "lastActivity": "Dashboard Sync @ 7:05 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
