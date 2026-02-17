@@ -272,15 +272,14 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 - Commit and push your own changes
 - **Review and update MEMORY.md** (see below)
 
-## Dashboard Control
-- **Bella Dashboard v4.0:** `/Users/hafsahnuzhat/bella-dashboard/` (React/Vite, deployed to Vercel as Telegram Mini App)
+## Dashboard Control (ONE DASHBOARD ONLY — NEVER CREATE MORE)
+- **URL:** https://bella-dashboard-nu.vercel.app
+- **GitHub:** `SamDev1303/pulse-dashboard`
+- **Local:** `/Users/hafsahnuzhat/bella-dashboard/` (React/Vite, Telegram Mini App)
 - **Data Source:** `dashboard-data.json` in workspace root (copied to bella-dashboard/public/ on build)
-- **Sync Protocol:** Update `dashboard-data.json` during every heartbeat and after major task completion.
-- **Key Leak Prevention:** Always run `python3 pre-push-check.py` before pushing. The dashboard-data.json must NEVER contain API keys, tokens, or secrets — only display-safe metrics.
-- **Push Rule:** After updating dashboard-data.json:
-  1. Copy to `/Users/hafsahnuzhat/bella-dashboard/public/dashboard-data.json`
-  2. Push workspace repo to `origin main`
-  3. Push bella-dashboard to its Vercel-connected repo to update the live Mini App
+- **Sync Protocol:** Update `dashboard-data.json` → copy to bella-dashboard/public/ → push to GitHub → Vercel auto-deploys
+- **Key Leak Prevention:** Always run `python3 pre-push-check.py` before pushing.
+- **RULE:** DO NOT create additional Vercel projects or GitHub repos for dashboards. ONE only.
 
 ### Dashboard Data Schema
 The `dashboard-data.json` must include these sections:

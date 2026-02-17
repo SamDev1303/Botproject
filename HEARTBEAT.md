@@ -5,7 +5,7 @@
 2. Update `memory/working/metrics.json` for persistent stats.
 3. Sync local `memory/` entities with Master Sheets.
 4. Run `python3 pre-push-check.py` — BLOCK push if secrets detected.
-5. Git push workspace and dashboard repos.
+5. Git push workspace and pulse-dashboard repo.
 
 ## Model Health Check (EVERY heartbeat)
 1. Run `bash ~/Desktop/🦀/scripts/check-model.sh`
