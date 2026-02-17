@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T19:20:00+11:00",
+  "updatedAt": "2026-02-17T19:25:00+11:00",
   "stats": {
     "revenueMTD": 3515.00,
     "outstandingBalance": 4155.40,
@@ -12,12 +12,12 @@
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "activeSessions": 9,
+    "activeSessions": 10,
     "memoryFiles": 35,
     "skills": 13,
-    "lastHeartbeat": "2026-02-17T19:15:00+11:00",
-    "status": "Memory restructure in progress — embedding & consolidating all memories",
-    "memoryStatus": "RESTRUCTURING — Creating optimized semantic-search-friendly memory architecture"
+    "lastHeartbeat": "2026-02-17T19:25:00+11:00",
+    "status": "Memory restructure + sheets consolidation running — dashboard auto-syncing",
+    "memoryStatus": "RESTRUCTURING — Consolidating & embedding memory files for optimized recall"
   },
   "financial": {
     "recentTransactions": [
@@ -72,13 +72,14 @@
   },
   "liveTasks": [
     {"task": "Memory Restructure & Embedding", "status": "🔄 In Progress", "agent": "memory-restructure"},
+    {"task": "Sheets Consolidation", "status": "🔄 Running", "agent": "sheets-consolidation"},
+    {"task": "Archive Review", "status": "🔄 Running", "agent": "archive-review"},
+    {"task": "Daily Consolidation", "status": "🔄 Queued", "agent": "daily-consolidation"},
     {"task": "Dashboard Data Sync", "status": "✅ Complete", "agent": "main"},
     {"task": "Workspace Audit", "status": "✅ Complete", "agent": "workspace-audit"},
     {"task": "Bookkeeping Research", "status": "✅ Complete", "agent": "bookkeeping-research"},
     {"task": "Connecteam Forms", "status": "✅ Complete", "agent": "connecteam-forms-finish"},
-    {"task": "Connecteam Nav Cleanup", "status": "✅ Complete", "agent": "connecteam-nav-cleanup"},
-    {"task": "Sheets Consolidation", "status": "🔄 Running", "agent": "sheets-consolidation"},
-    {"task": "Archive Review", "status": "🔄 Running", "agent": "archive-review"}
+    {"task": "Connecteam Nav Cleanup", "status": "✅ Complete", "agent": "connecteam-nav-cleanup"}
   ],
   "patterns": [
     {"date": "2026-02-17", "observation": "Memory restructure initiated — consolidating 35+ memory files into semantic-search-optimized architecture"},
@@ -91,7 +92,8 @@
   ],
   "activeSessions": [
     {"label": "main", "status": "Active", "model": "claude-opus-4-6"},
-    {"label": "memory-restructure", "status": "Running", "model": "claude-opus-4-6"},
+    {"label": "memory-restructure", "status": "Running", "model": "gemini-3-flash-preview"},
+    {"label": "daily-consolidation", "status": "Queued", "model": "pending"},
     {"label": "archive-review", "status": "Running", "model": "claude-opus-4-6"},
     {"label": "sheets-consolidation", "status": "Running", "model": "claude-opus-4-6"},
     {"label": "workspace-audit", "status": "Complete", "model": "claude-opus-4-6"},
