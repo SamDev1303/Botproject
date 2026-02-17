@@ -1,140 +1,58 @@
 {
-  "updatedAt": "2026-02-17T19:30:00+11:00",
+  "lastUpdated": "2026-02-17T19:31:00+11:00",
   "stats": {
-    "revenueMTD": 3515.00,
+    "revenueMTD": 3515,
     "outstandingBalance": 4155.40,
-    "unpaidInvoices": 3,
-    "leads": 0,
-    "gstPayable": 319.55,
-    "paymentsThisMonth": 13,
-    "meshachBalance": 3750.00,
-    "meshachDue": "2026-03-05"
+    "unpaidInvoices": 4,
+    "activeLeads": 68,
+    "gstPayable": 319.55
   },
   "bella": {
-    "model": "anthropic/claude-opus-4-6",
-    "activeSessions": 13,
+    "model": "claude-opus-4-6",
+    "activeSessions": 5,
+    "totalSkills": 19,
+    "lastHeartbeat": "2026-02-17T19:31:00+11:00",
     "memoryFiles": 35,
-    "skills": 19,
-    "lastHeartbeat": "2026-02-17T19:30:00+11:00",
-    "status": "Infrastructure overhaul complete — 6 new skills created, memory restructured, sheets consolidated",
-    "memoryStatus": "OPTIMIZED — Memory consolidated, 3 daily logs merged, MEMORY.md restructured for semantic search"
+    "memoryLastRestructured": "2026-02-17T19:20:00+11:00"
   },
   "financial": {
-    "recentTransactions": [
-      {"date": "2026-02-16", "description": "Pinnacle", "amount": 435.00, "status": "PAID"},
-      {"date": "2026-02-16", "description": "Unit 3", "amount": 145.00, "status": "PAID"},
-      {"date": "2026-02-13", "description": "End Of Lease", "amount": 380.00, "status": "PAID"},
-      {"date": "2026-02-07", "description": "Pinnacle", "amount": 290.00, "status": "PAID"},
-      {"date": "2026-02-07", "description": "General clean", "amount": 800.00, "status": "PAID"},
-      {"date": "2026-02-06", "description": "Unit 3", "amount": 145.00, "status": "PAID"},
-      {"date": "2026-02-06", "description": "Unit 4", "amount": 145.00, "status": "PAID"},
-      {"date": "2026-02-06", "description": "General clean", "amount": 150.00, "status": "PAID"},
-      {"date": "2026-02-05", "description": "End of Lease", "amount": 300.00, "status": "PAID"},
-      {"date": "2026-02-03", "description": "Pinnacle", "amount": 435.00, "status": "PAID"}
+    "unpaidDetails": [
+      {"client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750.00, "status": "PARTIALLY_PAID", "due": "2026-03-05"},
+      {"client": "McKayla Vamarasi", "invoice": "#000049", "amount": 127.70, "status": "UNPAID"},
+      {"client": "McKayla Vamarasi", "invoice": "#000047", "amount": 127.70, "status": "UNPAID"},
+      {"client": "Herdip Gill", "invoice": "#000045", "amount": 150.00, "status": "UNPAID"}
     ],
-    "unpaidInvoices": [
-      {"number": "000049", "client": "Janette Vamarasi", "amount": 127.70, "due": "2026-02-16", "status": "UNPAID"},
-      {"number": "000047", "client": "Janette Vamarasi", "amount": 127.70, "due": "2026-02-16", "status": "UNPAID"},
-      {"number": "000045", "client": "Unknown", "amount": 150.00, "due": "2026-02-13", "status": "UNPAID"},
-      {"number": "000005", "client": "Meshach (Ephraim Care)", "amount": 5000.00, "paid": 1250.00, "balance": 3750.00, "due": "2026-03-05", "status": "PARTIALLY_PAID"}
-    ],
-    "monthlyChart": [
-      {"month": "Jan 2026", "revenue": 8103.97},
-      {"month": "Feb 2026 (MTD)", "revenue": 3515.00}
-    ]
+    "totalOutstanding": 4155.40,
+    "recentPayments": []
   },
   "calendar": {
     "today": [],
     "upcoming": [
-      {"date": "2026-02-19", "time": "8:00 PM - 10:00 PM", "event": "🧹 U3 Atkinson Cleaning"},
-      {"date": "2026-02-22", "time": "All day", "event": "🧹 Pinnacle Building Cleaning"}
+      {"date": "2026-02-19", "time": "20:00", "summary": "🧹 U3 Atkinson Cleaning"}
     ]
   },
   "crons": {
-    "total": 36,
-    "active": [
-      {"name": "Morning Routine", "schedule": "6:35 AM daily", "status": "✅ last ran successfully"},
-      {"name": "Dashboard Sync", "schedule": "Every 5 min", "status": "✅ running"},
-      {"name": "Social Morning Post", "schedule": "7:00 AM daily", "status": "✅ active"},
-      {"name": "Commercial Outreach", "schedule": "10:00 AM daily", "status": "✅ active"},
-      {"name": "Social Lunch Post", "schedule": "12:00 PM daily", "status": "✅ active"},
-      {"name": "Social Evening Post", "schedule": "7:00 PM daily", "status": "✅ active"},
-      {"name": "Maryam Reminder (Night)", "schedule": "Mon 8:00 PM", "status": "✅ active"},
-      {"name": "Maryam Reminder (Morning)", "schedule": "Tue 8:00 AM", "status": "✅ active"},
-      {"name": "Karan AusPost (Night)", "schedule": "Fri 8:00 PM", "status": "✅ active"},
-      {"name": "Karan AusPost (Morning)", "schedule": "Sat 10:00 AM", "status": "✅ active"},
-      {"name": "Thursday Invoice/Wages", "schedule": "Thu 10:00 PM", "status": "✅ active"},
-      {"name": "Tuition Fee Reminder", "schedule": "Thu 10:00 AM", "status": "✅ active"},
-      {"name": "Weekly Airbnb Summary", "schedule": "Sun 9:00 PM", "status": "✅ active"},
-      {"name": "Weekly Business Review", "schedule": "Mon 9:00 AM", "status": "✅ active"},
-      {"name": "Weekly Social Research", "schedule": "Sun 9:00 AM", "status": "✅ active"}
-    ]
+    "status": "gateway_timeout",
+    "lastChecked": "2026-02-17T19:31:00+11:00"
   },
   "liveTasks": [
-    {"task": "Memory Restructure & Embedding", "status": "✅ Complete", "agent": "memory-restructure"},
-    {"task": "Sheets Consolidation", "status": "✅ Complete", "agent": "sheets-consolidation"},
-    {"task": "Archive Review", "status": "✅ Complete", "agent": "archive-review"},
-    {"task": "Daily Consolidation", "status": "✅ Complete", "agent": "daily-consolidation"},
-    {"task": "Skill Creation (6 new)", "status": "✅ Complete", "agent": "skill-creation"},
-    {"task": "Sheet Sync (Client+Task Log)", "status": "✅ Complete", "agent": "sheet-sync"},
-    {"task": "Dashboard Data Sync", "status": "✅ Complete", "agent": "main"},
-    {"task": "Workspace Audit", "status": "✅ Complete", "agent": "workspace-audit"},
-    {"task": "Bookkeeping Research", "status": "✅ Complete", "agent": "bookkeeping-research"},
-    {"task": "Connecteam Forms", "status": "✅ Complete", "agent": "connecteam-forms-finish"}
+    {"task": "Master Hub Protocol", "status": "Complete", "timestamp": "2026-02-17T19:25:00+11:00"},
+    {"task": "Memory Restructure", "status": "Complete", "timestamp": "2026-02-17T19:20:00+11:00"},
+    {"task": "Client Log Sync (20 customers)", "status": "Complete", "timestamp": "2026-02-17T19:25:00+11:00"},
+    {"task": "6 New Skills Created", "status": "Complete", "timestamp": "2026-02-17T19:28:00+11:00"},
+    {"task": "Daily Log Consolidation", "status": "Complete", "timestamp": "2026-02-17T19:26:00+11:00"}
   ],
   "patterns": [
-    {"date": "2026-02-17", "observation": "Full infrastructure overhaul complete — 19 skills, memory restructured, sheets consolidated, archive reviewed"},
-    {"date": "2026-02-17", "observation": "6 new skills created: google-workspace, square-finance, bookkeeping, twilio-comms, lead-management, whatsapp-business"},
-    {"date": "2026-02-17", "observation": "Master Ops Sheet populated: 20 clients in Client Log, 4 tasks in Task Log from live Square data"},
-    {"date": "2026-02-17", "observation": "Connecteam fully configured: 11 jobs, 4 published checklists, branding, training courses"},
-    {"date": "2026-02-17", "observation": "Square SOT rule enforced — no more local memory for financial data"},
-    {"date": "2026-02-17", "observation": "Social media posted: Before/After transformation on FB + IG"},
-    {"date": "2026-02-16", "observation": "Clinical documentation system created with Larissa Marks incident report"}
+    "Cross-reference protocol established: Square → Sheet → Gmail → Task Log",
+    "19 skills operational (13 existing + 6 new)",
+    "Master Ops Sheet is the unified dashboard hub"
   ],
-  "activeSessions": [
-    {"label": "main", "status": "Active", "model": "claude-opus-4-6"},
-    {"label": "memory-restructure", "status": "✅ Complete", "model": "gemini-3-flash-preview"},
-    {"label": "daily-consolidation", "status": "✅ Complete", "model": "gemini-3-flash-preview"},
-    {"label": "skill-creation", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "sheet-sync", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "sheets-consolidation", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "archive-review", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "workspace-audit", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "bookkeeping-research", "status": "✅ Complete", "model": "claude-opus-4-6"},
-    {"label": "connecteam-forms-finish", "status": "✅ Complete", "model": "claude-opus-4-5"}
-  ],
+  "activeSessions": {
+    "main": "agent:main:main",
+    "subAgents": ["sheet-sync", "skill-creation", "daily-consolidation", "memory-restructure", "archive-extraction"]
+  },
   "social": {
-    "lastPost": {
-      "date": "2026-02-17",
-      "platform": "Facebook + Instagram",
-      "type": "Before/After Transformation",
-      "caption": "POV: You finally stopped spending your whole weekend scrubbing and hired the pros",
-      "fbPostId": "707617919097782_122167368572918915",
-      "igMediaId": "17852324340627022"
-    },
-    "cronSchedule": "3x daily (7AM, 12PM, 7PM) + weekly research Sundays"
-  },
-  "staff": {
-    "roster": [
-      {"name": "Hafsah Nuzhat", "role": "Owner & Director", "id": "CUB-001", "connecteamId": "11925732"},
-      {"name": "Shamal Krishna", "role": "Operations Manager", "id": "CUB-002", "connecteamId": "11925807"},
-      {"name": "Arieta Cinavilakeba", "role": "Cleaning Technician", "id": "CUB-003", "connecteamId": "13917939"}
-    ]
-  },
-  "infrastructure": {
-    "skills": [
-      "square-sync", "square-finance", "clinical-documentation", "clean-up-bros-ops",
-      "bella-dashboard-manager", "connecteam-roster", "social-content-poster", "viral-ads-creator",
-      "client-onboarding", "pre-flight-validator", "secret-guard", "skill-creator",
-      "mcp-orchestrator", "google-workspace", "bookkeeping", "twilio-comms",
-      "lead-management", "whatsapp-business", "gog"
-    ],
-    "apis": [
-      "Square", "Google (Gmail/Calendar/Sheets/Drive/YouTube)", "Connecteam", "Meta (FB/IG)",
-      "Twilio", "WhatsApp", "OpenAI", "Anthropic", "Gemini", "ElevenLabs", "Brave Search",
-      "Apify", "Telegram", "LinkedIn", "AWS", "Sentry", "Kie AI"
-    ],
-    "masterOpsSheet": "1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU",
-    "financeBackupSheet": "1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q"
+    "lastPost": "2026-02-17 (FB + IG before/after transformation)",
+    "engagement": "pending review"
   }
 }

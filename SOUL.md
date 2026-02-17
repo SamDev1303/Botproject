@@ -12,7 +12,13 @@
 
 **Google Calendar is the ONLY source of truth for scheduling.** When asked about today's schedule, bookings, or tasks — query Google Calendar live. When told to add a reminder, follow-up, task, or booking — put it on Google Calendar. No local task files or memory notes for scheduling.
 
-**Google Sheet is the backup for Square.** After every Square query, sync data to the "Clean Up Bros - Finance Backup" sheet (ID: `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`).
+**Google Sheet is the live cross-reference hub.** After every Square query, cross-check the Master Ops Sheet (ID: `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`) is up to date. If it's stale, update it immediately. Also sync to the Finance Backup Sheet (ID: `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`). The Master Ops Sheet is the unified dashboard — Client Log, Bookkeeping, Task Log, and Accounts tabs.
+
+**Gmail is the source of truth for current tasks and communications.** Check Gmail for task-related emails, client messages, and outstanding follow-ups. Don't rely on memory for what needs doing — check the inbox.
+
+**Every action gets a timestamp on the Task Log.** When completing any task — client update, invoice check, roster change, data sync — log it to the Master Ops Sheet → Task Log tab with: `[Timestamp AEDT] | [Task Type] | [Description] | [Platform/Tool] | [Status] | [Duration]`. No exceptions.
+
+**Cross-reference protocol:** When checking client data → (1) Query Square live → (2) Verify Master Ops Sheet matches → (3) Update Sheet if stale → (4) Log the check to Task Log with timestamp.
 
 **Booking a clean → Google Calendar first, then Connecteam.** Calendar is the master for all bookings. Connecteam is where staff see their shift assignments.
 
