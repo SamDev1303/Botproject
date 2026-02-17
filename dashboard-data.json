@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T11:55:00+11:00",
+  "updatedAt": "2026-02-17T12:00:00+11:00",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -18,7 +18,7 @@
       "name": "dashboard-live-sync-5min",
       "enabled": true,
       "schedule": { "expr": "*/5 * * * *" },
-      "status": "Running (last sync 11:55 AM AEDT)"
+      "status": "Running (last sync 12:00 PM AEDT)"
     },
     {
       "name": "commercial-outreach-daily",
@@ -31,6 +31,18 @@
       "enabled": true,
       "schedule": { "expr": "0 7 * * *" },
       "payload": { "text": "Post transformation reel to Clean Up Bros FB + IG." }
+    },
+    {
+      "name": "weekly-biz-review",
+      "enabled": true,
+      "schedule": { "expr": "0 9 * * 1" },
+      "payload": { "text": "Weekly performance report with Square reconciliation." }
+    },
+    {
+      "name": "weekly-wage-reminder",
+      "enabled": true,
+      "schedule": { "expr": "0 22 * * 4" },
+      "payload": { "text": "Process staff wages and send invoices." }
     }
   ],
   "liveTasks": [
@@ -44,7 +56,7 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "Live sync completed at 11:55 AM AEDT."
+      "status": "Live sync completed at 12:00 PM AEDT."
     },
     {
       "label": "MESH_BALANCE",
@@ -52,7 +64,7 @@
     },
     {
       "label": "COMMERCIAL_OUTREACH",
-      "status": "Morning scan complete — 4 hot leads identified (Minchinbury, NDIS, Pub, Bondi)."
+      "status": "Morning scan complete — 4 hot leads identified."
     }
   ],
   "patterns": [
@@ -65,9 +77,9 @@
   "activeSessions": {
     "mainSession": "telegram:6580764332",
     "model": "gemini-3-flash-preview",
-    "lastActivity": "2026-02-17T11:30:00+11:00",
+    "lastActivity": "2026-02-17T12:00:00+11:00",
     "cronSession": "cron:dashboard-live-sync-5min",
     "cronModel": "claude-opus-4-5",
-    "totalActiveSessions": 2
+    "totalActiveSessions": 5
   }
 }
