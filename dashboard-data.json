@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T05:55:00Z",
+  "updatedAt": "2026-02-17T06:00:00Z",
   "stats": {
     "leads": "154",
     "unpaidInvoices": "5",
@@ -9,14 +9,14 @@
   },
   "bella": {
     "model": "anthropic/claude-opus-4-6",
-    "contextUsage": "14%",
+    "contextUsage": "0%",
     "sessions": 3,
     "memory": {
       "filesIndexed": 47,
       "chunks": 312,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "4:55 PM AEDT"
+    "lastHeartbeat": "5:00 PM AEDT"
   },
   "financial": {
     "recentTransactions": [
@@ -41,6 +41,8 @@
       { "title": "No bookings today", "time": "-", "type": "reminder" }
     ],
     "upcoming": [
+      { "title": "U3 Atkinson Cleaning", "time": "Wed 19 Feb @ 8-10 PM", "location": "Atkinson", "type": "cleaning" },
+      { "title": "Pinnacle Building Cleaning", "time": "Sat 22 Feb (all day)", "location": "Pinnacle", "type": "cleaning" },
       { "title": "2BR End of Lease Clean", "time": "Mar 13 @ 10:00 AM", "location": "Liverpool", "type": "cleaning" }
     ]
   },
@@ -50,22 +52,23 @@
     { "name": "social-morning-post", "enabled": true, "schedule": { "expr": "0 7 * * *" }, "status": "ok" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 4:55 PM AEDT" },
+    { "label": "DASHBOARD_SYNC", "status": "Auto-sync @ 5:00 PM AEDT" },
     { "label": "SQUARE_SOT_SYNC", "status": "Square API verified as Financial SOT" },
-    { "label": "SESSION_STATUS", "status": "3 sessions active — Opus 4 cron + connecteam-setup sub-agent (Gemini quota hit) + main (Gemini Flash)" },
+    { "label": "CONNECTEAM_SETUP", "status": "Sub-agent rate-limited (Gemini 429) — roster skill scripts working, Forms pending" },
+    { "label": "SESSION_STATUS", "status": "3 sessions — Opus 4 cron + connecteam-setup sub-agent (rate-limited) + main (Gemini Flash)" },
     { "label": "CLINICAL_DOCS", "status": "Templates ready — Larissa (high-risk), Lisa (lower risk)" }
   ],
   "patterns": [
-    { "description": "Dashboard 5-min sync @ 4:55 PM: 3 active sessions. Connecteam sub-agent hit Gemini rate limit (429). Gateway cron list timed out — transient.", "date": "2026-02-17" },
-    { "description": "Connecteam setup sub-agent active but rate-limited. Clinical documentation system established.", "date": "2026-02-17" },
-    { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" },
-    { "description": "Incident report filed: Larissa Marks medication refusal (15/02).", "date": "2026-02-16" }
+    { "description": "Dashboard 5-min sync @ 5:00 PM: Calendar updated with Wed U3 Atkinson + Sat Pinnacle. Connecteam sub-agent still rate-limited (Gemini 429). Gateway cron list timed out — transient.", "date": "2026-02-17" },
+    { "description": "Connecteam roster skill fully built (7 scripts, 11 jobs created). Forms creation pending via sub-agent.", "date": "2026-02-17" },
+    { "description": "Square SOT rule enforced. Meshach balance corrected to $3,750 from live Square data.", "date": "2026-02-17" },
+    { "description": "Clinical documentation system created — shift notes, incident reports, Viva Engage.", "date": "2026-02-16" }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
     "cronJobs": 3,
     "subAgents": ["connecteam-setup (rate-limited)"],
-    "lastActivity": "Dashboard sync @ 4:55 PM AEDT"
+    "lastActivity": "Dashboard sync @ 5:00 PM AEDT"
   },
   "social": {
     "lastPost": "Engagement poll: 'Worst chore to clean?'",
