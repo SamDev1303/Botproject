@@ -1,235 +1,292 @@
-# Clean Up Bros — NDIS Compliance for Cleaning
-## Staff Training Module 3
+# NDIS Compliance for Cleaning Workers
 
-*Generated via NotebookLM based on Australian NDIS regulations and industry best practices*
+> **Clean Up Bros — NDIS Worker Compliance Training Guide**
+> Based on NDIS Quality and Safeguards Commission requirements and NDIS Code of Conduct
 
----
+## 1. What is the NDIS?
 
-**Target Audience:** Clean Up Bros Staff working with NDIS Participants
-**Objective:** To ensure all staff understand their legal and ethical obligations under the NDIS Quality and Safeguards Commission, ensuring the safety, dignity, and well-being of participants.
+The **National Disability Insurance Scheme (NDIS)** is an Australian Government program that funds supports and services for people with disability. Cleaning falls under support category **0120 — Household Tasks**.
 
----
+### Why This Matters to You
+- NDIS participants are **vulnerable people** who have rights protected by law
+- As a worker providing NDIS-funded services, you have **legal obligations**
+- Non-compliance can result in **banning orders, fines, and criminal charges**
+- Our business must maintain compliance or lose registration
 
-## 1. The NDIS Quality and Safeguards Commission
-
-As an NDIS provider, we operate under the **NDIS Code of Conduct**. All workers must adhere to these core principles:
-
-- **Respect for Rights:** Act with respect for individual rights to freedom of expression, self-determination, and decision-making
-- **Privacy:** Respect the privacy of people with disability
-- **Safety:** Provide supports and services in a safe and competent manner with care and skill
-- **Integrity:** Act with integrity, honesty, and transparency
-- **Violence Prevention:** Promptly take steps to raise and act on concerns about matters that may impact the quality and safety of supports provided to people with disability
-
-### What This Means for Cleaners
-- You are a **support worker** under the NDIS, not just a cleaner
-- Your conduct reflects on Clean Up Bros as a registered NDIS provider
-- Breaching the Code of Conduct can result in **banning orders** from the NDIS Commission
-- The Commission can investigate complaints from participants, families, or the public
+**Source:** NDIS Quality and Safeguards Commission (ndiscommission.gov.au)
 
 ---
 
-## 2. NDIS Worker Screening Check
+## 2. NDIS Code of Conduct
 
-Before entering an NDIS participant's home, compliance is mandatory.
+**All workers** delivering NDIS services — registered or not — must follow the NDIS Code of Conduct. This is law, not a suggestion.
 
-### Requirements
-- **Worker Screening ID:** You must hold a valid **NDIS Worker Screening Check** (formerly Yellow Card/Police Check depending on state)
-- **Always Carry ID:** You must carry your photo ID and clearance card to every NDIS shift
-- **Renewal:** Screening checks must be renewed every 5 years
-- **Status Changes:** You must **immediately** inform management if you are charged with an offence or if your clearance status changes
+### The 8 Requirements
 
-### Consequences of Non-Compliance
-- Working without a valid screening check is **illegal**
-- Clean Up Bros can be fined or deregistered for allowing unscreened workers
-- You may face personal liability and banning orders
+#### 1. Act with respect for individual rights to freedom of expression, self-determination, and decision-making
+- Let participants choose how they want their home cleaned
+- Respect their preferences and routines
+- Don't rearrange their belongings without asking
+- Use their preferred name and communicate respectfully
 
----
+#### 2. Respect the privacy of people with disability
+- Never discuss a participant's personal details with anyone (including other clients, your friends, or on social media)
+- Don't take photos inside their home without explicit consent
+- Keep all participant information confidential
+- Don't share participant addresses, conditions, or behaviours
 
-## 3. Client Dignity, Privacy & Cultural Sensitivity
+#### 3. Provide supports and services in a safe and competent manner
+- Use proper cleaning techniques and appropriate products
+- Follow WHS procedures (PPE, safe chemicals, manual handling)
+- Arrive prepared with all necessary equipment
+- Only perform tasks within your training and scope
 
-**You are working in someone's private home, not a public site.**
+#### 4. Act with integrity, honesty, and transparency
+- Be honest about time spent at appointments
+- Don't claim for work you didn't do
+- Report any mistakes or accidents immediately
+- Be upfront about what you can and can't do
 
-### Entering the Home
-- **Always knock and wait** to be invited in, even if you have a key
-- **Announce your arrival** clearly: *"Hello, it's [Name] from Clean Up Bros for your cleaning today"*
-- If no one answers, **do not enter** — call the office for instructions
-- **Wear shoe covers** or remove shoes if requested
+#### 5. Promptly take steps to raise and act on concerns about matters that may impact the quality and safety of supports
+- Report any hazards in a participant's home
+- If you notice signs of neglect or abuse, report it
+- Raise concerns about unsafe conditions
+- Don't ignore problems — escalate them
 
-### Personal Belongings
-- **Do not move** personal items, medical equipment, or mobility aids without specific permission
-- If you move something to clean under it, **put it back exactly where it was**
-- **Never read** personal documents, mail, or notes left on tables
-- **Never use** the participant's phone, computer, or personal items
+#### 6. Take all reasonable steps to prevent and respond to all forms of violence, exploitation, neglect, and abuse
+- Never yell at, threaten, or intimidate a participant
+- Never take or borrow money, belongings, or food
+- Never accept gifts without reporting it to your supervisor
+- Report any concerns about a participant's wellbeing
 
-### Cultural Safety
-- Be aware of cultural protocols (e.g., removing shoes at the door, prayer times)
-- If you are unsure, **respectfully ask** the participant or check the Service Agreement notes
-- Be respectful of religious items, cultural artefacts, and traditional practices
-- Some participants may prefer a cleaner of a specific gender — respect these preferences
-- Use the participant's **preferred name and pronouns**
+#### 7. Take all reasonable steps to prevent and respond to sexual misconduct
+- Maintain professional boundaries at all times
+- Never engage in any sexual contact with participants
+- Report any disclosures of sexual abuse immediately
 
-### Confidentiality
-- **NEVER discuss** a participant's condition, living situation, or personal details with anyone outside of the management team
-- **Do not post photos** of the worksite on social media
-- **Do not gossip** about participants with other staff
-- Breaching confidentiality is a **serious NDIS Code of Conduct violation**
-- If someone (family member, neighbour, etc.) asks about a participant, say: *"I'm not able to discuss that. Please contact our office."*
-
----
-
-## 4. Professional Boundaries
-
-Maintaining professional boundaries is critical for protecting both the participant and yourself.
-
-### Rules
-- **No Gifts:** Do not accept money, gifts, or food from participants. Politely decline by citing company policy
-- **No Personal Relationships:** Do not share your personal phone number, social media handles, or details about your personal life/problems with participants
-- **Financial Safety:** Never offer financial advice, handle a participant's cash/credit cards, or buy items on their behalf unless strictly authorised in the care plan
-- **Physical Contact:** No unnecessary physical contact. If a participant needs physical assistance, this is outside your role — refer to their support coordinator
-- **Scope of Work:** Only perform the tasks outlined in the service agreement. Do not perform care tasks (medication, personal care, etc.)
-
-### What to Do If Boundaries Are Tested
-- A participant asks you to do tasks outside your role → *"I'd love to help, but for safety and insurance reasons, I can only do what's in our agreement. Let me ask the office to help with that."*
-- A participant offers you a gift → *"That's so kind, but our policy doesn't allow me to accept gifts. Thank you though!"*
-- A participant shares distressing information → Listen empathetically, then report to your supervisor
+#### 8. Take all reasonable steps to prevent and respond to unauthorised use of restrictive practices
+- Don't restrict a participant's movement or access to their home
+- Don't lock rooms or prevent access to areas
+- Never restrain a participant in any way
 
 ---
 
-## 5. Infection Control in NDIS Environments
+## 3. NDIS Worker Screening Check
 
-Participants may be immunocompromised or vulnerable to infection.
+### What Is It?
+An NDIS Worker Screening Check (NWSC) is a national criminal history check specifically for people who work with NDIS participants. It's managed by each state's screening agency.
 
-### Standard Precautions
-- Treat **all bodily fluids and waste** as potentially infectious
-- Use appropriate PPE (gloves, apron) when cleaning areas with bodily fluid contamination
-- Dispose of contaminated materials in sealed bags
+### In NSW
+- Managed by the **Office of the Children's Guardian**
+- Apply online at: service.nsw.gov.au
+- You'll receive either **Clearance** or **Exclusion**
+- Valid for **5 years**
+- You **cannot start NDIS work until your clearance is issued**
 
-### Hand Hygiene — The 5 Moments
-1. **Upon arrival** at the participant's home
-2. **Before putting on gloves**
-3. **After removing gloves**
-4. **After handling waste or contaminated items**
-5. **Before leaving** the participant's home
+### What's Checked
+- National criminal history (including spent convictions relevant to disability work)
+- Apprehended violence orders
+- Workplace misconduct records
+- Child protection records (where relevant)
 
-### Illness Policy
-- ⚠️ **Do not work if you are sick**
-- If you have cold/flu symptoms, gastro, COVID, or any contagious illness, **report to your supervisor immediately** so the shift can be rescheduled
-- Entering a vulnerable person's home while sick is a **breach of duty of care**
-- You will not be penalised for calling in sick — you will be penalised for coming to work sick
-
-### Cleaning for Infection Control
-- Use **colour-coded cloths** (see Module 2) to prevent cross-contamination
-- **Disinfect high-touch surfaces** thoroughly:
-  - Door handles and locks
-  - Light switches and power points
-  - Tap handles
-  - Toilet flush buttons
-  - Remote controls
-  - Handrails
-- Allow **proper dwell time** for disinfectants (5–10 minutes)
-- Use **hospital-grade disinfectant** when specified in the service agreement
+### Your Obligations
+- You must tell Clean Up Bros immediately if you are:
+  - Charged with a criminal offence
+  - Subject to an AVO
+  - Under investigation for any misconduct
+- Your clearance must remain current while you work with us
 
 ---
 
-## 6. Incident Reporting Under NDIS
+## 4. NDIS Worker Orientation Module
 
-Under the NDIS, we have **strict timelines** for reporting specific events to the Commission.
+### "Quality, Safety and You"
+All NDIS workers should complete the free online module called **"Quality, Safety and You"** provided by the NDIS Commission.
 
-### What to Report Immediately (to your Supervisor)
-- Any injury to a participant (even minor)
-- Any injury to yourself
-- Property damage
-- Near misses (accidents that almost happened)
-- Anything that made you feel uncomfortable or concerned
+- **Website:** ndiscommission.gov.au/workers/worker-training
+- **Duration:** Approximately 90 minutes
+- **Cost:** Free
+- **Certificate:** You receive a completion certificate — provide a copy to Clean Up Bros
 
-### Mandatory "Reportable Incidents"
-
-If you witness, suspect, or are alleged to have committed any of the following, it **must be reported to the NDIS Commission within 24 hours:**
-
-1. **The death of a person with disability**
-2. **Serious injury** of a person with disability
-3. **Abuse or neglect** of a person with disability (physical, verbal, financial, or sexual)
-4. **Unlawful sexual or physical contact** with, or assault of, a person with disability
-5. **Sexual misconduct** committed against, or in the presence of, a person with disability, including grooming
-6. **Unauthorised use of a restrictive practice** (e.g., locking someone in a room)
-
-### Your Reporting Obligations
-- You are a **mandatory reporter** — you MUST report suspected abuse or neglect
-- **Not reporting is a breach** of the NDIS Code of Conduct
-- You can report directly to the NDIS Commission if you feel your report to management is not being acted upon
-- **NDIS Commission Contact:** 1800 035 544 or complaints@ndiscommission.gov.au
-- Reports can be made **anonymously** if needed
-
-### What Abuse/Neglect Looks Like
-- **Physical abuse:** Unexplained bruises, marks, or injuries
-- **Verbal/emotional abuse:** Yelling, threats, belittling, isolation
-- **Financial abuse:** Missing money or possessions, unusual financial transactions
-- **Neglect:** Inadequate food, poor hygiene (not related to cleaning), untreated medical conditions
-- **Sexual abuse:** Any unwanted sexual contact or behaviour
+### What It Covers
+- The NDIS and how it works
+- The rights of people with disability
+- The NDIS Code of Conduct
+- Reporting concerns and incidents
+- Your role as an NDIS worker
 
 ---
 
-## 7. Service Agreements & Documentation
+## 5. Privacy and Confidentiality
+
+### What You MUST Keep Confidential
+- Participant's name, address, and contact details
+- Their disability, diagnosis, or health conditions
+- Their living situation and personal circumstances
+- Details about their NDIS plan or funding
+- Anything you see or hear in their home
+
+### What You Must NOT Do
+- ❌ Discuss participants with other clients
+- ❌ Post anything about a participant on social media
+- ❌ Share participant details with family or friends
+- ❌ Take photos inside a participant's home without consent
+- ❌ Leave participant documents visible in your car
+- ❌ Access participant information you don't need for your job
+
+### What You CAN Share (and with whom)
+- ✅ Relevant safety concerns — with your supervisor
+- ✅ Reportable incidents — with your supervisor (who reports to NDIS Commission)
+- ✅ Information directly related to the service — with authorised Clean Up Bros staff only
+
+### Penalties for Breach
+Privacy breaches can result in:
+- Disciplinary action including termination
+- NDIS Commission investigation
+- Banning orders (preventing you from ever working in NDIS again)
+- Potential criminal charges under the Privacy Act 1988
+
+---
+
+## 6. Infection Control
+
+### Standard Precautions for Every Visit
+1. **Hand hygiene** — Wash hands with soap and water (or use alcohol-based sanitiser) before and after every appointment
+2. **Fresh gloves** — Use a new pair of gloves for each home
+3. **Clean equipment** — Ensure mops, cloths, and tools are clean before entering a participant's home
+4. **Respiratory hygiene** — If you're feeling unwell (cough, cold, flu), do NOT attend the appointment. Call your supervisor to arrange a replacement.
+
+### When to Use Enhanced Precautions
+- Participant has a known infection or communicable disease
+- Bodily fluids are present (blood, vomit, urine, faeces)
+- Participant is immunocompromised
+- During infectious disease outbreaks (COVID-19, flu season)
+
+### Enhanced Precautions Include
+- P2/N95 face mask
+- Disposable gown or apron
+- Eye protection (if risk of splash)
+- Double gloving
+- Placing contaminated materials in a biohazard bag
+
+### Handling Bodily Fluids
+1. Put on full PPE (gloves, mask, apron, eye protection)
+2. Contain the area — prevent others from walking through
+3. Clean with paper towels first, then disinfect with hospital-grade disinfectant
+4. Dispose of contaminated materials in a sealed plastic bag
+5. Wash hands thoroughly after removing PPE
+6. Report to supervisor (may be a reportable incident)
+
+### If You Are Unwell
+- **Do NOT attend NDIS appointments if you have:**
+  - Fever, cough, sore throat, runny nose
+  - Vomiting or diarrhoea
+  - Open wounds on hands (unless covered with waterproof dressing)
+  - COVID-19 symptoms or positive test result
+- **Notify your supervisor ASAP** so a replacement can be arranged
+- Participants may be immunocompromised — what's a mild cold for you could be life-threatening for them
+
+---
+
+## 7. Reportable Incidents
+
+### What is a Reportable Incident?
+Under NDIS rules, certain incidents MUST be reported to the NDIS Commission within specific timeframes.
+
+### Categories of Reportable Incidents
+
+| Incident Type | Examples | Reporting Timeframe |
+|--------------|----------|-------------------|
+| **Death** | Death of a participant during/related to service delivery | **24 hours** |
+| **Serious injury** | Burns, fractures, head injuries requiring medical treatment | **24 hours** |
+| **Abuse or neglect** | Physical, sexual, emotional, financial, or neglect | **24 hours** |
+| **Unlawful sexual or physical contact** | Any form of assault | **24 hours** |
+| **Unauthorised use of restrictive practices** | Restraint, seclusion, restricting movement | **24 hours** |
+
+### Your Responsibility
+You are **not** expected to report directly to the NDIS Commission — that's Clean Up Bros' responsibility. But you **must**:
+
+1. **Report to your supervisor IMMEDIATELY** — by phone, not just text
+2. **Document exactly what happened** — who, what, when, where
+3. **Preserve any evidence** — don't clean up or alter the scene
+4. **Write your account** while it's fresh in your memory
+5. **Cooperate with any investigation**
+
+### What If You Witness Abuse or Neglect?
+If you observe signs that a participant is being abused or neglected by anyone (family, other workers, carers):
+- **Report it to your supervisor immediately**
+- **Do NOT confront the alleged perpetrator**
+- **Document what you observed** (facts only, not opinions)
+- **If the participant is in immediate danger, call 000**
+- If your concern is about your own organisation, you can report directly to the NDIS Commission: **1800 035 544**
+
+---
+
+## 8. Service Agreements & Participant Rights
 
 ### Service Agreements
-- These are **legal contracts** detailing what cleaning tasks we are paid to do
-- **Do not deviate** from the agreed task list
-- If a participant asks for extra tasks (e.g., *"Can you walk my dog?"* or *"Clean the gutters?"*), politely explain that you can only perform the agreed tasks for safety and insurance reasons, and refer them to the office
-- If you notice the service agreement doesn't cover what the participant actually needs, inform your supervisor
+Every NDIS participant should have a **service agreement** with Clean Up Bros that outlines:
+- What cleaning tasks will be performed
+- How often (weekly, fortnightly, etc.)
+- Duration of each visit
+- Cost and how it's billed
+- Cancellation policy
 
-### Record Keeping
-- **Timesheets:** Must be accurate to the minute. **Fraudulent billing is a federal offence**
-- **Communication Book:** If a communication book is present:
-  - Sign in and out with date and time
-  - Keep notes **factual and professional** (e.g., "Mopped floors, cleaned bathroom")
-  - Do NOT write subjective comments (e.g., "Client was grumpy today")
-- **Photos:** Take before/after photos for quality assurance if required by the service agreement
-- **Incident Reports:** Complete within 24 hours of any incident
+### Participant Rights
+NDIS participants have the right to:
+- Choose their own service provider
+- Be treated with dignity and respect
+- Have their privacy maintained
+- Be free from violence, abuse, neglect, and exploitation
+- Make complaints without fear of retribution
+- End services at any time
 
-### What to Document
-- Tasks completed during the visit
-- Any tasks not completed and the reason why
-- Any hazards or maintenance issues noticed (e.g., leaking tap, broken tile)
-- Any changes in the participant's environment or well-being
-- Time in and time out
-
----
-
-## 8. Working in Shared Living / SIL Homes
-
-Some NDIS participants live in Supported Independent Living (SIL) houses with other participants.
-
-### Additional Considerations
-- Multiple participants may have **different service agreements** — know which areas you're responsible for
-- Be mindful of **other participants' privacy** — don't enter their bedrooms unless authorised
-- There may be **support workers on site** — coordinate with them
-- Follow any **house rules** posted by the SIL provider
-- Be aware that some participants may have **behaviours of concern** — read the participant's support plan and risk assessment before your first visit
+### Your Role in Upholding Rights
+- Always arrive at the agreed time (or notify in advance of delays)
+- Perform the agreed tasks to a high standard
+- Treat every participant as you would want your own family member treated
+- Listen to their preferences and act on them
+- Never pressure a participant to agree to additional services
 
 ---
 
-## 9. Emergency Procedures in NDIS Homes
+## 9. Cultural Competency
 
-### If a Participant Has a Medical Emergency
-1. Call **000** immediately
-2. Do not move the participant unless they are in immediate danger
-3. Stay calm and reassure the participant
-4. Call your supervisor
-5. Stay on-site until help arrives
-6. Complete an incident report
+### Working with Diverse Participants
+NDIS participants come from all backgrounds. Be aware of:
+- **Cultural practices** around shoes in the home, gender preferences for workers, food preparation areas
+- **Communication needs** — some participants may use assistive technology, sign language, or have communication support workers
+- **Aboriginal and Torres Strait Islander participants** — respect cultural protocols and ask about any specific needs
+- **CALD (Culturally and Linguistically Diverse) participants** — speak clearly, use simple language, be patient
 
-### If You Feel Unsafe
-1. **Leave the property** immediately
-2. Call your supervisor from a safe location
-3. Call **000** if there is an immediate threat
-4. Complete an incident report
-5. You will **never be penalised** for removing yourself from an unsafe situation
+### Key Principle
+> **Ask, don't assume.** Every participant is different. The best way to provide good service is to listen and adapt.
 
 ---
 
-*This training document must be reviewed and acknowledged by all Clean Up Bros staff working on NDIS contracts before commencing work. Refresher training is required annually.*
+## Quick Reference: Your NDIS Compliance Checklist
 
-**Document Version:** 1.0
-**Created:** July 2025
-**Review Date:** July 2026
-**Regulatory Reference:** NDIS Quality and Safeguards Commission — www.ndiscommission.gov.au
+- [ ] NDIS Worker Screening Check — current and valid
+- [ ] Worker Orientation Module — completed ("Quality, Safety and You")
+- [ ] NDIS Code of Conduct — read and understood
+- [ ] Privacy obligations — understood and followed
+- [ ] Infection control supplies — gloves, sanitiser, masks available
+- [ ] Know how to report incidents — supervisor's phone number saved
+- [ ] Service agreement — understand what tasks are required for each participant
+- [ ] Cultural awareness — ask participants about their preferences
+
+---
+
+## Key Contacts
+
+| Contact | Number / Details |
+|---------|-----------------|
+| Clean Up Bros Supervisor | Saved in your phone contacts |
+| NDIS Commission (complaints/concerns) | **1800 035 544** |
+| NDIS Commission website | ndiscommission.gov.au |
+| Police / Ambulance / Fire | **000** |
+| NSW Worker Screening | service.nsw.gov.au |
+
+---
+
+*This guide is based on NDIS Quality and Safeguards Commission requirements, the NDIS Code of Conduct, NDIS Practice Standards, and ProviderPlus guidance (providerplus.com.au). Last updated February 2026.*

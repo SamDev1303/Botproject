@@ -1,154 +1,191 @@
-# Clean Up Bros — WHS (Work Health & Safety) Basics
-## Staff Training Module 1
+# WHS Basics for Cleaning Workers
 
-*Generated via NotebookLM from Clean Up Bros cleaning checklists and industry standards*
+> **Clean Up Bros — Work Health & Safety Training Guide**
+> Based on SafeWork NSW requirements and the WHS Act 2011 (NSW)
 
----
+## 1. Your WHS Rights and Responsibilities
 
-## 1. PPE (Personal Protective Equipment) Requirements
+### As a Worker, You Must:
+- Take reasonable care for your own health and safety
+- Take reasonable care that your actions don't affect other people's health and safety
+- Comply with any reasonable WHS instructions given by Clean Up Bros
+- Cooperate with any reasonable WHS policy or procedure
 
-### Mandatory PPE for All Cleaning Tasks
-- **Gloves** — Mandatory when handling chemicals, waste, or contaminated surfaces
-  - Use nitrile gloves for chemical handling (latex-free for allergy safety)
-  - Change gloves between different areas (bathroom → kitchen)
-  - Dispose of single-use gloves after each property
-- **Enclosed Non-Slip Footwear** — Must be worn at all times on-site
-  - Steel-capped boots recommended for heavy equipment work
-  - No open-toed shoes, thongs, or sandals
-- **Eye Protection (Goggles/Safety Glasses)** — Required during:
-  - Chemical mixing or dilution
-  - Overhead cleaning (ceiling fans, range hoods, exhaust fans)
-  - Descaling tasks (taps, showerheads, drains)
-  - Mould removal
-- **Face Masks/Respirators** — Required when:
-  - Using spray chemicals in enclosed spaces
-  - Removing mould from grout/silicone
-  - Working with strong degreasers
-  - Cleaning in poorly ventilated areas
-- **Aprons/Protective Clothing** — Recommended for:
-  - Deep cleaning tasks
-  - End of lease cleans
-  - Working with bleach or caustic chemicals
+### Clean Up Bros Must:
+- Provide a safe working environment
+- Provide adequate training and supervision
+- Supply appropriate PPE at no cost to you
+- Maintain equipment in safe working condition
+- Consult with workers on WHS matters
 
-### PPE Inspection
-- Check PPE before every shift for damage or wear
-- Replace damaged PPE immediately — never use compromised equipment
-- Store PPE in a clean, dry location
+**Source:** SafeWork NSW — Employer & Worker Obligations (safework.nsw.gov.au)
 
 ---
 
-## 2. Chemical Handling Safety
+## 2. Personal Protective Equipment (PPE)
 
-- **Always read the product label before use** — follow all warnings and instructions
-- **Never smell or taste chemicals** to identify them
-- **Wear appropriate PPE** before handling any chemicals
-- **Wash hands thoroughly** after removing gloves and before eating/drinking
-- **Never transfer chemicals** to unmarked containers
-- **Keep chemicals away from food, drinks, and personal items**
-- **Know where the MSDS (Material Safety Data Sheets) folder is** — in the van or cleaning kit
-- **First aid basics:**
-  - Eye contact → Flush with water for 15+ minutes, seek medical help
-  - Skin contact → Remove contaminated clothing, wash skin with water
-  - Inhalation → Move to fresh air immediately
-  - Ingestion → Do NOT induce vomiting, call Poisons Information Centre: **13 11 26**
+### Required PPE for Cleaning Tasks
 
----
+| Task | PPE Required |
+|------|-------------|
+| General cleaning | Gloves (nitrile), closed-toe shoes |
+| Chemical use | Chemical-resistant gloves, safety glasses, apron |
+| Bathroom/toilet cleaning | Nitrile gloves, safety glasses, face mask if using bleach |
+| Oven cleaning | Chemical-resistant gloves, safety glasses, apron, ventilation |
+| Mould removal | P2/N95 respirator, gloves, safety glasses, disposable coveralls |
+| End-of-lease heavy work | Knee pads, gloves, sturdy footwear |
+| NDIS participant homes | Gloves, shoe covers (if requested), mask (infection control) |
 
-## 3. Slip, Trip & Fall Prevention
-
-This is the **#1 cause of workplace injuries** for cleaners.
-
-### Prevention Measures
-- **Place "WET FLOOR" signs clearly** before and during mopping
-  - Signs must be visible from all approach directions
-  - Remove signs only when floor is completely dry
-- **Keep walkways clear** of cords, hoses, mop handles, and equipment
-- **Clean up spills immediately** — don't leave them for later
-- **Wear non-slip footwear** at all times
-- **Use caution on stairs** — carry equipment in one hand, keep the other free for the railing
-- **Secure electrical cords** — run along walls, not across walkways
-- **Report damaged flooring** (loose tiles, torn carpet) to the supervisor
-- **Use step ladders** for high work — never stand on chairs, benches, or buckets
-- **Take extra care in bathrooms** — wet tiles are extremely slippery
+### PPE Rules
+- **Always inspect PPE before use** — check for tears, cracks, or damage
+- **Replace damaged PPE immediately** — never use compromised equipment
+- **Clean reusable PPE** after each shift
+- **Store PPE** in a clean, dry place (not loose in your car boot)
+- **Never share** single-use PPE items
 
 ---
 
-## 4. Manual Handling
+## 3. Chemical Safety Overview
 
-Cleaning involves significant lifting, carrying, pushing, and pulling.
+### The Golden Rules
+1. **Always read the label** before using any chemical product
+2. **Never mix chemicals** — especially bleach + ammonia or bleach + vinegar (toxic fumes)
+3. **Use in ventilated areas** — open windows or turn on exhaust fans
+4. **Follow dilution ratios** — stronger is NOT better; it damages surfaces and increases fume risk
+5. **Store chemicals upright** in original labelled containers
+6. **Know where the Safety Data Sheet (SDS) is** for every product you use
+
+### Common Cleaning Chemicals & Hazards
+- **Bleach (sodium hypochlorite):** Skin/eye irritant, toxic fumes if mixed with acids or ammonia
+- **Oven cleaners (caustic soda/NaOH):** Severe burns, must use gloves + glasses + ventilation
+- **Bathroom acids (phosphoric/hydrochloric):** Corrosive, never mix with bleach
+- **General purpose sprays:** Lower risk but still use gloves, avoid inhalation
+
+**Full detail: See training-chemical-safety.md**
+
+---
+
+## 4. Slips, Trips and Falls
+
+### Common Causes in Cleaning Work
+- Wet floors (after mopping or spills)
+- Trailing cords from vacuum cleaners
+- Cluttered walkways
+- Loose rugs or mats
+- Working on ladders/step stools for high areas
+- Uneven surfaces, stairs, or thresholds
+
+### Prevention
+- **Mop yourself out of the room** — never mop yourself into a corner with no dry path
+- **Place "Wet Floor" signs** or warn occupants when floors are wet
+- **Keep cords tidy** — loop excess cord, never stretch across doorways
+- **Wear non-slip footwear** with good grip
+- **Use a stable step stool** (not chairs or bins) for high areas
+- **Turn on lights** — ensure good visibility in all work areas
+- **Report hazards** — loose tiles, broken steps, missing handrails
+
+---
+
+## 5. Manual Handling
+
+### Risks for Cleaners
+- Lifting heavy vacuum cleaners, buckets, or equipment
+- Repetitive motions (scrubbing, wiping, mopping)
+- Awkward postures (reaching, bending, kneeling)
+- Carrying equipment up/down stairs
 
 ### Safe Lifting Technique
-1. **Plan the lift** — assess the weight, check the path is clear
-2. **Stand close** to the object with feet shoulder-width apart
-3. **Bend at the knees**, not the waist
-4. **Grip firmly** and keep the load close to your body
-5. **Lift with your legs**, keeping your back straight
-6. **Avoid twisting** — move your feet to turn, don't twist your torso
-7. **Set down carefully**, bending at the knees again
+1. **Plan the lift** — Where is it going? Is it too heavy? Do you need help?
+2. **Stand close** to the load with feet shoulder-width apart
+3. **Bend your knees**, keep your back straight
+4. **Grip firmly** with both hands
+5. **Lift with your legs**, not your back
+6. **Keep the load close** to your body
+7. **Turn with your feet** — never twist your back while lifting
+8. **Set down carefully** — reverse the process
 
-### Specific Risks for Cleaners
-- **Vacuum cleaners** — avoid dragging by the cord; use the handle
-- **Mop buckets** — don't carry when full; wheel them or fill at the destination
-- **Moving appliances** (fridges, washing machines) — always get help, never move alone
-- **Repetitive tasks** — take micro-breaks when scrubbing, mopping, or wiping overhead
-- **Working overhead** (ceiling fans, range hoods) — use appropriate equipment, take regular breaks
-
-### When to Ask for Help
-- Loads over 16kg (for women) or 25kg (for men)
-- Awkward shapes or sizes
-- Moving heavy appliances
+### Reducing Repetitive Strain
+- **Alternate tasks** — don't scrub for 2 hours straight
+- **Switch hands** when mopping or wiping
+- **Use long-handled tools** to avoid constant bending
+- **Take micro-breaks** — stretch your hands, wrists, and shoulders every 30 minutes
+- **Use a mop with a wringer** instead of hand-wringing
 
 ---
 
-## 5. Incident Reporting Procedures
+## 6. Working in Occupied Homes (NDIS & Residential)
 
-### What Must Be Reported
-- **All injuries** — no matter how minor (cuts, strains, chemical splashes)
-- **Near-misses** — events that could have caused injury but didn't
-- **Hazards** — unsafe conditions found on-site (broken glass, exposed wires, mould)
-- **Property damage** — anything broken or damaged during cleaning
-- **Client concerns** — anything unusual observed at the property
-
-### Reporting Process
-1. **Immediately** — Tell your supervisor by phone/text
-2. **Within 24 hours** — Complete an Incident Report Form
-3. **Include:** Date, time, location, what happened, who was involved, what action was taken
-4. **Photos** — Take photos of the hazard/injury/damage if safe to do so
-5. **Seek medical attention** if needed — don't "push through" an injury
-
-### Emergency Contacts
-- **Emergency Services:** 000
-- **Poisons Information:** 13 11 26
-- **WorkCover NSW/QLD/VIC:** Check your state's number
-- **Company Supervisor:** [Insert number]
+### Special Considerations
+- **Knock and announce yourself** before entering any room
+- **Ask about hazards** — pets, medications left out, recent spills
+- **Be aware of trip hazards** — mobility aids, oxygen tubing, medical equipment
+- **Respect the participant's space** — never move personal items without asking
+- **Infection control:** Wash hands before and after each appointment; use fresh gloves per home
+- **Sharps/needles:** If you find sharps, DO NOT pick them up. Report to supervisor immediately.
 
 ---
 
-## 6. Working Alone
+## 7. Incident Reporting
 
-Many cleaning jobs are performed solo. Extra precautions:
-- **Always let someone know** your location and expected finish time
-- **Keep your phone charged** and accessible
-- **Lock the door** behind you when cleaning an empty property
-- **Trust your instincts** — if something feels unsafe, leave and call your supervisor
-- **Check-in protocol** — text your supervisor when you arrive and when you leave each job
+### What is an Incident?
+Any event that causes, or could have caused, injury or illness, including:
+- **Injury:** Cut, burn, strain, slip, fall — no matter how minor
+- **Near miss:** Something that COULD have caused injury but didn't (e.g., nearly falling on wet stairs)
+- **Dangerous occurrence:** Equipment failure, chemical spill, structural damage
+- **Property damage:** Breaking a client's item, equipment malfunction
+
+### How to Report
+1. **Stop and assess** — make the area safe if possible
+2. **Get first aid** if someone is injured
+3. **Notify your supervisor** immediately by phone or text
+4. **Complete an incident report** within 24 hours via Connecteam
+5. **Take photos** if safe to do so (damage, hazard, injury)
+
+### Serious Incidents (Notify SafeWork NSW)
+The following must be reported to SafeWork NSW immediately:
+- Death of any person
+- Serious injury requiring hospitalisation
+- Dangerous incident (collapse, explosion, chemical exposure)
+
+**SafeWork NSW Incident Line: 13 10 50**
 
 ---
 
-## 7. Electrical Safety
+## 8. Emergency Procedures
 
-- **Inspect all power cords** for damage before plugging in
-- **Never use damaged or frayed cords** — tag out and report
-- **Don't overload power points** — one appliance per outlet
-- **Keep electrical equipment away from water**
-- **Pull by the plug**, not the cord, when unplugging
-- **Never use electrical equipment with wet hands**
-- **Test RCDs (safety switches)** if available at the property
+### If Someone is Injured
+1. Ensure the scene is safe (don't become a second casualty)
+2. Call **000** if serious
+3. Provide first aid if trained
+4. Notify supervisor
+
+### Chemical Exposure
+1. Remove person from the area
+2. If on skin: flush with water for 20 minutes
+3. If in eyes: flush with water for 20 minutes, keep eyelids open
+4. If inhaled: move to fresh air
+5. Call **Poisons Information: 13 11 26**
+6. Bring the product label or SDS to hospital
+
+### Fire
+1. Alert others and evacuate
+2. Call **000**
+3. Do NOT fight the fire unless trained and it's small
+4. Meet at the designated assembly point
 
 ---
 
-*This training document must be reviewed and acknowledged by all Clean Up Bros staff before commencing work. Refresher training is required annually.*
+## Summary: Your Daily WHS Checklist
 
-**Document Version:** 1.0
-**Created:** July 2025
-**Review Date:** July 2026
+- [ ] PPE checked and in good condition
+- [ ] Chemicals labelled and SDS available
+- [ ] Work area assessed for hazards (wet floors, cords, clutter)
+- [ ] Equipment inspected before use
+- [ ] Lifting done safely — use legs, not back
+- [ ] Ventilation ensured when using chemicals
+- [ ] Incidents/near-misses reported immediately
+- [ ] Hands washed between clients
+
+---
+
+*This guide meets requirements under the Work Health and Safety Act 2011 (NSW), SafeWork NSW guidelines, and NDIS Quality and Safeguards Commission standards.*
