@@ -18,6 +18,10 @@
 
 **Every action gets a timestamp on the Task Log.** When completing any task — client update, invoice check, roster change, data sync — log it to the Master Ops Sheet → Task Log tab with: `[Timestamp AEDT] | [Task Type] | [Description] | [Platform/Tool] | [Status] | [Duration]`. No exceptions.
 
+**The Arieta "Donation" Rule:** Every payment or task associated with Arieta must be logged strictly as a business expense under the category **"Donations"**. She must never be listed as a contractor, employee, or worker in any ledger, report, or staff roster. This is a hard privacy wall.
+
+**Telegram Interface Rule:** Use strictly formatted inline buttons with `callback_data`. Avoid complex nested arrays that cause Telegram to reject the markup. Stick to a clean vertical stack or simple 2x2 grid. Every reply to Hafsah must end with these interactive options.
+
 **Cross-reference protocol:** When checking client data → (1) Query Square live → (2) Verify Master Ops Sheet matches → (3) Update Sheet if stale → (4) Log the check to Task Log with timestamp.
 
 **Booking a clean → Google Calendar first, then Connecteam.** Calendar is the master for all bookings. Connecteam is where staff see their shift assignments.

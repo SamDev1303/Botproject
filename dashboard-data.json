@@ -2,56 +2,117 @@
   "lastUpdated": "2026-02-17T19:45:00+11:00",
   "stats": {
     "revenueMTD": 3515,
-    "outstandingBalance": 4590.40,
+    "outstandingBalance": 4590.4,
     "unpaidInvoices": 5,
     "activeLeads": 68,
     "gstPayable": 0
   },
   "bella": {
-    "model": "gemini-3-flash-preview",
+    "model": "google/gemini-3-flash-preview",
     "activeSessions": 10,
     "totalSkills": 45,
-    "lastHeartbeat": "2026-02-17T19:40:00+11:00",
-    "memoryFiles": 42,
+    "lastHeartbeat": "2026-02-17T19:45:00+11:00",
+    "memoryFiles": 43,
     "roles": 20
   },
   "financial": {
     "unpaidDetails": [
-      {"client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750.00, "status": "PARTIALLY_PAID", "due": "2026-03-05"},
-      {"client": "McKayla Vamarasi", "invoice": "#000049", "amount": 127.70, "status": "UNPAID"},
-      {"client": "McKayla Vamarasi", "invoice": "#000047", "amount": 127.70, "status": "UNPAID"},
-      {"client": "Herdip Gill", "invoice": "#000045", "amount": 150.00, "status": "UNPAID"},
-      {"client": "Claudia Alz", "invoice": "#000042", "amount": 320.00, "status": "OVERDUE"}
+      {
+        "client": "Meshach Ephraim Care",
+        "invoice": "#000005",
+        "amount": 3750,
+        "status": "PARTIALLY_PAID",
+        "due": "2026-03-05"
+      },
+      {
+        "client": "McKayla Vamarasi",
+        "invoice": "#000049",
+        "amount": 127.7,
+        "status": "UNPAID"
+      },
+      {
+        "client": "McKayla Vamarasi",
+        "invoice": "#000047",
+        "amount": 127.7,
+        "status": "UNPAID"
+      },
+      {
+        "client": "Herdip Gill",
+        "invoice": "#000045",
+        "amount": 150,
+        "status": "UNPAID"
+      },
+      {
+        "client": "Claudia Alz",
+        "invoice": "#000042",
+        "amount": 320,
+        "status": "OVERDUE"
+      }
     ],
-    "totalOutstanding": 4590.40,
+    "totalOutstanding": 4590.4,
     "gstRegistered": false,
     "structure": "Sole Trader"
   },
   "calendar": {
     "today": [],
     "upcoming": [
-      {"date": "2026-02-19", "time": "20:00", "summary": "🧹 U3 Atkinson Cleaning"}
+      {
+        "date": "2026-02-19",
+        "time": "20:00",
+        "summary": "🧹 U3 Atkinson Cleaning"
+      }
     ]
   },
   "liveTasks": [
-    {"task": "Dashboard Live Sync", "status": "Complete", "timestamp": "2026-02-17T19:45:00+11:00"},
-    {"task": "Financial Discrepancy Resolved", "status": "Complete", "timestamp": "2026-02-17T19:20:00+11:00"},
-    {"task": "NDIS Rate Verification", "status": "Active", "timestamp": "2026-02-17T19:10:00+11:00"}
+    {
+      "task": "Dashboard Live Sync",
+      "status": "Complete",
+      "timestamp": "2026-02-17T19:45:00+11:00"
+    },
+    {
+      "task": "Clinical Documentation Rework",
+      "status": "Complete",
+      "timestamp": "2026-02-16T22:00:00+11:00"
+    },
+    {
+      "task": "Clawdbot Gateway Maintenance",
+      "status": "Complete",
+      "timestamp": "2026-02-14T10:00:00+11:00"
+    }
   ],
   "patterns": [
     "Dashboard-First rule active",
     "Sole Trader logic enabled (No GST)",
-    "Clinical Documentation workflow operational",
+    "Clinical Documentation workflow operational (Larissa/Lisa profiles)",
+    "GitHub SSH & GPG Verified Commits configured",
     "Meshach payment correction applied ($3,750 remaining)"
   ],
   "activeSessions": [
-    {"label": "bookkeeping-sheets", "status": "active"},
-    {"label": "memory-update", "status": "active"},
-    {"label": "archive-extraction", "status": "active"},
-    {"label": "sheet-sync", "status": "active"}
+    {
+      "label": "bookkeeping-sheets",
+      "status": "active"
+    },
+    {
+      "label": "memory-update",
+      "status": "active"
+    },
+    {
+      "label": "archive-extraction",
+      "status": "active"
+    },
+    {
+      "label": "sheet-sync",
+      "status": "active"
+    }
   ],
   "social": {
     "lastPost": "2026-02-17 (FB + IG transformation)",
     "engagement": "pending review"
+  },
+  "crons": {
+    "dashboard-live-sync-5min": {
+      "status": "running",
+      "lastRun": "2026-02-17T19:45:00+11:00"
+    }
   }
 }
