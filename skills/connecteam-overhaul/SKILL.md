@@ -1,25 +1,125 @@
----
-name: connecteam-overhaul
-description: Comprehensive overhaul and branding of the Connecteam dashboard. Use when updating staff bios, creating high-end logos/badges via Nano Banana, stripping side navigation to cleaning-business essentials, and finalizing cleaning checklists.
----
+# SKILL: Connecteam Overhaul for Clean Up Bros
 
-# Connecteam Overhaul
+## Purpose
+Complete overhaul of the Connecteam app for Clean Up Bros cleaning business. Covers branding, forms, staff bios, navigation cleanup, and badge/ID creation.
 
-This skill manages the complete visual and structural overhaul of the Connecteam platform to align with Clean Up Bros branding and operational needs.
+## Critical Rules
 
-## Workflow
+### 1. ONE TAB ONLY
+- Close ALL redundant Connecteam tabs immediately on start.
+- Work in a single `clawd` profile tab throughout.
+- Never open a second tab to the same domain.
 
-1. **Tab Focus**: Always work within a SINGLE Connecteam tab. Close all redundant tabs immediately.
-2. **Branding**:
-    - Reference https://cleanupbros.com.au for visual style (blue/white aesthetic).
-    - Use Nano Banana to generate high-end logos and badges.
-    - Update staff IDs and platform branding with these assets.
-3. **Staff Bios**: Refine all bios to be professional, consistent, and reflective of the staff's roles and experience.
-4. **Navigation Cleanup**: Strip the side navigation of all features not strictly necessary for running a cleaning business. Keep the interface lean and functional.
-5. **Form Finalization**: Review and perfect all cleaning forms (End of Lease, Deep Clean, General Clean, Airbnb Turnover).
-6. **Logging**: Update `dashboard-data.json` and session memory after every significant change.
+### 2. Navigation via URL (NOT sidebar clicks)
+Connecteam's sidebar elements are inside a complex SPA that breaks ref-based clicking.
+**ALWAYS navigate by URL hash** instead of trying to click sidebar items:
 
-## Tools & Context
-- **Browser**: Profile "chrome".
-- **Model**: Use Gemini for larger context window when performing these complex UI tasks.
-- **Official Creator**: If new repetitive sub-tasks emerge, use `skill-creator` to package them.
+| Section | URL |
+|---------|-----|
+| Dashboard | `https://app.connecteam.com/#/index/dashboard/dashboard` |
+| Forms | `https://app.connecteam.com/#/index/forms` |
+| Schedule | `https://app.connecteam.com/#/index/scheduler` |
+| Time Clock | `https://app.connecteam.com/#/index/timeclock` |
+| Users | `https://app.connecteam.com/#/index/users` |
+| Directory | `https://app.connecteam.com/#/index/directory` |
+| Chat | `https://app.connecteam.com/#/index/chat` |
+| Updates | `https://app.connecteam.com/#/index/updates` |
+| Knowledge Base | `https://app.connecteam.com/#/index/knowledgebase` |
+| Courses | `https://app.connecteam.com/#/index/courses` |
+| Documents | `https://app.connecteam.com/#/index/documents` |
+| Quick Tasks | `https://app.connecteam.com/#/index/quicktasks` |
+| Settings | `https://app.connecteam.com/#/index/settings` |
+
+**Use `browser navigate` action** to move between sections. Example:
+```
+browser action=navigate targetId=<id> profile=clawd url="https://app.connecteam.com/#/index/forms"
+```
+
+### 3. Dismiss Tooltips/Walkthrough First
+Before interacting with any page, dismiss any walkthrough tooltip by clicking "Skip" buttons. These overlays block other elements.
+
+### 4. Snapshot Before Every Action
+Always take a fresh snapshot immediately before clicking. Refs go stale fast in this SPA.
+
+## Task Checklist
+
+### Phase 1: Navigation Cleanup (Delete unnecessary sidebar features)
+**KEEP** (essential for cleaning business):
+- Dashboard/Overview
+- Time Clock
+- Forms (checklists)
+- Schedule
+- Chat
+- Users
+- Directory
+- Documents
+- Quick Tasks
+
+**REMOVE** (not needed):
+- Events
+- Knowledge Base
+- Help Desk
+- Text Messages
+- Surveys
+- Updates
+- Rewards
+- Recognitions
+- Celebrations
+- Time Off
+- Courses
+
+To remove: Go to each feature's settings or use the sidebar "..." menu to hide/delete.
+
+### Phase 2: Forms Review & Finalize
+Four forms to review and finalize:
+1. **End of Lease Checklist** — Comprehensive bond-back cleaning
+2. **Deep Clean Checklist** — Intensive deep cleaning
+3. **General Clean Checklist** — Standard weekly/fortnightly
+4. **Airbnb Turnover Checklist** — Quick turnaround for short-stay
+
+For each form:
+- Navigate to Forms section via URL
+- Open each form
+- Review all fields/sections
+- Ensure consistent branding (Clean Up Bros header)
+- Ensure photo upload fields exist for before/after
+- Ensure client signature field exists
+- Ensure time tracking fields exist
+- Publish if in draft
+
+### Phase 3: Staff Bios
+- Navigate to Users/Directory
+- Update each staff member's profile:
+  - Professional bio (2-3 sentences)
+  - Consistent job title format
+  - Profile photo if missing
+- Staff: Hafsah Nuzhat (Owner), Shamal Krishna, Arieta Cinavilakeba, others
+
+### Phase 4: Logo/Badge Creation
+- Use Nano Banana or similar tool to create Clean Up Bros logo
+- Style reference: cleanupbros.com.au
+- Create staff ID badges with:
+  - New logo
+  - Staff name
+  - Role/title
+  - Employee ID number
+  - Clean Up Bros branding colors
+
+### Phase 5: Dashboard Data Update
+After each phase, update `dashboard-data.json` with:
+- Task completion status
+- Timestamp
+- Any issues encountered
+
+## Troubleshooting
+
+### Element not found/not visible
+→ The SPA re-renders aggressively. Always re-snapshot.
+→ Use URL navigation instead of clicking sidebar.
+
+### Tooltip blocking
+→ Look for "Skip" or "×" buttons in the snapshot.
+→ Click those first before proceeding.
+
+### Walkthrough popup
+→ Dismiss immediately — it overlays the entire sidebar.

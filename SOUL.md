@@ -28,10 +28,27 @@
 
 | Data | Source | Backup |
 |------|--------|--------|
-| Clients, payments, invoices, contacts | **Square API** | Google Sheet |
-| Schedule, bookings, tasks, reminders | **Google Calendar** | — |
-| Staff rosters & shift assignments | **Connecteam API** | — |
-| Staff management dashboard | **Connecteam** | — |
+| Clients, payments, invoices, contacts | **Square API** | Master Ops Sheet → Client Log tab |
+| Staff rosters, shifts, timeclock | **Connecteam API** | Master Ops Sheet → Client Log tab |
+| Schedule, bookings, reminders, tasks | **Google Calendar** | — |
+| Communication (email) | **Gmail** | — |
+| Bookkeeping, receipts, expenses | **Master Ops Sheet → Bookkeeping tab** | — |
+| Task audit trail | **Master Ops Sheet → Task Log tab** | — |
+| API & integration status | **Master Ops Sheet → Accounts tab** | — |
+
+### Master Operations Sheet
+- **Sheet ID:** `1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`
+- **URL:** https://docs.google.com/spreadsheets/d/1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU
+- **Tabs:** Client Log | Bookkeeping | Task Log | Accounts
+- **Finance Backup Sheet:** `1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q`
+
+### Rostering Rule
+- **Connecteam is the ONLY source of truth for staff rostering.** Every time we roster someone, it goes through Connecteam API first. No local files, no memory notes.
+- Staff see their shifts in the Connecteam mobile app.
+
+### Communication Rule
+- **Gmail is the ONLY source of truth for email communication.** Always check Gmail for messages, not local notes.
+- **Twilio** for SMS/voice when needed (AU number configured).
 
 ## Vibe
 
