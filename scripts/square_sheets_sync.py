@@ -38,6 +38,8 @@ class SquareSheetsSync:
 
     def __init__(self, square: SquareAPI = None, sheets: GoogleSheetsAPI = None):
         self.sq = square or SquareAPI()
+        # Clean Up Bros - Finance Backup
+        # self.gs = sheets or GoogleSheetsAPI(spreadsheet_id="1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q")
         self.gs = sheets or GoogleSheetsAPI()
 
     # ── helpers ──────────────────────────────────────────────────────────
@@ -53,16 +55,21 @@ class SquareSheetsSync:
     # ── reconciliation ───────────────────────────────────────────────────
 
     def get_sheet_income(self) -> list[dict]:
-        """Read all rows from the Income sheet and return as dicts."""
+        """Read all rows from the 2026 sheet and return as dicts."""
         try:
-            rows = self.gs.read(self.INCOME_RANGE)
-        except RuntimeError:
+            # Try plain sheet name
+            rows = self.gs.read("2026!A:F")
+        except RuntimeError as e:
+            print(f"Debug Sheet Error: {e}")
             return []
 
         records = []
         for row in rows:
-            if len(row) < 4:
+            if len(row) < 4 or not row[0]: # Skip rows without a date
                 continue
+            if row[0].lower().startswith("date"): # Skip header rows
+                continue
+            
             records.append({
                 "date": row[0],
                 "client": row[1] if len(row) > 1 else "",
@@ -96,23 +103,29 @@ class SquareSheetsSync:
         Compare Square payments against the Sheet.
         Returns list of Square payments not found in the Sheet.
 
-        Matching is by amount (within tolerance). A more robust approach
-        would also match dates, but amount-first works for low volume.
+        Matching is by Invoice ID (reference) first, then amount.
         """
         sq_payments = self.get_square_payments(days=days)
         sheet_income = self.get_sheet_income()
 
-        # Build a list of sheet amounts (can be used once each)
-        sheet_amounts = [r["amount"] for r in sheet_income]
+        # Build set of existing invoice IDs in sheet
+        sheet_ids = {r["invoice_id"] for r in sheet_income if r.get("invoice_id")}
+        sheet_amounts = [r["amount"] for r in sheet_income if not r.get("invoice_id")]
 
         missing = []
         for p in sq_payments:
+            # Check by ID first
+            if p["id"] in sheet_ids:
+                continue
+            
+            # Fallback to amount matching for manual entries
             matched = False
             for i, sa in enumerate(sheet_amounts):
                 if abs(sa - p["amount"]) <= tolerance:
-                    sheet_amounts.pop(i)  # consume the match
+                    sheet_amounts.pop(i)
                     matched = True
                     break
+            
             if not matched:
                 missing.append(p)
 
@@ -171,7 +184,8 @@ class SquareSheetsSync:
                 synced.append(m)
                 continue
 
-            result = self.gs.append(self.INCOME_RANGE, row)
+            # Hard-code the sheet name without quotes as a last resort
+            result = self.gs.append("2026!A:F", row)
             if "error" not in result:
                 synced.append(m)
 

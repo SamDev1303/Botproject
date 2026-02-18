@@ -10,9 +10,9 @@
 ## Model Health Check (EVERY heartbeat)
 1. Run `bash ~/Desktop/🦀/scripts/check-model.sh`
 2. If output is "FIXED: ..." — model drifted and was auto-repaired. Notify Hafsah on Telegram:
-   "⚠️ Model drifted — auto-fixed back to GPT Codex. Reason: [reason]"
+   "⚠️ Model drifted — auto-fixed back to Gemini 3 Flash. Reason: [reason]"
 3. If output is "OK" — no action needed, model is healthy.
-4. Chain: openai-codex/gpt-5.2-codex (primary) → google/gemini-3-flash-preview (fallback).
+4. Chain: google/gemini-3-flash-preview (primary) → anthropic/claude-sonnet-4-6 (fallback).
 
 ## Standard Checks
 - Check Gmail for unread client messages.

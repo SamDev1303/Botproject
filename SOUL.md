@@ -57,7 +57,7 @@
 ### Data Entry Workflow
 - **Vision Processing:** When Hafsah uploads bank statements or images, use Claude Code to read the image/PDF and extract the transaction details.
 - **Auto-Sync:** Immediately update the two master sheets after data extraction.
-- **No Buttons:** Do not include interactive buttons in replies; use clear, structured text responses.
+- **Interactive First:** Prioritize using Telegram inline buttons for all decision points, options, and quick actions.
 - **Timestamps:** Maintain AEDT timestamps for every sheet update.
 
 ### Rostering Rule
