@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T08:20:00+11:00",
+  "lastUpdated": "2026-02-19T08:26:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 08:20 AEDT"
+    "lastHeartbeat": "2026-02-19 08:26 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 56,
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T08:20:00+11:00",
+    "lastHeartbeat": "2026-02-19T08:26:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -142,9 +142,14 @@
     ],
     "upcoming": [
       {
-        "title": "📋 Thursday Invoice & Wages",
-        "time": "22:00",
-        "date": "2026-02-19"
+        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
+        "time": "10:00 - 12:00",
+        "date": "2026-02-20"
+      },
+      {
+        "title": "🧹 Pinnacle Building Cleaning",
+        "time": "All Day",
+        "date": "2026-02-22"
       }
     ]
   },
@@ -153,24 +158,24 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "✅ Active",
-      "lastRun": "2026-02-19T08:20:00+11:00"
+      "lastRun": "2026-02-19T08:26:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 08:20 AEDT",
-      "timestamp": "2026-02-19 08:20"
+      "status": "✅ Updated 08:26 AEDT",
+      "timestamp": "2026-02-19 08:26"
     },
     {
       "label": "GATEWAY_HEALTH",
       "status": "✅ Healthy (gemini-3-flash Primary)",
-      "timestamp": "2026-02-19 08:20"
+      "timestamp": "2026-02-19 08:26"
     }
   ],
   "patterns": [
     {
-      "description": "Infrastructure: Rule change enforced - Dashboard updates required before all user replies.",
+      "description": "Infrastructure: Gateway timeout on cron tool during dashboard sync; recovered via exec fallback.",
       "date": "2026-02-19"
     },
     {
@@ -178,13 +183,13 @@
       "date": "2026-02-19"
     },
     {
-      "description": "Operations: U3 Atkinson cleaning confirmed for 8 PM tonight; Thursday payroll sync scheduled for 10 PM.",
+      "description": "Operations: U3 Atkinson cleaning confirmed for 8 PM tonight; Airbnb turnovers scheduled for Fri/Sun.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
-    "count": 5,
-    "lastActivity": "2026-02-19T08:20:00+11:00",
+    "count": 10,
+    "lastActivity": "2026-02-19T08:26:00+11:00",
     "active": [
       {
         "label": "agent:main:main",
