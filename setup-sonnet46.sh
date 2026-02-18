@@ -295,7 +295,7 @@ mkdir -p "$SKILL_DIR/scripts"
 cat > "$SKILL_DIR/SKILL.md" << 'SKILLEOF'
 ---
 name: model-switcher
-description: Universal model switcher for Clawdbot. Use when told to switch model, use gemini, use opus, use sonnet, change model, swap model, rate limited, or switch to [any model name].
+description: Universal model switcher for Clawdbot. Use when told to switch model, use gpt/codex/codex53/codex52/gemini/opus/sonnet, change model, swap model, rate limited, or switch to [any model name].
 ---
 
 # Universal Model Switcher
@@ -308,6 +308,9 @@ Switch Clawdbot's primary model between any configured provider without breaking
 |-------|---------------|----------|----------|
 | opus | anthropic/claude-opus-4-6 | anthropic | Max intelligence, expensive |
 | sonnet | anthropic/claude-sonnet-4-6 | anthropic | Default — coding, complex tasks |
+| gpt / codex | openai-codex/gpt-5.3-codex | openai-codex | Preferred GPT via ChatGPT/Codex OAuth |
+| codex53 | openai-codex/gpt-5.3-codex | openai-codex | Explicit Codex 5.3 |
+| codex52 | openai-codex/gpt-5.2-codex | openai-codex | Compatibility fallback |
 | gemini | google/gemini-3-flash-preview | google | Fast, free tier |
 | deepseek | deepseek/deepseek-chat | deepseek | Budget, decent quality |
 | openrouter | openrouter/auto | openrouter | Universal fallback |
@@ -317,6 +320,9 @@ Switch Clawdbot's primary model between any configured provider without breaking
 ```bash
 bash <SKILL_DIR>/scripts/switch-model.sh opus
 bash <SKILL_DIR>/scripts/switch-model.sh sonnet
+bash <SKILL_DIR>/scripts/switch-model.sh gpt
+bash <SKILL_DIR>/scripts/switch-model.sh codex53
+bash <SKILL_DIR>/scripts/switch-model.sh codex52
 bash <SKILL_DIR>/scripts/switch-model.sh gemini
 bash <SKILL_DIR>/scripts/switch-model.sh status
 ```
@@ -325,6 +331,7 @@ bash <SKILL_DIR>/scripts/switch-model.sh status
 
 - opus → sonnet (cheaper)
 - sonnet → gemini (free tier)
+- gpt/codex/codex53 → codex52 (if 5.3 unsupported) → gemini
 - gemini → sonnet (paid reliable)
 SKILLEOF
 
@@ -337,7 +344,7 @@ rm -f "$SKILL_DIR/SKILL.md.bak"
 cat > "$SKILL_DIR/scripts/switch-model.sh" << 'SCRIPTEOF'
 #!/bin/bash
 # Universal Model Switcher for Clawdbot
-# Usage: switch-model.sh [opus|sonnet|gemini|deepseek|openrouter|status]
+# Usage: switch-model.sh [opus|sonnet|gpt|codex|codex53|codex52|gemini|deepseek|openrouter|status]
 
 set -e
 
@@ -357,19 +364,45 @@ if [ -z "$BOT_HOME" ]; then
     exit 1
 fi
 
-CONFIG="$BOT_HOME/config/clawdbot.json"
+if [ -f "$BOT_HOME/config/clawdbot.json" ]; then
+    CONFIG="$BOT_HOME/config/clawdbot.json"
+elif [ -f "$BOT_HOME/clawdbot.json" ]; then
+    CONFIG="$BOT_HOME/clawdbot.json"
+else
+    echo "❌ Could not find clawdbot.json in $BOT_HOME"
+    exit 1
+fi
 
 get_model_info() {
     local alias="$1"
     case "$alias" in
         opus) MODEL_ID="anthropic/claude-opus-4-6"; FALLBACK="anthropic/claude-sonnet-4-6" ;;
         sonnet) MODEL_ID="anthropic/claude-sonnet-4-6"; FALLBACK="google/gemini-3-flash-preview" ;;
+        gpt|codex|gpt53|gpt-5.3|codex53|gpt-5.3-codex) MODEL_ID="openai-codex/gpt-5.3-codex"; FALLBACK="google/gemini-3-flash-preview" ;;
+        gpt52|gpt-5.2|codex52|gpt-5.2-codex) MODEL_ID="openai-codex/gpt-5.2-codex"; FALLBACK="google/gemini-3-flash-preview" ;;
         gemini) MODEL_ID="google/gemini-3-flash-preview"; FALLBACK="anthropic/claude-sonnet-4-6" ;;
         deepseek) MODEL_ID="deepseek/deepseek-chat"; FALLBACK="google/gemini-3-flash-preview" ;;
         openrouter) MODEL_ID="openrouter/auto"; FALLBACK="google/gemini-3-flash-preview" ;;
         *) return 1 ;;
     esac
     return 0
+}
+
+is_model_available() {
+    local model_id="$1"
+    local short_id="${model_id##*/}"
+    local models_file=""
+    for candidate in \
+        "$HOME/.npm-global/lib/node_modules/clawdbot/node_modules/@mariozechner/pi-ai/dist/models.generated.js" \
+        "/usr/local/lib/node_modules/clawdbot/node_modules/@mariozechner/pi-ai/dist/models.generated.js" \
+        "/usr/lib/node_modules/clawdbot/node_modules/@mariozechner/pi-ai/dist/models.generated.js" \
+        "$(npm root -g 2>/dev/null)/clawdbot/node_modules/@mariozechner/pi-ai/dist/models.generated.js"; do
+        if [ -f "$candidate" ]; then
+            models_file="$candidate"
+            break
+        fi
+    done
+    [ -n "$models_file" ] && (grep -q "\"$model_id\"" "$models_file" || grep -q "\"$short_id\"" "$models_file")
 }
 
 TARGET="${1:-}"
@@ -384,13 +417,19 @@ print(f"Current Primary: {model['primary']}")
 print(f"Current Fallbacks: {', '.join(model.get('fallbacks', []))}")
 PYEOF
     [ "$TARGET" = "status" ] && exit 0
-    echo "Usage: switch-model.sh [opus|sonnet|gemini|deepseek|openrouter|status]"
+    echo "Usage: switch-model.sh [opus|sonnet|gpt|codex|codex53|codex52|gemini|deepseek|openrouter|status]"
     exit 1
 fi
 
 if ! get_model_info "$TARGET"; then
     echo "Unknown model: $TARGET"
     exit 1
+fi
+
+if [ "$MODEL_ID" = "openai-codex/gpt-5.3-codex" ] && ! is_model_available "openai-codex/gpt-5.3-codex"; then
+    echo "⚠️  openai-codex/gpt-5.3-codex is not in your local model registry."
+    echo "   Falling back to openai-codex/gpt-5.2-codex."
+    MODEL_ID="openai-codex/gpt-5.2-codex"
 fi
 
 echo "Switching to: $TARGET ($MODEL_ID)"

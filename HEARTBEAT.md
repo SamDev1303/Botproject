@@ -10,9 +10,9 @@
 ## Model Health Check (EVERY heartbeat)
 1. Run `bash ~/Desktop/🦀/scripts/check-model.sh`
 2. If output is "FIXED: ..." — model drifted and was auto-repaired. Notify Hafsah on Telegram:
-   "⚠️ Model drifted — auto-fixed back to Opus 4.6. Reason: [reason]"
+   "⚠️ Model drifted — auto-fixed back to GPT Codex. Reason: [reason]"
 3. If output is "OK" — no action needed, model is healthy.
-4. Chain: Opus 4.6 (primary) → Opus 4.5 (fallback only). Never use Gemini.
+4. Chain: openai-codex/gpt-5.2-codex (primary) → google/gemini-3-flash-preview (fallback).
 
 ## Standard Checks
 - Check Gmail for unread client messages.
