@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T12:00:00+11:00",
+  "lastUpdated": "2026-02-18T12:05:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,409 +15,113 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T12:00:00+11:00",
+    "lastHeartbeat": "2026-02-18T12:05:00+11:00",
     "roles": 20
   },
   "roles": [
-    {
-      "name": "Accounts Controller",
-      "description": "Owns the 11-tab Master Operations Sheet and unified ledger."
-    },
-    {
-      "name": "Bookkeeper",
-      "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)."
-    },
-    {
-      "name": "Square Manager",
-      "description": "Live invoicing, payments, and client contact record synchronization."
-    },
-    {
-      "name": "Staff Scheduler",
-      "description": "Connecteam roster management and staff shift assignments."
-    },
-    {
-      "name": "Clinical Documenter",
-      "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)."
-    },
-    {
-      "name": "Calendar Master",
-      "description": "Google Calendar integration for all cleans and business appointments."
-    },
-    {
-      "name": "Task Logger",
-      "description": "Timestamping every action to the Master Ops Sheet Task Log."
-    },
-    {
-      "name": "Email Manager",
-      "description": "Monitoring Gmail for business tasks and client communications."
-    },
-    {
-      "name": "Dashboard Manager",
-      "description": "Updating the Pulse Mini App live on Vercel with real-time data."
-    },
-    {
-      "name": "Lead Gen Specialist",
-      "description": "Managing 1,600+ Apollo leads and tracking commercial outreach."
-    },
-    {
-      "name": "Social Media Manager",
-      "description": "FB/IG content creation and before/after transformation posts."
-    },
-    {
-      "name": "Secret Guard",
-      "description": "Scanning pushes and guarding credentials with pre-push checks."
-    },
-    {
-      "name": "Pre-Flight Validator",
-      "description": "Mandatory internal audit of facts and Square data before replying."
-    },
-    {
-      "name": "Memory Architect",
-      "description": "Search-optimized memory restructuring and daily log consolidation."
-    },
-    {
-      "name": "Communications Agent",
-      "description": "Twilio SMS & WhatsApp confirmations for bookings and payments."
-    },
-    {
-      "name": "Automation Orchestrator",
-      "description": "Spawning isolated sub-agents for heavy background data processing."
-    },
-    {
-      "name": "Donation Manager",
-      "description": "Handling Arieta's private expense mapping and privacy wall."
-    },
-    {
-      "name": "Skill Creator",
-      "description": "Designing and packaging specialized tools for workspace gaps."
-    },
-    {
-      "name": "Airbnb Coordinator",
-      "description": "Tracking turnovers and guest checkouts across 5 properties."
-    },
-    {
-      "name": "NDIS Specialist",
-      "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation."
-    }
+    { "name": "Accounts Controller", "description": "Owns the 11-tab Master Operations Sheet and unified ledger." },
+    { "name": "Bookkeeper", "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)." },
+    { "name": "Square Manager", "description": "Live invoicing, payments, and client contact record synchronization." },
+    { "name": "Staff Scheduler", "description": "Connecteam roster management and staff shift assignments." },
+    { "name": "Clinical Documenter", "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)." },
+    { "name": "Calendar Master", "description": "Google Calendar integration for all cleans and business appointments." },
+    { "name": "Task Logger", "description": "Timestamping every action to the Master Ops Sheet Task Log." },
+    { "name": "Email Manager", "description": "Monitoring Gmail for business tasks and client communications." },
+    { "name": "Dashboard Manager", "description": "Updating the Pulse Mini App live on Vercel with real-time data." },
+    { "name": "Lead Gen Specialist", "description": "Managing 1,600+ Apollo leads and tracking commercial outreach." },
+    { "name": "Social Media Manager", "description": "FB/IG content creation and before/after transformation posts." },
+    { "name": "Secret Guard", "description": "Scanning pushes and guarding credentials with pre-push checks." },
+    { "name": "Pre-Flight Validator", "description": "Mandatory internal audit of facts and Square data before replying." },
+    { "name": "Memory Architect", "description": "Search-optimized memory restructuring and daily log consolidation." },
+    { "name": "Communications Agent", "description": "Twilio SMS & WhatsApp confirmations for bookings and payments." },
+    { "name": "Automation Orchestrator", "description": "Spawning isolated sub-agents for heavy background data processing." },
+    { "name": "Donation Manager", "description": "Handling Arieta's private expense mapping and privacy wall." },
+    { "name": "Skill Creator", "description": "Designing and packaging specialized tools for workspace gaps." },
+    { "name": "Airbnb Coordinator", "description": "Tracking turnovers and guest checkouts across 5 properties." },
+    { "name": "NDIS Specialist", "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation." }
   ],
   "financial": {
     "recentTransactions": [],
     "monthlyData": [
-      {
-        "month": "Jan",
-        "revenue": 14214,
-        "expenses": 1540
-      },
-      {
-        "month": "Feb",
-        "revenue": 3515,
-        "expenses": 800
-      }
+      { "month": "Jan", "revenue": 14214, "expenses": 1540 },
+      { "month": "Feb", "revenue": 3515, "expenses": 800 }
     ],
     "overdueAccounts": [
-      {
-        "client": "Meshach Ephraim Care",
-        "amount": "$3,750.00",
-        "daysOverdue": 0,
-        "lastContact": "2026-02-17",
-        "status": "Partial \u2014 due Mar 5"
-      },
-      {
-        "client": "Maryam Al Atar",
-        "amount": "$300.00",
-        "daysOverdue": 5,
-        "lastContact": "2026-02-13",
-        "status": "Overdue"
-      },
-      {
-        "client": "Janette Vamarasi",
-        "amount": "$255.40",
-        "daysOverdue": 2,
-        "lastContact": "2026-02-16",
-        "status": "Overdue"
-      }
+      { "client": "Meshach Ephraim Care", "amount": "$3,750.00", "daysOverdue": 0, "lastContact": "2026-02-17", "status": "Partial — due Mar 5" },
+      { "client": "Maryam Al Atar", "amount": "$300.00", "daysOverdue": 5, "lastContact": "2026-02-13", "status": "Overdue" },
+      { "client": "Janette Vamarasi", "amount": "$255.40", "daysOverdue": 2, "lastContact": "2026-02-16", "status": "Overdue" }
     ],
     "totalOutstanding": 4305.4,
     "unpaidDetails": [
-      {
-        "client": "Meshach Ephraim Care",
-        "invoice": "#000005",
-        "amount": 3750,
-        "status": "PARTIALLY_PAID",
-        "due": "2026-03-05"
-      },
-      {
-        "client": "Maryam Al Atar",
-        "invoice": "#000048",
-        "amount": 150,
-        "status": "OVERDUE",
-        "due": "2026-02-17"
-      },
-      {
-        "client": "Maryam Al Atar",
-        "invoice": "#000045",
-        "amount": 150,
-        "status": "OVERDUE",
-        "due": "2026-02-13"
-      },
-      {
-        "client": "Janette Vamarasi",
-        "invoice": "#000049",
-        "amount": 127.7,
-        "status": "OVERDUE",
-        "due": "2026-02-16"
-      },
-      {
-        "client": "Janette Vamarasi",
-        "invoice": "#000047",
-        "amount": 127.7,
-        "status": "OVERDUE",
-        "due": "2026-02-16"
-      }
+      { "client": "Meshach Ephraim Care", "invoice": "#000005", "amount": 3750, "status": "PARTIALLY_PAID", "due": "2026-03-05" },
+      { "client": "Maryam Al Atar", "invoice": "#000048", "amount": 150, "status": "OVERDUE", "due": "2026-02-17" },
+      { "client": "Maryam Al Atar", "invoice": "#000045", "amount": 150, "status": "OVERDUE", "due": "2026-02-13" },
+      { "client": "Janette Vamarasi", "invoice": "#000049", "amount": 127.7, "status": "OVERDUE", "due": "2026-02-16" },
+      { "client": "Janette Vamarasi", "invoice": "#000047", "amount": 127.7, "status": "OVERDUE", "due": "2026-02-16" }
     ]
   },
   "calendar": {
     "today": [
-      {
-        "title": "\ud83e\uddf9 Karanjeet House Deep Clean (Hafsah)",
-        "time": "10:30 - 14:00",
-        "date": "2026-02-18",
-        "type": "cleaning"
-      },
-      {
-        "title": "\ud83e\uddf9 Pinnacle Unit 4 (Shamal)",
-        "time": "11:30 - 13:30",
-        "date": "2026-02-18",
-        "type": "cleaning"
-      }
+      { "title": "🧹 Karanjeet House Deep Clean (Hafsah)", "time": "10:30 - 14:00", "date": "2026-02-18", "type": "cleaning" },
+      { "title": "🧹 Pinnacle Unit 4 (Shamal)", "time": "11:30 - 13:30", "date": "2026-02-18", "type": "cleaning" }
     ],
     "upcoming": [
-      {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
-        "time": "20:00",
-        "date": "2026-02-19",
-        "type": "cleaning"
-      }
+      { "title": "🧹 U3 Atkinson Cleaning", "time": "20:00", "date": "2026-02-19", "type": "cleaning" }
     ]
   },
   "crons": [
-    {
-      "id": "bc2c5294",
-      "label": "dashboard-live-sync-5min",
-      "status": "active",
-      "lastRun": "2026-02-18T12:00:00+11:00"
-    },
-    {
-      "id": "b2d4d12f",
-      "label": "social-morning-post",
-      "status": "active",
-      "lastRun": "2026-02-18T07:00:00+11:00"
-    },
-    {
-      "id": "eb3caa8f",
-      "label": "social-lunch-post",
-      "status": "active",
-      "nextRun": "2026-02-18T12:00:00+11:00"
-    },
-    {
-      "id": "28e4173e",
-      "label": "social-evening-post",
-      "status": "active",
-      "nextRun": "2026-02-18T19:00:00+11:00"
-    },
-    {
-      "id": "fa2d2e5f",
-      "label": "commercial-outreach-daily",
-      "status": "active",
-      "lastRun": "2026-02-18T10:00:00+11:00"
-    },
-    {
-      "id": "411de93c",
-      "label": "Maryam Al Atar Morning",
-      "status": "active",
-      "lastRun": "2026-02-18T08:00:00+11:00"
-    },
-    {
-      "id": "469bfd31",
-      "label": "atkinson-u3-feb19-reminder",
-      "status": "active",
-      "nextRun": "2026-02-19T08:00:00+11:00"
-    },
-    {
-      "id": "8b185f2e",
-      "label": "Weekly Business Review",
-      "status": "active",
-      "nextRun": "2026-02-23T09:00:00+11:00"
-    },
-    {
-      "id": "392fe7f2",
-      "label": "weekly-airbnb-reminder",
-      "status": "active",
-      "nextRun": "2026-02-22T21:00:00+11:00"
-    },
-    {
-      "id": "ba9f3a18",
-      "label": "thursday-invoice-wages",
-      "status": "active",
-      "nextRun": "2026-02-19T22:00:00+11:00"
-    },
-    {
-      "id": "ff24890b",
-      "label": "Tuition Fee Reminder",
-      "status": "active",
-      "nextRun": "2026-02-19T10:00:00+11:00"
-    },
-    {
-      "id": "870a7392",
-      "label": "Karanjeet Aus Post Night Before",
-      "status": "active",
-      "nextRun": "2026-02-20T20:00:00+11:00"
-    },
-    {
-      "id": "c3865e06",
-      "label": "Karanjeet Aus Post Morning",
-      "status": "active",
-      "nextRun": "2026-02-21T10:00:00+11:00"
-    }
+    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T12:05:00+11:00" },
+    { "id": "b2d4d12f", "label": "social-morning-post", "status": "active", "lastRun": "2026-02-18T07:00:00+11:00" },
+    { "id": "eb3caa8f", "label": "social-lunch-post", "status": "active", "lastRun": "2026-02-18T12:00:00+11:00" },
+    { "id": "28e4173e", "label": "social-evening-post", "status": "active", "nextRun": "2026-02-18T19:00:00+11:00" },
+    { "id": "fa2d2e5f", "label": "commercial-outreach-daily", "status": "active", "lastRun": "2026-02-18T10:00:00+11:00" },
+    { "id": "411de93c", "label": "Maryam Al Atar Morning", "status": "active", "lastRun": "2026-02-18T08:00:00+11:00" },
+    { "id": "469bfd31", "label": "atkinson-u3-feb19-reminder", "status": "active", "nextRun": "2026-02-19T08:00:00+11:00" },
+    { "id": "8b185f2e", "label": "Weekly Business Review", "status": "active", "nextRun": "2026-02-23T09:00:00+11:00" },
+    { "id": "392fe7f2", "label": "weekly-airbnb-reminder", "status": "active", "nextRun": "2026-02-22T21:00:00+11:00" },
+    { "id": "ba9f3a18", "label": "thursday-invoice-wages", "status": "active", "nextRun": "2026-02-19T22:00:00+11:00" },
+    { "id": "ff24890b", "label": "Tuition Fee Reminder", "status": "active", "nextRun": "2026-02-19T10:00:00+11:00" },
+    { "id": "870a7392", "label": "Karanjeet Aus Post Night Before", "status": "active", "nextRun": "2026-02-20T20:00:00+11:00" },
+    { "id": "c3865e06", "label": "Karanjeet Aus Post Morning", "status": "active", "nextRun": "2026-02-21T10:00:00+11:00" }
   ],
   "liveTasks": [
-    {
-      "label": "SOCIAL_LUNCH",
-      "status": "\u2705 Lunch poll live (Which chore do you hate most?)",
-      "timestamp": "2026-02-18 12:10"
-    },
-    {
-      "label": "CACHE_FIX",
-      "status": "\ud83d\ude80 Force-pushed v4.0 via cache-buster v1771375560",
-      "timestamp": "2026-02-18 11:47"
-    },
-    {
-      "label": "HARD_RESET",
-      "status": "\ud83d\uded1 Full button wipe and re-map to BELLA Pulse v4",
-      "timestamp": "2026-02-18 11:51"
-    },
-    {
-      "label": "CACHE_FIX",
-      "status": "\ud83d\ude80 Force-pushed v4.0 via cache-buster v1771375560",
-      "timestamp": "2026-02-18 11:47"
-    },
-    {
-      "label": "DASHBOARD_UPGRADE",
-      "status": "\u2705 Mini App link updated to https://bella-dashboard-nu.vercel.app",
-      "timestamp": "2026-02-18 11:15"
-    },
-    {
-      "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 12:00 AEDT",
-      "timestamp": "2026-02-18 12:00"
-    },
-    {
-      "label": "MODEL_STATUS",
-      "status": "\u2705 Claude Opus 4.6 (cron) / Gemini Flash (main)",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "INVOICE_CHECK",
-      "status": "\u26a0\ufe0f Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "SOCIAL_POST",
-      "status": "\u2705 Morning post live (Dishwasher hack) \u2014 lunch post at 12pm",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "COMMERCIAL_OUTREACH",
-      "status": "\u2705 12 leads prioritized, 3 cold emails drafted \u2014 Gmail auth blocking sends",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "GMAIL_AUTH",
-      "status": "\u274c 401 Unauthorized \u2014 needs re-auth",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "ANTHROPIC_AUTH",
-      "status": "\u2705 Opus 4.6 active (cron session healthy)",
-      "timestamp": "2026-02-18 11:10"
-    },
-    {
-      "label": "SCHEDULE_TODAY",
-      "status": "\ud83e\uddf9 Karanjeet 10:30 (Hafsah) | Pinnacle 11:30 (Shamal)",
-      "timestamp": "2026-02-18 11:10"
-    }
+    { "label": "SOCIAL_LUNCH", "status": "✅ Lunch poll live (Which chore do you hate most?)", "timestamp": "2026-02-18 12:10" },
+    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 12:05 AEDT", "timestamp": "2026-02-18 12:05" },
+    { "label": "MODEL_STATUS", "status": "✅ Claude Opus 4.6 (cron) / Gemini Flash (main)", "timestamp": "2026-02-18 12:05" },
+    { "label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 12:05" },
+    { "label": "SOCIAL_POST", "status": "✅ Morning post live (Dishwasher hack) + Lunch poll live", "timestamp": "2026-02-18 12:05" },
+    { "label": "COMMERCIAL_OUTREACH", "status": "✅ 12 leads prioritized, 3 cold emails drafted — Gmail auth blocking sends", "timestamp": "2026-02-18 12:05" },
+    { "label": "GMAIL_AUTH", "status": "❌ 401 Unauthorized — needs re-auth", "timestamp": "2026-02-18 11:10" },
+    { "label": "ANTHROPIC_AUTH", "status": "✅ Opus 4.6 active (cron session healthy)", "timestamp": "2026-02-18 12:05" },
+    { "label": "SCHEDULE_TODAY", "status": "🧹 Karanjeet 10:30 (Hafsah) | Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 12:05" }
   ],
   "patterns": [
-    {
-      "description": "Wiped all traces of legacy dashboards (Vercel 404s verified) and updated Telegram Mini App button link.",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Main session running on Gemini 3 Flash Preview (token saving mode)",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Cron sessions healthy on Opus 4.6 \u2014 Anthropic auth restored for cron",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Morning social post live: Dishwasher tablet shower glass hack (FB+IG)",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Commercial outreach: 12 leads from Apollo, #1 target Westside Strata (600+ buildings)",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "3 cold emails drafted for strata managers \u2014 blocked by Gmail 401",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Gmail auth down since early AM \u2014 Hafsah notified, awaiting re-auth",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Maryam Al Atar $300 overdue (5 days) \u2014 payment reminder needed",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Janette Vamarasi $255.40 overdue (2 days) \u2014 payment reminder needed",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Meshach $3,750 balance due Mar 5 \u2014 on track",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Claudia Alz confirmed PAID IN FULL \u2014 removed from debtors",
-      "date": "2026-02-18"
-    }
+    { "description": "Lunch social poll posted: 'Which chore do you hate most?' — engagement play", "date": "2026-02-18" },
+    { "description": "Wiped all traces of legacy dashboards (Vercel 404s verified) and updated Telegram Mini App button link.", "date": "2026-02-18" },
+    { "description": "Main session running on Gemini 3 Flash Preview (token saving mode)", "date": "2026-02-18" },
+    { "description": "Cron sessions healthy on Opus 4.6 — Anthropic auth restored for cron", "date": "2026-02-18" },
+    { "description": "Morning social post live: Dishwasher tablet shower glass hack (FB+IG)", "date": "2026-02-18" },
+    { "description": "Commercial outreach: 12 leads from Apollo, #1 target Westside Strata (600+ buildings)", "date": "2026-02-18" },
+    { "description": "3 cold emails drafted for strata managers — blocked by Gmail 401", "date": "2026-02-18" },
+    { "description": "Gmail auth down since early AM — Hafsah notified, awaiting re-auth", "date": "2026-02-18" },
+    { "description": "Maryam Al Atar $300 overdue (5 days) — payment reminder needed", "date": "2026-02-18" },
+    { "description": "Janette Vamarasi $255.40 overdue (2 days) — payment reminder needed", "date": "2026-02-18" },
+    { "description": "Meshach $3,750 balance due Mar 5 — on track", "date": "2026-02-18" },
+    { "description": "Claudia Alz confirmed PAID IN FULL — removed from debtors", "date": "2026-02-18" }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T12:00:00+11:00",
+    "lastActivity": "2026-02-18T12:05:00+11:00",
     "active": [
-      {
-        "key": "agent:main:main",
-        "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-18 11:05",
-        "model": "gemini-3-flash-preview",
-        "status": "Active"
-      },
-      {
-        "key": "cron:dashboard-sync",
-        "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 11:10",
-        "model": "claude-opus-4-6",
-        "status": "Running"
-      }
+      { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 12:02", "model": "gemini-3-flash-preview", "status": "Active" },
+      { "key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 12:05", "model": "claude-opus-4-6", "status": "Running" }
     ]
   },
   "social": {
-    "lastPost": "2026-02-18 12:10 \u2014 Lunch poll (Which chore do you hate most?)",
-    "engagement": "Monitoring \u2014 4h since post",
-    "nextPost": "2026-02-18 12:00 \u2014 Lunch content (engagement poll or BTS)"
+    "lastPost": "2026-02-18 12:10 — Lunch poll (Which chore do you hate most?)",
+    "engagement": "Monitoring — just posted",
+    "nextPost": "2026-02-18 19:00 — Evening content"
   }
 }
