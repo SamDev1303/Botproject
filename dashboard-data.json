@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T08:30:33+11:00",
+  "lastUpdated": "2026-02-19T08:42:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 08:30 AEDT"
+    "lastHeartbeat": "2026-02-19 08:42 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 10,
+    "sessions": 5,
     "memory": {
       "filesIndexed": 56,
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T08:30:33+11:00",
+    "lastHeartbeat": "2026-02-19T08:42:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -158,56 +158,39 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "\u2705 Active",
-      "lastRun": "2026-02-19T08:26:00+11:00"
+      "lastRun": "2026-02-19T08:42:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 08:30 AEDT",
-      "timestamp": "2026-02-19 08:30 AEDT"
+      "status": "\u2705 Updated 08:42 AEDT",
+      "timestamp": "2026-02-19 08:42 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
-      "status": "\u2705 Healthy (gemini-3-flash Primary)",
-      "timestamp": "2026-02-19 08:30 AEDT"
+      "status": "\u2705 Active",
+      "timestamp": "2026-02-19 08:42 AEDT"
     }
   ],
   "patterns": [
     {
-      "description": "System: Recovered from Gateway timeout via exec fallback; model switched to Gemini Flash for token economy.",
+      "description": "System: Recovered from Gateway timeout via exec fallback; current session active.",
       "date": "2026-02-19"
     },
     {
-      "description": "Infrastructure: TOOLS.md consolidated with 26 scripts and 160+ MCP tools; SOT mandates enforced for Square/Gmail/Calendar.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Operations: Morning brief verified ,060 revenue MTD; tracking overdue accounts for Maryam and Janette.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Infrastructure: Gateway timeout on cron tool during dashboard sync; recovered via exec fallback.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Continuity: 12 Business Rules written to memory including Square/Gmail/Calendar SOT mandates.",
+      "description": "Financial: Square debtors check confirmed Janette and Maryam remain outstanding ($405.40 total).",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
     "count": 5,
-    "lastActivity": "2026-02-19T08:30:33+11:00",
+    "lastActivity": "2026-02-19T08:42:00+11:00",
     "active": [
       {
         "label": "agent:main:main",
         "status": "Active",
-        "model": "gemini-3-flash-preview"
-      },
-      {
-        "label": "dashboard-sync-cron",
-        "status": "Active",
-        "model": "gemini-3-flash-preview"
+        "model": "google/gemini-3-flash-preview"
       }
     ]
   }
