@@ -208,7 +208,7 @@
     },
     {
       "label": "CRON_STATUS",
-      "status": "\u2705 CRON list check initiated (Gateway timeout)",
+      "status": "\u26a0\ufe0f Gateway API timeout persists",
       "timestamp": "2026-02-19 06:10"
     },
     {
@@ -219,16 +219,16 @@
   ],
   "patterns": [
     {
-      "description": "Workflow Update: Orchestrator mode and clinical documentation system established.",
+      "description": "Infrastructure: Gateway API timeout continues to affect automated status checks.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Workflow: Orchestrator mode and clinical documentation system established.",
       "date": "2026-02-16"
     },
     {
       "description": "Critical Fix: Resolved gateway version mismatch and established SSH/GPG verification.",
       "date": "2026-02-14"
-    },
-    {
-      "description": "Observation: Overdue invoices identified for Claudia Alz ($320) and Meshach Ephraim Care ($3,750).",
-      "date": "2026-02-13"
     }
   ],
   "activeSessions": {
