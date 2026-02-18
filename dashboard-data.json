@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T06:45+11:00",
+  "lastUpdated": "2026-02-19T06:55+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": "$0.00",
-    "lastHeartbeat": "2026-02-19 06:45 AEDT"
+    "lastHeartbeat": "2026-02-19 06:55 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T06:45+11:00",
+    "lastHeartbeat": "2026-02-19T06:55+11:00",
     "roles": 20
   },
   "roles": [
@@ -191,35 +191,35 @@
     {
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
-      "status": "active",
-      "lastRun": "2026-02-19T06:45+11:00"
+      "status": "timeout_error",
+      "lastRun": "2026-02-19T06:55+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 06:45 AEDT",
-      "timestamp": "2026-02-19 06:45"
+      "status": "\u2705 Updated 06:55 AEDT",
+      "timestamp": "2026-02-19 06:55"
     },
     {
       "label": "MEMORY_AUDIT",
       "status": "\u2705 Patterns synced from consolidated logs",
-      "timestamp": "2026-02-19 06:45"
+      "timestamp": "2026-02-19 06:55"
     },
     {
       "label": "CRON_STATUS",
       "status": "\u26a0\ufe0f Gateway API timeout persists",
-      "timestamp": "2026-02-19 06:45"
+      "timestamp": "2026-02-19 06:55"
     },
     {
       "label": "SECRET_GUARD",
       "status": "\u2705 Pre-push check passed",
-      "timestamp": "2026-02-19 06:45"
+      "timestamp": "2026-02-19 06:55"
     }
   ],
   "patterns": [
     {
-      "description": "Financials: Revenue MTD at $6,060.00. Outstanding balance at $405.40. Brief generated at 06:45 AEDT.",
+      "description": "Financials: Revenue MTD at $6,060.00. Outstanding balance at $405.40. Brief generated at 06:55 AEDT.",
       "date": "2026-02-19"
     },
     {
@@ -234,13 +234,13 @@
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
     "cronModel": "google/gemini-3-flash-preview",
-    "cronJobs": 5,
-    "lastActivity": "2026-02-19T06:45+11:00",
+    "cronJobs": 10,
+    "lastActivity": "2026-02-19T06:55+11:00",
     "active": [
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 06:45",
+        "lastSeen": "2026-02-19 06:55",
         "model": "google/gemini-3-flash-preview",
         "status": "Active"
       },
@@ -252,7 +252,7 @@
         "status": "Active"
       }
     ],
-    "count": 5
+    "count": 10
   },
   "social": {
     "lastPost": "2026-02-18 19:00 \u2014 Evening POV post",
