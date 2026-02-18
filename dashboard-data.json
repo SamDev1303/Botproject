@@ -282,6 +282,11 @@
   ],
   "liveTasks": [
     {
+      "label": "SOCIAL_LUNCH",
+      "status": "\u2705 Lunch poll live (Which chore do you hate most?)",
+      "timestamp": "2026-02-18 12:10"
+    },
+    {
       "label": "CACHE_FIX",
       "status": "\ud83d\ude80 Force-pushed v4.0 via cache-buster v1771375560",
       "timestamp": "2026-02-18 11:47"
@@ -411,7 +416,7 @@
     ]
   },
   "social": {
-    "lastPost": "2026-02-18 07:05 \u2014 Dishwasher tablet shower glass hack (FB+IG)",
+    "lastPost": "2026-02-18 12:10 \u2014 Lunch poll (Which chore do you hate most?)",
     "engagement": "Monitoring \u2014 4h since post",
     "nextPost": "2026-02-18 12:00 \u2014 Lunch content (engagement poll or BTS)"
   }

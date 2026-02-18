@@ -1,5 +1,16 @@
 # Social Media Post Log
 
+## 2026-02-18 (Tue 12:00 PM AEDT) — Lunch Post
+- **Platform:** Facebook + Instagram
+- **Type:** Engagement Poll (Lunch rotation)
+- **Topic:** "Which chore do you hate most?"
+- **Image:** Split-screen dirty/clean oven transformation
+- **Facebook Photo ID:** 122167503074918915
+- **Instagram Media ID:** 18045733862713394
+- **Image Host:** https://files.catbox.moe/z25izc.png
+- **Hashtags:** #cleanupbros #cleaningpoll #sydneycleaning #liverpoolnsw #westernsydney #cleaningmotivation #cleaninghacks #satisfyingcleaning #endofleasecleaning #bondcleaning
+- **Engagement:** [check after 24hrs]
+
 ## 2026-02-18 (Tue 7:00 AM AEDT) — Morning Post
 - **Platform:** Facebook + Instagram
 - **Type:** Quick Cleaning Hack (Tuesday rotation)
