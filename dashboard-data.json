@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-19T10:15:00+11:00",
+  "lastUpdated": "2026-02-19T10:35:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 10:15 AEDT"
+    "lastHeartbeat": "2026-02-19 10:35 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -16,7 +16,7 @@
       "chunks": 465,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T10:15:00+11:00",
+    "lastHeartbeat": "2026-02-19T10:35:00+11:00",
     "roles": 20
   },
   "financial": {
@@ -76,42 +76,38 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "✅ Active",
-      "lastRun": "2026-02-19T10:15:00+11:00"
+      "lastRun": "2026-02-19T10:35:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 10:15 AEDT",
-      "timestamp": "2026-02-19 10:15 AEDT"
+      "status": "✅ Updated 10:35 AEDT",
+      "timestamp": "2026-02-19 10:35 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
       "status": "✅ Active",
-      "timestamp": "2026-02-19 10:15 AEDT"
+      "timestamp": "2026-02-19 10:35 AEDT"
     }
   ],
   "patterns": [
     {
-      "description": "System: Workflow change implemented: Dashboard-First rule. Must update and push before reply.",
-      "date": "2026-02-14"
-    },
-    {
-      "description": "Ops: Shift notes and incident reports system consolidated for high-risk clinical work.",
-      "date": "2026-02-16"
-    },
-    {
-      "description": "Ops: Square identified as SOT for all financial transactions and client contacts.",
-      "date": "2026-02-18"
-    },
-    {
       "description": "Financial: Overdue invoices flagged for Janette Vamarasi and Maryam Al Atar.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "System: Memory indexed for Feb 18 cleanup; button protocol fixed (callback_data mandatory).",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "System: Dashboard-First rule in effect. Pushing pulse-dashboard repo updates.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
     "count": 10,
-    "lastActivity": "2026-02-19T10:15:00+11:00",
+    "lastActivity": "2026-02-19T10:35:00+11:00",
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
