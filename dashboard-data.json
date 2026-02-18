@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T21:30:00+11:00",
+  "lastUpdated": "2026-02-18T21:35:00+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 4005.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T21:30:00+11:00",
+    "lastHeartbeat": "2026-02-18T21:35:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -127,7 +127,7 @@
         "amount": "$150.00",
         "daysOverdue": 5,
         "lastContact": "2026-02-18",
-        "status": "Partial — Inv #48 paid, #45 overdue"
+        "status": "Inv #48 PAID ✅ — #45 $150 still overdue"
       },
       {
         "client": "Janette Vamarasi",
@@ -296,8 +296,8 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 21:30 AEDT",
-      "timestamp": "2026-02-18 21:30"
+      "status": "✅ Updated 21:35 AEDT",
+      "timestamp": "2026-02-18 21:35"
     },
     {
       "label": "MODEL_STATUS",
@@ -396,19 +396,20 @@
     "main": "google/gemini-3-flash-preview",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T21:30:00+11:00",
+    "lastActivity": "2026-02-18T21:35:00+11:00",
     "active": [
       {
         "key": "agent:main:main",
         "label": "Main Session (Telegram)",
         "lastSeen": "2026-02-18 21:18",
+
         "model": "gemini-3-flash-preview",
         "status": "Active"
       },
       {
         "key": "cron:dashboard-sync",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 21:30",
+        "lastSeen": "2026-02-18 21:35",
         "model": "claude-opus-4-6",
         "status": "Running"
       }
