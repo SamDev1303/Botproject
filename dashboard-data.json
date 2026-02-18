@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T13:15:00+11:00",
+  "lastUpdated": "2026-02-18T13:20:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T13:15:00+11:00",
+    "lastHeartbeat": "2026-02-18T13:20:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -70,7 +70,7 @@
     ]
   },
   "crons": [
-    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T13:15:00+11:00" },
+    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T13:20:00+11:00" },
     { "id": "b2d4d12f", "label": "social-morning-post", "status": "active", "lastRun": "2026-02-18T07:00:00+11:00" },
     { "id": "eb3caa8f", "label": "social-lunch-post", "status": "active", "lastRun": "2026-02-18T12:00:00+11:00" },
     { "id": "28e4173e", "label": "social-evening-post", "status": "active", "nextRun": "2026-02-18T19:00:00+11:00" },
@@ -86,14 +86,14 @@
   ],
   "liveTasks": [
     { "label": "SOCIAL_LUNCH", "status": "✅ Lunch poll live (Which chore do you hate most?)", "timestamp": "2026-02-18 12:10" },
-    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 13:15 AEDT", "timestamp": "2026-02-18 13:15" },
-    { "label": "MODEL_STATUS", "status": "✅ Claude Opus 4.6 (cron) / Gemini Flash (main)", "timestamp": "2026-02-18 13:15" },
-    { "label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 13:15" },
-    { "label": "SOCIAL_POST", "status": "✅ Morning post live (Dishwasher hack) + Lunch poll live", "timestamp": "2026-02-18 13:15" },
+    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 13:20 AEDT", "timestamp": "2026-02-18 13:20" },
+    { "label": "MODEL_STATUS", "status": "✅ Claude Opus 4.6 (cron 54% daily) / Gemini Flash (main)", "timestamp": "2026-02-18 13:20" },
+    { "label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 13:20" },
+    { "label": "SOCIAL_POST", "status": "✅ Morning post live (Dishwasher hack) + Lunch poll live", "timestamp": "2026-02-18 13:20" },
     { "label": "COMMERCIAL_OUTREACH", "status": "✅ 12 leads prioritized, 3 cold emails drafted — Gmail auth blocking sends", "timestamp": "2026-02-18 13:05" },
     { "label": "GMAIL_AUTH", "status": "❌ 401 Unauthorized — needs re-auth", "timestamp": "2026-02-18 11:10" },
-    { "label": "ANTHROPIC_AUTH", "status": "✅ Opus 4.6 active (cron session healthy)", "timestamp": "2026-02-18 13:15" },
-    { "label": "SCHEDULE_TODAY", "status": "🧹 Karanjeet 10:30 (Hafsah) | Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 13:15" }
+    { "label": "ANTHROPIC_AUTH", "status": "✅ Opus 4.6 active (54% daily left, cron healthy)", "timestamp": "2026-02-18 13:20" },
+    { "label": "SCHEDULE_TODAY", "status": "🧹 Karanjeet 10:30 (Hafsah) | Pinnacle 11:30 (Shamal)", "timestamp": "2026-02-18 13:20" }
   ],
   "patterns": [
     { "description": "Dashboard sync running smoothly on 5-min cycle — Opus 4.6 cron healthy", "date": "2026-02-18" },
@@ -114,10 +114,10 @@
     "main": "google/gemini-3-flash-preview",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T13:15:00+11:00",
+    "lastActivity": "2026-02-18T13:20:00+11:00",
     "active": [
       { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 13:12", "model": "gemini-3-flash-preview", "status": "Active" },
-      { "key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 13:15", "model": "claude-opus-4-6", "status": "Running" }
+      { "key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 13:20", "model": "claude-opus-4-6", "status": "Running" }
     ]
   },
   "social": {
