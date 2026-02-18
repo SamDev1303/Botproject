@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T17:35:00+11:00",
+  "lastUpdated": "2026-02-18T17:40:00+11:00",
   "stats": {
     "revenueMTD": "$3,515.00",
     "outstandingBalance": 555.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T17:35:00+11:00",
+    "lastHeartbeat": "2026-02-18T17:40:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -70,7 +70,7 @@
     ]
   },
   "crons": [
-    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T17:30:00+11:00" },
+    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "active", "lastRun": "2026-02-18T17:40:00+11:00" },
     { "id": "b2d4d12f", "label": "social-morning-post", "status": "active", "lastRun": "2026-02-18T07:00:00+11:00" },
     { "id": "eb3caa8f", "label": "social-lunch-post", "status": "active", "lastRun": "2026-02-18T12:00:00+11:00" },
     { "id": "28e4173e", "label": "social-evening-post", "status": "active", "nextRun": "2026-02-18T19:00:00+11:00" },
@@ -86,7 +86,7 @@
   ],
   "liveTasks": [
     { "label": "SOCIAL_LUNCH", "status": "✅ Lunch poll live (Which chore do you hate most?)", "timestamp": "2026-02-18 12:10" },
-    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 17:35 AEDT", "timestamp": "2026-02-18 17:35" },
+    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 17:40 AEDT", "timestamp": "2026-02-18 17:40" },
     { "label": "MODEL_STATUS", "status": "✅ Claude Opus 4.6 (cron healthy) / Gemini Flash (main)", "timestamp": "2026-02-18 15:25" },
     { "label": "INVOICE_CHECK", "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)", "timestamp": "2026-02-18 13:35" },
     { "label": "SOCIAL_POST", "status": "✅ Morning post live (Dishwasher hack) + Lunch poll live", "timestamp": "2026-02-18 13:35" },
@@ -114,10 +114,10 @@
     "main": "google/gemini-3-flash-preview",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T17:35:00+11:00",
+    "lastActivity": "2026-02-18T17:40:00+11:00",
     "active": [
       { "key": "agent:main:main", "label": "Main Session (Telegram)", "lastSeen": "2026-02-18 15:06", "model": "gemini-3-flash-preview", "status": "Active" },
-      { "key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 17:35", "model": "claude-opus-4-6", "status": "Running" }
+      { "key": "cron:dashboard-sync", "label": "dashboard-live-sync-5min", "lastSeen": "2026-02-18 17:40", "model": "claude-opus-4-6", "status": "Running" }
     ]
   },
   "social": {
