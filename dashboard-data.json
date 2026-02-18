@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-02-19T00:10:00+11:00",
+  "lastUpdated": "2026-02-19T00:16+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
-    "outstandingBalance": 4005.4,
+    "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": "$0.00"
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T00:10:00+11:00",
+    "lastHeartbeat": "2026-02-19T00:16+11:00",
     "roles": 20
   },
   "roles": [
@@ -116,13 +116,6 @@
     ],
     "overdueAccounts": [
       {
-        "client": "Meshach Ephraim Care",
-        "amount": "$3,750.00",
-        "daysOverdue": 0,
-        "lastContact": "2026-02-17",
-        "status": "Partial \u2014 due Mar 5"
-      },
-      {
         "client": "Maryam Al Atar",
         "amount": "$150.00",
         "daysOverdue": 5,
@@ -137,15 +130,8 @@
         "status": "Overdue"
       }
     ],
-    "totalOutstanding": 4005.4,
+    "totalOutstanding": 405.4,
     "unpaidDetails": [
-      {
-        "client": "Meshach Ephraim Care",
-        "invoice": "#000005",
-        "amount": 3750,
-        "status": "PARTIALLY_PAID",
-        "due": "2026-03-05"
-      },
       {
         "client": "Maryam Al Atar",
         "invoice": "#000045",
@@ -172,18 +158,11 @@
   "calendar": {
     "today": [
       {
-        "title": "\ud83e\uddf9 Karanjeet House Deep Clean (Hafsah)",
-        "time": "10:30 - 14:00",
-        "date": "2026-02-18",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "time": "20:00 - 22:00",
+        "date": "2026-02-19",
         "type": "cleaning",
-        "status": "\u2705 Complete"
-      },
-      {
-        "title": "\ud83e\uddf9 Pinnacle Unit 4 (Shamal)",
-        "time": "11:30 - 13:30",
-        "date": "2026-02-18",
-        "type": "cleaning",
-        "status": "\u2705 Complete"
+        "status": "Scheduled"
       }
     ],
     "upcoming": [
@@ -290,13 +269,13 @@
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 00:10 AEDT",
-      "timestamp": "2026-02-19 00:10"
+      "status": "\u2705 Updated 00:16 AEDT",
+      "timestamp": "2026-02-19 00:16"
     },
     {
       "label": "CRON_STATUS",
       "status": "\u26a0\ufe0f Cron list failed \u2014 gateway timeout (loopback)",
-      "timestamp": "2026-02-19 00:10"
+      "timestamp": "2026-02-19 00:16"
     },
     {
       "label": "PAYMENT_RECEIVED",
@@ -345,6 +324,10 @@
     }
   ],
   "patterns": [
+    {
+      "description": "Dashboard sync 00:16 \u2014 sessions refreshed. Cron list failed (gateway timeout) so cron panel retained last known state.",
+      "date": "2026-02-19"
+    },
     {
       "description": "Dashboard sync 00:10 \u2014 sessions refreshed (main gpt-5.2-codex, cron opus 4.6). Cron list failed (gateway timeout).",
       "date": "2026-02-19"
@@ -396,23 +379,23 @@
   ],
   "activeSessions": {
     "main": "gpt-5.2-codex",
-    "cronModel": "claude-opus-4-6",
+    "cronModel": "unknown (cron list failed)",
     "cronJobs": 13,
-    "lastActivity": "2026-02-19T00:10:00+11:00",
+    "lastActivity": "2026-02-19T00:16:41+11:00",
     "active": [
       {
         "key": "agent:main:main",
         "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-19 00:10",
+        "lastSeen": "2026-02-19 00:16",
         "model": "gpt-5.2-codex",
-        "tokens": 19220,
+        "tokens": 21228,
         "status": "Active"
       },
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 00:10",
-        "model": "claude-opus-4-6",
+        "lastSeen": "2026-02-19 00:16",
+        "model": "gpt-5.2-codex",
         "status": "Running"
       }
     ]
