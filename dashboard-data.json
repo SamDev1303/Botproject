@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-02-18T21:05:00+11:00",
+  "lastUpdated": "2026-02-18T21:10:00+11:00",
   "stats": {
-    "revenueMTD": ",665.00",
+    "revenueMTD": "$3,665.00",
     "outstandingBalance": 4155.4,
     "unpaidInvoices": 4,
     "leads": "68",
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T21:05:00+11:00",
+    "lastHeartbeat": "2026-02-18T21:10:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -124,10 +124,10 @@
       },
       {
         "client": "Maryam Al Atar",
-        "amount": "$300.00",
+        "amount": "$150.00",
         "daysOverdue": 5,
-        "lastContact": "2026-02-13",
-        "status": "Overdue"
+        "lastContact": "2026-02-18",
+        "status": "Partial — Inv #48 paid, #45 overdue"
       },
       {
         "client": "Janette Vamarasi",
@@ -137,7 +137,7 @@
         "status": "Overdue"
       }
     ],
-    "totalOutstanding": 4305.4,
+    "totalOutstanding": 4155.4,
     "unpaidDetails": [
       {
         "client": "Meshach Ephraim Care",
@@ -150,8 +150,9 @@
         "client": "Maryam Al Atar",
         "invoice": "#000048",
         "amount": 150,
-        "status": "OVERDUE",
-        "due": "2026-02-17"
+        "status": "PAID",
+        "due": "2026-02-17",
+        "paidDate": "2026-02-18"
       },
       {
         "client": "Maryam Al Atar",
@@ -295,8 +296,8 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 21:05 AEDT",
-      "timestamp": "2026-02-18 21:05"
+      "status": "\u2705 Updated 21:10 AEDT",
+      "timestamp": "2026-02-18 21:10"
     },
     {
       "label": "MODEL_STATUS",
@@ -395,7 +396,7 @@
     "main": "google/gemini-3-flash-preview",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T21:05:00+11:00",
+    "lastActivity": "2026-02-18T21:10:00+11:00",
     "active": [
       {
         "key": "agent:main:main",
@@ -407,7 +408,7 @@
       {
         "key": "cron:dashboard-sync",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 21:05",
+        "lastSeen": "2026-02-18 21:10",
         "model": "claude-opus-4-6",
         "status": "Running"
       }
