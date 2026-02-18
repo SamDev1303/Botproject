@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T22:30:00+11:00",
+  "lastUpdated": "2026-02-18T22:35:00+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 4005.4,
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "anthropic/claude-opus-4-6",
+    "model": "anthropic/claude-sonnet-4-6",
     "sessions": 2,
     "memory": {
       "filesIndexed": 38,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T22:30:00+11:00",
+    "lastHeartbeat": "2026-02-18T22:35:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -110,7 +110,7 @@
       },
       {
         "month": "Feb",
-        "revenue": 3515,
+        "revenue": 3665,
         "expenses": 800
       }
     ],
@@ -208,7 +208,7 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-18T22:30:00+11:00"
+      "lastRun": "2026-02-18T22:35:00+11:00"
     },
     {
       "id": "b2d4d12f",
@@ -286,7 +286,7 @@
   "liveTasks": [
     {
       "label": "PAYMENT_RECEIVED",
-      "status": "✅ Maryam paid  (Inv #48) — Dashboard updated",
+      "status": "✅ Maryam paid (Inv #48) — Dashboard updated",
       "timestamp": "2026-02-18 21:10"
     },
     {
@@ -296,18 +296,18 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 22:30 AEDT",
-      "timestamp": "2026-02-18 22:30"
+      "status": "✅ Updated 22:35 AEDT",
+      "timestamp": "2026-02-18 22:35"
     },
     {
       "label": "MODEL_STATUS",
-      "status": "✅ Opus 4.6 (cron) / Gemini Flash (main)",
-      "timestamp": "2026-02-18 19:15"
+      "status": "✅ Sonnet 4.6 (main) / Opus 4.6 (cron)",
+      "timestamp": "2026-02-18 22:35"
     },
     {
       "label": "INVOICE_CHECK",
-      "status": "⚠️ Maryam $300 (5d overdue) + Janette $255.40 (2d overdue)",
-      "timestamp": "2026-02-18 19:15"
+      "status": "⚠️ Maryam $150 (5d overdue) + Janette $255.40 (2d overdue)",
+      "timestamp": "2026-02-18 22:35"
     },
     {
       "label": "COMMERCIAL_OUTREACH",
@@ -332,11 +332,11 @@
   ],
   "patterns": [
     {
-      "description": "Maryam Al Atar paid Invoice #000048 (). Total Feb revenue: ,665.",
+      "description": "Dashboard sync 22:35 — 2 active sessions (Sonnet 4.6 main / Opus 4.6 cron), gateway ws timeout on cron list (non-critical, cached)",
       "date": "2026-02-18"
     },
     {
-      "description": "Dashboard sync running smoothly on 5-min cycle — Opus 4.6 cron healthy",
+      "description": "Maryam Al Atar paid Invoice #000048 ($150). Total Feb revenue: $3,665.",
       "date": "2026-02-18"
     },
     {
@@ -345,10 +345,6 @@
     },
     {
       "description": "Legacy dashboard traces fully wiped — single Vercel deployment confirmed",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Main session on Gemini 3 Flash Preview (token economy mode)",
       "date": "2026-02-18"
     },
     {
@@ -364,7 +360,7 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Maryam Al Atar $300 overdue 5 days — needs payment follow-up",
+      "description": "Maryam Al Atar $150 overdue 5 days — needs payment follow-up",
       "date": "2026-02-18"
     },
     {
@@ -386,29 +382,25 @@
     {
       "description": "TOOLS.md consolidated as single script/MCP reference — no more scattered docs",
       "date": "2026-02-18"
-    },
-    {
-      "description": "Gateway ws timeout on cron list (recurring, non-critical — cached data used)",
-      "date": "2026-02-18"
     }
   ],
   "activeSessions": {
-    "main": "google/gemini-3-flash-preview",
+    "main": "anthropic/claude-sonnet-4-6",
     "cronModel": "anthropic/claude-opus-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T22:30:00+11:00",
+    "lastActivity": "2026-02-18T22:35:00+11:00",
     "active": [
       {
         "key": "agent:main:main",
         "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-18 21:42",
-        "model": "gemini-3-flash-preview",
+        "lastSeen": "2026-02-18 22:20",
+        "model": "claude-sonnet-4-6",
         "status": "Active"
       },
       {
         "key": "cron:dashboard-sync",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 22:30",
+        "lastSeen": "2026-02-18 22:35",
         "model": "claude-opus-4-6",
         "status": "Running"
       }
