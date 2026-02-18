@@ -1,11 +1,12 @@
 {
   "lastUpdated": "2026-02-19T05:50+11:00",
   "stats": {
-    "revenueMTD": "$6,060.00",
+    "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
-    "gstPayable": "$0.00"
+    "gstPayable": "$0.00",
+    "lastHeartbeat": "2026-02-19 05:54 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -158,7 +159,7 @@
   "calendar": {
     "today": [
       {
-        "title": "🧹 U3 Atkinson Cleaning",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "type": "cleaning",
@@ -167,19 +168,19 @@
     ],
     "upcoming": [
       {
-        "title": "🧹 U3 Atkinson Cleaning",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
         "time": "20:00",
         "date": "2026-02-19",
         "type": "cleaning"
       },
       {
-        "title": "📋 Thursday Invoice & Wages",
+        "title": "\ud83d\udccb Thursday Invoice & Wages",
         "time": "22:00",
         "date": "2026-02-19",
         "type": "admin"
       },
       {
-        "title": "🧹 Karanjeet Aus Post (Sat)",
+        "title": "\ud83e\uddf9 Karanjeet Aus Post (Sat)",
         "time": "10:00",
         "date": "2026-02-21",
         "type": "cleaning"
@@ -197,22 +198,22 @@
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 05:50 AEDT",
+      "status": "\u2705 Updated 05:50 AEDT",
       "timestamp": "2026-02-19 05:50"
     },
     {
       "label": "MEMORY_AUDIT",
-      "status": "✅ Patterns synced from consolidated logs",
+      "status": "\u2705 Patterns synced from consolidated logs",
       "timestamp": "2026-02-19 05:50"
     },
     {
       "label": "CRON_STATUS",
-      "status": "⚠️ Gateway timeout; list used as fallback",
+      "status": "\u26a0\ufe0f Gateway timeout; list used as fallback",
       "timestamp": "2026-02-19 05:50"
     },
     {
       "label": "SECRET_GUARD",
-      "status": "✅ Pre-push check passed",
+      "status": "\u2705 Pre-push check passed",
       "timestamp": "2026-02-19 05:50"
     }
   ],
@@ -254,8 +255,8 @@
     "count": 5
   },
   "social": {
-    "lastPost": "2026-02-18 19:00 — Evening POV post",
+    "lastPost": "2026-02-18 19:00 \u2014 Evening POV post",
     "engagement": "Steady",
-    "nextPost": "2026-02-19 07:00 — Morning Post"
+    "nextPost": "2026-02-19 07:00 \u2014 Morning Post"
   }
 }
