@@ -55,6 +55,7 @@
 |--------|---------|-----|
 | `switch-to-opus46.sh` | Reset model to Opus 4.6, clear cooldown | `bash scripts/switch-to-opus46.sh` |
 | `check-model.sh` | Check active model, auto-fix if drifted | `bash scripts/check-model.sh` |
+| `setup-sonnet46.sh` | Switch primary to Claude Sonnet 4.6 + Gemini fallback | `bash setup-sonnet46.sh` |
 
 ### System / DevOps
 

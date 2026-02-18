@@ -1,37 +1,51 @@
 {
-  "updated": "2026-02-14T00:00:00+11:00",
-  "schema_version": "1.0",
+  "updated": "2026-02-18T22:33:00+11:00",
+  "schema_version": "1.1",
   "active_tasks": [
     {
-      "id": "task-001",
-      "description": "Follow up with Claudia Alz for $320 payment (~57 days overdue)",
+      "id": "task-003",
+      "description": "Send payment reminder to Maryam Al Atar — $300 overdue (2 invoices, overdue since Feb 13)",
       "status": "pending",
       "priority": "high",
-      "created": "2026-02-01",
-      "due_date": "2026-02-03",
+      "created": "2026-02-18",
+      "due_date": "2026-02-19",
+      "category": "payment_collection",
+      "contact": "Maryam Al Atar — Kingswood client"
+    },
+    {
+      "id": "task-004",
+      "description": "Send payment reminder to Janette Vamarasi — $255.40 overdue (2 invoices, due Feb 16)",
+      "status": "pending",
+      "priority": "high",
+      "created": "2026-02-18",
+      "due_date": "2026-02-19",
+      "category": "payment_collection",
+      "contact": "Janette Vamarasi — NDIS client"
+    },
+    {
+      "id": "task-005",
+      "description": "Monitor Meshach Ephraim Care balance — $3,750 outstanding on Invoice #000005. Due 5 March 2026. Not overdue yet.",
+      "status": "monitoring",
+      "priority": "medium",
+      "created": "2026-02-17",
+      "due_date": "2026-03-05",
+      "category": "payment_tracking",
+      "contact": "+61 451 918 884 / ephraimcare25@gmail.com"
+    }
+  ],
+  "completed": [
+    {
+      "id": "task-001",
+      "description": "Claudia Alz $320 — CONFIRMED PAID. All 3 invoices paid in full (history: $800, $640, $480). Removed from debtors.",
+      "completed_date": "2026-02-18",
       "category": "payment_collection"
     },
     {
       "id": "task-002",
-      "description": "Monitor Meshach Ephraim Care payment plan ($3,750 total, $2,000 paid)",
-      "status": "in_progress",
-      "priority": "medium",
-      "created": "2026-01-15",
-      "category": "payment_tracking"
+      "description": "Corrected Meshach payment hallucination — entity file rewritten with Square-only data ($5,000 total, $1,250 deposit paid, $3,750 balance).",
+      "completed_date": "2026-02-17",
+      "category": "data_integrity"
     }
   ],
-  "completed_today": [
-    "Switched primary LLM from Gemini to Claude (anthropic/claude-sonnet-4-20250514)",
-    "Reorganised project structure (moved scripts, docs, memory files)",
-    "Removed duplicate files (GEMINI.md, temp_google_creds.json)",
-    "Updated all documentation (CLAUDE.md, HEARTBEAT.md, TOOLS.md, MEMORY.md, BELLA.md)"
-  ],
-  "recent_actions": [
-    "LLM switch: Gemini → Claude in clawdbot.json and auth-profiles.json",
-    "Moved 9 Python scripts from root to scripts/",
-    "Moved 7 doc files to docs/ subdirectories",
-    "Moved 3 memory files to proper locations",
-    "Updated CLAUDE.md with tool usage priority tiers"
-  ],
-  "notes": "LLM switched to Claude Code. Project structure reorganised. All docs updated 14/02/2026."
+  "notes": "Updated 2026-02-18 AEDT. Claudia fully paid. Active debtors: Maryam ($300) + Janette ($255.40). Meshach not overdue until March 5."
 }

@@ -1,8 +1,17 @@
 {
   "lastChecks": {
-    "morningBrief": "2026-02-14",
-    "invoiceCheck": 1739458800,
-    "eveningSummary": "2026-02-13",
-    "lastFullBusinessSync": 1739455000
-  }
+    "morningBrief": "2026-02-18",
+    "invoiceCheck": 1739884380,
+    "eveningSummary": "2026-02-18",
+    "lastFullBusinessSync": "2026-02-18T15:20:00+11:00",
+    "modelHealthCheck": "2026-02-18",
+    "dashboardSync": "2026-02-18T15:20:00+11:00",
+    "memoryAudit": "2026-02-18T22:33:00+11:00"
+  },
+  "embeddingStatus": "WORKING — Gemini embedding-001 (confirmed 2026-02-18)",
+  "activeAlerts": [
+    "Maryam Al Atar: $300 overdue — send payment reminder",
+    "Janette Vamarasi: $255.40 overdue — send payment reminder"
+  ],
+  "notes": "Updated 2026-02-18 22:33 AEDT after full memory audit session."
 }
