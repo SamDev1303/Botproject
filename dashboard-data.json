@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-19T08:26:00+11:00",
+  "lastUpdated": "2026-02-19T08:30:33+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 08:26 AEDT"
+    "lastHeartbeat": "2026-02-19 08:30 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -16,7 +16,7 @@
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T08:26:00+11:00",
+    "lastHeartbeat": "2026-02-19T08:30:33+11:00",
     "roles": 20
   },
   "roles": [
@@ -134,7 +134,7 @@
   "calendar": {
     "today": [
       {
-        "title": "🧹 U3 Atkinson Cleaning",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "status": "Scheduled"
@@ -142,12 +142,12 @@
     ],
     "upcoming": [
       {
-        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
+        "title": "\ud83e\uddf9 Airbnb Cleaning - Unit 3 Atkinson St",
         "time": "10:00 - 12:00",
         "date": "2026-02-20"
       },
       {
-        "title": "🧹 Pinnacle Building Cleaning",
+        "title": "\ud83e\uddf9 Pinnacle Building Cleaning",
         "time": "All Day",
         "date": "2026-02-22"
       }
@@ -157,23 +157,35 @@
     {
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
-      "status": "✅ Active",
+      "status": "\u2705 Active",
       "lastRun": "2026-02-19T08:26:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 08:26 AEDT",
-      "timestamp": "2026-02-19 08:26"
+      "status": "\u2705 Updated 08:30 AEDT",
+      "timestamp": "2026-02-19 08:30 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
-      "status": "✅ Healthy (gemini-3-flash Primary)",
-      "timestamp": "2026-02-19 08:26"
+      "status": "\u2705 Healthy (gemini-3-flash Primary)",
+      "timestamp": "2026-02-19 08:30 AEDT"
     }
   ],
   "patterns": [
+    {
+      "description": "System: Recovered from Gateway timeout via exec fallback; model switched to Gemini Flash for token economy.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Infrastructure: TOOLS.md consolidated with 26 scripts and 160+ MCP tools; SOT mandates enforced for Square/Gmail/Calendar.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Operations: Morning brief verified ,060 revenue MTD; tracking overdue accounts for Maryam and Janette.",
+      "date": "2026-02-19"
+    },
     {
       "description": "Infrastructure: Gateway timeout on cron tool during dashboard sync; recovered via exec fallback.",
       "date": "2026-02-19"
@@ -181,15 +193,11 @@
     {
       "description": "Continuity: 12 Business Rules written to memory including Square/Gmail/Calendar SOT mandates.",
       "date": "2026-02-19"
-    },
-    {
-      "description": "Operations: U3 Atkinson cleaning confirmed for 8 PM tonight; Airbnb turnovers scheduled for Fri/Sun.",
-      "date": "2026-02-19"
     }
   ],
   "activeSessions": {
-    "count": 10,
-    "lastActivity": "2026-02-19T08:26:00+11:00",
+    "count": 5,
+    "lastActivity": "2026-02-19T08:30:33+11:00",
     "active": [
       {
         "label": "agent:main:main",
@@ -197,7 +205,7 @@
         "model": "gemini-3-flash-preview"
       },
       {
-        "label": "dashboard-live-sync-5min",
+        "label": "dashboard-sync-cron",
         "status": "Active",
         "model": "gemini-3-flash-preview"
       }
