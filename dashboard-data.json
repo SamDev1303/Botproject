@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-19T06:10+11:00",
+  "lastUpdated": "2026-02-19T06:30+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": "$0.00",
-    "lastHeartbeat": "2026-02-19 06:10 AEDT"
+    "lastHeartbeat": "2026-02-19 06:31 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -16,7 +16,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T06:10+11:00",
+    "lastHeartbeat": "2026-02-19T06:30+11:00",
     "roles": 20
   },
   "roles": [
@@ -121,7 +121,7 @@
         "amount": "$150.00",
         "daysOverdue": 6,
         "lastContact": "2026-02-18",
-        "status": "Inv #45 $150 still overdue"
+        "status": "Overdue since Feb 13"
       },
       {
         "client": "Janette Vamarasi",
@@ -192,55 +192,55 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-19T06:10+11:00"
+      "lastRun": "2026-02-19T06:30+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 06:10 AEDT",
-      "timestamp": "2026-02-19 06:10"
+      "status": "\u2705 Updated 06:30 AEDT",
+      "timestamp": "2026-02-19 06:30"
     },
     {
       "label": "MEMORY_AUDIT",
       "status": "\u2705 Patterns synced from consolidated logs",
-      "timestamp": "2026-02-19 06:10"
+      "timestamp": "2026-02-19 06:30"
     },
     {
       "label": "CRON_STATUS",
       "status": "\u26a0\ufe0f Gateway API timeout persists",
-      "timestamp": "2026-02-19 06:10"
+      "timestamp": "2026-02-19 06:30"
     },
     {
       "label": "SECRET_GUARD",
       "status": "\u2705 Pre-push check passed",
-      "timestamp": "2026-02-19 06:10"
+      "timestamp": "2026-02-19 06:30"
     }
   ],
   "patterns": [
+    {
+      "description": "Financials: Total outstanding balance confirmed at $405.40. Maryam Al Atar's balance corrected to $150.00.",
+      "date": "2026-02-19"
+    },
     {
       "description": "Infrastructure: Gateway API timeout continues to affect automated status checks.",
       "date": "2026-02-19"
     },
     {
-      "description": "Workflow: Orchestrator mode and clinical documentation system established.",
-      "date": "2026-02-16"
-    },
-    {
-      "description": "Critical Fix: Resolved gateway version mismatch and established SSH/GPG verification.",
-      "date": "2026-02-14"
+      "description": "Operations: Migration to Master Operations Log complete; 20 active entries verified.",
+      "date": "2026-02-17"
     }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
     "cronModel": "google/gemini-3-flash-preview",
-    "cronJobs": 1,
-    "lastActivity": "2026-02-19T06:10+11:00",
+    "cronJobs": 5,
+    "lastActivity": "2026-02-19T06:30+11:00",
     "active": [
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 06:10",
+        "lastSeen": "2026-02-19 06:30",
         "model": "google/gemini-3-flash-preview",
         "status": "Active"
       },
