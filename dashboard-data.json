@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T00:16+11:00",
+  "lastUpdated": "2026-02-19T00:27+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 405.4,
@@ -9,13 +9,13 @@
   },
   "bella": {
     "model": "gpt-5.2-codex",
-    "sessions": 2,
+    "sessions": 15,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T00:16+11:00",
+    "lastHeartbeat": "2026-02-19T00:27+11:00",
     "roles": 20
   },
   "roles": [
@@ -120,7 +120,7 @@
         "amount": "$150.00",
         "daysOverdue": 5,
         "lastContact": "2026-02-18",
-        "status": "Inv #48 PAID \u2705 \u2014 #45 $150 still overdue"
+        "status": "Inv #48 PAID ✅ — #45 $150 still overdue"
       },
       {
         "client": "Janette Vamarasi",
@@ -158,7 +158,7 @@
   "calendar": {
     "today": [
       {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "title": "🧹 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "type": "cleaning",
@@ -167,19 +167,19 @@
     ],
     "upcoming": [
       {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "title": "🧹 U3 Atkinson Cleaning",
         "time": "20:00",
         "date": "2026-02-19",
         "type": "cleaning"
       },
       {
-        "title": "\ud83d\udccb Thursday Invoice & Wages",
+        "title": "📋 Thursday Invoice & Wages",
         "time": "22:00",
         "date": "2026-02-19",
         "type": "admin"
       },
       {
-        "title": "\ud83e\uddf9 Karanjeet Aus Post (Sat)",
+        "title": "🧹 Karanjeet Aus Post (Sat)",
         "time": "10:00",
         "date": "2026-02-21",
         "type": "cleaning"
@@ -269,67 +269,83 @@
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 00:16 AEDT",
-      "timestamp": "2026-02-19 00:16"
+      "status": "✅ Updated 00:27 AEDT",
+      "timestamp": "2026-02-19 00:27"
     },
     {
       "label": "CRON_STATUS",
-      "status": "\u26a0\ufe0f Cron list failed \u2014 gateway timeout (loopback)",
-      "timestamp": "2026-02-19 00:16"
+      "status": "⚠️ Cron list failed — gateway timeout (loopback)",
+      "timestamp": "2026-02-19 00:27"
     },
     {
       "label": "PAYMENT_RECEIVED",
-      "status": "\u2705 Maryam paid (Inv #48) \u2014 Dashboard updated",
+      "status": "✅ Maryam paid (Inv #48) — Dashboard updated",
       "timestamp": "2026-02-18 21:10"
     },
     {
       "label": "SOCIAL_POSTS",
-      "status": "\u2705 All 3 posts live (Morning + Lunch + Evening)",
+      "status": "✅ All 3 posts live (Morning + Lunch + Evening)",
       "timestamp": "2026-02-18 19:15"
     },
     {
       "label": "MODEL_STATUS",
-      "status": "\u2705 Sonnet 4.6 (main + cron) \u2014 2 active sessions | 71,767 tokens",
+      "status": "✅ Sonnet 4.6 (main + cron) — 2 active sessions | 71,767 tokens",
       "timestamp": "2026-02-18 23:05"
     },
     {
       "label": "INVOICE_CHECK",
-      "status": "\u26a0\ufe0f Maryam $150 (5d overdue) + Janette $255.40 (2d overdue)",
-      "timestamp": "2026-02-18 22:55"
+      "status": "⚠️ Maryam $150 (6d overdue) + Janette $255.40 (3d overdue)",
+      "timestamp": "2026-02-19 00:27"
     },
     {
       "label": "COMMERCIAL_OUTREACH",
-      "status": "\u2705 12 leads prioritized, 3 cold emails drafted \u2014 Gmail auth blocking sends",
+      "status": "✅ 12 leads prioritized, 3 cold emails drafted — Gmail auth blocking sends",
       "timestamp": "2026-02-18 13:05"
     },
     {
       "label": "GMAIL_AUTH",
-      "status": "\u274c 401 Unauthorized \u2014 needs re-auth",
+      "status": "❌ 401 Unauthorized — needs re-auth",
       "timestamp": "2026-02-18 11:10"
     },
     {
       "label": "SCHEDULE_TODAY",
-      "status": "\u2705 Both cleans complete (Karanjeet + Pinnacle)",
+      "status": "✅ Both cleans complete (Karanjeet + Pinnacle)",
       "timestamp": "2026-02-18 19:15"
     },
     {
       "label": "SCHEDULE_TOMORROW",
-      "status": "\ud83e\uddf9 U3 Atkinson @ 20:00 \u2014 reminder cron armed for 08:00",
+      "status": "🧹 U3 Atkinson @ 20:00 — reminder cron armed for 08:00",
       "timestamp": "2026-02-18 19:15"
     },
     {
       "label": "MEMORY_AUDIT",
-      "status": "\u2705 Full workspace audit complete \u2014 19 skills, 55+ memory files indexed",
+      "status": "✅ Full workspace audit complete — 19 skills, 55+ memory files indexed",
       "timestamp": "2026-02-18 22:33"
     }
   ],
   "patterns": [
     {
-      "description": "Dashboard sync 00:16 \u2014 sessions refreshed. Cron list failed (gateway timeout) so cron panel retained last known state.",
+      "description": "Dashboard rebuilt as Pulse Mini App; orchestrator mode adopted for delegation.",
+      "date": "2026-02-16"
+    },
+    {
+      "description": "Dashboard syncs now log session/version mismatches when cron data cannot be fetched.",
+      "date": "2026-02-17"
+    },
+    {
+      "description": "Cron list still timing out on loopback — dashboard retains last-known cron state.",
       "date": "2026-02-19"
     },
     {
-      "description": "Dashboard sync 00:10 \u2014 sessions refreshed (main gpt-5.2-codex, cron opus 4.6). Cron list failed (gateway timeout).",
+      "description": "Dashboard sync 00:27 — invoices refreshed; cron list failed (gateway timeout).",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Dashboard sync 00:16 — sessions refreshed. Cron list failed (gateway timeout) so cron panel retained last known state.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Dashboard sync 00:10 — sessions refreshed (main gpt-5.2-codex, cron opus 4.6). Cron list failed (gateway timeout).",
       "date": "2026-02-19"
     },
     {
@@ -337,15 +353,15 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Dashboard sync 23:05 \u2014 2 active sessions, Sonnet 4.6. Main 71,767 tokens. 13 crons healthy. Late-night quiet cycle.",
+      "description": "Dashboard sync 23:05 — 2 active sessions, Sonnet 4.6. Main 71,767 tokens. 13 crons healthy. Late-night quiet cycle.",
       "date": "2026-02-18"
     },
     {
-      "description": "Dashboard sync 23:00 \u2014 2 active sessions, model Sonnet 4.6. Main session 71,767 tokens. All 13 crons healthy.",
+      "description": "Dashboard sync 23:00 — 2 active sessions, model Sonnet 4.6. Main session 71,767 tokens. All 13 crons healthy.",
       "date": "2026-02-18"
     },
     {
-      "description": "Full memory audit complete \u2014 19 skills catalogued, 5 missing skills added to MEMORY.md, current-tasks.json rebuilt.",
+      "description": "Full memory audit complete — 19 skills catalogued, 5 missing skills added to MEMORY.md, current-tasks.json rebuilt.",
       "date": "2026-02-18"
     },
     {
@@ -357,7 +373,7 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Legacy dashboard traces fully wiped \u2014 single Vercel deployment confirmed (bella-dashboard-nu.vercel.app).",
+      "description": "Legacy dashboard traces fully wiped — single Vercel deployment confirmed (bella-dashboard-nu.vercel.app).",
       "date": "2026-02-18"
     },
     {
@@ -365,44 +381,58 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Gmail 401 persists \u2014 cold emails drafted but blocked from sending.",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Claudia Alz confirmed PAID IN FULL \u2014 removed from debtors.",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Maryam $150 overdue (5d) + Janette $255.40 overdue (2d) \u2014 reminders pending.",
+      "description": "Gmail 401 persists — cold emails drafted but blocked from sending.",
       "date": "2026-02-18"
     }
   ],
   "activeSessions": {
     "main": "gpt-5.2-codex",
     "cronModel": "unknown (cron list failed)",
-    "cronJobs": 13,
-    "lastActivity": "2026-02-19T00:16:41+11:00",
+    "cronJobs": 14,
+    "lastActivity": "2026-02-19T00:25:37+11:00",
     "active": [
       {
         "key": "agent:main:main",
         "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-19 00:16",
+        "lastSeen": "2026-02-19 00:25",
         "model": "gpt-5.2-codex",
-        "tokens": 21228,
-        "status": "Active"
+        "status": "Active",
+        "tokens": 19585
       },
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 00:16",
+        "lastSeen": "2026-02-19 00:25",
         "model": "gpt-5.2-codex",
-        "status": "Running"
+        "status": "Active"
+      },
+      {
+        "key": "agent:main:cron:ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
+        "label": "cron:ba9f3a18",
+        "lastSeen": "2026-02-12 22:00",
+        "model": "gemini-3-flash-preview",
+        "status": "Active"
+      },
+      {
+        "key": "agent:main:cron:8b185f2e-bced-4d9f-b702-6c3369150a13",
+        "label": "Weekly Business Review",
+        "lastSeen": "2026-02-09 09:00",
+        "model": "gemini-3-flash-preview",
+        "status": "Active"
+      },
+      {
+        "key": "agent:main:cron:392fe7f2-f8fc-4add-a20c-075558fe08ba",
+        "label": "weekly-airbnb-reminder",
+        "lastSeen": "2026-02-08 21:00",
+        "model": "gemini-3-flash-preview",
+        "status": "Active"
       }
-    ]
+    ],
+    "count": 15
   },
   "social": {
-    "lastPost": "2026-02-18 19:00 \u2014 Evening POV post (FB+IG)",
-    "engagement": "Monitoring \u2014 all 3 daily posts published",
-    "nextPost": "2026-02-19 07:00 \u2014 Morning content"
+    "lastPost": "2026-02-18 19:00 — Evening POV post (FB+IG)",
+    "engagement": "Monitoring — all 3 daily posts published",
+    "nextPost": "2026-02-19 07:00 — Morning content"
   }
 }
