@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-19T07:31:00+11:00",
+  "lastUpdated": "2026-02-19T07:40:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 07:34 AEDT"
+    "lastHeartbeat": "2026-02-19 07:40 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -16,7 +16,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T07:31:00+11:00",
+    "lastHeartbeat": "2026-02-19T07:40:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -153,38 +153,38 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "\u2705 Active",
-      "lastRun": "2026-02-19T07:31:00+11:00"
+      "lastRun": "2026-02-19T07:40:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 07:31 AEDT",
-      "timestamp": "2026-02-19 07:31"
+      "status": "\u2705 Updated 07:40 AEDT",
+      "timestamp": "2026-02-19 07:40"
     },
     {
       "label": "GATEWAY_HEALTH",
-      "status": "\u2705 Healthy (Auto-fixed mismatch)",
-      "timestamp": "2026-02-19 07:31"
+      "status": "\u2705 Healthy (Gemini 3 Flash Primary)",
+      "timestamp": "2026-02-19 07:40"
     }
   ],
   "patterns": [
     {
-      "description": "Infrastructure: Resolved Gateway loopback timeout; confirmed gemini-3-flash-preview primary health.",
+      "description": "Infrastructure: Confirmed Gemini 3 Flash Preview as primary model; Gateway operational after timeout recovery.",
       "date": "2026-02-19"
     },
     {
-      "description": "Financials: Revenue MTD stable at $6,060.00; Maryam and Janette remain as active debtors.",
+      "description": "Financials: Revenue MTD at $6,060.00; Maryam and Janette remain as primary overdue accounts.",
       "date": "2026-02-19"
     },
     {
-      "description": "Operations: Atkinson cleaning scheduled for tonight 20:00; Thursday wages cycle pending.",
+      "description": "Operations: Atkinson cleaning scheduled for 20:00 AEDT; Thursday payroll/invoice cycle triggered at 22:00 AEDT.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
     "count": 5,
-    "lastActivity": "2026-02-19T07:31:00+11:00",
+    "lastActivity": "2026-02-19T07:40:00+11:00",
     "active": [
       {
         "label": "dashboard-live-sync-5min",
