@@ -10,8 +10,8 @@ LOG_DIR="$HOME/.clawdbot/logs"
 LOG_FILE="$LOG_DIR/model-monitor.log"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S %Z')
-EXPECTED_PRIMARY="google/gemini-3-flash-preview"
-EXPECTED_FALLBACK="anthropic/claude-sonnet-4-6"
+EXPECTED_PRIMARY="openai-codex/gpt-5.3-codex"
+EXPECTED_FALLBACK="google/gemini-3-flash-preview"
 
 mkdir -p "$LOG_DIR"
 
@@ -50,7 +50,7 @@ fi
 # ── Act on findings ──
 if [ "$NEEDS_FIX" = true ]; then
   log "MODEL CHECK FAILED: $REASONS — running auto-fix..."
-  bash "$HOME/.clawdbot/skills/model-switcher/scripts/switch-model.sh" gemini 2>&1 | while read -r line; do log "  fix: $line"; done
+  bash "$HOME/.clawdbot/skills/model-switcher/scripts/switch-model.sh" codex53 2>&1 | while read -r line; do log "  fix: $line"; done
   log "Auto-fix completed."
 
   # Output for heartbeat to pick up

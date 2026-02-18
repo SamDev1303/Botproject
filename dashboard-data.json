@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T07:55:00+11:00",
+  "lastUpdated": "2026-02-19T08:10:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 07:55 AEDT"
+    "lastHeartbeat": "2026-02-19 08:10 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T07:55:00+11:00",
+    "lastHeartbeat": "2026-02-19T08:10:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -62,23 +62,23 @@
     ]
   },
   "crons": [
-    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "✅ Active", "lastRun": "2026-02-19T07:55:00+11:00" }
+    { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "✅ Active", "lastRun": "2026-02-19T08:10:00+11:00" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 07:55 AEDT", "timestamp": "2026-02-19 07:55" },
-    { "label": "GATEWAY_HEALTH", "status": "✅ Healthy (Gemini 3 Flash Primary)", "timestamp": "2026-02-19 07:55" }
+    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 08:10 AEDT", "timestamp": "2026-02-19 08:10" },
+    { "label": "GATEWAY_HEALTH", "status": "✅ Healthy (Gemini 3 Flash Primary)", "timestamp": "2026-02-19 08:10" }
   ],
   "patterns": [
-    { "description": "Infrastructure: Transitioned to Gemini 3 Flash/Pro for token economy; self-healing model scripts active.", "date": "2026-02-19" },
-    { "description": "Financial: Total outstanding remains $405.40 (Janette & Maryam). Claudia Alz is fully paid.", "date": "2026-02-19" },
-    { "description": "Operations: Atkinson clean scheduled for 8 PM tonight; Thursday payroll sync pending.", "date": "2026-02-19" }
+    { "description": "Infrastructure: Rule change enforced - Dashboard updates required before all user replies.", "date": "2026-02-19" },
+    { "description": "Continuity: 12 Business Rules written to memory including Square/Gmail/Calendar SOT mandates.", "date": "2026-02-19" },
+    { "description": "Operations: U3 Atkinson cleaning confirmed for 8 PM tonight; Thursday payroll sync scheduled for 10 PM.", "date": "2026-02-19" }
   ],
   "activeSessions": {
-    "count": 5,
-    "lastActivity": "2026-02-19T07:55:00+11:00",
+    "count": 10,
+    "lastActivity": "2026-02-19T08:10:00+11:00",
     "active": [
-      { "label": "dashboard-live-sync-5min", "status": "Active", "model": "gemini-3-flash-preview" },
-      { "label": "Main Session (Hafsah)", "status": "Active", "model": "gemini-3-flash-preview" }
+      { "label": "Main Session (Hafsah)", "status": "Active", "model": "gemini-3-flash-preview" },
+      { "label": "dashboard-live-sync-5min", "status": "Active", "model": "gemini-3-flash-preview" }
     ]
   }
 }
