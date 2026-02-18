@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T02:00+11:00",
+  "lastUpdated": "2026-02-19T05:25+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 405.4,
@@ -9,13 +9,13 @@
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T02:00+11:00",
+    "lastHeartbeat": "2026-02-19T05:25+11:00",
     "roles": 20
   },
   "roles": [
@@ -191,143 +191,62 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-19T02:00+11:00"
-    },
-    {
-      "id": "b2d4d12f",
-      "label": "social-morning-post",
-      "status": "active",
-      "lastRun": "2026-02-18T07:00:00+11:00"
-    },
-    {
-      "id": "eb3caa8f",
-      "label": "social-lunch-post",
-      "status": "active",
-      "lastRun": "2026-02-18T12:00:00+11:00"
-    },
-    {
-      "id": "28e4173e",
-      "label": "social-evening-post",
-      "status": "active",
-      "lastRun": "2026-02-18T19:00:00+11:00"
-    },
-    {
-      "id": "fa2d2e5f",
-      "label": "commercial-outreach-daily",
-      "status": "active",
-      "lastRun": "2026-02-18T10:00:00+11:00"
-    },
-    {
-      "id": "411de93c",
-      "label": "Maryam Al Atar Morning",
-      "status": "active",
-      "lastRun": "2026-02-18T08:00:00+11:00"
-    },
-    {
-      "id": "469bfd31",
-      "label": "atkinson-u3-feb19-reminder",
-      "status": "active",
-      "nextRun": "2026-02-19T08:00:00+11:00"
-    },
-    {
-      "id": "8b185f2e",
-      "label": "Weekly Business Review",
-      "status": "active",
-      "nextRun": "2026-02-23T09:00:00+11:00"
-    },
-    {
-      "id": "392fe7f2",
-      "label": "weekly-airbnb-reminder",
-      "status": "active",
-      "nextRun": "2026-02-22T21:00:00+11:00"
-    },
-    {
-      "id": "ba9f3a18",
-      "label": "thursday-invoice-wages",
-      "status": "active",
-      "nextRun": "2026-02-19T22:00:00+11:00"
-    },
-    {
-      "id": "ff24890b",
-      "label": "Tuition Fee Reminder",
-      "status": "active",
-      "nextRun": "2026-02-19T10:00:00+11:00"
-    },
-    {
-      "id": "870a7392",
-      "label": "Karanjeet Aus Post Night Before",
-      "status": "active",
-      "nextRun": "2026-02-20T20:00:00+11:00"
-    },
-    {
-      "id": "c3865e06",
-      "label": "Karanjeet Aus Post Morning",
-      "status": "active",
-      "nextRun": "2026-02-21T10:00:00+11:00"
+      "lastRun": "2026-02-19T05:25+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 02:00 AEDT",
-      "timestamp": "2026-02-19 02:00"
+      "status": "✅ Updated 05:25 AEDT",
+      "timestamp": "2026-02-19 05:25"
     },
     {
       "label": "CRON_STATUS",
-      "status": "⚠️ Cron API timeout continues; panel state retained",
-      "timestamp": "2026-02-19 02:00"
+      "status": "⚠️ Gateway API timeout; tool failed",
+      "timestamp": "2026-02-19 05:25"
     },
     {
       "label": "SESSION_STATUS",
-      "status": "✅ 10 sessions indexed (main + cron history)",
-      "timestamp": "2026-02-19 02:00"
-    },
-    {
-      "label": "INVOICE_CHECK",
-      "status": "⚠️ Maryam $150 (6d) + Janette $255.40 (3d) overdue",
-      "timestamp": "2026-02-19 02:00"
+      "status": "✅ 10 active sessions detected",
+      "timestamp": "2026-02-19 05:25"
     }
   ],
   "patterns": [
     {
-      "description": "Dashboard sync 02:00 — Debtors updated from morning brief; cron API timeout remains a known infrastructure friction.",
+      "description": "Infrastructure observation: Persistent Gateway API timeout for cron listing; confirmed active sync via manual tool calls.",
       "date": "2026-02-19"
     },
     {
-      "description": "Pattern from memory logs: outstanding balance pressure shifted from Claudia to Maryam/Janette; dashboard now tracks this newer debtor mix.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Pattern from memory logs: dashboard-first operations and SSH-only push hygiene continue to hold as stable operating baseline.",
+      "description": "Consolidation: Model economy successfully transitioned to Gemini Flash; tools and scripts fully indexed in TOOLS.md.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
     "main": "google/gemini-3-flash-preview",
-    "cronModel": "mixed",
-    "cronJobs": 13,
-    "lastActivity": "2026-02-19T02:00+11:00",
+    "cronModel": "google/gemini-3-flash-preview",
+    "cronJobs": 1,
+    "lastActivity": "2026-02-19T05:25+11:00",
     "active": [
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 02:00",
+        "lastSeen": "2026-02-19 05:25",
         "model": "google/gemini-3-flash-preview",
         "status": "Active"
       },
       {
         "key": "agent:main:main",
-        "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-19 01:58",
-        "model": "gpt-5.3-codex",
+        "label": "Main Session (Hafsah)",
+        "lastSeen": "2026-02-19 05:20",
+        "model": "google/gemini-3-flash-preview",
         "status": "Active"
       }
     ],
     "count": 10
   },
   "social": {
-    "lastPost": "2026-02-18 19:00 — Evening POV post (FB+IG)",
-    "engagement": "Monitoring — all 3 daily posts published",
-    "nextPost": "2026-02-19 07:00 — Morning content"
+    "lastPost": "2026-02-18 19:00 — Evening POV post",
+    "engagement": "Steady",
+    "nextPost": "2026-02-19 07:00 — Morning Post"
   }
 }
