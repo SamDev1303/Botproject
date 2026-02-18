@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T01:36+11:00",
+  "lastUpdated": "2026-02-19T01:45+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 405.4,
@@ -8,14 +8,14 @@
     "gstPayable": "$0.00"
   },
   "bella": {
-    "model": "gpt-5.3-codex",
-    "sessions": 15,
+    "model": "google/gemini-3-flash-preview",
+    "sessions": 5,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T01:36+11:00",
+    "lastHeartbeat": "2026-02-19T01:45+11:00",
     "roles": 20
   },
   "roles": [
@@ -118,14 +118,14 @@
       {
         "client": "Maryam Al Atar",
         "amount": "$150.00",
-        "daysOverdue": 5,
+        "daysOverdue": 6,
         "lastContact": "2026-02-18",
-        "status": "Inv #48 PAID \u2705 \u2014 #45 $150 still overdue"
+        "status": "Inv #48 PAID ✅ — #45 $150 still overdue"
       },
       {
         "client": "Janette Vamarasi",
         "amount": "$255.40",
-        "daysOverdue": 2,
+        "daysOverdue": 3,
         "lastContact": "2026-02-16",
         "status": "Overdue"
       }
@@ -158,7 +158,7 @@
   "calendar": {
     "today": [
       {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "title": "🧹 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "type": "cleaning",
@@ -167,19 +167,19 @@
     ],
     "upcoming": [
       {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "title": "🧹 U3 Atkinson Cleaning",
         "time": "20:00",
         "date": "2026-02-19",
         "type": "cleaning"
       },
       {
-        "title": "\ud83d\udccb Thursday Invoice & Wages",
+        "title": "📋 Thursday Invoice & Wages",
         "time": "22:00",
         "date": "2026-02-19",
         "type": "admin"
       },
       {
-        "title": "\ud83e\uddf9 Karanjeet Aus Post (Sat)",
+        "title": "🧹 Karanjeet Aus Post (Sat)",
         "time": "10:00",
         "date": "2026-02-21",
         "type": "cleaning"
@@ -191,7 +191,7 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-19T01:26+11:00"
+      "lastRun": "2026-02-19T01:45+11:00"
     },
     {
       "id": "b2d4d12f",
@@ -269,68 +269,28 @@
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 01:36 AEDT",
-      "timestamp": "2026-02-19 01:36"
+      "status": "✅ Updated 01:45 AEDT",
+      "timestamp": "2026-02-19 01:45"
     },
     {
       "label": "CRON_STATUS",
-      "status": "\u26a0\ufe0f Cron API timeout persists (loopback gateway + version mismatch 2026.1.24-2 vs config 2026.1.24-3); retained last-known cron panel state",
-      "timestamp": "2026-02-19 01:36"
+      "status": "⚠️ Cron API gateway timeout persists; retained last-known cron panel state",
+      "timestamp": "2026-02-19 01:45"
     },
     {
       "label": "SESSION_STATUS",
-      "status": "\u2705 15 sessions indexed (main + cron workers)",
-      "timestamp": "2026-02-19 01:36"
-    },
-    {
-      "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 01:26 AEDT",
-      "timestamp": "2026-02-19 01:26"
-    },
-    {
-      "label": "CRON_STATUS",
-      "status": "\u26a0\ufe0f Cron API timeout persists (loopback gateway); retained last-known cron panel state",
-      "timestamp": "2026-02-19 01:26"
-    },
-    {
-      "label": "SESSION_STATUS",
-      "status": "\u2705 15 sessions indexed (main + cron workers)",
-      "timestamp": "2026-02-19 01:26"
-    },
-    {
-      "label": "PAYMENT_RECEIVED",
-      "status": "\u2705 Maryam paid (Inv #48) \u2014 Dashboard updated",
-      "timestamp": "2026-02-18 21:10"
-    },
-    {
-      "label": "SOCIAL_POSTS",
-      "status": "\u2705 All 3 posts live (Morning + Lunch + Evening)",
-      "timestamp": "2026-02-18 19:15"
-    },
-    {
-      "label": "MODEL_STATUS",
-      "status": "\u2705 Sonnet 4.6 (main + cron) \u2014 2 active sessions | 71,767 tokens",
-      "timestamp": "2026-02-18 23:05"
+      "status": "✅ 5 sessions indexed (main + recent crons)",
+      "timestamp": "2026-02-19 01:45"
     },
     {
       "label": "INVOICE_CHECK",
-      "status": "\u26a0\ufe0f Maryam $150 (6d overdue) + Janette $255.40 (3d overdue)",
-      "timestamp": "2026-02-19 00:27"
-    },
-    {
-      "label": "COMMERCIAL_OUTREACH",
-      "status": "\u2705 12 leads prioritized, 3 cold emails drafted \u2014 Gmail auth blocking sends",
-      "timestamp": "2026-02-18 13:05"
-    },
-    {
-      "label": "GMAIL_AUTH",
-      "status": "\u274c 401 Unauthorized \u2014 needs re-auth",
-      "timestamp": "2026-02-18 11:10"
+      "status": "⚠️ Maryam $150 (6d overdue) + Janette $255.40 (3d overdue)",
+      "timestamp": "2026-02-19 01:45"
     }
   ],
   "patterns": [
     {
-      "description": "Dashboard sync 01:36 \u2014 sessions refreshed; cron list/status unavailable (loopback timeout + local CLI version mismatch), so cron widget retained last-known state.",
+      "description": "Dashboard sync 01:45 — session list refreshed; cron API still timing out, retained panel state. Debtor pressure constant.",
       "date": "2026-02-19"
     },
     {
@@ -338,142 +298,36 @@
       "date": "2026-02-19"
     },
     {
-      "description": "Dashboard sync 01:26 \u2014 active sessions refreshed; cron status/list still timing out on loopback, so cron widget retained last-known state.",
-      "date": "2026-02-19"
-    },
-    {
       "description": "Pattern from memory logs: dashboard-first operations and SSH-only push hygiene continue to hold as stable operating baseline.",
       "date": "2026-02-19"
-    },
-    {
-      "description": "Pattern from memory logs: operational hardening remains consistent (secret cleanup discipline + secure push workflow).",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 01:21 \u2014 active sessions refreshed; cron list/status timed out again on loopback, so cron widget retained last-known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 01:15 \u2014 active sessions refreshed; cron list/status timed out again on loopback, so cron widget retained last-known state. Memory patterns re-read and preserved.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 01:11 \u2014 active sessions refreshed; cron list/status still timing out on loopback, so cron widget retained last-known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Pattern from memory logs: dashboard-first operations and SSH-only push hygiene remain stable across recent runs.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Pattern from memory logs: operational hardening continues (secrets cleanup + SSH-only Git workflow retained).",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 01:05 \u2014 active sessions refreshed; cron list/status still timing out on loopback, so cron widget retained last-known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 01:01 \u2014 active sessions refreshed; cron list still timing out on loopback, so cron widget retained last-known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:55 \u2014 active sessions refreshed; cron tool timed out again, so cron widget kept last-known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:46 \u2014 sessions refreshed; cron list still timing out on loopback, retained last-known cron panel.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:35 \u2014 sessions refreshed. Cron list failed (gateway timeout); cron panel retained last known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:30 \u2014 sessions refreshed. Cron list failed (gateway timeout); cron panel retained last known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard rebuilt as Pulse Mini App; orchestrator mode adopted for delegation.",
-      "date": "2026-02-16"
-    },
-    {
-      "description": "Dashboard syncs now log session/version mismatches when cron data cannot be fetched.",
-      "date": "2026-02-17"
-    },
-    {
-      "description": "Cron list still timing out on loopback \u2014 dashboard retains last-known cron state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:27 \u2014 invoices refreshed; cron list failed (gateway timeout).",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:16 \u2014 sessions refreshed. Cron list failed (gateway timeout) so cron panel retained last known state.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Dashboard sync 00:10 \u2014 sessions refreshed (main gpt-5.2-codex, cron opus 4.6). Cron list failed (gateway timeout).",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Rules audit recap: Square/Gmail/Calendar/Sheets SOT confirmed; legacy dashboard cleanup logged.",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Dashboard sync 23:05 \u2014 2 active sessions, Sonnet 4.6. Main 71,767 tokens. 13 crons healthy. Late-night quiet cycle.",
-      "date": "2026-02-18"
     }
   ],
   "activeSessions": {
-    "main": "gpt-5.3-codex",
-    "cronModel": "mixed (gpt-5.3-codex + gemini-3-flash-preview workers)",
+    "main": "google/gemini-3-flash-preview",
+    "cronModel": "mixed",
     "cronJobs": 14,
-    "lastActivity": "2026-02-19T01:36+11:00",
+    "lastActivity": "2026-02-19T01:45+11:00",
     "active": [
-      {
-        "key": "agent:main:main",
-        "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-19 01:26",
-        "model": "gpt-5.3-codex",
-        "status": "Active",
-        "tokens": 400000
-      },
       {
         "key": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-19 01:26",
+        "lastSeen": "2026-02-19 01:45",
+        "model": "google/gemini-3-flash-preview",
+        "status": "Active"
+      },
+      {
+        "key": "agent:main:main",
+        "label": "Main Session (Telegram)",
+        "lastSeen": "2026-02-19 01:38",
         "model": "gpt-5.3-codex",
-        "status": "Active"
-      },
-      {
-        "key": "agent:main:cron:ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
-        "label": "cron:ba9f3a18",
-        "lastSeen": "2026-02-12 22:00",
-        "model": "gemini-3-flash-preview",
-        "status": "Active"
-      },
-      {
-        "key": "agent:main:cron:8b185f2e-bced-4d9f-b702-6c3369150a13",
-        "label": "Weekly Business Review",
-        "lastSeen": "2026-02-09 09:00",
-        "model": "gemini-3-flash-preview",
-        "status": "Active"
-      },
-      {
-        "key": "agent:main:cron:392fe7f2-f8fc-4add-a20c-075558fe08ba",
-        "label": "weekly-airbnb-reminder",
-        "lastSeen": "2026-02-08 21:00",
-        "model": "gemini-3-flash-preview",
         "status": "Active"
       }
     ],
-    "count": 15
+    "count": 5
   },
   "social": {
-    "lastPost": "2026-02-18 19:00 \u2014 Evening POV post (FB+IG)",
-    "engagement": "Monitoring \u2014 all 3 daily posts published",
-    "nextPost": "2026-02-19 07:00 \u2014 Morning content"
+    "lastPost": "2026-02-18 19:00 — Evening POV post (FB+IG)",
+    "engagement": "Monitoring — all 3 daily posts published",
+    "nextPost": "2026-02-19 07:00 — Morning content"
   }
 }
