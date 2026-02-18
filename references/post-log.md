@@ -1,5 +1,16 @@
 # Social Media Post Log
 
+## 2026-02-18 (Tue 7:00 PM AEDT) — Evening Post
+- **Platform:** Facebook + Instagram
+- **Type:** POV Lifestyle (Evening rotation)
+- **Topic:** "POV: You hired the pros and your weekends are yours"
+- **Image:** AI-generated POV coffee + sparkling clean living room with sunset light
+- **Facebook Photo ID:** 122167541288918915
+- **Instagram Media ID:** 17898434418398199
+- **Image Host:** https://files.catbox.moe/yw5l3y.png
+- **Hashtags:** #cleanupbros #sydneycleaning #liverpoolnsw #westernsydney #cleaningservice #povreels #cleaningmotivation #satisfyingcleaning #endofleasecleaning #bondcleaning #airbnbcleaning
+- **Engagement:** [check after 24hrs]
+
 ## 2026-02-18 (Tue 12:00 PM AEDT) — Lunch Post
 - **Platform:** Facebook + Instagram
 - **Type:** Engagement Poll (Lunch rotation)
