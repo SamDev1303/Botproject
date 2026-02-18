@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T08:42:00+11:00",
+  "lastUpdated": "2026-02-19T09:45:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 08:42 AEDT"
+    "lastHeartbeat": "2026-02-19 09:45 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
       "filesIndexed": 56,
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T08:42:00+11:00",
+    "lastHeartbeat": "2026-02-19T09:45:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -134,7 +134,7 @@
   "calendar": {
     "today": [
       {
-        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "title": "🧹 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "status": "Scheduled"
@@ -142,12 +142,12 @@
     ],
     "upcoming": [
       {
-        "title": "\ud83e\uddf9 Airbnb Cleaning - Unit 3 Atkinson St",
+        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
         "time": "10:00 - 12:00",
         "date": "2026-02-20"
       },
       {
-        "title": "\ud83e\uddf9 Pinnacle Building Cleaning",
+        "title": "🧹 Pinnacle Building Cleaning",
         "time": "All Day",
         "date": "2026-02-22"
       }
@@ -157,36 +157,55 @@
     {
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
-      "status": "\u2705 Active",
-      "lastRun": "2026-02-19T08:42:00+11:00"
+      "status": "✅ Active",
+      "lastRun": "2026-02-19T09:45:00+11:00"
+    },
+    {
+      "id": "weekly-airbnb-reminder",
+      "label": "Weekly Airbnb Reminder",
+      "status": "✅ Scheduled",
+      "lastRun": "N/A"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "\u2705 Updated 08:42 AEDT",
-      "timestamp": "2026-02-19 08:42 AEDT"
+      "status": "✅ Updated 09:45 AEDT",
+      "timestamp": "2026-02-19 09:45 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
-      "status": "\u2705 Active",
-      "timestamp": "2026-02-19 08:42 AEDT"
+      "status": "✅ Active",
+      "timestamp": "2026-02-19 09:45 AEDT"
     }
   ],
   "patterns": [
     {
-      "description": "System: Recovered from Gateway timeout via exec fallback; current session active.",
+      "description": "Lesson: Mental notes don't survive restarts — write everything to files.",
+      "date": "2026-02-18"
+    },
+    {
+      "description": "Insight: Use memory_search aggressively before every answer; embeddings are functional.",
+      "date": "2026-02-18"
+    },
+    {
+      "description": "System: Self-healing model scripts confirmed working via heartbeat; auto-repaired drift.",
       "date": "2026-02-19"
     },
     {
-      "description": "Financial: Square debtors check confirmed Janette and Maryam remain outstanding ($405.40 total).",
+      "description": "Finance: Confirmed $405.40 outstanding from Janette and Maryam via morning brief.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
-    "count": 5,
-    "lastActivity": "2026-02-19T08:42:00+11:00",
+    "count": 10,
+    "lastActivity": "2026-02-19T09:45:00+11:00",
     "active": [
+      {
+        "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
+        "status": "Active",
+        "model": "google/gemini-3-flash-preview"
+      },
       {
         "label": "agent:main:main",
         "status": "Active",
