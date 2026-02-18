@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T07:15:00+11:00",
+  "lastUpdated": "2026-02-19T07:20:00+11:00",
   "stats": {
-    "revenueMTD": 6060.0,
+    "revenueMTD": 3665.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
-    "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 07:15 AEDT"
+    "gstPayable": 333.18,
+    "lastHeartbeat": "2026-02-19 07:20 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 10,
+    "sessions": 5,
     "memory": {
       "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T07:15:00+11:00",
+    "lastHeartbeat": "2026-02-19T07:20:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -45,11 +45,11 @@
     "recentTransactions": [],
     "monthlyData": [
       { "month": "Jan", "revenue": 14214, "expenses": 1540 },
-      { "month": "Feb", "revenue": 6060, "expenses": 800 }
+      { "month": "Feb", "revenue": 3665, "expenses": 800 }
     ],
     "overdueAccounts": [
-      { "client": "Maryam Al Atar", "amount": 120.00, "daysOverdue": 6, "status": "Overdue since Feb 13" },
-      { "client": "Janette Vamarasi", "amount": 285.40, "daysOverdue": 3, "status": "Overdue" }
+      { "client": "Maryam Al Atar", "amount": 150.00, "daysOverdue": 6, "status": "Overdue since Feb 13" },
+      { "client": "Janette Vamarasi", "amount": 255.40, "daysOverdue": 3, "status": "Overdue" }
     ],
     "totalOutstanding": 405.4
   },
@@ -62,21 +62,20 @@
     ]
   },
   "crons": [
-    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "✅ Active", "lastRun": "2026-02-19T07:15:00+11:00" }
+    { "id": "bc2c5294", "label": "dashboard-live-sync-5min", "status": "✅ Active", "lastRun": "2026-02-19T07:20:00+11:00" }
   ],
   "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 07:15 AEDT", "timestamp": "2026-02-19 07:15" },
-    { "label": "CRON_STATUS", "status": "⚠️ Gateway API timeout persists", "timestamp": "2026-02-19 07:15" }
+    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 07:20 AEDT", "timestamp": "2026-02-19 07:20" },
+    { "label": "GATEWAY_HEALTH", "status": "⚠️ Version mismatch (Loopback timeout)", "timestamp": "2026-02-19 07:20" }
   ],
   "patterns": [
-    { "description": "Financials: Revenue MTD at $6,060.00. Outstanding balance at $405.40. Brief generated at 07:15 AEDT.", "date": "2026-02-19" },
-    { "description": "Infrastructure: Gateway API timeout continues to affect automated status checks.", "date": "2026-02-19" },
-    { "description": "Automation: Dashboard sync is running but cron list tool is failing due to gateway timeout.", "date": "2026-02-19" },
-    { "description": "Documentation: Created clinical documentation system for Larissa and Lisa.", "date": "2026-02-16" }
+    { "description": "Infrastructure: Identified Telegram Menu Button conflict; reset to Bella Dashboard URL with cache-busting.", "date": "2026-02-19" },
+    { "description": "Financials: Revenue MTD updated to $3,665.00 based on latest reconciliation.", "date": "2026-02-19" },
+    { "description": "Gateway: Timeout persists due to version mismatch (v2-v3 discrepancy).", "date": "2026-02-19" }
   ],
   "activeSessions": {
-    "count": 10,
-    "lastActivity": "2026-02-19T07:15:00+11:00",
+    "count": 5,
+    "lastActivity": "2026-02-19T07:20:00+11:00",
     "active": [
       { "label": "dashboard-live-sync-5min", "status": "Active", "model": "gemini-3-flash-preview" },
       { "label": "Main Session (Hafsah)", "status": "Active", "model": "gemini-3-flash-preview" }
