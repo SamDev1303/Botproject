@@ -1,106 +1,24 @@
 {
-  "lastUpdated": "2026-02-19T10:05:00+11:00",
+  "lastUpdated": "2026-02-19T10:10:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 10:05 AEDT"
+    "lastHeartbeat": "2026-02-19 10:10 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 10,
+    "sessions": 5,
     "memory": {
       "filesIndexed": 56,
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T10:05:00+11:00",
+    "lastHeartbeat": "2026-02-19T10:10:00+11:00",
     "roles": 20
   },
-  "roles": [
-    {
-      "name": "Accounts Controller",
-      "description": "Owns the 11-tab Master Operations Sheet and unified ledger."
-    },
-    {
-      "name": "Bookkeeper",
-      "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)."
-    },
-    {
-      "name": "Square Manager",
-      "description": "Live invoicing, payments, and client contact record synchronization."
-    },
-    {
-      "name": "Staff Scheduler",
-      "description": "Connecteam roster management and staff shift assignments."
-    },
-    {
-      "name": "Clinical Documenter",
-      "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)."
-    },
-    {
-      "name": "Calendar Master",
-      "description": "Google Calendar integration for all cleans and business appointments."
-    },
-    {
-      "name": "Task Logger",
-      "description": "Timestamping every action to the Master Ops Sheet Task Log."
-    },
-    {
-      "name": "Email Manager",
-      "description": "Monitoring Gmail for business tasks and client communications."
-    },
-    {
-      "name": "Dashboard Manager",
-      "description": "Updating the Pulse Mini App live on Vercel with real-time data."
-    },
-    {
-      "name": "Lead Gen Specialist",
-      "description": "Managing 1,600+ Apollo leads and tracking commercial outreach."
-    },
-    {
-      "name": "Social Media Manager",
-      "description": "FB/IG content creation and before/after transformation posts."
-    },
-    {
-      "name": "Secret Guard",
-      "description": "Scanning pushes and guarding credentials with pre-push checks."
-    },
-    {
-      "name": "Pre-Flight Validator",
-      "description": "Mandatory internal audit of facts and Square data before replying."
-    },
-    {
-      "name": "Memory Architect",
-      "description": "Search-optimized memory restructuring and daily log consolidation."
-    },
-    {
-      "name": "Communications Agent",
-      "description": "Twilio SMS & WhatsApp confirmations for bookings and payments."
-    },
-    {
-      "name": "Automation Orchestrator",
-      "description": "Spawning isolated sub-agents for heavy background data processing."
-    },
-    {
-      "name": "Donation Manager",
-      "description": "Handling Arieta's private expense mapping and privacy wall."
-    },
-    {
-      "name": "Skill Creator",
-      "description": "Designing and packaging specialized tools for workspace gaps."
-    },
-    {
-      "name": "Airbnb Coordinator",
-      "description": "Tracking turnovers and guest checkouts across 5 properties."
-    },
-    {
-      "name": "NDIS Specialist",
-      "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation."
-    }
-  ],
   "financial": {
     "recentTransactions": [],
     "monthlyData": [
@@ -158,48 +76,42 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "✅ Active",
-      "lastRun": "2026-02-19T10:05:00+11:00"
-    },
-    {
-      "id": "weekly-airbnb-reminder",
-      "label": "Weekly Airbnb Reminder",
-      "status": "✅ Scheduled",
-      "lastRun": "N/A"
+      "lastRun": "2026-02-19T10:10:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 10:05 AEDT",
-      "timestamp": "2026-02-19 10:05 AEDT"
+      "status": "✅ Updated 10:10 AEDT",
+      "timestamp": "2026-02-19 10:10 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
       "status": "✅ Active",
-      "timestamp": "2026-02-19 10:05 AEDT"
+      "timestamp": "2026-02-19 10:10 AEDT"
     }
   ],
   "patterns": [
     {
-      "description": "Action: Consistently using Square API live checks for financial status reporting.",
-      "date": "2026-02-19"
+      "description": "System: Workflow change implemented: Dashboard-First rule. Must update and push before reply.",
+      "date": "2026-02-14"
     },
     {
-      "description": "Lesson: Square morning brief sync error handled by manual live status verification.",
-      "date": "2026-02-19"
+      "description": "Ops: Shift notes and incident reports system consolidated for high-risk clinical work.",
+      "date": "2026-02-16"
     },
     {
-      "description": "System: Self-healing model scripts confirmed working via heartbeat; auto-repaired drift.",
-      "date": "2026-02-19"
+      "description": "Ops: Square identified as SOT for all financial transactions and client contacts.",
+      "date": "2026-02-18"
     },
     {
-      "description": "Finance: Confirmed $405.40 outstanding from Janette and Maryam via live Square check.",
-      "date": "2026-02-19"
+      "description": "Financial: Overdue invoices flagged for Claudia Alz and Meshach Ephraim Care.",
+      "date": "2026-02-13"
     }
   ],
   "activeSessions": {
-    "count": 10,
-    "lastActivity": "2026-02-19T10:05:00+11:00",
+    "count": 5,
+    "lastActivity": "2026-02-19T10:10:00+11:00",
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
