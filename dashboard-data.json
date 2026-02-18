@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T22:40:00+11:00",
+  "lastUpdated": "2026-02-18T22:45:00+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 4005.4,
@@ -15,7 +15,7 @@
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T22:40:00+11:00",
+    "lastHeartbeat": "2026-02-18T22:45:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -212,7 +212,7 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-18T22:40:00+11:00"
+      "lastRun": "2026-02-18T22:45:00+11:00"
     },
     {
       "id": "b2d4d12f",
@@ -289,6 +289,11 @@
   ],
   "liveTasks": [
     {
+      "label": "DASHBOARD_SYNC",
+      "status": "✅ Updated 22:45 AEDT",
+      "timestamp": "2026-02-18 22:45"
+    },
+    {
       "label": "PAYMENT_RECEIVED",
       "status": "✅ Maryam paid (Inv #48) — Dashboard updated",
       "timestamp": "2026-02-18 21:10"
@@ -299,19 +304,14 @@
       "timestamp": "2026-02-18 19:15"
     },
     {
-      "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 22:40 AEDT",
-      "timestamp": "2026-02-18 22:40"
-    },
-    {
       "label": "MODEL_STATUS",
-      "status": "✅ Sonnet 4.6 (main) / Opus 4.6 (cron)",
-      "timestamp": "2026-02-18 22:40"
+      "status": "✅ Sonnet 4.6 (main + cron) — 2 active sessions",
+      "timestamp": "2026-02-18 22:45"
     },
     {
       "label": "INVOICE_CHECK",
       "status": "⚠️ Maryam $150 (5d overdue) + Janette $255.40 (2d overdue)",
-      "timestamp": "2026-02-18 22:40"
+      "timestamp": "2026-02-18 22:45"
     },
     {
       "label": "COMMERCIAL_OUTREACH",
@@ -330,7 +330,7 @@
     },
     {
       "label": "SCHEDULE_TOMORROW",
-      "status": "🧹 U3 Atkinson @ 20:00 — reminder cron set for 08:00",
+      "status": "🧹 U3 Atkinson @ 20:00 — reminder cron armed for 08:00",
       "timestamp": "2026-02-18 19:15"
     },
     {
@@ -341,7 +341,7 @@
   ],
   "patterns": [
     {
-      "description": "Dashboard sync 22:40 — 2 active sessions (Sonnet 4.6 main / Opus 4.6 cron), 13 cron jobs healthy",
+      "description": "Dashboard sync 22:45 — 2 active sessions (Sonnet 4.6 main + cron), 13 cron jobs healthy. Gateway cron list returned timeout (transient).",
       "date": "2026-02-18"
     },
     {
@@ -397,7 +397,7 @@
     "main": "anthropic/claude-sonnet-4-6",
     "cronModel": "anthropic/claude-sonnet-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T22:40:00+11:00",
+    "lastActivity": "2026-02-18T22:45:00+11:00",
     "active": [
       {
         "key": "agent:main:main",
@@ -410,7 +410,7 @@
       {
         "key": "agent:main:cron:bc2c5294",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 22:40",
+        "lastSeen": "2026-02-18 22:45",
         "model": "claude-sonnet-4-6",
         "status": "Running"
       }
