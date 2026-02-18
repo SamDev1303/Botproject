@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-02-19T10:10:00+11:00",
+  "lastUpdated": "2026-02-19T10:15:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 10:10 AEDT"
+    "lastHeartbeat": "2026-02-19 10:15 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
-    "sessions": 5,
+    "sessions": 10,
     "memory": {
-      "filesIndexed": 56,
-      "chunks": 452,
+      "filesIndexed": 57,
+      "chunks": 465,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T10:10:00+11:00",
+    "lastHeartbeat": "2026-02-19T10:15:00+11:00",
     "roles": 20
   },
   "financial": {
@@ -76,19 +76,19 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "✅ Active",
-      "lastRun": "2026-02-19T10:10:00+11:00"
+      "lastRun": "2026-02-19T10:15:00+11:00"
     }
   ],
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 10:10 AEDT",
-      "timestamp": "2026-02-19 10:10 AEDT"
+      "status": "✅ Updated 10:15 AEDT",
+      "timestamp": "2026-02-19 10:15 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
       "status": "✅ Active",
-      "timestamp": "2026-02-19 10:10 AEDT"
+      "timestamp": "2026-02-19 10:15 AEDT"
     }
   ],
   "patterns": [
@@ -105,13 +105,13 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Financial: Overdue invoices flagged for Claudia Alz and Meshach Ephraim Care.",
-      "date": "2026-02-13"
+      "description": "Financial: Overdue invoices flagged for Janette Vamarasi and Maryam Al Atar.",
+      "date": "2026-02-19"
     }
   ],
   "activeSessions": {
-    "count": 5,
-    "lastActivity": "2026-02-19T10:10:00+11:00",
+    "count": 10,
+    "lastActivity": "2026-02-19T10:15:00+11:00",
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
