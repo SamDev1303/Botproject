@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-18T22:35:00+11:00",
+  "lastUpdated": "2026-02-18T22:40:00+11:00",
   "stats": {
     "revenueMTD": "$3,665.00",
     "outstandingBalance": 4005.4,
@@ -11,11 +11,11 @@
     "model": "anthropic/claude-sonnet-4-6",
     "sessions": 2,
     "memory": {
-      "filesIndexed": 38,
+      "filesIndexed": 55,
       "chunks": 448,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-18T22:35:00+11:00",
+    "lastHeartbeat": "2026-02-18T22:40:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -148,14 +148,6 @@
       },
       {
         "client": "Maryam Al Atar",
-        "invoice": "#000048",
-        "amount": 150,
-        "status": "PAID",
-        "due": "2026-02-17",
-        "paidDate": "2026-02-18"
-      },
-      {
-        "client": "Maryam Al Atar",
         "invoice": "#000045",
         "amount": 150,
         "status": "OVERDUE",
@@ -200,6 +192,18 @@
         "time": "20:00",
         "date": "2026-02-19",
         "type": "cleaning"
+      },
+      {
+        "title": "📋 Thursday Invoice & Wages",
+        "time": "22:00",
+        "date": "2026-02-19",
+        "type": "admin"
+      },
+      {
+        "title": "🧹 Karanjeet Aus Post (Sat)",
+        "time": "10:00",
+        "date": "2026-02-21",
+        "type": "cleaning"
       }
     ]
   },
@@ -208,7 +212,7 @@
       "id": "bc2c5294",
       "label": "dashboard-live-sync-5min",
       "status": "active",
-      "lastRun": "2026-02-18T22:35:00+11:00"
+      "lastRun": "2026-02-18T22:40:00+11:00"
     },
     {
       "id": "b2d4d12f",
@@ -296,18 +300,18 @@
     },
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 22:35 AEDT",
-      "timestamp": "2026-02-18 22:35"
+      "status": "✅ Updated 22:40 AEDT",
+      "timestamp": "2026-02-18 22:40"
     },
     {
       "label": "MODEL_STATUS",
       "status": "✅ Sonnet 4.6 (main) / Opus 4.6 (cron)",
-      "timestamp": "2026-02-18 22:35"
+      "timestamp": "2026-02-18 22:40"
     },
     {
       "label": "INVOICE_CHECK",
       "status": "⚠️ Maryam $150 (5d overdue) + Janette $255.40 (2d overdue)",
-      "timestamp": "2026-02-18 22:35"
+      "timestamp": "2026-02-18 22:40"
     },
     {
       "label": "COMMERCIAL_OUTREACH",
@@ -328,11 +332,20 @@
       "label": "SCHEDULE_TOMORROW",
       "status": "🧹 U3 Atkinson @ 20:00 — reminder cron set for 08:00",
       "timestamp": "2026-02-18 19:15"
+    },
+    {
+      "label": "MEMORY_AUDIT",
+      "status": "✅ Full workspace audit complete — 19 skills, 55+ memory files indexed",
+      "timestamp": "2026-02-18 22:33"
     }
   ],
   "patterns": [
     {
-      "description": "Dashboard sync 22:35 — 2 active sessions (Sonnet 4.6 main / Opus 4.6 cron), gateway ws timeout on cron list (non-critical, cached)",
+      "description": "Dashboard sync 22:40 — 2 active sessions (Sonnet 4.6 main / Opus 4.6 cron), 13 cron jobs healthy",
+      "date": "2026-02-18"
+    },
+    {
+      "description": "Full memory audit complete — 19 skills catalogued, 5 missing skills added to MEMORY.md, current-tasks.json rebuilt",
       "date": "2026-02-18"
     },
     {
@@ -344,7 +357,7 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Legacy dashboard traces fully wiped — single Vercel deployment confirmed",
+      "description": "Legacy dashboard traces fully wiped — single Vercel deployment confirmed (bella-dashboard-nu.vercel.app)",
       "date": "2026-02-18"
     },
     {
@@ -360,15 +373,11 @@
       "date": "2026-02-18"
     },
     {
-      "description": "Maryam Al Atar $150 overdue 5 days — needs payment follow-up",
+      "description": "Maryam $150 overdue (5d) + Janette $255.40 overdue (2d) — reminder tasks pending",
       "date": "2026-02-18"
     },
     {
-      "description": "Janette Vamarasi $255.40 overdue 2 days — needs payment follow-up",
-      "date": "2026-02-18"
-    },
-    {
-      "description": "Meshach $3,750 balance on track — due Mar 5",
+      "description": "Meshach $3,750 balance on track — due Mar 5, not overdue",
       "date": "2026-02-18"
     },
     {
@@ -380,28 +389,29 @@
       "date": "2026-02-18"
     },
     {
-      "description": "TOOLS.md consolidated as single script/MCP reference — no more scattered docs",
+      "description": "Model corrected: Sonnet 4.6 primary (was Gemini) — setup-sonnet46.sh run by Hafsah",
       "date": "2026-02-18"
     }
   ],
   "activeSessions": {
     "main": "anthropic/claude-sonnet-4-6",
-    "cronModel": "anthropic/claude-opus-4-6",
+    "cronModel": "anthropic/claude-sonnet-4-6",
     "cronJobs": 13,
-    "lastActivity": "2026-02-18T22:35:00+11:00",
+    "lastActivity": "2026-02-18T22:40:00+11:00",
     "active": [
       {
         "key": "agent:main:main",
         "label": "Main Session (Telegram)",
-        "lastSeen": "2026-02-18 22:20",
+        "lastSeen": "2026-02-18 22:33",
         "model": "claude-sonnet-4-6",
+        "tokens": 71767,
         "status": "Active"
       },
       {
-        "key": "cron:dashboard-sync",
+        "key": "agent:main:cron:bc2c5294",
         "label": "dashboard-live-sync-5min",
-        "lastSeen": "2026-02-18 22:35",
-        "model": "claude-opus-4-6",
+        "lastSeen": "2026-02-18 22:40",
+        "model": "claude-sonnet-4-6",
         "status": "Running"
       }
     ]
