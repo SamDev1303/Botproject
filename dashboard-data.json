@@ -6,7 +6,7 @@
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": "$0.00",
-    "lastHeartbeat": "2026-02-19 06:55 AEDT"
+    "lastHeartbeat": "2026-02-19 07:01 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
