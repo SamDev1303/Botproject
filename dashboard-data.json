@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-02-19T09:55:00+11:00",
+  "lastUpdated": "2026-02-19T10:05:00+11:00",
   "stats": {
     "revenueMTD": 6060.0,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 09:55 AEDT"
+    "lastHeartbeat": "2026-02-19 10:05 AEDT"
   },
   "bella": {
     "model": "google/gemini-3-flash-preview",
@@ -16,7 +16,7 @@
       "chunks": 452,
       "cacheStatus": "warm"
     },
-    "lastHeartbeat": "2026-02-19T09:55:00+11:00",
+    "lastHeartbeat": "2026-02-19T10:05:00+11:00",
     "roles": 20
   },
   "roles": [
@@ -158,7 +158,7 @@
       "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
       "label": "dashboard-live-sync-5min",
       "status": "✅ Active",
-      "lastRun": "2026-02-19T09:55:00+11:00"
+      "lastRun": "2026-02-19T10:05:00+11:00"
     },
     {
       "id": "weekly-airbnb-reminder",
@@ -170,36 +170,36 @@
   "liveTasks": [
     {
       "label": "DASHBOARD_SYNC",
-      "status": "✅ Updated 09:55 AEDT",
-      "timestamp": "2026-02-19 09:55 AEDT"
+      "status": "✅ Updated 10:05 AEDT",
+      "timestamp": "2026-02-19 10:05 AEDT"
     },
     {
       "label": "GATEWAY_HEALTH",
       "status": "✅ Active",
-      "timestamp": "2026-02-19 09:55 AEDT"
+      "timestamp": "2026-02-19 10:05 AEDT"
     }
   ],
   "patterns": [
     {
-      "description": "Lesson: Mental notes don't survive restarts — write everything to files.",
-      "date": "2026-02-18"
+      "description": "Action: Consistently using Square API live checks for financial status reporting.",
+      "date": "2026-02-19"
     },
     {
-      "description": "Insight: Use memory_search aggressively before every answer; embeddings are functional.",
-      "date": "2026-02-18"
+      "description": "Lesson: Square morning brief sync error handled by manual live status verification.",
+      "date": "2026-02-19"
     },
     {
       "description": "System: Self-healing model scripts confirmed working via heartbeat; auto-repaired drift.",
       "date": "2026-02-19"
     },
     {
-      "description": "Finance: Confirmed $405.40 outstanding from Janette and Maryam via morning brief.",
+      "description": "Finance: Confirmed $405.40 outstanding from Janette and Maryam via live Square check.",
       "date": "2026-02-19"
     }
   ],
   "activeSessions": {
     "count": 10,
-    "lastActivity": "2026-02-19T09:55:00+11:00",
+    "lastActivity": "2026-02-19T10:05:00+11:00",
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
