@@ -282,6 +282,11 @@
   ],
   "liveTasks": [
     {
+      "label": "HARD_RESET",
+      "status": "\ud83d\uded1 Full button wipe and re-map to BELLA Pulse v4",
+      "timestamp": "2026-02-18 11:51"
+    },
+    {
       "label": "CACHE_FIX",
       "status": "\ud83d\ude80 Force-pushed v4.0 via cache-buster v1771375560",
       "timestamp": "2026-02-18 11:47"
