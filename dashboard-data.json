@@ -4,12 +4,12 @@
     "phase": 8,
     "mode": "production-hardened"
   },
-  "updatedAt": "2026-02-20T02:53:02+11:00",
+  "updatedAt": "2026-02-20T03:00:16+11:00",
   "status": {
     "state": "online",
-    "lastHeartbeat": "2026-02-20T02:51:02+11:00",
-    "lastSync": "2026-02-20T02:53:02+11:00",
-    "sourceCheckAt": "2026-02-20T02:53:02+11:00",
+    "lastHeartbeat": "2026-02-20T03:00:00+11:00",
+    "lastSync": "2026-02-20T03:00:16+11:00",
+    "sourceCheckAt": "2026-02-20T03:00:16+11:00",
     "freshness": "green",
     "note": "All adapters healthy."
   },
@@ -19,14 +19,14 @@
         "id": "session:agent:main:main",
         "title": "Active session: direct",
         "priority": "medium",
-        "updatedAt": "2026-02-20T02:51:02+11:00",
+        "updatedAt": "2026-02-20T02:56:16+11:00",
         "source": "sessions"
       },
       {
         "id": "session:agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "title": "Active session: session",
         "priority": "medium",
-        "updatedAt": "2026-02-20T02:45:00+11:00",
+        "updatedAt": "2026-02-20T03:00:00+11:00",
         "source": "sessions"
       }
     ],
@@ -91,7 +91,7 @@
       "healthy": 4,
       "failing": 0
     },
-    "sourceCheckAt": "2026-02-20T02:52:59+11:00"
+    "sourceCheckAt": "2026-02-20T03:00:12+11:00"
   },
   "finance": {
     "incomeMTD": 3825.0,
@@ -159,28 +159,28 @@
       "squareKeyPresent": true,
       "googleTokenOk": true
     },
-    "checkedAt": "2026-02-20T02:53:02+11:00"
+    "checkedAt": "2026-02-20T03:00:16+11:00"
   },
   "adapters": {
     "sessions": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:52:59+11:00"
+      "fetchedAt": "2026-02-20T03:00:12+11:00"
     },
     "crons": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:52:59+11:00"
+      "fetchedAt": "2026-02-20T03:00:12+11:00"
     },
     "square": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:52:59+11:00"
+      "fetchedAt": "2026-02-20T03:00:12+11:00"
     },
     "calendar": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:53:01+11:00"
+      "fetchedAt": "2026-02-20T03:00:15+11:00"
     }
   }
 }
