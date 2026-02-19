@@ -1,0 +1,78 @@
+{
+  "updatedAt": "2026-02-19T15:02:32Z",
+  "stats": {
+    "revenueMTD": "$0",
+    "outstandingBalance": "$0",
+    "unpaidInvoices": "0",
+    "leads": "0",
+    "gstPayable": "$0"
+  },
+  "bella": {
+    "model": "openai-codex/gpt-5.3-codex",
+    "contextUsage": "n/a",
+    "sessions": 18,
+    "memory": {
+      "filesIndexed": 0,
+      "chunks": 0,
+      "cacheStatus": "cold"
+    },
+    "lastHeartbeat": "02:02 AM AEDT"
+  },
+  "financial": {
+    "recentTransactions": [],
+    "monthlyData": [],
+    "overdueAccounts": []
+  },
+  "calendar": {
+    "today": [],
+    "upcoming": []
+  },
+  "crons": [
+    {
+      "name": "dashboard-live-sync-hourly",
+      "enabled": true,
+      "schedule": {
+        "expr": "hourly"
+      },
+      "status": "degraded_timeout"
+    }
+  ],
+  "liveTasks": [
+    {
+      "label": "Dashboard sync",
+      "status": "partial_success"
+    },
+    {
+      "label": "Cron status fetch",
+      "status": "failed_timeout"
+    },
+    {
+      "label": "Memory pattern recall",
+      "status": "failed_embeddings_quota"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Dashboard is being rebuilt toward a minimal Ops view (status, tasks, cron) with accuracy-first flow.",
+      "date": "2026-02-20"
+    },
+    {
+      "description": "Intermittent gateway timeouts are blocking cron API reads during overnight sync windows.",
+      "date": "2026-02-20"
+    },
+    {
+      "description": "Gemini embedding quota exhaustion is impacting memory_search reliability.",
+      "date": "2026-02-20"
+    }
+  ],
+  "activeSessions": {
+    "main": 1,
+    "cronJobs": 15,
+    "lastActivity": 1771513206857
+  },
+  "social": {
+    "lastPost": null,
+    "engagement": null,
+    "platform": null
+  }
+}
