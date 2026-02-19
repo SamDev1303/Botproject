@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-02-20T01:12:44+11:00",
+  "lastUpdated": "2026-02-20T01:21:51+11:00",
   "uiMeta": {
     "version": "5.0.0",
-    "generatedAt": "2026-02-20T01:12:44+11:00",
+    "generatedAt": "2026-02-20T01:21:51+11:00",
     "timezone": "Australia/Sydney"
   },
   "tabs": {
@@ -36,7 +36,7 @@
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 0,
-    "lastHeartbeat": "2026-02-20 01:12 AEDT"
+    "lastHeartbeat": "2026-02-20 01:21 AEDT"
   },
   "runtime": {
     "gateway": {
@@ -44,7 +44,7 @@
       "rpc": "ok",
       "pid": "6557",
       "port": 18789,
-      "checkedAt": "2026-02-20 01:12 AEDT"
+      "checkedAt": "2026-02-20 01:21 AEDT"
     },
     "llm": {
       "provider": "openai-codex",
@@ -66,25 +66,25 @@
     {
       "name": "Square",
       "status": "required",
-      "lastSync": "2026-02-20 01:12 AEDT",
+      "lastSync": "2026-02-20 01:21 AEDT",
       "note": "Financial and client truth source"
     },
     {
       "name": "Google Calendar",
       "status": "required",
-      "lastSync": "2026-02-20 01:12 AEDT",
+      "lastSync": "2026-02-20 01:21 AEDT",
       "note": "Schedule truth source"
     },
     {
       "name": "Connecteam",
       "status": "required",
-      "lastSync": "2026-02-20 01:12 AEDT",
+      "lastSync": "2026-02-20 01:21 AEDT",
       "note": "Roster truth source"
     },
     {
       "name": "Google Sheets",
       "status": "required",
-      "lastSync": "2026-02-20 01:12 AEDT",
+      "lastSync": "2026-02-20 01:21 AEDT",
       "note": "Three-sheet accounting and ops mirror"
     }
   ],
@@ -159,7 +159,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": "sheet-linked"
@@ -170,7 +170,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -181,7 +181,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -192,7 +192,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -203,7 +203,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -214,7 +214,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -236,7 +236,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -247,7 +247,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -258,7 +258,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:12:44+11:00",
+        "dueAt": "2026-02-20T01:21:51+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -998,7 +998,7 @@
         }
       ]
     },
-    "updatedAt": "2026-02-20T01:12:44+11:00",
+    "updatedAt": "2026-02-20T01:21:51+11:00",
     "source": "square+business_ops"
   },
   "crons": {
@@ -1006,7 +1006,7 @@
       "total": 4,
       "enabled": 4,
       "errors": 0,
-      "lastCheck": "2026-02-20 01:12 AEDT",
+      "lastCheck": "2026-02-20 01:21 AEDT",
       "status": "healthy",
       "note": "Cron jobs include social, dashboard sync, and accounting automations."
     },
@@ -1046,7 +1046,7 @@
           "name": "end-of-day-square-first-sheet-sync",
           "enabled": true,
           "schedule": "30 21 * * *",
-          "lastStatus": "unknown",
+          "lastStatus": "scheduled",
           "lastRunAt": "n/a",
           "durationMs": 0,
           "command": "n/a",
@@ -1068,7 +1068,7 @@
       "summary": {
         "total": 4,
         "enabled": 4,
-        "healthy": 3,
+        "healthy": 4,
         "failing": 0
       }
     }
@@ -1077,8 +1077,8 @@
     "businessOps": {
       "id": "1yMACZuzmsF7fJ3wqUD4AiMKUU6FeyLG2_zfKI_QqRdY",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:13 AEDT",
-      "lastWrite": "2026-02-20 01:13 AEDT",
+      "lastRead": "2026-02-20 01:22 AEDT",
+      "lastWrite": "2026-02-20 01:22 AEDT",
       "tabHealth": [
         {
           "tab": "Client Log",
@@ -1093,20 +1093,20 @@
         {
           "tab": "Task Log",
           "status": "ok",
-          "rows": 31
+          "rows": 33
         },
         {
           "tab": "SOT_Health",
           "status": "ok",
-          "rows": 69
+          "rows": 76
         }
       ]
     },
     "staffProperties": {
       "id": "1UohNCAbCu210Znlt0mktvmjzbqCFbtD2xvacO-9NBlo",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:13 AEDT",
-      "lastWrite": "2026-02-20 01:13 AEDT",
+      "lastRead": "2026-02-20 01:22 AEDT",
+      "lastWrite": "2026-02-20 01:22 AEDT",
       "tabHealth": [
         {
           "tab": "Staff & Wages",
@@ -1123,8 +1123,8 @@
     "personal": {
       "id": "1E74pWC4i-rCoHWhr-uXaariLl2gSsiAIn_rmC2NdQ5M",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:13 AEDT",
-      "lastWrite": "2026-02-20 01:13 AEDT",
+      "lastRead": "2026-02-20 01:22 AEDT",
+      "lastWrite": "2026-02-20 01:22 AEDT",
       "tabHealth": [
         {
           "tab": "Personal_Expenses",
@@ -1182,12 +1182,12 @@
   },
   "sessions": {
     "count": 18,
-    "lastActivityMs": 1771510209557,
+    "lastActivityMs": 1771510786441,
     "active": [
       {
         "label": "agent:main:main",
         "chatType": "direct",
-        "updatedAtMs": 1771510209557,
+        "updatedAtMs": 1771510786441,
         "model": "gpt-5.3-codex"
       },
       {
