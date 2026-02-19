@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-02-20T01:26:40+11:00",
+  "lastUpdated": "2026-02-20T01:33:40+11:00",
   "uiMeta": {
     "version": "5.0.0",
-    "generatedAt": "2026-02-20T01:26:40+11:00",
+    "generatedAt": "2026-02-20T01:33:40+11:00",
     "timezone": "Australia/Sydney"
   },
   "tabs": {
@@ -32,11 +32,11 @@
   },
   "stats": {
     "revenueMTD": 0.0,
-    "outstandingBalance": 5610.0,
+    "outstandingBalance": 5482.3,
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 0,
-    "lastHeartbeat": "2026-02-20 01:26 AEDT"
+    "lastHeartbeat": "2026-02-20 01:33 AEDT"
   },
   "runtime": {
     "gateway": {
@@ -44,7 +44,7 @@
       "rpc": "ok",
       "pid": "6557",
       "port": 18789,
-      "checkedAt": "2026-02-20 01:26 AEDT"
+      "checkedAt": "2026-02-20 01:33 AEDT"
     },
     "llm": {
       "provider": "openai-codex",
@@ -66,25 +66,25 @@
     {
       "name": "Square",
       "status": "required",
-      "lastSync": "2026-02-20 01:26 AEDT",
+      "lastSync": "2026-02-20 01:33 AEDT",
       "note": "Financial and client truth source"
     },
     {
       "name": "Google Calendar",
       "status": "required",
-      "lastSync": "2026-02-20 01:26 AEDT",
+      "lastSync": "2026-02-20 01:33 AEDT",
       "note": "Schedule truth source"
     },
     {
       "name": "Connecteam",
       "status": "required",
-      "lastSync": "2026-02-20 01:26 AEDT",
+      "lastSync": "2026-02-20 01:33 AEDT",
       "note": "Roster truth source"
     },
     {
       "name": "Google Sheets",
       "status": "required",
-      "lastSync": "2026-02-20 01:26 AEDT",
+      "lastSync": "2026-02-20 01:33 AEDT",
       "note": "Three-sheet accounting and ops mirror"
     }
   ],
@@ -122,7 +122,7 @@
         "status": "Overdue since 2026-02-16"
       }
     ],
-    "totalOutstanding": 5610.0,
+    "totalOutstanding": 5482.3,
     "totals": {
       "revenueMTD": 0.0,
       "expensesMTD": 300.0,
@@ -159,7 +159,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": "sheet-linked"
@@ -170,7 +170,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -181,7 +181,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -192,7 +192,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -203,7 +203,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -214,7 +214,7 @@
         "source": "pipeline",
         "priority": "medium",
         "status": "open",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -236,7 +236,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -247,7 +247,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -258,7 +258,7 @@
         "source": "runtime",
         "priority": "medium",
         "status": "done",
-        "dueAt": "2026-02-20T01:26:40+11:00",
+        "dueAt": "2026-02-20T01:33:40+11:00",
         "owner": "Bella",
         "sheetContext": "Business Ops",
         "blockingReason": ""
@@ -274,21 +274,18 @@
   },
   "clients": {
     "summary": {
-      "paid": 62,
-      "pending": 4,
+      "paid": 35,
+      "pending": 3,
       "overdue": 13,
-      "totalOutstanding": 5610.0,
-      "recurringClients": 5,
-      "recurringPaidTotal": 13643.5,
-      "oneTimeClients": 7
+      "totalOutstanding": 5482.3,
+      "recurringClients": 3,
+      "recurringPaidTotal": 10505.0,
+      "oneTimeClients": 4
     },
     "oneTimeClientList": [
       "Claudia Alz",
       "Faraz Ahmed",
-      "Karan Boss",
-      "McKayla Vamarasi",
       "Meshach Ephraim Care",
-      "Rebecca Tom",
       "Shayan Chand"
     ],
     "kanban": {
@@ -346,69 +343,6 @@
           "dueDate": "2025-12-29",
           "daysOverdue": 0,
           "sourceRef": "square:inv:0-ChBBGTQckNTW3L3PT9K2u9AqEOoK"
-        },
-        {
-          "clientName": "Herdip Gill",
-          "invoiceNumber": "#000010,000009,000045",
-          "amountDue": 0.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2026-02-17",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Karan Boss",
-          "invoiceNumber": "#CUB-16/08",
-          "amountDue": 120.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-08-23",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Rebecca Tom",
-          "invoiceNumber": "#INV-1",
-          "amountDue": 265.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-07-28",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Recovery N Care Pty Ltd",
-          "invoiceNumber": "#INV-01",
-          "amountDue": 655.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-08-24",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Recovery N Care Pty Ltd",
-          "invoiceNumber": "#INV-02",
-          "amountDue": 826.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-09-01",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Recovery N Care Pty Ltd",
-          "invoiceNumber": "#INV-03",
-          "amountDue": 812.5,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-09-09",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
-        {
-          "clientName": "Recovery N Care Pty Ltd",
-          "invoiceNumber": "#INV-04",
-          "amountDue": 845.0,
-          "paymentStatus": "PAID",
-          "dueDate": "2025-09-14",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
         },
         {
           "clientName": "Shayan Chand",
@@ -517,18 +451,72 @@
           "dueDate": "2026-01-31",
           "daysOverdue": 0,
           "sourceRef": "square:inv:0-ChDoU1G_dlhXlG9kIg6fw53yEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000030",
+          "amountDue": 285.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-01-30",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChAeiqOncsANR7birWdpe-LKEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000029",
+          "amountDue": 150.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-01-28",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChDzeRQpAJUU1lOequ0JSq6qEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000028",
+          "amountDue": 435.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-02-03",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChDi9oRjfUv1Xbc5LFFV0LdXEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000027",
+          "amountDue": 290.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-02-03",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChDyWMudBLvNuy1-xLNooPZzEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000024",
+          "amountDue": 640.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-01-21",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChATEMOEN4pfNILK1jKrnTtWEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000023",
+          "amountDue": 145.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-01-21",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChBqUiZq3xymm5i2DAsUiURzEOoK"
+        },
+        {
+          "clientName": "Square Client",
+          "invoiceNumber": "#000022",
+          "amountDue": 145.0,
+          "paymentStatus": "PAID",
+          "dueDate": "2026-01-21",
+          "daysOverdue": 0,
+          "sourceRef": "square:inv:0-ChBarS61JZ_UvL_hcBzzo2qVEOoK"
         }
       ],
       "pending": [
-        {
-          "clientName": "McKayla Vamarasi",
-          "invoiceNumber": "#000047,000049",
-          "amountDue": 127.7,
-          "paymentStatus": "PENDING",
-          "dueDate": "2026-02-17",
-          "daysOverdue": 0,
-          "sourceRef": "business_ops:client_log"
-        },
         {
           "clientName": "Square Client",
           "invoiceNumber": "#000046-R-0002",
@@ -677,7 +665,7 @@
         }
       ]
     },
-    "updatedAt": "2026-02-20T01:26:40+11:00",
+    "updatedAt": "2026-02-20T01:33:40+11:00",
     "source": "square+business_ops"
   },
   "crons": {
@@ -685,7 +673,7 @@
       "total": 4,
       "enabled": 4,
       "errors": 0,
-      "lastCheck": "2026-02-20 01:26 AEDT",
+      "lastCheck": "2026-02-20 01:33 AEDT",
       "status": "healthy",
       "note": "Cron jobs include social, dashboard sync, and accounting automations."
     },
@@ -756,8 +744,8 @@
     "businessOps": {
       "id": "1yMACZuzmsF7fJ3wqUD4AiMKUU6FeyLG2_zfKI_QqRdY",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:26 AEDT",
-      "lastWrite": "2026-02-20 01:26 AEDT",
+      "lastRead": "2026-02-20 01:33 AEDT",
+      "lastWrite": "2026-02-20 01:33 AEDT",
       "tabHealth": [
         {
           "tab": "Client Log",
@@ -772,20 +760,20 @@
         {
           "tab": "Task Log",
           "status": "ok",
-          "rows": 35
+          "rows": 37
         },
         {
           "tab": "SOT_Health",
           "status": "ok",
-          "rows": 83
+          "rows": 90
         }
       ]
     },
     "staffProperties": {
       "id": "1UohNCAbCu210Znlt0mktvmjzbqCFbtD2xvacO-9NBlo",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:26 AEDT",
-      "lastWrite": "2026-02-20 01:26 AEDT",
+      "lastRead": "2026-02-20 01:34 AEDT",
+      "lastWrite": "2026-02-20 01:34 AEDT",
       "tabHealth": [
         {
           "tab": "Staff & Wages",
@@ -802,8 +790,8 @@
     "personal": {
       "id": "1E74pWC4i-rCoHWhr-uXaariLl2gSsiAIn_rmC2NdQ5M",
       "health": "healthy",
-      "lastRead": "2026-02-20 01:27 AEDT",
-      "lastWrite": "2026-02-20 01:27 AEDT",
+      "lastRead": "2026-02-20 01:34 AEDT",
+      "lastWrite": "2026-02-20 01:34 AEDT",
       "tabHealth": [
         {
           "tab": "Personal_Expenses",
@@ -861,12 +849,12 @@
   },
   "sessions": {
     "count": 18,
-    "lastActivityMs": 1771511016994,
+    "lastActivityMs": 1771511409928,
     "active": [
       {
         "label": "agent:main:main",
         "chatType": "direct",
-        "updatedAtMs": 1771511016994,
+        "updatedAtMs": 1771511409928,
         "model": "gpt-5.3-codex"
       },
       {

@@ -239,27 +239,7 @@ def build_clients_section(now: datetime, business_sheet_id: str) -> dict[str, An
             else:
                 pending.append(card)
 
-        for inv_num, row in client_log_map.items():
-            if inv_num in seen:
-                continue
-            status = str(row.get("paymentStatus", "")).strip().lower()
-            if not status:
-                continue
-            amount = parse_money(row.get("amount", "0"))
-            card = {
-                "clientName": row.get("clientName", "Unknown"),
-                "invoiceNumber": f"#{inv_num}",
-                "amountDue": round(amount, 2),
-                "paymentStatus": "PAID" if "paid" in status else "PENDING",
-                "dueDate": str(row.get("date", "n/a")) or "n/a",
-                "daysOverdue": 0,
-                "sourceRef": "business_ops:client_log",
-            }
-            if card["paymentStatus"] == "PAID":
-                paid.append(card)
-            else:
-                pending.append(card)
-
+        # Square is source-of-truth for active client payment status on dashboard.
         total_outstanding = sum(float(x.get("amountDue", 0) or 0) for x in pending + overdue)
 
         by_client: dict[str, dict[str, Any]] = {}
