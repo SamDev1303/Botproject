@@ -1,84 +1,357 @@
 {
-  "lastUpdated": "2026-02-19T11:10:00+11:00",
+  "lastUpdated": "2026-02-19T20:01:50+11:00",
+  "controlCenter": {
+    "title": "Bella Command Center",
+    "mode": "codex-stable",
+    "objective": "Operate all critical business tasks from one trusted state view.",
+    "health": "healthy"
+  },
   "stats": {
-    "revenueMTD": 6060.0,
+    "revenueMTD": 4740.4,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
-    "gstPayable": 550.91,
-    "lastHeartbeat": "2026-02-19 11:10 AEDT"
+    "gstPayable": 430.95,
+    "lastHeartbeat": "2026-02-19 20:01 AEDT"
   },
-  "bella": {
-    "model": "google/gemini-3-flash-preview",
-    "sessions": 10,
-    "memory": {
-      "filesIndexed": 56,
-      "chunks": 452,
-      "cacheStatus": "warm"
+  "runtime": {
+    "gateway": {
+      "status": "running",
+      "rpc": "ok",
+      "pid": "43171",
+      "port": 18789,
+      "checkedAt": "2026-02-19 20:01 AEDT"
     },
-    "lastHeartbeat": "2026-02-19T11:10:00+11:00",
-    "roles": 20
+    "llm": {
+      "provider": "openai-codex",
+      "primary": "openai-codex/gpt-5.3-codex",
+      "fallbacks": [
+        "openai-codex/gpt-5.2-codex"
+      ],
+      "authMode": "chatgpt-subscription",
+      "checkModelResult": "OK",
+      "smokeTest": "pass"
+    },
+    "memory": {
+      "files": 78,
+      "todayLogPresent": true,
+      "lastSummary": "memory/2026-02-19-codex-stable-summary.md"
+    }
   },
-  "roles": [
-    { "name": "Accounts Controller", "description": "Owns the 11-tab Master Operations Sheet and unified ledger." },
-    { "name": "Bookkeeper", "description": "AU-compliant records (Sole Trader, No-GST, Super, BAS prep)." },
-    { "name": "Square Manager", "description": "Live invoicing, payments, and client contact record synchronization." },
-    { "name": "Staff Scheduler", "description": "Connecteam roster management and staff shift assignments." },
-    { "name": "Clinical Documenter", "description": "High-risk MH shift notes & court-defensible incident reports (ABC format)." },
-    { "name": "Calendar Master", "description": "Google Calendar integration for all cleans and business appointments." },
-    { "name": "Task Logger", "description": "Timestamping every action to the Master Ops Sheet Task Log." },
-    { "name": "Email Manager", "description": "Monitoring Gmail for business tasks and client communications." },
-    { "name": "Dashboard Manager", "description": "Updating the Pulse Mini App live on Vercel with real-time data." },
-    { "name": "Lead Gen Specialist", "description": "Managing 1,600+ Apollo leads and tracking commercial outreach." },
-    { "name": "Social Media Manager", "description": "FB/IG content creation and before/after transformation posts." },
-    { "name": "Secret Guard", "description": "Scanning pushes and guarding credentials with pre-push checks." },
-    { "name": "Pre-Flight Validator", "description": "Mandatory internal audit of facts and Square data before replying." },
-    { "name": "Memory Architect", "description": "Search-optimized memory restructuring and daily log consolidation." },
-    { "name": "Communications Agent", "description": "Twilio SMS & WhatsApp confirmations for bookings and payments." },
-    { "name": "Automation Orchestrator", "description": "Spawning isolated sub-agents for heavy background data processing." },
-    { "name": "Donation Manager", "description": "Handling Arieta's private expense mapping and privacy wall." },
-    { "name": "Skill Creator", "description": "Designing and packaging specialized tools for workspace gaps." },
-    { "name": "Airbnb Coordinator", "description": "Tracking turnovers and guest checkouts across 5 properties." },
-    { "name": "NDIS Specialist", "description": "Enforcing NDIS compliance rates ($58.03/hr) and documentation." }
+  "sourcesOfTruth": [
+    {
+      "name": "Square",
+      "status": "required",
+      "lastSync": "2026-02-19 20:00 AEDT",
+      "note": "Financial and client truth source"
+    },
+    {
+      "name": "Google Calendar",
+      "status": "required",
+      "lastSync": "2026-02-19 20:00 AEDT",
+      "note": "Schedule truth source"
+    },
+    {
+      "name": "Connecteam",
+      "status": "required",
+      "lastSync": "2026-02-19 20:00 AEDT",
+      "note": "Roster truth source"
+    },
+    {
+      "name": "Google Sheets",
+      "status": "required",
+      "lastSync": "2026-02-19 20:00 AEDT",
+      "note": "Accounting and ops mirror"
+    }
   ],
   "financial": {
-    "recentTransactions": [],
+    "recentTransactions": [
+      {
+        "date": "2026-02-18",
+        "description": "Square Payment 1MLfZY",
+        "amount": 150.0,
+        "type": "income"
+      },
+      {
+        "date": "CUB-16/08. 23/08 - Australia Post",
+        "description": "PAID",
+        "amount": 120.0,
+        "type": "income"
+      },
+      {
+        "date": "1",
+        "description": "PAID",
+        "amount": 650.0,
+        "type": "income"
+      },
+      {
+        "date": "karanjeet",
+        "description": "CANCELED",
+        "amount": 220.0,
+        "type": "income"
+      },
+      {
+        "date": "2",
+        "description": "CANCELED",
+        "amount": 65.0,
+        "type": "income"
+      },
+      {
+        "date": "Cub-Airb-001",
+        "description": "PAID",
+        "amount": 1160.0,
+        "type": "income"
+      },
+      {
+        "date": "3",
+        "description": "CANCELED",
+        "amount": 812.5,
+        "type": "income"
+      },
+      {
+        "date": "4",
+        "description": "PAID",
+        "amount": 160.0,
+        "type": "income"
+      },
+      {
+        "date": "5",
+        "description": "PARTIALLY_PAID",
+        "amount": 5000.0,
+        "type": "income"
+      },
+      {
+        "date": "6",
+        "description": "CANCELED",
+        "amount": 1160.0,
+        "type": "income"
+      },
+      {
+        "date": "7",
+        "description": "PAID",
+        "amount": 290.0,
+        "type": "income"
+      },
+      {
+        "date": "8",
+        "description": "PAID",
+        "amount": 435.0,
+        "type": "income"
+      }
+    ],
     "monthlyData": [
-      { "month": "Jan", "revenue": 14214, "expenses": 1540 },
-      { "month": "Feb", "revenue": 6060, "expenses": 800 }
+      {
+        "month": "Jan",
+        "revenue": 14214,
+        "expenses": 1540
+      },
+      {
+        "month": "Feb",
+        "revenue": 6060,
+        "expenses": 800
+      }
     ],
     "overdueAccounts": [
-      { "client": "Janette Vamarasi", "amount": 255.4, "daysOverdue": 3, "status": "Overdue since Feb 16" },
-      { "client": "Maryam Al Atar", "amount": 150.0, "daysOverdue": 6, "status": "Overdue since Feb 13" }
+      {
+        "client": "Janette Vamarasi",
+        "amount": 255.4,
+        "daysOverdue": 3,
+        "status": "Overdue since Feb 16"
+      },
+      {
+        "client": "Maryam Al Atar",
+        "amount": 150.0,
+        "daysOverdue": 6,
+        "status": "Overdue since Feb 13"
+      }
     ],
-    "totalOutstanding": 405.4
+    "totalOutstanding": 405.4,
+    "totals": {
+      "revenueMTD": 4740.4,
+      "expensesMTD": 0.0,
+      "netMTD": 4740.4
+    }
   },
   "calendar": {
     "today": [
-      { "title": "🧹 U3 Atkinson Cleaning", "time": "20:00 - 22:00", "date": "2026-02-19", "status": "Scheduled" }
+      {
+        "title": "🧹 U3 Atkinson Cleaning",
+        "time": "20:00 - 22:00",
+        "date": "2026-02-19",
+        "status": "Scheduled"
+      }
     ],
     "upcoming": [
-      { "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St", "time": "10:00 - 12:00", "date": "2026-02-20" },
-      { "title": "📋 Thursday Invoice & Wages", "time": "22:00", "date": "2026-02-19" }
+      {
+        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
+        "time": "10:00 - 12:00",
+        "date": "2026-02-20"
+      },
+      {
+        "title": "📋 Thursday Invoice & Wages",
+        "time": "22:00",
+        "date": "2026-02-19"
+      }
     ]
   },
-  "crons": [
-    { "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971", "label": "dashboard-live-sync-5min", "status": "✅ Active", "lastRun": "2026-02-19T11:10:00+11:00" }
-  ],
-  "liveTasks": [
-    { "label": "DASHBOARD_SYNC", "status": "✅ Updated 11:10 AEDT", "timestamp": "2026-02-19 11:10" },
-    { "label": "GATEWAY_HEALTH", "status": "✅ Healthy (Flash 3.0 Fallback Active)", "timestamp": "2026-02-19 11:10" }
-  ],
-  "patterns": [
-    { "description": "Infrastructure: Handled Gateway timeout for cron tools; verified local check successful.", "date": "2026-02-19" },
-    { "description": "Operations: System prep for Atkinson cleaning (20:00 tonight).", "date": "2026-02-19" },
-    { "description": "System: Dashboard data sync protocol executed successfully.", "date": "2026-02-19" }
-  ],
-  "activeSessions": {
-    "count": 10,
-    "lastActivity": "2026-02-19T11:10:00+11:00",
-    "active": [
-      { "label": "agent:main:main", "status": "Active", "model": "google/gemini-3-flash-preview" }
+  "crons": {
+    "summary": {
+      "total": 46,
+      "enabled": 37,
+      "errors": 1,
+      "lastCheck": "2026-02-19 20:01 AEDT",
+      "status": "degraded",
+      "error": "cron tool timeout (gateway loopback ws://127.0.0.1:18789)"
+    },
+    "critical": [
+      {
+        "name": "social-morning-post",
+        "enabled": true,
+        "schedule": "0 7 * * *",
+        "lastStatus": "ok"
+      },
+      {
+        "name": "social-lunch-post",
+        "enabled": true,
+        "schedule": "0 12 * * *",
+        "lastStatus": "ok"
+      },
+      {
+        "name": "social-evening-post",
+        "enabled": true,
+        "schedule": "0 19 * * *",
+        "lastStatus": "ok"
+      },
+      {
+        "name": "commercial-outreach-daily",
+        "enabled": true,
+        "schedule": "0 10 * * *",
+        "lastStatus": "ok"
+      },
+      {
+        "name": "dashboard-live-sync-hourly",
+        "enabled": true,
+        "schedule": "0 * * * *",
+        "lastStatus": "error"
+      }
     ]
+  },
+  "tasks": {
+    "now": [
+      {
+        "label": "MODEL_HEALTH",
+        "status": "OK"
+      },
+      {
+        "label": "GATEWAY_RUNTIME",
+        "status": "running"
+      },
+      {
+        "label": "ACCOUNTING_BOOK",
+        "status": "sheet-linked"
+      },
+      {
+        "label": "CONTROL_CENTER_SYNC",
+        "status": "updated"
+      }
+    ],
+    "queue": [
+      "Square -> Finance Backup sync",
+      "Expenses -> Master Ops sync",
+      "Finance sheet -> dashboard sync",
+      "Calendar refresh for next 48h",
+      "Cron error review"
+    ],
+    "blockers": [
+      "dashboard-live-sync-hourly: Error: All models failed (2): openai-codex/gpt-5.3-codex: You have hit your ChatGPT usage limit (free plan). Try again in ~8941 min. (rate_limit) | google/gemini-3-flash-preview: LLM error: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n}\n (rate_limit)",
+      "cron list failed at sync time: gateway timeout after 30s (ws://127.0.0.1:18789)."
+    ]
+  },
+  "skills": {
+    "workspaceTotal": 24,
+    "liveTotal": 4,
+    "critical": [
+      "model-switcher",
+      "model-switch-control",
+      "api-health-and-quotas",
+      "codex-opencli-update-watch",
+      "pre-flight-validator",
+      "secret-guard",
+      "bella-dashboard-manager"
+    ],
+    "newlyAdded": [
+      "model-switch-control",
+      "api-health-and-quotas",
+      "codex-opencli-update-watch"
+    ]
+  },
+  "sessions": {
+    "count": 18,
+    "lastActivityMs": 1771491600151,
+    "active": [
+      {
+        "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
+        "chatType": "unknown",
+        "updatedAtMs": 1771491600151,
+        "model": "gemini-3-flash-preview"
+      },
+      {
+        "label": "agent:main:main",
+        "chatType": "direct",
+        "updatedAtMs": 1771491332836,
+        "model": "gpt-5.3-codex"
+      },
+      {
+        "label": "agent:main:cron:c9b5cf2d-7ca1-49e2-98f0-43062e162e1f",
+        "chatType": "unknown",
+        "updatedAtMs": 1771488027809,
+        "model": "gemini-3-flash-preview"
+      },
+      {
+        "label": "agent:main:telegram:group:hafsahnuzhat",
+        "chatType": "group",
+        "updatedAtMs": 1771487054614,
+        "model": "gemini-3-flash-preview"
+      },
+      {
+        "label": "agent:main:telegram:group:weezy_fj",
+        "chatType": "group",
+        "updatedAtMs": 1771427250025,
+        "model": "gpt-5.3-codex"
+      }
+    ]
+  },
+  "patterns": [
+    {
+      "description": "Gateway restart + smoke test passed (BOT_HEALTH_OK) and runtime stabilized.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Model routing locked to Codex chain (5.3 primary, 5.2 fallback) after Gemini/Anthropic failures.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Dashboard-first workflow and Telegram callback_data button protocol reaffirmed.",
+      "date": "2026-02-19"
+    }
+  ],
+  "quickActions": [
+    {
+      "label": "Model Check",
+      "command": "bash /Users/hafsahnuzhat/Desktop/🦀/scripts/check-model.sh"
+    },
+    {
+      "label": "Gateway Restart",
+      "command": "clawdbot gateway restart"
+    },
+    {
+      "label": "Smoke Test",
+      "command": "clawdbot agent --local --agent main --message \"Reply exactly: BOT_HEALTH_OK\" --thinking low --json"
+    }
+  ],
+  "legacyCompat": {
+    "bella": {},
+    "liveTasks": [],
+    "activeSessions": {}
   }
 }
