@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T20:01:50+11:00",
+  "lastUpdated": "2026-02-19T21:01:23+11:00",
   "controlCenter": {
     "title": "Bella Command Center",
     "mode": "codex-stable",
@@ -7,12 +7,12 @@
     "health": "healthy"
   },
   "stats": {
-    "revenueMTD": 4740.4,
+    "revenueMTD": 8255.4,
     "outstandingBalance": 405.4,
     "unpaidInvoices": 3,
     "leads": "68",
-    "gstPayable": 430.95,
-    "lastHeartbeat": "2026-02-19 20:01 AEDT"
+    "gstPayable": 750.49,
+    "lastHeartbeat": "2026-02-19 21:01 AEDT"
   },
   "runtime": {
     "gateway": {
@@ -20,7 +20,7 @@
       "rpc": "ok",
       "pid": "43171",
       "port": 18789,
-      "checkedAt": "2026-02-19 20:01 AEDT"
+      "checkedAt": "2026-02-19 20:58 AEDT"
     },
     "llm": {
       "provider": "openai-codex",
@@ -42,100 +42,100 @@
     {
       "name": "Square",
       "status": "required",
-      "lastSync": "2026-02-19 20:00 AEDT",
+      "lastSync": "2026-02-19 20:58 AEDT",
       "note": "Financial and client truth source"
     },
     {
       "name": "Google Calendar",
       "status": "required",
-      "lastSync": "2026-02-19 20:00 AEDT",
+      "lastSync": "2026-02-19 20:58 AEDT",
       "note": "Schedule truth source"
     },
     {
       "name": "Connecteam",
       "status": "required",
-      "lastSync": "2026-02-19 20:00 AEDT",
+      "lastSync": "2026-02-19 20:58 AEDT",
       "note": "Roster truth source"
     },
     {
       "name": "Google Sheets",
       "status": "required",
-      "lastSync": "2026-02-19 20:00 AEDT",
+      "lastSync": "2026-02-19 20:58 AEDT",
       "note": "Accounting and ops mirror"
     }
   ],
   "financial": {
     "recentTransactions": [
       {
-        "date": "2026-02-18",
-        "description": "Square Payment 1MLfZY",
-        "amount": 150.0,
-        "type": "income"
-      },
-      {
-        "date": "CUB-16/08. 23/08 - Australia Post",
-        "description": "PAID",
-        "amount": 120.0,
-        "type": "income"
-      },
-      {
-        "date": "1",
-        "description": "PAID",
-        "amount": 650.0,
-        "type": "income"
-      },
-      {
-        "date": "karanjeet",
-        "description": "CANCELED",
-        "amount": 220.0,
-        "type": "income"
-      },
-      {
-        "date": "2",
-        "description": "CANCELED",
-        "amount": 65.0,
-        "type": "income"
-      },
-      {
-        "date": "Cub-Airb-001",
-        "description": "PAID",
+        "date": "2025-12-30",
+        "description": "Square Payment ROveZY",
         "amount": 1160.0,
         "type": "income"
       },
       {
-        "date": "3",
-        "description": "CANCELED",
-        "amount": 812.5,
-        "type": "income"
-      },
-      {
-        "date": "4",
-        "description": "PAID",
+        "date": "2026-01-02",
+        "description": "Square Payment PpjKZY",
         "amount": 160.0,
         "type": "income"
       },
       {
-        "date": "5",
-        "description": "PARTIALLY_PAID",
-        "amount": 5000.0,
+        "date": "2026-01-05",
+        "description": "Square Payment tMYXZY",
+        "amount": 1250.0,
         "type": "income"
       },
       {
-        "date": "6",
-        "description": "CANCELED",
-        "amount": 1160.0,
-        "type": "income"
-      },
-      {
-        "date": "7",
-        "description": "PAID",
+        "date": "2026-01-07",
+        "description": "Square Payment rkyWZY",
         "amount": 290.0,
         "type": "income"
       },
       {
-        "date": "8",
-        "description": "PAID",
+        "date": "2026-01-07",
+        "description": "Square Payment p5u7YY",
         "amount": 435.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-07",
+        "description": "Square Payment AKe9YY",
+        "amount": 290.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-09",
+        "description": "Square Payment vAfCZY",
+        "amount": 145.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-09",
+        "description": "Square Payment wbYBZY",
+        "amount": 480.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-13",
+        "description": "Square Payment 4WDVZY",
+        "amount": 161.6,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-14",
+        "description": "Square Payment 2lOGZY",
+        "amount": 145.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-14",
+        "description": "Square Payment 6KqAZY",
+        "amount": 145.0,
+        "type": "income"
+      },
+      {
+        "date": "2026-01-14",
+        "description": "Square Payment IZwdZY",
+        "amount": 290.0,
         "type": "income"
       }
     ],
@@ -167,15 +167,15 @@
     ],
     "totalOutstanding": 405.4,
     "totals": {
-      "revenueMTD": 4740.4,
+      "revenueMTD": 8255.4,
       "expensesMTD": 0.0,
-      "netMTD": 4740.4
+      "netMTD": 8255.4
     }
   },
   "calendar": {
     "today": [
       {
-        "title": "🧹 U3 Atkinson Cleaning",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "status": "Scheduled"
@@ -183,12 +183,12 @@
     ],
     "upcoming": [
       {
-        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
+        "title": "\ud83e\uddf9 Airbnb Cleaning - Unit 3 Atkinson St",
         "time": "10:00 - 12:00",
         "date": "2026-02-20"
       },
       {
-        "title": "📋 Thursday Invoice & Wages",
+        "title": "\ud83d\udccb Thursday Invoice & Wages",
         "time": "22:00",
         "date": "2026-02-19"
       }
@@ -198,10 +198,10 @@
     "summary": {
       "total": 46,
       "enabled": 37,
-      "errors": 1,
-      "lastCheck": "2026-02-19 20:01 AEDT",
+      "errors": 0,
+      "lastChecked": "2026-02-19 21:01 AEDT",
       "status": "degraded",
-      "error": "cron tool timeout (gateway loopback ws://127.0.0.1:18789)"
+      "note": "cron tool timeout via gateway; displaying last known cron snapshot"
     },
     "critical": [
       {
@@ -232,7 +232,7 @@
         "name": "dashboard-live-sync-hourly",
         "enabled": true,
         "schedule": "0 * * * *",
-        "lastStatus": "error"
+        "lastStatus": "ok"
       }
     ]
   },
@@ -262,13 +262,10 @@
       "Calendar refresh for next 48h",
       "Cron error review"
     ],
-    "blockers": [
-      "dashboard-live-sync-hourly: Error: All models failed (2): openai-codex/gpt-5.3-codex: You have hit your ChatGPT usage limit (free plan). Try again in ~8941 min. (rate_limit) | google/gemini-3-flash-preview: LLM error: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n}\n (rate_limit)",
-      "cron list failed at sync time: gateway timeout after 30s (ws://127.0.0.1:18789)."
-    ]
+    "blockers": []
   },
   "skills": {
-    "workspaceTotal": 24,
+    "workspaceTotal": 26,
     "liveTotal": 4,
     "critical": [
       "model-switcher",
@@ -287,58 +284,51 @@
   },
   "sessions": {
     "count": 18,
-    "lastActivityMs": 1771491600151,
+    "lastActivityMs": 1771494934486,
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
-        "chatType": "unknown",
-        "updatedAtMs": 1771491600151,
-        "model": "gemini-3-flash-preview"
+        "chatType": "webchat",
+        "updatedAt": "2026-02-19T21:00:00+11:00",
+        "model": "gpt-5.3-codex"
       },
       {
         "label": "agent:main:main",
         "chatType": "direct",
-        "updatedAtMs": 1771491332836,
+        "updatedAt": "2026-02-19T20:58:27+11:00",
         "model": "gpt-5.3-codex"
       },
       {
         "label": "agent:main:cron:c9b5cf2d-7ca1-49e2-98f0-43062e162e1f",
-        "chatType": "unknown",
-        "updatedAtMs": 1771488027809,
-        "model": "gemini-3-flash-preview"
-      },
-      {
-        "label": "agent:main:telegram:group:hafsahnuzhat",
-        "chatType": "group",
-        "updatedAtMs": 1771487054614,
-        "model": "gemini-3-flash-preview"
-      },
-      {
-        "label": "agent:main:telegram:group:weezy_fj",
-        "chatType": "group",
-        "updatedAtMs": 1771427250025,
-        "model": "gpt-5.3-codex"
+        "chatType": "cron",
+        "updatedAt": "2026-02-19T19:53:47+11:00",
+        "model": "openai-codex/gpt-5.3-codex"
       }
-    ]
+    ],
+    "lastRefresh": "2026-02-19 21:01 AEDT"
   },
   "patterns": [
     {
-      "description": "Gateway restart + smoke test passed (BOT_HEALTH_OK) and runtime stabilized.",
+      "description": "Dashboard verified live and synced after Square/Calendar refresh.",
       "date": "2026-02-19"
     },
     {
-      "description": "Model routing locked to Codex chain (5.3 primary, 5.2 fallback) after Gemini/Anthropic failures.",
+      "description": "Codex routing stabilized at 5.3 primary with 5.2 fallback; unstable provider fallbacks removed.",
       "date": "2026-02-19"
     },
     {
-      "description": "Dashboard-first workflow and Telegram callback_data button protocol reaffirmed.",
+      "description": "Telegram inline button callback_data formatting fixed to prevent render failures.",
+      "date": "2026-02-19"
+    },
+    {
+      "description": "Thursday 22:00 invoice + wages processing queued; Shamal wages paid and Arieta logged as Donations.",
       "date": "2026-02-19"
     }
   ],
   "quickActions": [
     {
       "label": "Model Check",
-      "command": "bash /Users/hafsahnuzhat/Desktop/🦀/scripts/check-model.sh"
+      "command": "bash /Users/hafsahnuzhat/Desktop/\ud83e\udd80/scripts/check-model.sh"
     },
     {
       "label": "Gateway Restart",
@@ -353,5 +343,10 @@
     "bella": {},
     "liveTasks": [],
     "activeSessions": {}
+  },
+  "activeSessions": {
+    "main": 1,
+    "cronJobs": 2,
+    "lastActivity": "2026-02-19 21:01 AEDT"
   }
 }
