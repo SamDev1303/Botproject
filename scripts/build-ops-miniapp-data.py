@@ -45,7 +45,7 @@ def parse_iso(s: str | None):
     if not s:
         return None
     try:
-        return datetime.fromisoformat(s)
+        return datetime.fromisoformat(str(s).replace('Z', '+00:00'))
     except Exception:
         return None
 
@@ -134,21 +134,57 @@ def adapter_square():
         return {'ok': False, 'error': f'square adapter failed: {e}', 'fetchedAt': check_at, 'data': {'incomeMTD': 0.0, 'pendingPayments': 0, 'pendingTotal': 0.0, 'recentPayments': [], 'keyPresent': False}}
 
 
+def _fmt_12h(dt: datetime) -> str:
+    return dt.strftime('%I:%M %p').lstrip('0')
+
+
 def adapter_calendar_today():
     check_at = now_iso()
     try:
         token = get_access_token()
-        now = datetime.now(timezone.utc)
-        start = now.replace(hour=0, minute=0, second=0, microsecond=0)
-        end = now.replace(hour=23, minute=59, second=59, microsecond=0)
-        qs = urllib.parse.urlencode({'timeMin': start.isoformat().replace('+00:00', 'Z'), 'timeMax': end.isoformat().replace('+00:00', 'Z'), 'singleEvents': 'true', 'orderBy': 'startTime', 'maxResults': '20'})
-        req = urllib.request.Request(f"https://www.googleapis.com/calendar/v3/calendars/primary/events?{qs}", headers={'Authorization': f'Bearer {token}'})
+        now_syd = now_local()
+        day_start_syd = now_syd.replace(hour=0, minute=0, second=0, microsecond=0)
+        day_end_syd = now_syd.replace(hour=23, minute=59, second=59, microsecond=0)
+
+        start_utc = day_start_syd.astimezone(timezone.utc)
+        end_utc = day_end_syd.astimezone(timezone.utc)
+
+        qs = urllib.parse.urlencode({
+            'timeMin': start_utc.isoformat().replace('+00:00', 'Z'),
+            'timeMax': end_utc.isoformat().replace('+00:00', 'Z'),
+            'singleEvents': 'true',
+            'orderBy': 'startTime',
+            'maxResults': '20'
+        })
+        req = urllib.request.Request(
+            f"https://www.googleapis.com/calendar/v3/calendars/primary/events?{qs}",
+            headers={'Authorization': f'Bearer {token}'}
+        )
         with urllib.request.urlopen(req, timeout=25) as resp:
             data = json.loads(resp.read().decode())
+
         events = []
         for e in data.get('items', [])[:6]:
-            s = e.get('start', {}).get('dateTime', e.get('start', {}).get('date', ''))
-            events.append({'title': e.get('summary', '(no title)'), 'time': s[11:16] if 'T' in s else 'all day'})
+            start_raw = e.get('start', {}).get('dateTime', e.get('start', {}).get('date', ''))
+            end_raw = e.get('end', {}).get('dateTime', e.get('end', {}).get('date', ''))
+
+            if 'T' in str(start_raw):
+                sdt = parse_iso(str(start_raw))
+                edt = parse_iso(str(end_raw)) if 'T' in str(end_raw) else None
+                if sdt is not None:
+                    sdt = sdt.astimezone(TZ)
+                    if edt is not None:
+                        edt = edt.astimezone(TZ)
+                        tlabel = f"{_fmt_12h(sdt)} – {_fmt_12h(edt)}"
+                    else:
+                        tlabel = _fmt_12h(sdt)
+                else:
+                    tlabel = 'time unavailable'
+            else:
+                tlabel = 'All day'
+
+            events.append({'title': e.get('summary', '(no title)'), 'time': tlabel})
+
         return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'today': events, 'tokenOk': True}}
     except Exception as e:
         return {'ok': False, 'error': f'calendar adapter failed: {e}', 'fetchedAt': check_at, 'data': {'today': [], 'tokenOk': False}}
