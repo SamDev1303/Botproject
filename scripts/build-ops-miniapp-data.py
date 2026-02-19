@@ -228,6 +228,8 @@ def main():
     tasks = build_tasks(sessions, crons)
 
     payload = {
+        'schemaVersion': 'ops-miniapp.v1',
+        'build': {'phase': 7, 'mode': 'production-hardened'},
         'updatedAt': now_iso(),
         'status': status,
         'tasks': tasks,
