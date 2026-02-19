@@ -96,27 +96,32 @@ def build_financial_snapshot(now: datetime, business_sheet_id: str) -> dict[str,
     }
 
     try:
-        gs = GoogleSheetsAPI(spreadsheet_id=business_sheet_id)
-        sq_rows = gs.read("square!A:F")
+        sq = SquareAPI()
+        month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        start_utc = month_start.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+        end_utc = now.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        pay_result = sq._request(f"/payments?begin_time={start_utc}&end_time={end_utc}")
+        payments = pay_result.get("payments", [])
+        completed = [p for p in payments if str(p.get("status", "")).upper() == "COMPLETED"]
+
+        data["revenue_mtd"] = round(
+            sum(((p.get("amount_money", {}).get("amount", 0) or 0) / 100) for p in completed),
+            2,
+        )
+
         tx = []
-        for row in sq_rows[1:]:
-            if len(row) < 4:
-                continue
-            dt = str(row[0]).strip()
-            amt = parse_money(row[3])
-            if amt <= 0:
-                continue
-            if dt.startswith(now.strftime("%Y-%m")):
-                data["revenue_mtd"] += amt
+        for p in sorted(completed, key=lambda x: str(x.get("created_at", "")), reverse=True)[:12]:
+            amt = (p.get("amount_money", {}).get("amount", 0) or 0) / 100
             tx.append(
                 {
-                    "date": dt,
-                    "description": row[2] if len(row) > 2 else "Square payment",
+                    "date": str(p.get("created_at", ""))[:10],
+                    "description": "Square payment",
                     "amount": round(amt, 2),
                     "type": "income",
                 }
             )
-        data["recent_transactions"] = tx[-12:][::-1]
+        data["recent_transactions"] = tx
     except Exception:
         pass
 
