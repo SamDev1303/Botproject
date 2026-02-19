@@ -227,6 +227,13 @@ class GoogleSheetsAPI:
         endpoint = f"/values:batchGet?{params}"
         return self._request(endpoint)
 
+    def batch_update_spreadsheet(self, requests: list[dict]) -> dict:
+        """
+        Run structural/formatting updates via spreadsheets.batchUpdate.
+        """
+        endpoint = ":batchUpdate"
+        return self._request(endpoint, method="POST", data={"requests": requests})
+
 
 # ─── CLI ──────────────────────────────────────────────────────────────────────
 

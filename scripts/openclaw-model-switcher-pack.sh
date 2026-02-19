@@ -1,3 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 #!/bin/bash
 # OpenClaw Universal Model Switcher Pack
 # Usage:
@@ -147,31 +158,42 @@ PYEOF
 set_model() {
     local primary="$1"
     local fallback="$2"
+    local fallback2="${3:-}"
 
-    python3 - "$CONFIG" "$primary" "$fallback" << 'PYEOF'
+    python3 - "$CONFIG" "$primary" "$fallback" "$fallback2" << 'PYEOF'
 import json, sys
-path, primary, fallback = sys.argv[1], sys.argv[2], sys.argv[3]
+path, primary, fallback, fallback2 = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 with open(path) as f:
     data = json.load(f)
 
 defaults = data.setdefault("agents", {}).setdefault("defaults", {})
 model = defaults.setdefault("model", {})
 model["primary"] = primary
-model["fallbacks"] = [fallback]
+fallbacks = [x for x in [fallback, fallback2] if x]
+model["fallbacks"] = fallbacks
 
 models = defaults.setdefault("models", {})
-models.setdefault("openai-codex/gpt-5.3-codex", {"alias": "codex53"})
-models.setdefault("openai-codex/gpt-5.2-codex", {"alias": "codex52"})
-models.setdefault("google/gemini-3-flash-preview", {"alias": "gemini"})
-models.setdefault("anthropic/claude-opus-4-6", {"alias": "opus46"})
-models.setdefault("anthropic/claude-opus-4-5", {"alias": "opus45"})
-models.setdefault("anthropic/claude-sonnet-4-6", {"alias": "sonnet46"})
+alias_map = {
+    "openai-codex/gpt-5.3-codex": "codex53",
+    "openai-codex/gpt-5.2-codex": "codex52",
+    "google/gemini-3-flash-preview": "gemini",
+    "anthropic/claude-opus-4-6": "opus46",
+    "anthropic/claude-opus-4-5": "opus45",
+    "anthropic/claude-sonnet-4-6": "sonnet46",
+}
+for model_id, alias in alias_map.items():
+    entry = models.get(model_id)
+    if not isinstance(entry, dict):
+        models[model_id] = {"alias": alias}
+        continue
+    if not entry.get("alias"):
+        entry["alias"] = alias
 
 with open(path, "w") as f:
     json.dump(data, f, indent=2)
     f.write("\n")
 print(f"Set primary={primary}")
-print(f"Set fallback={fallback}")
+print(f"Set fallbacks={fallbacks}")
 PYEOF
 }
 
@@ -204,6 +226,44 @@ PYEOF
     done
 }
 
+any_openai_codex_cooldown() {
+    if [ "${#AUTH_FILES[@]}" -eq 0 ]; then
+        return 1
+    fi
+
+    local now_ms
+    now_ms="$(python3 - << 'PYEOF'
+import time
+print(int(time.time() * 1000))
+PYEOF
+)"
+
+    for auth in "${AUTH_FILES[@]}"; do
+        if python3 - "$auth" "$now_ms" << 'PYEOF'
+import json, sys
+path, now_ms = sys.argv[1], int(sys.argv[2])
+try:
+    with open(path) as f:
+        data = json.load(f)
+except Exception:
+    raise SystemExit(1)
+for key, entry in (data.get("usageStats") or {}).items():
+    if not isinstance(entry, dict):
+        continue
+    if "openai-codex" not in str(key):
+        continue
+    cooldown = int(entry.get("cooldownUntil") or 0)
+    if cooldown > now_ms:
+        raise SystemExit(0)
+raise SystemExit(1)
+PYEOF
+        then
+            return 0
+        fi
+    done
+    return 1
+}
+
 status() {
     python3 - "$CONFIG" << 'PYEOF'
 import json, sys
@@ -224,21 +284,22 @@ case "$TARGET" in
         patch_codex53
         ;;
     codex53|gpt|codex)
+        any_openai_codex_cooldown && cooldown_bypass || true
         if ! is_model_available "openai-codex/gpt-5.3-codex"; then
             echo "codex53 missing in registry. Attempting patch..."
             patch_codex53 || true
         fi
         if is_model_available "openai-codex/gpt-5.3-codex"; then
-            set_model "openai-codex/gpt-5.3-codex" "google/gemini-3-flash-preview"
+            set_model "openai-codex/gpt-5.3-codex" "openai-codex/gpt-5.2-codex"
         else
             echo "codex53 still unavailable, falling back to codex52."
-            set_model "openai-codex/gpt-5.2-codex" "google/gemini-3-flash-preview"
+            set_model "openai-codex/gpt-5.2-codex" "openai-codex/gpt-5.3-codex"
         fi
         clawdbot gateway restart >/dev/null 2>&1 || true
         status
         ;;
     codex52|gpt52)
-        set_model "openai-codex/gpt-5.2-codex" "google/gemini-3-flash-preview"
+        set_model "openai-codex/gpt-5.2-codex" "openai-codex/gpt-5.3-codex"
         clawdbot gateway restart >/dev/null 2>&1 || true
         status
         ;;
@@ -271,4 +332,3 @@ case "$TARGET" in
         exit 1
         ;;
 esac
-

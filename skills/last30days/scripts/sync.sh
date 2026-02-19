@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 # sync.sh - Deploy last30days skill to all host locations
 # Usage: bash scripts/sync.sh  (run from repo root)
 set -euo pipefail

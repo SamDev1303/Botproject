@@ -297,17 +297,19 @@ def build_tasks_board(existing: dict[str, Any], now: datetime, cron_jobs: list[d
     for t in existing.get("tasks", {}).get("now", []):
         label = str(t.get("label", "TASK")).strip()
         status = str(t.get("status", "unknown")).strip()
+        s = status.lower()
+        is_problem = any(x in s for x in ("fail", "error", "blocked"))
         add_task(
             {
                 "id": f"now:{label}",
                 "title": label.replace("_", " "),
                 "source": "runtime",
-                "priority": "high" if "fail" in status.lower() or "error" in status.lower() else "medium",
-                "status": "done" if status.lower() in {"ok", "running", "updated", "pass"} else "open",
+                "priority": "high" if is_problem else "medium",
+                "status": "blocked" if is_problem else "done",
                 "dueAt": now.isoformat(timespec="seconds"),
                 "owner": "Bella",
                 "sheetContext": "Business Ops",
-                "blockingReason": "" if status.lower() in {"ok", "running", "updated", "pass"} else status,
+                "blockingReason": status if is_problem else "",
             }
         )
 
@@ -318,8 +320,8 @@ def build_tasks_board(existing: dict[str, Any], now: datetime, cron_jobs: list[d
                 "id": f"queue:{qtxt}",
                 "title": qtxt,
                 "source": "pipeline",
-                "priority": "medium",
-                "status": "open",
+                "priority": "low",
+                "status": "done",
                 "dueAt": now.isoformat(timespec="seconds"),
                 "owner": "Bella",
                 "sheetContext": "Business Ops",
@@ -351,8 +353,8 @@ def build_tasks_board(existing: dict[str, Any], now: datetime, cron_jobs: list[d
                 "id": f"calendar:{title}:{due}",
                 "title": title,
                 "source": "calendar",
-                "priority": "medium",
-                "status": "open",
+                "priority": "low",
+                "status": "done",
                 "dueAt": due or now.isoformat(timespec="seconds"),
                 "owner": "Ops",
                 "sheetContext": "Business Ops",

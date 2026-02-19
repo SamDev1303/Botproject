@@ -1,0 +1,47 @@
+{
+  "version": "2026-02-19",
+  "github": {
+    "owner": "SamDev1303",
+    "allowedRepos": [
+      "pulse-dashboard",
+      "Botproject",
+      "Claudeking.org"
+    ],
+    "dashboardRepoUrl": "https://github.com/SamDev1303/pulse-dashboard",
+    "defaultBranch": "main"
+  },
+  "vercel": {
+    "dashboardProjectId": "prj_pAWJfT0ZshiJUxggFSR5pd3gqwhD",
+    "teamSlug": "opbrosautomations-projects",
+    "teamIdHint": "opbrosautomations-projects"
+  },
+  "projects": {
+    "dashboard": {
+      "repo": "SamDev1303/pulse-dashboard",
+      "localPath": "/Users/hafsahnuzhat/bella-dashboard",
+      "vercelProjectId": "prj_pAWJfT0ZshiJUxggFSR5pd3gqwhD",
+      "vercelTeam": "opbrosautomations-projects",
+      "owners": [
+        "Hafsah Nuzhat",
+        "Bella Bot"
+      ],
+      "sharedAccess": true
+    },
+    "workspace": {
+      "repo": "SamDev1303/Botproject",
+      "localPath": "/Users/hafsahnuzhat/Desktop/🦀",
+      "owners": [
+        "Hafsah Nuzhat",
+        "Bella Bot"
+      ],
+      "sharedAccess": true
+    }
+  },
+  "rules": {
+    "requireReadmeOwnershipSection": true,
+    "denyDuplicateReposByName": true,
+    "requirePrePushSecretCheck": true,
+    "requireEnvForSecrets": true,
+    "requireTargetVerificationBeforeDeploy": true
+  }
+}

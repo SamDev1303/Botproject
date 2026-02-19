@@ -21,6 +21,7 @@ Usage standalone:
 
 import json
 import os
+import socket
 import sys
 import time
 import urllib.error
@@ -98,6 +99,16 @@ class SquareAPI:
                     time.sleep(2 ** attempt)
                     continue
                 return {"error": f"Connection failed: {e}"}
+            except (TimeoutError, socket.timeout) as e:
+                if attempt < self.MAX_RETRIES - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                return {"error": f"Timeout: {e}"}
+            except Exception as e:
+                if attempt < self.MAX_RETRIES - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                return {"error": f"Unexpected request error: {e}"}
         return {"error": "Max retries exceeded"}
 
     # ── helpers ──────────────────────────────────────────────────────────

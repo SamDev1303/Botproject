@@ -11,11 +11,16 @@
 1. Run `bash ~/Desktop/🦀/scripts/check-model.sh`
 2. If output is "FIXED: ..." — model drifted and was auto-repaired. Notify Hafsah on Telegram:
    "⚠️ Model drifted — auto-fixed back to GPT 5.3 Codex. Reason: [reason]"
-3. If output is "OK" — no action needed, model is healthy.
-4. Chain: openai-codex/gpt-5.3-codex (primary) → google/gemini-3-flash-preview (fallback).
+3. If output is "CHANGED: ..." — notify Hafsah:
+   "ℹ️ Model routing changed: [reason]"
+4. If output is "OK" — no action needed, model is healthy.
+5. Chain: openai-codex/gpt-5.3-codex (primary) → openai-codex/gpt-5.2-codex (fallback).
 
 ## Standard Checks
 - Check Gmail for unread client messages.
 - Review Google Calendar for upcoming bookings.
 - Verify Square for new unpaid invoices.
 - Rotate through: inbox, upcoming bookings, overdue invoices, social engagement.
+
+4. Refresh startup chat memory file from last 4 chat logs:
+   `python3 scripts/update-startup-last4-chatlogs.py`

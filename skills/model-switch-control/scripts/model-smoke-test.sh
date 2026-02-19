@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+
+echo "== model check =="
+bash ~/Desktop/🦀/scripts/check-model.sh || true
+echo
+echo "== embedding check =="
+bash ~/Desktop/🦀/scripts/check-embedding.sh || true
+echo
+echo "== local agent smoke test =="
+clawdbot agent --local --agent main --message "Reply exactly: BOT_SMOKE_OK" --thinking low --json || true

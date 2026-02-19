@@ -29,7 +29,8 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Use `memory_search` to pull only relevant snippets — **never bulk-load memory files**
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
-5. **Never ask "what are we working on?"** — search memory first, summarize recent work, then ask how to help
+5. Read `memory/startup-last4-chatlogs.md` to recover immediate context from the latest 4 chats
+6. **Never ask "what are we working on?"** — search memory first, summarize recent work, then ask how to help
 
 7 days of memory files are kept in `memory/` and `memory/backup/` for search indexing — but never loaded into context directly.
 

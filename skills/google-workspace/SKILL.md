@@ -42,6 +42,16 @@ with open(TOKEN_FILE, 'w') as f:
 
 ## Workflows
 
+## Mandatory Guardrail
+
+After any Sheets write/update/append operation, run:
+
+```bash
+python3 scripts/check-sheets-accuracy.py --task "Google Sheets update"
+```
+
+If it fails, sync and re-check before reporting success.
+
 ### Gmail
 
 #### Send Email

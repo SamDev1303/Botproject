@@ -34,13 +34,13 @@ SYDNEY_TZ = ZoneInfo("Australia/Sydney")
 class SquareSheetsSync:
     """Reconcile Square payments with Google Sheets Income tab."""
 
-    INCOME_RANGE = "Income!A:F"   # Date | Client | Desc | Amount | Method | InvoiceID
+    FINANCE_SHEET_ID = "1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q"
+    INCOME_RANGE = "square!A:F"   # Date | Client | Desc | Amount | Method | PaymentID
 
     def __init__(self, square: SquareAPI = None, sheets: GoogleSheetsAPI = None):
         self.sq = square or SquareAPI()
-        # Clean Up Bros - Finance Backup
-        # self.gs = sheets or GoogleSheetsAPI(spreadsheet_id="1pocJwoOO3emKfQf9mzFHuahZ5nA7KSrehF9fBqn-00Q")
-        self.gs = sheets or GoogleSheetsAPI()
+        # Hard-pin finance backup sheet (never create new accounting sheet).
+        self.gs = sheets or GoogleSheetsAPI(spreadsheet_id=self.FINANCE_SHEET_ID)
 
     # ── helpers ──────────────────────────────────────────────────────────
 
@@ -55,10 +55,9 @@ class SquareSheetsSync:
     # ── reconciliation ───────────────────────────────────────────────────
 
     def get_sheet_income(self) -> list[dict]:
-        """Read all rows from the 2026 sheet and return as dicts."""
+        """Read all rows from the finance backup 'square' tab and return as dicts."""
         try:
-            # Try plain sheet name
-            rows = self.gs.read("2026!A:F")
+            rows = self.gs.read(self.INCOME_RANGE)
         except RuntimeError as e:
             print(f"Debug Sheet Error: {e}")
             return []
@@ -184,8 +183,7 @@ class SquareSheetsSync:
                 synced.append(m)
                 continue
 
-            # Hard-code the sheet name without quotes as a last resort
-            result = self.gs.append("2026!A:F", row)
+            result = self.gs.append(self.INCOME_RANGE, row)
             if "error" not in result:
                 synced.append(m)
 

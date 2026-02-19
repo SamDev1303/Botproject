@@ -1,0 +1,69 @@
+{
+  "version": "2026-02-19",
+  "source_of_truth": {
+    "business_ops_sheet_id": "1yMACZuzmsF7fJ3wqUD4AiMKUU6FeyLG2_zfKI_QqRdY",
+    "staff_properties_sheet_id": "1UohNCAbCu210Znlt0mktvmjzbqCFbtD2xvacO-9NBlo",
+    "personal_sheet_id": "1E74pWC4i-rCoHWhr-uXaariLl2gSsiAIn_rmC2NdQ5M"
+  },
+  "rules": {
+    "no_new_spreadsheets": true,
+    "mandatory_post_write_validation": true,
+    "calendar_merge_mode": "dual_merge",
+    "calendar_tiebreaker": "latest_updated_then_google",
+    "require_account_type": true,
+    "account_types": [
+      "business",
+      "personal"
+    ],
+    "exclude_personal_from_business_pl": true,
+    "mirror_old_master": false,
+    "cutover_trigger": "validation_checklist_pass"
+  },
+  "routing": {
+    "business": [
+      "gmail",
+      "google_calendar",
+      "apple_calendar",
+      "apple_reminders",
+      "apple_notes",
+      "square"
+    ],
+    "staff": [
+      "connecteam",
+      "staff_hours"
+    ],
+    "personal": [
+      "personal_expenses",
+      "personal_calendar",
+      "personal_reminders",
+      "personal_notes"
+    ]
+  },
+  "allowed_write_tabs": [
+    "Client Log",
+    "Bookkeeping",
+    "Task Log",
+    "Accounts",
+    "Airbnb Cleans",
+    "Non-Airbnb Jobs",
+    "Income Ledger",
+    "Expenses",
+    "Staff & Wages",
+    "P&L Summary",
+    "Bot_Change_Log",
+    "Ingestion_Gmail",
+    "Ingestion_GCal",
+    "Ingestion_AppleCal",
+    "Ingestion_Reminders",
+    "Ingestion_Connecteam",
+    "Ingestion_AppleNotes",
+    "Unified_Bookings",
+    "Unified_Clients",
+    "Business_Expenses",
+    "Personal_Expenses",
+    "SOT_Dashboard",
+    "SOT_Health",
+    "Sync_Errors",
+    "square"
+  ]
+}

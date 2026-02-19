@@ -183,3 +183,8 @@ Check P&L | `profit_loss` MCP tool (accounting_server)
 ---
 
 *This is your cheat sheet. Reference what you need, when you need it.*
+# Media Storage
+
+- Canonical media path: `media-vault/`
+- Use `bash scripts/store-media-asset.sh <file> [category]` to move/store all generated images, videos, audio, and documents.
+- Keep workspace root free of media binaries.

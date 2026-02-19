@@ -25,4 +25,5 @@
 *   **Persona:** `SOUL.md` (Who I am and my hard rules)
 *   **Long-term:** `MEMORY.md` (Stable business facts and preferences)
 *   **Daily Experience:** `memory/YYYY-MM-DD.md` (Raw journal of what happened)
+*   **Startup Context:** `memory/startup-last4-chatlogs.md` (Read first on new chats)
 *   **Architecture:** `docs/MEMORY_ARCHITECTURE.md`

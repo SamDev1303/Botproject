@@ -41,6 +41,26 @@ Hourly Cost = Hourly Rate × (1 + 0.115)  # Including super
 
 ## Workflows
 
+### 0. Instant Expense Capture (Receipts)
+
+When Hafsah says "this is my expense" or sends a receipt, immediately log it with:
+
+```bash
+python3 scripts/add-expense-entry.py \
+  --description "Receipt description" \
+  --amount 55.00 \
+  --category "Cleaning Supplies" \
+  --payment-method "Card" \
+  --supplier "Bunnings" \
+  --notes "Receipt upload"
+```
+
+This writes to:
+- `Expenses!A:J`
+- `Bookkeeping!A:K`
+
+in the canonical Master Ops sheet (`1sZOaf57GcR26sEXnZKSNltQPisXoLTGasx0qmbaCBGU`).
+
 ### 1. Categorize Expenses (ATO-Compliant)
 
 Use these standard categories for Clean Up Bros:

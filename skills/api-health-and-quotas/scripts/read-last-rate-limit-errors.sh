@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+set -euo pipefail
+
+LOG_FILE="/tmp/clawdbot/clawdbot-$(date +%Y-%m-%d).log"
+if [ ! -f "$LOG_FILE" ]; then
+  echo "No log file found at $LOG_FILE"
+  exit 0
+fi
+
+echo "Reading last rate-limit/cooldown errors from $LOG_FILE"
+rg -n "rate_limit|RESOURCE_EXHAUSTED|cooldown|All models failed" "$LOG_FILE" | tail -n 60 || true
