@@ -1,26 +1,50 @@
 {
-  "lastUpdated": "2026-02-19T23:01:48+11:00",
+  "lastUpdated": "2026-02-20T00:01:13+11:00",
+  "uiMeta": {
+    "version": "5.0.0",
+    "generatedAt": "2026-02-20T00:01:13+11:00",
+    "timezone": "Australia/Sydney"
+  },
+  "tabs": {
+    "defaultTab": "overview",
+    "enabled": [
+      "overview",
+      "tasks",
+      "clients",
+      "crons",
+      "sheets",
+      "insights"
+    ]
+  },
   "controlCenter": {
-    "title": "Bella Command Center",
-    "mode": "codex-stable",
+    "title": "Bella Three-Sheet Control Center",
+    "mode": "three-sheet-control-center",
     "objective": "Operate all critical business tasks from one trusted state view.",
-    "health": "healthy"
+    "health": "healthy",
+    "threeSheetMode": {
+      "enabled": true,
+      "sheets": {
+        "businessOpsId": "1yMACZuzmsF7fJ3wqUD4AiMKUU6FeyLG2_zfKI_QqRdY",
+        "staffPropertiesId": "1UohNCAbCu210Znlt0mktvmjzbqCFbtD2xvacO-9NBlo",
+        "personalId": "1E74pWC4i-rCoHWhr-uXaariLl2gSsiAIn_rmC2NdQ5M"
+      }
+    }
   },
   "stats": {
-    "revenueMTD": 8255.4,
-    "outstandingBalance": 405.4,
-    "unpaidInvoices": 3,
+    "revenueMTD": 0.0,
+    "outstandingBalance": 0,
+    "unpaidInvoices": 0,
     "leads": "68",
-    "gstPayable": 723.22,
-    "lastHeartbeat": "2026-02-19 23:01 AEDT"
+    "gstPayable": 0.0,
+    "lastHeartbeat": "2026-02-20 00:01 AEDT"
   },
   "runtime": {
     "gateway": {
       "status": "running",
-      "rpc": "ok",
-      "pid": "97490",
+      "rpc": "degraded",
+      "pid": "1194",
       "port": 18789,
-      "checkedAt": "2026-02-19 22:02 AEDT"
+      "checkedAt": "2026-02-20 00:01 AEDT"
     },
     "llm": {
       "provider": "openai-codex",
@@ -35,110 +59,37 @@
     "memory": {
       "files": 78,
       "todayLogPresent": true,
-      "lastSummary": "memory/2026-02-19-codex-stable-summary.md"
+      "lastSummary": "memory/2026-02-19.md"
     }
   },
   "sourcesOfTruth": [
     {
       "name": "Square",
       "status": "required",
-      "lastSync": "2026-02-19 22:02 AEDT",
+      "lastSync": "2026-02-19 23:42 AEDT",
       "note": "Financial and client truth source"
     },
     {
       "name": "Google Calendar",
       "status": "required",
-      "lastSync": "2026-02-19 22:02 AEDT",
+      "lastSync": "2026-02-19 23:42 AEDT",
       "note": "Schedule truth source"
     },
     {
       "name": "Connecteam",
       "status": "required",
-      "lastSync": "2026-02-19 22:02 AEDT",
+      "lastSync": "2026-02-19 23:42 AEDT",
       "note": "Roster truth source"
     },
     {
       "name": "Google Sheets",
       "status": "required",
-      "lastSync": "2026-02-19 22:02 AEDT",
-      "note": "Accounting and ops mirror"
+      "lastSync": "2026-02-19 23:42 AEDT",
+      "note": "Three-sheet accounting and ops mirror"
     }
   ],
   "financial": {
-    "recentTransactions": [
-      {
-        "date": "2025-12-30",
-        "description": "Square Payment ROveZY",
-        "amount": 1160.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-02",
-        "description": "Square Payment PpjKZY",
-        "amount": 160.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-05",
-        "description": "Square Payment tMYXZY",
-        "amount": 1250.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-07",
-        "description": "Square Payment rkyWZY",
-        "amount": 290.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-07",
-        "description": "Square Payment p5u7YY",
-        "amount": 435.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-07",
-        "description": "Square Payment AKe9YY",
-        "amount": 290.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-09",
-        "description": "Square Payment vAfCZY",
-        "amount": 145.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-09",
-        "description": "Square Payment wbYBZY",
-        "amount": 480.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-13",
-        "description": "Square Payment 4WDVZY",
-        "amount": 161.6,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-14",
-        "description": "Square Payment 2lOGZY",
-        "amount": 145.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-14",
-        "description": "Square Payment 6KqAZY",
-        "amount": 145.0,
-        "type": "income"
-      },
-      {
-        "date": "2026-01-14",
-        "description": "Square Payment IZwdZY",
-        "amount": 290.0,
-        "type": "income"
-      }
-    ],
+    "recentTransactions": [],
     "monthlyData": [
       {
         "month": "Jan",
@@ -151,25 +102,12 @@
         "expenses": 800
       }
     ],
-    "overdueAccounts": [
-      {
-        "client": "Janette Vamarasi",
-        "amount": 255.4,
-        "daysOverdue": 3,
-        "status": "Overdue since Feb 16"
-      },
-      {
-        "client": "Maryam Al Atar",
-        "amount": 150.0,
-        "daysOverdue": 6,
-        "status": "Overdue since Feb 13"
-      }
-    ],
-    "totalOutstanding": 405.4,
+    "overdueAccounts": [],
+    "totalOutstanding": 0,
     "totals": {
-      "revenueMTD": 8255.4,
-      "expensesMTD": 300.0,
-      "netMTD": 7955.4
+      "revenueMTD": 0.0,
+      "expensesMTD": 0.0,
+      "netMTD": 0.0
     }
   },
   "calendar": {
@@ -194,14 +132,150 @@
       }
     ]
   },
+  "tasksBoard": {
+    "items": [
+      {
+        "id": "now:ACCOUNTING_BOOK",
+        "title": "ACCOUNTING BOOK",
+        "source": "runtime",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": "sheet-linked"
+      },
+      {
+        "id": "queue:Calendar refresh for next 48h",
+        "title": "Calendar refresh for next 48h",
+        "source": "pipeline",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "queue:Cron error review",
+        "title": "Cron error review",
+        "source": "pipeline",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "queue:Expenses -> Master Ops sync",
+        "title": "Expenses -> Master Ops sync",
+        "source": "pipeline",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "queue:Finance sheet -> dashboard sync",
+        "title": "Finance sheet -> dashboard sync",
+        "source": "pipeline",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "queue:Square -> Finance Backup sync",
+        "title": "Square -> Finance Backup sync",
+        "source": "pipeline",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "calendar:\ud83e\uddf9 U3 Atkinson Cleaning:2026-02-19",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
+        "source": "calendar",
+        "priority": "medium",
+        "status": "open",
+        "dueAt": "2026-02-19",
+        "owner": "Ops",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "now:CONTROL_CENTER_SYNC",
+        "title": "CONTROL CENTER SYNC",
+        "source": "runtime",
+        "priority": "medium",
+        "status": "done",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "now:GATEWAY_RUNTIME",
+        "title": "GATEWAY RUNTIME",
+        "source": "runtime",
+        "priority": "medium",
+        "status": "done",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      },
+      {
+        "id": "now:MODEL_HEALTH",
+        "title": "MODEL HEALTH",
+        "source": "runtime",
+        "priority": "medium",
+        "status": "done",
+        "dueAt": "2026-02-19T23:42:39+11:00",
+        "owner": "Bella",
+        "sheetContext": "Business Ops",
+        "blockingReason": ""
+      }
+    ],
+    "summary": {
+      "total": 10,
+      "dueToday": 10,
+      "overdue": 0,
+      "blocked": 0,
+      "completedToday": 3
+    }
+  },
+  "clients": {
+    "summary": {
+      "paid": 0,
+      "pending": 0,
+      "overdue": 0,
+      "totalOutstanding": 0
+    },
+    "kanban": {
+      "paid": [],
+      "pending": [],
+      "overdue": []
+    },
+    "updatedAt": "2026-02-19T23:42:39+11:00",
+    "source": "square+business_ops"
+  },
   "crons": {
     "summary": {
       "total": 46,
       "enabled": 37,
       "errors": 0,
-      "lastCheck": "2026-02-19 23:01 AEDT",
+      "lastCheck": "2026-02-20 00:01 AEDT",
       "status": "degraded",
-      "note": "cron tool timed out against gateway; retained last known cron snapshot."
+      "note": "Cron API timed out during this sync; retaining last known job counts."
     },
     "critical": [
       {
@@ -234,7 +308,592 @@
         "schedule": "0 * * * *",
         "lastStatus": "ok"
       }
-    ]
+    ],
+    "technical": {
+      "jobs": [
+        {
+          "name": "Basem Holsworthy Clean Reminder",
+          "enabled": true,
+          "schedule": "0 8 7 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 24,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Character Reference Reminder",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Hafsah School Wakeup Today",
+          "enabled": true,
+          "schedule": "15 8 19 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Hafsah-Morning-Routine-635AM-FINAL",
+          "enabled": true,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 164147,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Karanjeet Aus Post Clean Reminder Morning",
+          "enabled": true,
+          "schedule": "0 10 * * 6",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 64,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Karanjeet Aus Post Clean Reminder Night Before",
+          "enabled": true,
+          "schedule": "0 20 * * 5",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 20,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Maryam Al Atar Weekly Reminder Morning",
+          "enabled": true,
+          "schedule": "0 8 * * 2",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Maryam Al Atar Weekly Reminder Night Before",
+          "enabled": true,
+          "schedule": "0 20 * * 1",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 27,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Melissa/Greg Wallace Clean Reminder",
+          "enabled": true,
+          "schedule": "30 13 10 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 22,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "NDIS Invoice Reminder",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 31,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Pinnacle-Feb-06-Morning",
+          "enabled": true,
+          "schedule": "0 8 6 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 18,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Pinnacle-Feb-06-Night-Before",
+          "enabled": true,
+          "schedule": "0 20 5 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder (Day Before): Rochelle",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder (Day Before): Steps & Glass",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 1,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder: Cleaning Rochelle",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder: Cleaning Rochelle (Fix)",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder: Cleaning Steps & Glass",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "SMS Reminder: Cleaning Steps & Glass (Fix)",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "School Absence Email Reminder",
+          "enabled": false,
+          "schedule": "at",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Tessa Liverpool Clean Reminder Morning",
+          "enabled": true,
+          "schedule": "0 8 11 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 24,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Tessa Liverpool Clean Reminder Night Before",
+          "enabled": true,
+          "schedule": "0 20 10 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 24,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Tuition Fee Reminder",
+          "enabled": true,
+          "schedule": "0 10 * * 4",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 33,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "U3-Pinnacle-Feb-08-Morning",
+          "enabled": true,
+          "schedule": "0 8 8 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "U3-Pinnacle-Feb-08-Night-Before",
+          "enabled": true,
+          "schedule": "0 20 7 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 21,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "Weekly Business Review",
+          "enabled": true,
+          "schedule": "0 9 * * 1",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 39039,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u3-feb15-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 15 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u3-feb19-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 19 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 17,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u3-mar01-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 1 3 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u4-feb11-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 11 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u4-feb15-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 15 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u4-feb22-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 22 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "atkinson-u4-mar01-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 1 3 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "commercial-outreach-daily",
+          "enabled": true,
+          "schedule": "0 10 * * *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "dashboard-live-sync-hourly",
+          "enabled": true,
+          "schedule": "0 * * * *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 178018,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "pinnacle-feb10-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 10 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "pinnacle-feb12-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 12 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 23,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "pinnacle-feb15-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 15 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "pinnacle-feb22-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 22 2 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "pinnacle-mar14-morning-reminder",
+          "enabled": true,
+          "schedule": "0 8 14 3 *",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "quote-reminder-tonight",
+          "enabled": true,
+          "schedule": "30 22 16 2 *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 20,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "social-evening-post",
+          "enabled": true,
+          "schedule": "0 19 * * *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 20,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "social-lunch-post",
+          "enabled": true,
+          "schedule": "0 12 * * *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 1094,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "social-morning-post",
+          "enabled": true,
+          "schedule": "0 7 * * *",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 22,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "social-weekly-research",
+          "enabled": true,
+          "schedule": "0 9 * * 0",
+          "lastStatus": "unknown",
+          "lastRunAt": "n/a",
+          "durationMs": 0,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "thursday-invoice-wages",
+          "enabled": true,
+          "schedule": "0 22 * * 4",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 8441,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        },
+        {
+          "name": "weekly-airbnb-reminder",
+          "enabled": true,
+          "schedule": "0 21 * * 0",
+          "lastStatus": "ok",
+          "lastRunAt": "n/a",
+          "durationMs": 3832,
+          "command": "n/a",
+          "lastError": "",
+          "lastOutputSnippet": ""
+        }
+      ],
+      "summary": {
+        "total": 46,
+        "enabled": 37,
+        "healthy": 35,
+        "failing": 0,
+        "lastCheckError": "gateway timeout on cron.list"
+      }
+    }
+  },
+  "sheetsCenter": {
+    "businessOps": {
+      "id": "1yMACZuzmsF7fJ3wqUD4AiMKUU6FeyLG2_zfKI_QqRdY",
+      "health": "error",
+      "lastRead": "2026-02-19 23:42 AEDT",
+      "lastWrite": "2026-02-19 23:42 AEDT",
+      "tabHealth": [
+        {
+          "tab": "Client Log",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        {
+          "tab": "Bookkeeping",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        {
+          "tab": "Task Log",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        {
+          "tab": "SOT_Health",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        }
+      ]
+    },
+    "staffProperties": {
+      "id": "1UohNCAbCu210Znlt0mktvmjzbqCFbtD2xvacO-9NBlo",
+      "health": "error",
+      "lastRead": "2026-02-19 23:42 AEDT",
+      "lastWrite": "2026-02-19 23:42 AEDT",
+      "tabHealth": [
+        {
+          "tab": "Staff & Wages",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        {
+          "tab": "Properties",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        }
+      ]
+    },
+    "personal": {
+      "id": "1E74pWC4i-rCoHWhr-uXaariLl2gSsiAIn_rmC2NdQ5M",
+      "health": "error",
+      "lastRead": "2026-02-19 23:42 AEDT",
+      "lastWrite": "2026-02-19 23:42 AEDT",
+      "tabHealth": [
+        {
+          "tab": "Personal_Expenses",
+          "status": "error",
+          "rows": 0,
+          "error": "Connection failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        }
+      ]
+    }
   },
   "tasks": {
     "now": [
@@ -256,11 +915,11 @@
       }
     ],
     "queue": [
-      "Square -> Finance Backup sync",
-      "Expenses -> Master Ops sync",
-      "Finance sheet -> dashboard sync",
+      "Square -> Business Ops sync",
+      "Expenses -> Business Ops/Personal routing",
+      "Three-sheet dashboard refresh",
       "Calendar refresh for next 48h",
-      "Cron error review"
+      "Cron technical review"
     ],
     "blockers": []
   },
@@ -284,42 +943,105 @@
   },
   "sessions": {
     "count": 18,
-    "lastActivityMs": 1771502400035,
+    "lastActivityMs": 1771506000333,
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
-        "chatType": "webchat",
-        "updatedAtMs": 1771502400035,
+        "chatType": "cron",
+        "updatedAtMs": 1771506000333,
         "model": "gpt-5.3-codex"
       },
       {
         "label": "agent:main:main",
         "chatType": "direct",
-        "updatedAtMs": 1771500848707,
+        "updatedAtMs": 1771505724342,
         "model": "gpt-5.3-codex"
       },
       {
         "label": "agent:main:cron:ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
-        "chatType": "unknown",
+        "chatType": "cron",
         "updatedAtMs": 1771498800036,
         "model": "gpt-5.3-codex"
+      },
+      {
+        "label": "agent:main:cron:c9b5cf2d-7ca1-49e2-98f0-43062e162e1f",
+        "chatType": "cron",
+        "updatedAtMs": 1771488027809,
+        "model": "gemini-3-flash-preview"
+      },
+      {
+        "label": "agent:main:telegram:group:hafsahnuzhat",
+        "chatType": "group",
+        "updatedAtMs": 1771487054614,
+        "model": "openai-codex/gpt-5.3-codex"
       }
     ]
   },
   "patterns": [
     {
-      "description": "Three-sheet source-of-truth cutover remains locked (Business Ops, Staff Properties, Personal).",
-      "date": "2026-02-19"
+      "description": "Three-sheet source-of-truth remains locked to Business Ops, Staff Properties, and Personal sheets.",
+      "date": "2026-02-20"
     },
     {
-      "description": "Codex routing stabilized at 5.3 primary with 5.2 fallback; broken fallbacks removed.",
-      "date": "2026-02-19"
+      "description": "Codex routing is stable at GPT-5.3 primary with GPT-5.2 fallback after removing failing providers.",
+      "date": "2026-02-20"
     },
     {
-      "description": "Universal sync pass completed with accuracy+integrity validation PASS.",
-      "date": "2026-02-19"
+      "description": "Universal sync and dashboard rebuild passed integrity checks late on Feb 19.",
+      "date": "2026-02-20"
+    },
+    {
+      "description": "Cron API timed out during hourly dashboard sync; live cron metrics held at last known snapshot.",
+      "date": "2026-02-20"
     }
   ],
+  "insights": {
+    "tips": [
+      {
+        "id": "collections",
+        "title": "Clear overdue first",
+        "impact": "cashflow",
+        "action": "Follow up overdue invoices before noon daily."
+      },
+      {
+        "id": "sheets",
+        "title": "Route by account type",
+        "impact": "accuracy",
+        "action": "Keep personal and business expenses split at entry time."
+      },
+      {
+        "id": "cron",
+        "title": "Watch failing jobs",
+        "impact": "reliability",
+        "action": "Resolve any failing cron in the same day."
+      }
+    ],
+    "patterns": [
+      {
+        "description": "Three-sheet source-of-truth remains locked to Business Ops, Staff Properties, and Personal sheets.",
+        "date": "2026-02-20"
+      },
+      {
+        "description": "Codex routing is stable at GPT-5.3 primary with GPT-5.2 fallback after removing failing providers.",
+        "date": "2026-02-20"
+      },
+      {
+        "description": "Universal sync and dashboard rebuild passed integrity checks late on Feb 19.",
+        "date": "2026-02-20"
+      },
+      {
+        "description": "Cron API timed out during hourly dashboard sync; live cron metrics held at last known snapshot.",
+        "date": "2026-02-20"
+      }
+    ],
+    "risks": [
+      {
+        "level": "low",
+        "message": "No active runtime blocker.",
+        "mitigation": "Maintain hourly sync cadence."
+      }
+    ]
+  },
   "quickActions": [
     {
       "label": "Model Check",
@@ -337,6 +1059,10 @@
   "legacyCompat": {
     "bella": {},
     "liveTasks": [],
-    "activeSessions": {}
+    "activeSessions": {
+      "main": 1,
+      "cronJobs": 4,
+      "lastActivity": "2026-02-20 00:01 AEDT"
+    }
   }
 }
