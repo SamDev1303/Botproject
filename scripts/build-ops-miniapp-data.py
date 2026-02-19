@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 import json
+import sys
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+ROOT = Path('/Users/hafsahnuzhat/Desktop/🦀')
+sys.path.insert(0, str(ROOT / 'scripts'))
+from square_api import SquareAPI
+from google_sheets_api import get_access_token
 
 TZ = ZoneInfo("Australia/Sydney")
 ROOT = Path('/Users/hafsahnuzhat/Desktop/🦀')
@@ -72,32 +80,9 @@ def adapter_crons():
                 'nextRunAt': ms_to_iso(st.get('nextRunAtMs') or st.get('nextRunAt')),
             })
         out.sort(key=lambda x: (0 if x['lastStatus'] == 'error' else 1, x['name']))
-        return {
-            'ok': True,
-            'error': '',
-            'fetchedAt': check_at,
-            'data': {
-                'jobs': out,
-                'summary': {
-                    'total': len(out),
-                    'enabled': len([j for j in out if j['enabled']]),
-                    'healthy': healthy,
-                    'failing': failing,
-                },
-                'sourceCheckAt': check_at,
-            },
-        }
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'jobs': out, 'summary': {'total': len(out), 'enabled': len([j for j in out if j['enabled']]), 'healthy': healthy, 'failing': failing}, 'sourceCheckAt': check_at}}
     except Exception as e:
-        return {
-            'ok': False,
-            'error': f'cron adapter failed: {e}',
-            'fetchedAt': check_at,
-            'data': {
-                'jobs': [],
-                'summary': {'total': 0, 'enabled': 0, 'healthy': 0, 'failing': 0},
-                'sourceCheckAt': check_at,
-            },
-        }
+        return {'ok': False, 'error': f'cron adapter failed: {e}', 'fetchedAt': check_at, 'data': {'jobs': [], 'summary': {'total': 0, 'enabled': 0, 'healthy': 0, 'failing': 0}, 'sourceCheckAt': check_at}}
 
 
 def adapter_sessions():
@@ -111,32 +96,62 @@ def adapter_sessions():
             updated = int(s.get('updatedAt', 0) or 0)
             latest_ms = max(latest_ms, updated)
             if now_ms - updated <= 15 * 60 * 1000:
-                active.append({
-                    'id': f"session:{key}",
-                    'title': f"Active session: {s.get('chatType', 'session')}",
-                    'priority': 'medium',
-                    'updatedAt': ms_to_iso(updated),
-                    'source': 'sessions',
-                })
-        return {
-            'ok': True,
-            'error': '',
-            'fetchedAt': check_at,
-            'data': {
-                'lastHeartbeat': ms_to_iso(latest_ms) or check_at,
-                'doingNow': active[:8],
-            },
-        }
+                active.append({'id': f"session:{key}", 'title': f"Active session: {s.get('chatType', 'session')}", 'priority': 'medium', 'updatedAt': ms_to_iso(updated), 'source': 'sessions'})
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'lastHeartbeat': ms_to_iso(latest_ms) or check_at, 'doingNow': active[:8]}}
     except Exception as e:
-        return {
-            'ok': False,
-            'error': f'session adapter failed: {e}',
-            'fetchedAt': check_at,
-            'data': {
-                'lastHeartbeat': check_at,
-                'doingNow': [],
-            },
-        }
+        return {'ok': False, 'error': f'session adapter failed: {e}', 'fetchedAt': check_at, 'data': {'lastHeartbeat': check_at, 'doingNow': []}}
+
+
+def adapter_square():
+    check_at = now_iso()
+    try:
+        sq = SquareAPI()
+        unpaid = sq.list_invoices(status='UNPAID') or []
+        unpaid_total = 0.0
+        for inv in unpaid:
+            req = (inv.get('payment_requests') or [{}])[0]
+            unpaid_total += (req.get('computed_amount_money', {}).get('amount', 0) or 0) / 100
+
+        now = now_local()
+        month_start = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        start_utc = month_start.astimezone(ZoneInfo('UTC')).strftime('%Y-%m-%dT%H:%M:%SZ')
+        end_utc = now.astimezone(ZoneInfo('UTC')).strftime('%Y-%m-%dT%H:%M:%SZ')
+        pay_result = sq._request(f"/payments?begin_time={start_utc}&end_time={end_utc}")
+        payments = pay_result.get('payments', [])
+        completed = [p for p in payments if str(p.get('status', '')).upper() == 'COMPLETED']
+        income_mtd = round(sum(((p.get('amount_money', {}).get('amount', 0) or 0) / 100) for p in completed), 2)
+
+        recent = []
+        for p in sorted(completed, key=lambda x: str(x.get('created_at', '')), reverse=True)[:5]:
+            recent.append({
+                'date': str(p.get('created_at', ''))[:10],
+                'amount': round((p.get('amount_money', {}).get('amount', 0) or 0) / 100, 2),
+                'status': p.get('status', 'COMPLETED')
+            })
+
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'incomeMTD': income_mtd, 'pendingPayments': len(unpaid), 'pendingTotal': round(unpaid_total, 2), 'recentPayments': recent}}
+    except Exception as e:
+        return {'ok': False, 'error': f'square adapter failed: {e}', 'fetchedAt': check_at, 'data': {'incomeMTD': 0.0, 'pendingPayments': 0, 'pendingTotal': 0.0, 'recentPayments': []}}
+
+
+def adapter_calendar_today():
+    check_at = now_iso()
+    try:
+        token = get_access_token()
+        now = datetime.now(timezone.utc)
+        start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        end = now.replace(hour=23, minute=59, second=59, microsecond=0)
+        qs = urllib.parse.urlencode({'timeMin': start.isoformat().replace('+00:00', 'Z'), 'timeMax': end.isoformat().replace('+00:00', 'Z'), 'singleEvents': 'true', 'orderBy': 'startTime', 'maxResults': '20'})
+        req = urllib.request.Request(f"https://www.googleapis.com/calendar/v3/calendars/primary/events?{qs}", headers={'Authorization': f'Bearer {token}'})
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            data = json.loads(resp.read().decode())
+        events = []
+        for e in data.get('items', [])[:6]:
+            s = e.get('start', {}).get('dateTime', e.get('start', {}).get('date', ''))
+            events.append({'title': e.get('summary', '(no title)'), 'time': s[11:16] if 'T' in s else 'all day'})
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'today': events}}
+    except Exception as e:
+        return {'ok': False, 'error': f'calendar adapter failed: {e}', 'fetchedAt': check_at, 'data': {'today': []}}
 
 
 def build_tasks(session_adapter, cron_adapter):
@@ -148,47 +163,28 @@ def build_tasks(session_adapter, cron_adapter):
             continue
         d = parse_iso(lr)
         if d and d.date() == today and j.get('lastStatus') in {'ok', 'success', 'completed', 'scheduled'}:
-            done_today.append({
-                'id': f"cron-done:{j['id']}",
-                'title': f"Cron healthy: {j['name']}",
-                'priority': 'low',
-                'updatedAt': lr,
-                'source': 'cron',
-            })
+            done_today.append({'id': f"cron-done:{j['id']}", 'title': f"Cron healthy: {j['name']}", 'priority': 'low', 'updatedAt': lr, 'source': 'cron'})
 
     high = []
     for j in cron_adapter['data']['jobs']:
         if j.get('lastStatus') == 'error':
-            high.append({
-                'id': f"cron-hi:{j['id']}",
-                'title': f"Fix cron failure: {j['name']}",
-                'priority': 'high',
-                'updatedAt': now_iso(),
-                'source': 'cron',
-            })
+            high.append({'id': f"cron-hi:{j['id']}", 'title': f"Fix cron failure: {j['name']}", 'priority': 'high', 'updatedAt': now_iso(), 'source': 'cron'})
 
     doing = session_adapter['data']['doingNow']
-
-    return {
-        'doingNow': doing,
-        'doneToday': done_today[:12],
-        'highPriority': high[:12],
-        'summary': {'doing': len(doing), 'done': len(done_today), 'high': len(high)},
-    }
+    return {'doingNow': doing, 'doneToday': done_today[:12], 'highPriority': high[:12], 'summary': {'doing': len(doing), 'done': len(done_today), 'high': len(high)}}
 
 
-def build_status(session_adapter, cron_adapter):
+def build_status(session_adapter, cron_adapter, square_adapter, cal_adapter):
     hb = parse_iso(session_adapter['data'].get('lastHeartbeat'))
     hb_age = mins_ago(hb)
 
     state = 'online'
     notes = []
-    if not session_adapter['ok'] or not cron_adapter['ok']:
-        state = 'degraded'
-        if not session_adapter['ok']:
-            notes.append('session adapter failed')
-        if not cron_adapter['ok']:
-            notes.append('cron adapter failed')
+    adapters = [('session', session_adapter), ('cron', cron_adapter), ('square', square_adapter), ('calendar', cal_adapter)]
+    for name, ad in adapters:
+        if not ad['ok']:
+            state = 'degraded'
+            notes.append(f'{name} adapter failed')
 
     if cron_adapter['data']['summary'].get('failing', 0) > 0:
         state = 'degraded'
@@ -210,33 +206,46 @@ def build_status(session_adapter, cron_adapter):
 
     note = '; '.join(notes) if notes else 'All adapters healthy.'
     now = now_iso()
-    return {
-        'state': state,
-        'lastHeartbeat': session_adapter['data'].get('lastHeartbeat', now),
-        'lastSync': now,
-        'sourceCheckAt': now,
-        'freshness': freshness,
-        'note': note,
-    }
+    return {'state': state, 'lastHeartbeat': session_adapter['data'].get('lastHeartbeat', now), 'lastSync': now, 'sourceCheckAt': now, 'freshness': freshness, 'note': note}
+
+
+def build_insights(square_adapter, cal_adapter):
+    out = []
+    if square_adapter['data'].get('pendingPayments', 0) > 0:
+        out.append(f"{square_adapter['data']['pendingPayments']} pending payments totalling ${square_adapter['data']['pendingTotal']:.2f}")
+    else:
+        out.append('No pending payments in Square')
+
+    tcount = len(cal_adapter['data'].get('today', []))
+    out.append(f"{tcount} calendar items for today")
+    return out
 
 
 def main():
     crons = adapter_crons()
     sessions = adapter_sessions()
+    square = adapter_square()
+    calendar = adapter_calendar_today()
 
-    status = build_status(sessions, crons)
+    status = build_status(sessions, crons, square, calendar)
     tasks = build_tasks(sessions, crons)
+    insights = build_insights(square, calendar)
 
     payload = {
-        'schemaVersion': 'ops-miniapp.v1',
-        'build': {'phase': 7, 'mode': 'production-hardened'},
+        'schemaVersion': 'ops-miniapp.v2',
+        'build': {'phase': 8, 'mode': 'production-hardened'},
         'updatedAt': now_iso(),
         'status': status,
         'tasks': tasks,
         'crons': crons['data'],
+        'finance': square['data'],
+        'calendar': calendar['data'],
+        'insights': insights,
         'adapters': {
             'sessions': {'ok': sessions['ok'], 'error': sessions['error'], 'fetchedAt': sessions['fetchedAt']},
             'crons': {'ok': crons['ok'], 'error': crons['error'], 'fetchedAt': crons['fetchedAt']},
+            'square': {'ok': square['ok'], 'error': square['error'], 'fetchedAt': square['fetchedAt']},
+            'calendar': {'ok': calendar['ok'], 'error': calendar['error'], 'fetchedAt': calendar['fetchedAt']},
         },
     }
 

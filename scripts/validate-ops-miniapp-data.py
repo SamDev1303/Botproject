@@ -16,11 +16,11 @@ try:
 except Exception as e:
     fail(f'cannot read json: {e}')
 
-for key in ['schemaVersion', 'updatedAt', 'status', 'tasks', 'crons']:
+for key in ['schemaVersion', 'updatedAt', 'status', 'tasks', 'crons', 'finance', 'calendar']:
     if key not in data:
         fail(f'missing key: {key}')
 
-if data['schemaVersion'] != 'ops-miniapp.v1':
+if data['schemaVersion'] != 'ops-miniapp.v2':
     fail('unexpected schemaVersion')
 
 status = data['status']
@@ -40,5 +40,12 @@ cron_summary = data['crons'].get('summary', {})
 for k in ['total', 'enabled', 'healthy', 'failing']:
     if k not in cron_summary:
         fail(f'missing crons.summary.{k}')
+
+for k in ['incomeMTD', 'pendingPayments', 'pendingTotal', 'recentPayments']:
+    if k not in data['finance']:
+        fail(f'missing finance.{k}')
+
+if 'today' not in data['calendar']:
+    fail('missing calendar.today')
 
 print('VALIDATION_OK')
