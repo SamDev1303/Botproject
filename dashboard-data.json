@@ -1,78 +1,104 @@
 {
-  "updatedAt": "2026-02-19T15:02:32Z",
-  "stats": {
-    "revenueMTD": "$0",
-    "outstandingBalance": "$0",
-    "unpaidInvoices": "0",
-    "leads": "0",
-    "gstPayable": "$0"
+  "updatedAt": "2026-02-20T02:05:00+11:00",
+  "status": {
+    "state": "online",
+    "lastHeartbeat": "2026-02-20T02:03:39+11:00",
+    "lastSync": "2026-02-20T02:05:00+11:00",
+    "sourceCheckAt": "2026-02-20T02:05:00+11:00",
+    "note": "Ops-only rebuild mode"
   },
-  "bella": {
-    "model": "openai-codex/gpt-5.3-codex",
-    "contextUsage": "n/a",
-    "sessions": 18,
-    "memory": {
-      "filesIndexed": 0,
-      "chunks": 0,
-      "cacheStatus": "cold"
-    },
-    "lastHeartbeat": "02:02 AM AEDT"
-  },
-  "financial": {
-    "recentTransactions": [],
-    "monthlyData": [],
-    "overdueAccounts": []
-  },
-  "calendar": {
-    "today": [],
-    "upcoming": []
-  },
-  "crons": [
-    {
-      "name": "dashboard-live-sync-hourly",
-      "enabled": true,
-      "schedule": {
-        "expr": "hourly"
+  "tasks": {
+    "doingNow": [
+      {
+        "id": "t-rebuild-1",
+        "title": "Rebuild mini app (ops-only)",
+        "priority": "high",
+        "updatedAt": "2026-02-20T02:05:00+11:00",
+        "source": "runtime"
       },
-      "status": "degraded_timeout"
+      {
+        "id": "t-rebuild-2",
+        "title": "Deploy new app to Vercel via GitHub",
+        "priority": "high",
+        "updatedAt": "2026-02-20T02:05:00+11:00",
+        "source": "runtime"
+      }
+    ],
+    "doneToday": [
+      {
+        "id": "t-done-1",
+        "title": "Wiped old dashboard + memory as requested",
+        "priority": "medium",
+        "updatedAt": "2026-02-20T01:58:00+11:00",
+        "source": "runtime"
+      },
+      {
+        "id": "t-done-2",
+        "title": "Defined accuracy-first rebuild plan",
+        "priority": "medium",
+        "updatedAt": "2026-02-20T02:01:00+11:00",
+        "source": "runtime"
+      }
+    ],
+    "highPriority": [
+      {
+        "id": "t-hi-1",
+        "title": "Complete push to new mini app",
+        "priority": "high",
+        "updatedAt": "2026-02-20T02:05:00+11:00",
+        "source": "runtime"
+      }
+    ],
+    "summary": {
+      "doing": 2,
+      "done": 2,
+      "high": 1
     }
-  ],
-  "liveTasks": [
-    {
-      "label": "Dashboard sync",
-      "status": "partial_success"
-    },
-    {
-      "label": "Cron status fetch",
-      "status": "failed_timeout"
-    },
-    {
-      "label": "Memory pattern recall",
-      "status": "failed_embeddings_quota"
-    }
-  ],
-  "patterns": [
-    {
-      "description": "Dashboard is being rebuilt toward a minimal Ops view (status, tasks, cron) with accuracy-first flow.",
-      "date": "2026-02-20"
-    },
-    {
-      "description": "Intermittent gateway timeouts are blocking cron API reads during overnight sync windows.",
-      "date": "2026-02-20"
-    },
-    {
-      "description": "Gemini embedding quota exhaustion is impacting memory_search reliability.",
-      "date": "2026-02-20"
-    }
-  ],
-  "activeSessions": {
-    "main": 1,
-    "cronJobs": 15,
-    "lastActivity": 1771513206857
   },
-  "social": {
-    "lastPost": null,
-    "engagement": null,
-    "platform": null
+  "crons": {
+    "jobs": [
+      {
+        "id": "bc2c5294-3185-4f6d-a8ff-a8f34302c971",
+        "name": "dashboard-live-sync-hourly",
+        "enabled": true,
+        "schedule": "0 * * * *",
+        "lastStatus": "ok",
+        "lastRunAt": "2026-02-20T02:00:00+11:00",
+        "nextRunAt": "2026-02-20T03:00:00+11:00"
+      },
+      {
+        "id": "f1435cbc-597a-4dbd-84b2-bb458f217b2b",
+        "name": "end-of-day-square-first-sheet-sync",
+        "enabled": true,
+        "schedule": "30 21 * * *",
+        "lastStatus": "scheduled",
+        "nextRunAt": "2026-02-20T21:30:00+11:00"
+      },
+      {
+        "id": "8b185f2e-bced-4d9f-b702-6c3369150a13",
+        "name": "Weekly Business Review",
+        "enabled": true,
+        "schedule": "0 9 * * 1",
+        "lastStatus": "ok",
+        "lastRunAt": "2026-02-09T09:00:00+11:00",
+        "nextRunAt": "2026-02-23T09:00:00+11:00"
+      },
+      {
+        "id": "ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
+        "name": "thursday-invoice-wages",
+        "enabled": true,
+        "schedule": "0 22 * * 4",
+        "lastStatus": "ok",
+        "lastRunAt": "2026-02-19T22:00:00+11:00",
+        "nextRunAt": "2026-02-26T22:00:00+11:00"
+      }
+    ],
+    "summary": {
+      "total": 4,
+      "enabled": 4,
+      "healthy": 3,
+      "failing": 0
+    },
+    "sourceCheckAt": "2026-02-20T02:05:00+11:00"
   }
 }
