@@ -1,3 +1,14 @@
+<!-- CLAWD_REPO_LABEL_START -->
+## Repository Ownership & Purpose
+
+- **Repository:** `SamDev1303/Botproject`
+- **Owner:** **SamDev1303**
+- **Visibility:** **Public**
+- **Purpose:** Hafsahs Bot
+- **Maintainer Note:** This README is labeled for clear ownership and repository intent.
+
+<!-- CLAWD_REPO_LABEL_END -->
+
 <p align="center">
   <img src="assets/bella-banner.svg" alt="Bella - AI Executive Assistant" width="100%">
 </p>
