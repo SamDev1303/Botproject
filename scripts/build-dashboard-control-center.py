@@ -261,17 +261,36 @@ def build_clients_section(now: datetime, business_sheet_id: str) -> dict[str, An
                 pending.append(card)
 
         total_outstanding = sum(float(x.get("amountDue", 0) or 0) for x in pending + overdue)
+
+        by_client: dict[str, dict[str, Any]] = {}
+        for card in paid + pending + overdue:
+            name = str(card.get("clientName", "Unknown")).strip() or "Unknown"
+            bucket = by_client.setdefault(name, {"count": 0, "paidTotal": 0.0})
+            bucket["count"] += 1
+            if str(card.get("paymentStatus", "")).upper() == "PAID":
+                bucket["paidTotal"] += float(card.get("amountDue", 0) or 0)
+
+        recurring_clients = [n for n, v in by_client.items() if int(v.get("count", 0)) >= 2]
+        one_time_clients = [n for n, v in by_client.items() if int(v.get("count", 0)) == 1]
+        recurring_paid_total = round(sum(float(by_client[n].get("paidTotal", 0) or 0) for n in recurring_clients), 2)
+
+        one_time_list = sorted(one_time_clients)[:60]
+
         return {
             "summary": {
                 "paid": len(paid),
                 "pending": len(pending),
                 "overdue": len(overdue),
                 "totalOutstanding": round(total_outstanding, 2),
+                "recurringClients": len(recurring_clients),
+                "recurringPaidTotal": recurring_paid_total,
+                "oneTimeClients": len(one_time_list),
             },
+            "oneTimeClientList": one_time_list,
             "kanban": {
-                "paid": sorted(paid, key=lambda x: str(x.get("clientName", "")))[:80],
-                "pending": sorted(pending, key=lambda x: str(x.get("dueDate", "")))[:80],
-                "overdue": sorted(overdue, key=lambda x: int(x.get("daysOverdue", 0)), reverse=True)[:80],
+                "paid": sorted(paid, key=lambda x: str(x.get("clientName", "")))[:25],
+                "pending": sorted(pending, key=lambda x: str(x.get("dueDate", "")))[:25],
+                "overdue": sorted(overdue, key=lambda x: int(x.get("daysOverdue", 0)), reverse=True)[:25],
             },
             "updatedAt": now.isoformat(timespec="seconds"),
             "source": "square+business_ops",
