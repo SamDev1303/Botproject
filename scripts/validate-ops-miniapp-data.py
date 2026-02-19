@@ -16,7 +16,7 @@ try:
 except Exception as e:
     fail(f'cannot read json: {e}')
 
-for key in ['schemaVersion', 'updatedAt', 'status', 'tasks', 'crons', 'finance', 'calendar']:
+for key in ['schemaVersion', 'updatedAt', 'status', 'tasks', 'crons', 'finance', 'calendar', 'health']:
     if key not in data:
         fail(f'missing key: {key}')
 
@@ -47,5 +47,9 @@ for k in ['incomeMTD', 'pendingPayments', 'pendingTotal', 'recentPayments']:
 
 if 'today' not in data['calendar']:
     fail('missing calendar.today')
+
+for k in ['fullCheckOk', 'apiChecks', 'keyChecks', 'checkedAt']:
+    if k not in data['health']:
+        fail(f'missing health.{k}')
 
 print('VALIDATION_OK')

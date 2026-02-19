@@ -129,9 +129,9 @@ def adapter_square():
                 'status': p.get('status', 'COMPLETED')
             })
 
-        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'incomeMTD': income_mtd, 'pendingPayments': len(unpaid), 'pendingTotal': round(unpaid_total, 2), 'recentPayments': recent}}
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'incomeMTD': income_mtd, 'pendingPayments': len(unpaid), 'pendingTotal': round(unpaid_total, 2), 'recentPayments': recent, 'keyPresent': bool(getattr(sq, 'access_token', ''))}}
     except Exception as e:
-        return {'ok': False, 'error': f'square adapter failed: {e}', 'fetchedAt': check_at, 'data': {'incomeMTD': 0.0, 'pendingPayments': 0, 'pendingTotal': 0.0, 'recentPayments': []}}
+        return {'ok': False, 'error': f'square adapter failed: {e}', 'fetchedAt': check_at, 'data': {'incomeMTD': 0.0, 'pendingPayments': 0, 'pendingTotal': 0.0, 'recentPayments': [], 'keyPresent': False}}
 
 
 def adapter_calendar_today():
@@ -149,9 +149,9 @@ def adapter_calendar_today():
         for e in data.get('items', [])[:6]:
             s = e.get('start', {}).get('dateTime', e.get('start', {}).get('date', ''))
             events.append({'title': e.get('summary', '(no title)'), 'time': s[11:16] if 'T' in s else 'all day'})
-        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'today': events}}
+        return {'ok': True, 'error': '', 'fetchedAt': check_at, 'data': {'today': events, 'tokenOk': True}}
     except Exception as e:
-        return {'ok': False, 'error': f'calendar adapter failed: {e}', 'fetchedAt': check_at, 'data': {'today': []}}
+        return {'ok': False, 'error': f'calendar adapter failed: {e}', 'fetchedAt': check_at, 'data': {'today': [], 'tokenOk': False}}
 
 
 def build_tasks(session_adapter, cron_adapter):
@@ -231,6 +231,21 @@ def main():
     tasks = build_tasks(sessions, crons)
     insights = build_insights(square, calendar)
 
+    health = {
+        'fullCheckOk': all([sessions['ok'], crons['ok'], square['ok'], calendar['ok']]),
+        'apiChecks': {
+            'squareApi': square['ok'],
+            'googleCalendarApi': calendar['ok'],
+            'cronStore': crons['ok'],
+            'sessionStore': sessions['ok'],
+        },
+        'keyChecks': {
+            'squareKeyPresent': square['data'].get('keyPresent', False),
+            'googleTokenOk': calendar['data'].get('tokenOk', False),
+        },
+        'checkedAt': now_iso(),
+    }
+
     payload = {
         'schemaVersion': 'ops-miniapp.v2',
         'build': {'phase': 8, 'mode': 'production-hardened'},
@@ -241,6 +256,7 @@ def main():
         'finance': square['data'],
         'calendar': calendar['data'],
         'insights': insights,
+        'health': health,
         'adapters': {
             'sessions': {'ok': sessions['ok'], 'error': sessions['error'], 'fetchedAt': sessions['fetchedAt']},
             'crons': {'ok': crons['ok'], 'error': crons['error'], 'fetchedAt': crons['fetchedAt']},
