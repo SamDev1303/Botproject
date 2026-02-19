@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-02-20T02:19:01+11:00",
+  "updatedAt": "2026-02-20T02:30:20+11:00",
   "status": {
     "state": "online",
-    "lastHeartbeat": "2026-02-20T02:18:12+11:00",
-    "lastSync": "2026-02-20T02:19:01+11:00",
-    "sourceCheckAt": "2026-02-20T02:19:01+11:00",
+    "lastHeartbeat": "2026-02-20T02:30:12+11:00",
+    "lastSync": "2026-02-20T02:30:20+11:00",
+    "sourceCheckAt": "2026-02-20T02:30:20+11:00",
     "freshness": "green",
     "note": "All adapters healthy."
   },
@@ -14,7 +14,14 @@
         "id": "session:agent:main:main",
         "title": "Active session: direct",
         "priority": "medium",
-        "updatedAt": "2026-02-20T02:18:12+11:00",
+        "updatedAt": "2026-02-20T02:30:12+11:00",
+        "source": "sessions"
+      },
+      {
+        "id": "session:agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
+        "title": "Active session: session",
+        "priority": "medium",
+        "updatedAt": "2026-02-20T02:30:00+11:00",
         "source": "sessions"
       }
     ],
@@ -29,7 +36,7 @@
     ],
     "highPriority": [],
     "summary": {
-      "doing": 1,
+      "doing": 2,
       "done": 1,
       "high": 0
     }
@@ -79,18 +86,18 @@
       "healthy": 4,
       "failing": 0
     },
-    "sourceCheckAt": "2026-02-20T02:19:01+11:00"
+    "sourceCheckAt": "2026-02-20T02:30:20+11:00"
   },
   "adapters": {
     "sessions": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:19:01+11:00"
+      "fetchedAt": "2026-02-20T02:30:20+11:00"
     },
     "crons": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T02:19:01+11:00"
+      "fetchedAt": "2026-02-20T02:30:20+11:00"
     }
   }
 }
