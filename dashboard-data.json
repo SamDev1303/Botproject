@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-19T22:02:17+11:00",
+  "lastUpdated": "2026-02-19T23:01:48+11:00",
   "controlCenter": {
     "title": "Bella Command Center",
     "mode": "codex-stable",
@@ -12,13 +12,13 @@
     "unpaidInvoices": 3,
     "leads": "68",
     "gstPayable": 723.22,
-    "lastHeartbeat": "2026-02-19 22:02 AEDT"
+    "lastHeartbeat": "2026-02-19 23:01 AEDT"
   },
   "runtime": {
     "gateway": {
       "status": "running",
       "rpc": "ok",
-      "pid": "43171",
+      "pid": "97490",
       "port": 18789,
       "checkedAt": "2026-02-19 22:02 AEDT"
     },
@@ -42,25 +42,25 @@
     {
       "name": "Square",
       "status": "required",
-      "lastSync": "2026-02-19 21:50 AEDT",
+      "lastSync": "2026-02-19 22:02 AEDT",
       "note": "Financial and client truth source"
     },
     {
       "name": "Google Calendar",
       "status": "required",
-      "lastSync": "2026-02-19 21:50 AEDT",
+      "lastSync": "2026-02-19 22:02 AEDT",
       "note": "Schedule truth source"
     },
     {
       "name": "Connecteam",
       "status": "required",
-      "lastSync": "2026-02-19 21:50 AEDT",
+      "lastSync": "2026-02-19 22:02 AEDT",
       "note": "Roster truth source"
     },
     {
       "name": "Google Sheets",
       "status": "required",
-      "lastSync": "2026-02-19 21:50 AEDT",
+      "lastSync": "2026-02-19 22:02 AEDT",
       "note": "Accounting and ops mirror"
     }
   ],
@@ -175,7 +175,7 @@
   "calendar": {
     "today": [
       {
-        "title": "🧹 U3 Atkinson Cleaning",
+        "title": "\ud83e\uddf9 U3 Atkinson Cleaning",
         "time": "20:00 - 22:00",
         "date": "2026-02-19",
         "status": "Scheduled"
@@ -183,12 +183,12 @@
     ],
     "upcoming": [
       {
-        "title": "🧹 Airbnb Cleaning - Unit 3 Atkinson St",
+        "title": "\ud83e\uddf9 Airbnb Cleaning - Unit 3 Atkinson St",
         "time": "10:00 - 12:00",
         "date": "2026-02-20"
       },
       {
-        "title": "📋 Thursday Invoice & Wages",
+        "title": "\ud83d\udccb Thursday Invoice & Wages",
         "time": "22:00",
         "date": "2026-02-19"
       }
@@ -199,8 +199,9 @@
       "total": 46,
       "enabled": 37,
       "errors": 0,
-      "lastChecked": "2026-02-19 22:02 AEDT",
-      "fetch": "degraded-timeout"
+      "lastCheck": "2026-02-19 23:01 AEDT",
+      "status": "degraded",
+      "note": "cron tool timed out against gateway; retained last known cron snapshot."
     },
     "critical": [
       {
@@ -283,68 +284,46 @@
   },
   "sessions": {
     "count": 18,
-    "lastActivityMs": 1771498808618,
+    "lastActivityMs": 1771502400035,
     "active": [
       {
         "label": "agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
-        "chatType": "cron",
-        "updatedAtMs": 1771498808618,
-        "model": "gpt-5.3-codex"
-      },
-      {
-        "label": "agent:main:cron:ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
-        "chatType": "cron",
-        "updatedAtMs": 1771498800036,
+        "chatType": "webchat",
+        "updatedAtMs": 1771502400035,
         "model": "gpt-5.3-codex"
       },
       {
         "label": "agent:main:main",
         "chatType": "direct",
-        "updatedAtMs": 1771498262668,
+        "updatedAtMs": 1771500848707,
         "model": "gpt-5.3-codex"
       },
       {
-        "label": "agent:main:cron:c9b5cf2d-7ca1-49e2-98f0-43062e162e1f",
-        "chatType": "cron",
-        "updatedAtMs": 1771488027809,
-        "model": "gemini-3-flash-preview"
-      },
-      {
-        "label": "agent:main:telegram:group:hafsahnuzhat",
-        "chatType": "group",
-        "updatedAtMs": 1771487054614,
-        "model": "unknown"
-      },
-      {
-        "label": "agent:main:telegram:group:weezy_fj",
-        "chatType": "group",
-        "updatedAtMs": 1771427250025,
-        "model": "unknown"
+        "label": "agent:main:cron:ba9f3a18-9a03-4ff0-9f3c-a23f14f77cd9",
+        "chatType": "unknown",
+        "updatedAtMs": 1771498800036,
+        "model": "gpt-5.3-codex"
       }
     ]
   },
   "patterns": [
     {
-      "description": "Codex-only stable routing locked (5.3 -> 5.2).",
+      "description": "Three-sheet source-of-truth cutover remains locked (Business Ops, Staff Properties, Personal).",
       "date": "2026-02-19"
     },
     {
-      "description": "Three-sheet cutover complete; legacy mirror disabled.",
+      "description": "Codex routing stabilized at 5.3 primary with 5.2 fallback; broken fallbacks removed.",
       "date": "2026-02-19"
     },
     {
-      "description": "Universal sync run 20260219214819 passed integrity + accuracy.",
-      "date": "2026-02-19"
-    },
-    {
-      "description": "Gemini embedding path hitting quota limits (429), memory search degraded.",
+      "description": "Universal sync pass completed with accuracy+integrity validation PASS.",
       "date": "2026-02-19"
     }
   ],
   "quickActions": [
     {
       "label": "Model Check",
-      "command": "bash /Users/hafsahnuzhat/Desktop/🦀/scripts/check-model.sh"
+      "command": "bash /Users/hafsahnuzhat/Desktop/\ud83e\udd80/scripts/check-model.sh"
     },
     {
       "label": "Gateway Restart",
