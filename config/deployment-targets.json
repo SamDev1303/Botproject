@@ -12,15 +12,15 @@
   },
   "vercel": {
     "dashboardProjectId": "prj_pAWJfT0ZshiJUxggFSR5pd3gqwhD",
-    "teamSlug": "opbrosautomations-projects",
-    "teamIdHint": "opbrosautomations-projects"
+    "teamSlug": "shamals-projects-0f4386e4",
+    "teamIdHint": "shamals-projects-0f4386e4"
   },
   "projects": {
     "dashboard": {
       "repo": "SamDev1303/pulse-dashboard",
       "localPath": "/Users/hafsahnuzhat/bella-dashboard",
       "vercelProjectId": "prj_pAWJfT0ZshiJUxggFSR5pd3gqwhD",
-      "vercelTeam": "opbrosautomations-projects",
+      "vercelTeam": "shamals-projects-0f4386e4",
       "owners": [
         "Hafsah Nuzhat",
         "Bella Bot"
