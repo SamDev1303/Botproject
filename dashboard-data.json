@@ -4,12 +4,12 @@
     "phase": 8,
     "mode": "production-hardened"
   },
-  "updatedAt": "2026-02-20T23:45:17+11:00",
+  "updatedAt": "2026-02-21T00:00:19+11:00",
   "status": {
     "state": "online",
-    "lastHeartbeat": "2026-02-20T23:45:00+11:00",
-    "lastSync": "2026-02-20T23:45:17+11:00",
-    "sourceCheckAt": "2026-02-20T23:45:17+11:00",
+    "lastHeartbeat": "2026-02-21T00:00:00+11:00",
+    "lastSync": "2026-02-21T00:00:19+11:00",
+    "sourceCheckAt": "2026-02-21T00:00:19+11:00",
     "freshness": "green",
     "note": "All adapters healthy."
   },
@@ -19,37 +19,22 @@
         "id": "session:agent:main:main",
         "title": "Active session: direct",
         "priority": "medium",
-        "updatedAt": "2026-02-20T23:31:33+11:00",
+        "updatedAt": "2026-02-20T23:46:24+11:00",
         "source": "sessions"
       },
       {
         "id": "session:agent:main:cron:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
         "title": "Active session: session",
         "priority": "medium",
-        "updatedAt": "2026-02-20T23:45:00+11:00",
+        "updatedAt": "2026-02-21T00:00:00+11:00",
         "source": "sessions"
       }
     ],
-    "doneToday": [
-      {
-        "id": "cron-done:bc2c5294-3185-4f6d-a8ff-a8f34302c971",
-        "title": "Cron healthy: dashboard-live-sync-hourly",
-        "priority": "low",
-        "updatedAt": "2026-02-20T23:30:00+11:00",
-        "source": "cron"
-      },
-      {
-        "id": "cron-done:f1435cbc-597a-4dbd-84b2-bb458f217b2b",
-        "title": "Cron healthy: end-of-day-square-first-sheet-sync",
-        "priority": "low",
-        "updatedAt": "2026-02-20T21:31:31+11:00",
-        "source": "cron"
-      }
-    ],
+    "doneToday": [],
     "highPriority": [],
     "summary": {
       "doing": 2,
-      "done": 2,
+      "done": 0,
       "high": 0
     }
   },
@@ -70,8 +55,8 @@
         "enabled": true,
         "schedule": "*/15 * * * *",
         "lastStatus": "ok",
-        "lastRunAt": "2026-02-20T23:30:00+11:00",
-        "nextRunAt": "2026-02-20T23:45:00+11:00"
+        "lastRunAt": "2026-02-20T23:45:00+11:00",
+        "nextRunAt": "2026-02-21T00:00:00+11:00"
       },
       {
         "id": "f1435cbc-597a-4dbd-84b2-bb458f217b2b",
@@ -98,7 +83,7 @@
       "healthy": 4,
       "failing": 0
     },
-    "sourceCheckAt": "2026-02-20T23:45:14+11:00"
+    "sourceCheckAt": "2026-02-21T00:00:16+11:00"
   },
   "finance": {
     "incomeMTD": 3825.0,
@@ -134,33 +119,12 @@
     "keyPresent": true
   },
   "calendar": {
-    "today": [
-      {
-        "title": "Cleaning - Priya",
-        "time": "9:30 AM \u2013 10:30 AM"
-      },
-      {
-        "title": "Airbnb Cleaning - Unit 3 Atkinson St",
-        "time": "10:00 AM \u2013 12:00 PM"
-      },
-      {
-        "title": "Airbnb Cleaning - Shayan (Unit 4 Atkinson St)",
-        "time": "11:00 AM \u2013 1:00 PM"
-      },
-      {
-        "title": "Meeting - Specsavers (Ref: Gabby's email)",
-        "time": "2:00 PM \u2013 3:00 PM"
-      },
-      {
-        "title": "Karanjeet's Australia Post Cleaning",
-        "time": "4:00 PM \u2013 6:00 PM"
-      }
-    ],
+    "today": [],
     "tokenOk": true
   },
   "insights": [
     "3 pending payments totalling $405.40",
-    "5 calendar items for today"
+    "0 calendar items for today"
   ],
   "health": {
     "fullCheckOk": true,
@@ -174,28 +138,28 @@
       "squareKeyPresent": true,
       "googleTokenOk": true
     },
-    "checkedAt": "2026-02-20T23:45:17+11:00"
+    "checkedAt": "2026-02-21T00:00:19+11:00"
   },
   "adapters": {
     "sessions": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T23:45:14+11:00"
+      "fetchedAt": "2026-02-21T00:00:16+11:00"
     },
     "crons": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T23:45:14+11:00"
+      "fetchedAt": "2026-02-21T00:00:16+11:00"
     },
     "square": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T23:45:14+11:00"
+      "fetchedAt": "2026-02-21T00:00:16+11:00"
     },
     "calendar": {
       "ok": true,
       "error": "",
-      "fetchedAt": "2026-02-20T23:45:16+11:00"
+      "fetchedAt": "2026-02-21T00:00:18+11:00"
     }
   }
 }
