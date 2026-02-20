@@ -1,0 +1,5 @@
+stage,creative_type,primary_cta,backup_cta,capture_method
+cold,before_after_reel,DM "QUOTE",Get instant estimate,dm_automation
+cold,objection_post,See what's included,Compare packages,landing_page
+warm,testimonial,Book this week,Check availability,call_or_form
+hot,urgency_retarget,Last 3 spots this week,Priority booking today,click_to_call
