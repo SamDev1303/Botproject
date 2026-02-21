@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 # check-model.sh — Monitor active model, auto-fix to GPT Codex + Gemini fallback
 # Usage: bash ~/Desktop/🦀/scripts/check-model.sh
 # Runs every heartbeat (30 min) or manually
@@ -116,8 +118,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S %Z')
-EXPECTED_PRIMARY="openai-codex/gpt-5.3-codex"
-EXPECTED_FALLBACK="openai-codex/gpt-5.2-codex"
+EXPECTED_PRIMARY="anthropic/claude-sonnet-4-6"
+EXPECTED_FALLBACK="google/gemini-3-flash-preview"
 CLAW_HOME="${CLAW_HOME:-$HOME/.clawdbot}"
 CONFIG_FILE="$CLAW_HOME/clawdbot.json"
 AUTH_FILE_PRIMARY="$CLAW_HOME/agents/main/agent/auth-profiles.json"
@@ -252,7 +254,7 @@ fi
 if [ "$NEEDS_FIX" = true ]; then
   log "MODEL CHECK FAILED: $REASONS — running auto-fix..."
   bash "$SWITCHER" cooldown-bypass 2>&1 | while read -r line; do log "  cooldown: $line"; done
-  bash "$SWITCHER" codex53 2>&1 | while read -r line; do log "  fix: $line"; done
+  bash "$SWITCHER" sonnet46 2>&1 | while read -r line; do log "  fix: $line"; done
   log "Auto-fix completed."
 
   python3 - "$STATE_FILE" "$EXPECTED_PRIMARY" "$EXPECTED_FALLBACK" << 'PYEOF'

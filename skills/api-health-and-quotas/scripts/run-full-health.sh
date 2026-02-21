@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 python3 ~/Desktop/🦀/scripts/api_health_check.py
 bash ~/Desktop/🦀/scripts/check-model.sh

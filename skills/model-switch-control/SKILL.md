@@ -18,7 +18,7 @@ Do not use for:
 
 ## Standard Routing
 
-- Primary: `openai-codex/gpt-5.3-codex`
+- Primary: `anthropic/claude-sonnet-4-6`
 - Fallback: `google/gemini-3-flash-preview`
 - Thinking target for maintenance jobs: `low`
 

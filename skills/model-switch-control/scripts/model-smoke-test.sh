@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 echo "== model check =="
 bash ~/Desktop/🦀/scripts/check-model.sh || true

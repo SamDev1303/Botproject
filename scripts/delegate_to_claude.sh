@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 #!/bin/bash
 # Delegate tasks to Claude Code from Bella's workspace
 # Usage: ./delegate_to_claude.sh "Task description here"

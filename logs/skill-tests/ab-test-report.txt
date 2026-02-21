@@ -1,0 +1,6 @@
+variant,impressions,clicks,leads,spend,CTR%,CPC,CPL,LeadRate%
+B_Checklist_Form,4100,55,14,$231.00,1.34,$4.20,$16.50,25.45
+A_Urgency_DM,4200,62,11,$238.00,1.48,$3.84,$21.64,17.74
+C_Testimonial_Call,3900,48,8,$205.00,1.23,$4.27,$25.62,16.67
+
+WINNER: B_Checklist_Form (lowest CPL $16.50)

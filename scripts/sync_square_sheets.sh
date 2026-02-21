@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 # Sync Square payments to Google Sheets + reconcile
 # Usage: bash ~/Desktop/🦀/scripts/sync_square_sheets.sh
 set -euo pipefail

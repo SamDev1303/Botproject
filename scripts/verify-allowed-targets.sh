@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 ROOT="/Users/hafsahnuzhat/Desktop/🦀"
 TARGETS="$ROOT/config/deployment-targets.json"

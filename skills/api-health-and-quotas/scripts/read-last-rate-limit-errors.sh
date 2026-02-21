@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 LOG_FILE="/tmp/clawdbot/clawdbot-$(date +%Y-%m-%d).log"
 if [ ! -f "$LOG_FILE" ]; then

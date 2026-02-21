@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 # check-embedding.sh — Ensure memory embeddings are configured to Gemini and healthy
 # Usage: bash ~/Desktop/🦀/scripts/check-embedding.sh
 

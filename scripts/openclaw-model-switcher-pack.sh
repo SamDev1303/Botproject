@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 #!/bin/bash
 # OpenClaw Universal Model Switcher Pack
 # Usage:
@@ -418,7 +420,7 @@ case "$TARGET" in
         status
         ;;
     sonnet46|sonnet)
-        set_model "anthropic/claude-sonnet-4-6" "google/gemini-3-flash-preview"
+        set_model "anthropic/claude-sonnet-4-6" "google/gemini-3-flash-preview" "openai-codex/gpt-5.3-codex"
         clawdbot gateway restart >/dev/null 2>&1 || true
         status
         ;;

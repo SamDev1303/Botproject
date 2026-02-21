@@ -109,6 +109,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 ROOT="/Users/hafsahnuzhat/Desktop/🦀"
 HOOK="$ROOT/.git/hooks/pre-push"

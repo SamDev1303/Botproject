@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 
 ROOT="/Users/hafsahnuzhat/Desktop/🦀"
 MAIN="$ROOT/scripts/run-bella-universal-sync.sh"

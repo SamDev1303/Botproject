@@ -108,6 +108,8 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
+set -euo pipefail
 # switch-to-opus46.sh — Reset Bella to Opus 4.6 (clear cooldown, restart gateway)
 # Usage: bash ~/Desktop/🦀/scripts/switch-to-opus46.sh
 
