@@ -109,6 +109,7 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
 
 ROOT="/Users/hafsahnuzhat/Desktop/🦀"
 LOG_DIR="$ROOT/logs"

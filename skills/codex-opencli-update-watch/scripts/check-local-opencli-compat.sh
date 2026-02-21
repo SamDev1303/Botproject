@@ -111,6 +111,7 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
 
 echo "== clawdbot version =="
 clawdbot --version

@@ -111,6 +111,7 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
 
 ROOT="/Users/hafsahnuzhat/Desktop/🦀"
 SYNC_SCRIPT="$ROOT/scripts/hourly-accounting-dashboard-sync.sh"

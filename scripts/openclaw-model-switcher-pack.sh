@@ -110,6 +110,7 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
 #!/bin/bash
 # OpenClaw Universal Model Switcher Pack
 # Usage:
