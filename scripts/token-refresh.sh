@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # token-refresh.sh — Monitor and auto-refresh provider tokens
 # Usage:
 #   bash token-refresh.sh status    — Show all token health

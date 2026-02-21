@@ -20,7 +20,7 @@ def weekly_report():
 
     # Payments this week
     try:
-        payments = sq.list_payments(limit=50) or []
+        payments = sq.list_payments(days=30) or []
         week_payments = []
         for p in payments:
             created = p.get('created_at', '')

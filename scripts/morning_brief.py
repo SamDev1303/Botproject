@@ -35,8 +35,8 @@ def morning_brief():
 
     # Square: recent payments (last 7 days)
     try:
-        payments = sq.list_payments(limit=10) or []
-        week_total = sum(float(p.get('amount_money', {}).get('amount', 0)) / 100 for p in payments[:7])
+        payments = sq.list_payments(days=7) or []
+        week_total = sum(float(p.get('amount_money', {}).get('amount', 0)) / 100 for p in payments)
         print(f"\n📊 Recent Payments (last 10): ${week_total:,.2f}")
     except Exception as e:
         print(f"  ⚠️ Payments error: {e}")

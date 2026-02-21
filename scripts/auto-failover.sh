@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # auto-failover.sh — Test all models in priority order, switch to first working one
 # Usage: bash auto-failover.sh
 # Can be run by heartbeat, cron, or manually when bot crashes

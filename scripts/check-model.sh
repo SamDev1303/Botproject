@@ -111,6 +111,7 @@ set -euo pipefail
 set -euo pipefail
 set -euo pipefail
 set -euo pipefail
+set -euo pipefail
 # check-model.sh — Monitor active model, auto-fix to GPT Codex + Gemini fallback
 # Usage: bash ~/Desktop/🦀/scripts/check-model.sh
 # Runs every heartbeat (30 min) or manually

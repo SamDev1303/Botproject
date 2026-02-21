@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 # model-switch.sh — Universal model switcher for Bella
 # Usage: bash model-switch.sh <sonnet|opus|gemini|codex|status>
 # Called by /model Telegram command or manually
